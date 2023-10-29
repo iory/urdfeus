@@ -1,5 +1,6 @@
 from __future__ import print_function
 
+import os
 import shlex
 import subprocess
 import sys
@@ -23,6 +24,15 @@ if sys.argv[-1] == 'release':
     sys.exit(0)
 
 
+def listup_package_data():
+    data_files = []
+    for root, _, files in os.walk('urdfeus/templates'):
+        for filename in files:
+            data_files.append(
+                os.path.join(root[len('urdfeus/'):], filename))
+    return data_files
+
+
 setup_requires = []
 
 with open('requirements.txt') as f:
@@ -34,7 +44,7 @@ with open('requirements.txt') as f:
 setup(
     name="urdfeus",
     version=version,
-    description="A python library",
+    description="URDF converter for Euslisp",
     author="iory",
     author_email="ab.ioryz@gmail.com",
     url="https://github.com/iory/urdfeus",
@@ -47,14 +57,19 @@ setup(
         "Natural Language :: English",
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python",
-        "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: Implementation :: CPython",
     ],
     packages=find_packages(),
+    package_data={'urdfeus': listup_package_data()},
     zip_safe=False,
     setup_requires=setup_requires,
     install_requires=install_requires,
+    entry_points={
+        "console_scripts": [
+            "urdf2eus=urdfeus.apps.urdf2eus:main"
+        ]
+    },
 )
