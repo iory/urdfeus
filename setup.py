@@ -69,7 +69,8 @@ setup(
     install_requires=install_requires,
     entry_points={
         "console_scripts": [
-            "urdf2eus=urdfeus.apps.urdf2eus:main"
+            "urdf2eus=urdfeus.apps.urdf2eus:main",
+            "mesh2eus=urdfeus.apps.mesh2eus:main",
         ]
     },
 )
