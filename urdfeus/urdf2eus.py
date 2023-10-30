@@ -10,6 +10,7 @@ from skrobot.model import RobotModel
 from urdfeus.common import is_fixed_joint
 from urdfeus.common import is_linear_joint
 from urdfeus.common import meter2millimeter
+from urdfeus.mesh_utils import split_mesh_by_face_color
 from urdfeus.read_yaml import read_config_from_yaml
 from urdfeus.templates import get_euscollada_string
 
@@ -168,24 +169,25 @@ def print_geometry(link, fp=sys.stdout):
 
 def print_mesh(link, fp=sys.stdout):
     print("\n                 (list ;; mesh list", file=fp)
-    for input_mesh in link.visual_mesh:
-        print("                  (list ;; mesh description", file=fp)
-        print("                   (list :type :triangles)", file=fp)
-        print("                   (list :material (list", file=fp)
-        print(f"                    (list :ambient (float-vector {input_mesh.visual.main_color[0] / 255.0} {input_mesh.visual.main_color[1]/ 255.0} {input_mesh.visual.main_color[2]/ 255.0} {input_mesh.visual.main_color[3]/ 255.0}))", file=fp)  # NOQA
-        print(f"                    (list :diffuse (float-vector {input_mesh.visual.main_color[0]/ 255.0} {input_mesh.visual.main_color[1]/ 255.0} {input_mesh.visual.main_color[2]/ 255.0} {input_mesh.visual.main_color[3]/ 255.0}))", end="", file=fp)  # NOQA
-        print("))", file=fp)
-        print("                   (list :indices #i(", end="", file=fp)
-        print(' '.join(map(str, input_mesh.faces.reshape(-1))), end="", file=fp)  # NOQA
-        print("))", file=fp)
-        print(f"                   (list :vertices (let ((mat (make-matrix {len(input_mesh.vertices)} 3))) (fvector-replace (array-entity mat) #f(", end="", file=fp)  # NOQA
-        vertices = np.array(input_mesh.vertices)
-        vertices = link.inverse_transformation().transform_vector(vertices)
-        vertices = meter2millimeter * vertices
-        print(' '.join(map(str, vertices.reshape(-1))), end='', file=fp)
-        print(")) mat))", end="", file=fp)
-        # TODO(someone) normal
-        print(")", end='', file=fp)
+    for mesh in link.visual_mesh:
+        for input_mesh in split_mesh_by_face_color(mesh):
+            print("                  (list ;; mesh description", file=fp)
+            print("                   (list :type :triangles)", file=fp)
+            print("                   (list :material (list", file=fp)
+            print(f"                    (list :ambient (float-vector {input_mesh.visual.main_color[0] / 255.0} {input_mesh.visual.main_color[1]/ 255.0} {input_mesh.visual.main_color[2]/ 255.0} {input_mesh.visual.main_color[3]/ 255.0}))", file=fp)  # NOQA
+            print(f"                    (list :diffuse (float-vector {input_mesh.visual.main_color[0]/ 255.0} {input_mesh.visual.main_color[1]/ 255.0} {input_mesh.visual.main_color[2]/ 255.0} {input_mesh.visual.main_color[3]/ 255.0}))", end="", file=fp)  # NOQA
+            print("))", file=fp)
+            print("                   (list :indices #i(", end="", file=fp)
+            print(' '.join(map(str, input_mesh.faces.reshape(-1))), end="", file=fp)  # NOQA
+            print("))", file=fp)
+            print(f"                   (list :vertices (let ((mat (make-matrix {len(input_mesh.vertices)} 3))) (fvector-replace (array-entity mat) #f(", end="", file=fp)  # NOQA
+            vertices = np.array(input_mesh.vertices)
+            vertices = link.inverse_transformation().transform_vector(vertices)
+            vertices = meter2millimeter * vertices
+            print(' '.join(map(str, vertices.reshape(-1))), end='', file=fp)
+            print(")) mat))", end="", file=fp)
+            # TODO(someone) normal
+            print(")", end='', file=fp)
     print(")))", file=fp)
 
 
