@@ -196,21 +196,21 @@ def print_end_coords(robot, config_yaml_path=None,
                      fp=sys.stdout):
     if config_yaml_path is not None:
         read_config_from_yaml(robot, config_yaml_path, fp=fp)
+    else:
+        print("     ;; init-ending\n", file=fp)
+        print("     (send self :init-ending) ;; :urdf\n", file=fp)
+        print("     ;; overwrite bodies to return draw-things links not (send link :bodies)\n", file=fp)  # NOQA
+        print("     (setq bodies (flatten (mapcar #'(lambda (b) (if (find-method b :bodies) (send b :bodies))) (list", end="", file=fp)  # NOQA
+        for link in robot.link_list:
+            if add_link_suffix:
+                print(f" {link.name}_lk", end="", file=fp)
+            else:
+                print(f" {link.name}", end="", file=fp)
+        print("))))\n", file=fp)
 
-    print("     ;; init-ending\n", file=fp)
-    print("     (send self :init-ending) ;; :urdf\n", file=fp)
-    print("     ;; overwrite bodies to return draw-things links not (send link :bodies)\n", file=fp)  # NOQA
-    print("     (setq bodies (flatten (mapcar #'(lambda (b) (if (find-method b :bodies) (send b :bodies))) (list", end="", file=fp)  # NOQA
-    for link in robot.link_list:
-        if add_link_suffix:
-            print(f" {link.name}_lk", end="", file=fp)
-        else:
-            print(f" {link.name}", end="", file=fp)
-    print("))))\n", file=fp)
-
-    print("     (when (member :reset-pose (send self :methods))", file=fp)
-    print("           (send self :reset-pose)) ;; :set reset-pose\n", file=fp)
-    print("     self)) ;; end of :init", file=fp)
+        print("     (when (member :reset-pose (send self :methods))", file=fp)
+        print("           (send self :reset-pose)) ;; :set reset-pose\n", file=fp)  # NOQA
+        print("     self)) ;; end of :init", file=fp)
 
     print("\n", end='', file=fp)
     print("  ;; all joints", file=fp)
