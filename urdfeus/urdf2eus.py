@@ -7,6 +7,7 @@ import numpy as np
 from skrobot.model import Link
 from skrobot.model import RobotModel
 
+from urdfeus.common import collect_all_joints_of_robot
 from urdfeus.common import is_fixed_joint
 from urdfeus.common import is_linear_joint
 from urdfeus.common import meter2millimeter
@@ -215,7 +216,7 @@ def print_end_coords(robot, config_yaml_path=None,
     print("\n", end='', file=fp)
     print("  ;; all joints", file=fp)
     # Assuming URDFDOM_1_0_0_API is a boolean variable
-    for joint in robot.joint_list:
+    for joint in collect_all_joints_of_robot(robot):
         joint_name = joint.name
         if add_joint_suffix:
             if is_fixed_joint(joint):
@@ -262,7 +263,7 @@ def urdf2eus(urdf_path, config_yaml_path=None, fp=sys.stdout):
     print(get_euscollada_string(), file=fp)
 
     joint_names = []
-    for joint in r.joint_list:
+    for joint in collect_all_joints_of_robot(r):
         joint_name = joint.name
         if is_fixed_joint(joint):
             joint_name += "_fixed_jt"
@@ -319,7 +320,7 @@ def urdf2eus(urdf_path, config_yaml_path=None, fp=sys.stdout):
     else:
         print(f"     (send self :assoc {r.root_link.name})", file=fp)
 
-    for j in r.joint_list:
+    for j in collect_all_joints_of_robot(r):
         print_joint(j, fp=fp)
     print_mimic_joints(r, fp=fp)
     print_end_coords(r, config_yaml_path, fp=fp)
