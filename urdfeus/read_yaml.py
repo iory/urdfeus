@@ -13,7 +13,8 @@ def read_config_from_yaml(
         doc = yaml.load(file, Loader=yaml.FullLoader)
 
     for limb in [k for k in doc.keys() if k.endswith('-end-coords')]:
-        limb_name = limb.rstrip('-end-coords')
+        suffix_to_remove = '-end-coords'
+        limb_name = limb[:-len(suffix_to_remove)]
         end_coords_parent_name = doc[f"{limb_name}-end-coords"]["parent"]
 
         if add_link_suffix:
@@ -110,3 +111,55 @@ def read_config_from_yaml(
                 print(f" {joint}", end="", file=fp)
     print("))", file=fp)
     print("", file=fp)
+
+    print("     ;; init-ending\n", file=fp)
+    print("     (send self :init-ending) ;; :urdf\n", file=fp)
+    print("     ;; overwrite bodies to return draw-things links not (send link :bodies)\n", file=fp)  # NOQA
+    print("     (setq bodies (flatten (mapcar #'(lambda (b) (if (find-method b :bodies) (send b :bodies))) (list", end="", file=fp)  # NOQA
+    for link in robot.link_list:
+        if add_link_suffix:
+            print(f" {link.name}_lk", end="", file=fp)
+        else:
+            print(f" {link.name}", end="", file=fp)
+    print("))))\n", file=fp)
+
+    print("     (when (member :reset-pose (send self :methods))", file=fp)
+    print("           (send self :reset-pose)) ;; :set reset-pose\n", file=fp)
+    print("     self)) ;; end of :init", file=fp)
+
+    if 'angle-vector' in doc:
+        n = doc['angle-vector']
+        if len(n) > 0:
+            print("  ;; pre-defined pose methods\n", file=fp)
+
+        for name, v in n.items():
+            limbs_symbols = " ".join([f":{limb[0]}" for limb in limbs])
+            print(f"\n    (:{name} (&optional (limbs '({limbs_symbols})))\n",
+                  file=fp)
+            print(f"      \"Predefined pose named {name}.\"\n", file=fp)
+            print("      (unless (listp limbs) (setq limbs (list limbs)))\n",
+                  file=fp)
+            print("      (dolist (limb limbs)\n", file=fp)
+            print("        (case limb", file=fp)
+
+            i_joint = 0
+            for limb in limbs:
+                limb_name = limb[0]
+                print(f"\n          (:{limb_name} (send self limb :angle-vector (float-vector", file=fp)  # NOQA
+                joint_names = limb[1][1]
+
+                for j in range(len(joint_names)):
+                    try:
+                        angle_value = v[i_joint]
+                        print(f" {angle_value}", file=fp)
+                        i_joint += 1
+                    except IndexError as e:  # NOQA
+                        sys.stderr.write("****** Angle-vector may be shorter than joint-list, please fix .yaml ******\n")  # NOQA
+                        while j < len(joint_names):
+                            print(" 0.0", file=fp)  # padding dummy
+                            j += 1
+
+                print(")))", file=fp)
+
+            print("\n          (t (format t \"Unknown limb is passed: ~a~%\" limb))", file=fp)  # NOQA
+            print("))\n      (send self :angle-vector))", file=fp)
