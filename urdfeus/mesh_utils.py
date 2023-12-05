@@ -1,4 +1,5 @@
 import numpy as np
+import open3d
 
 
 def split_mesh_by_face_color(mesh):
@@ -29,3 +30,15 @@ def split_mesh_by_face_color(mesh):
         submeshes.append(submesh)
 
     return submeshes
+
+
+def to_open3d(mesh):
+    o3d_mesh = open3d.geometry.TriangleMesh()
+    o3d_mesh.vertices = open3d.utility.Vector3dVector(np.array(mesh.vertices))
+    o3d_mesh.triangles = open3d.utility.Vector3iVector(np.array(mesh.faces))
+
+    # Convert vertex colors from RGBA to RGB and normalize the color values
+    # Use NumPy slicing and broadcasting for efficient conversion
+    vertex_colors = np.array(mesh.visual.vertex_colors)[:, :3] / 255.0
+    o3d_mesh.vertex_colors = open3d.utility.Vector3dVector(vertex_colors)
+    return o3d_mesh

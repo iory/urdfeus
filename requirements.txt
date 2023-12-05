@@ -1,3 +1,4 @@
+open3d
 pyglet<=1.5.17
 pyyaml
 scikit-robot
