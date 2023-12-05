@@ -6,7 +6,8 @@ from urdfeus.templates.urdf_template import urdf_template
 from urdfeus.urdf2eus import urdf2eus
 
 
-def mesh2eus(mesh_path, fp=sys.stdout, mesh_name=None):
+def mesh2eus(mesh_path, simplify_vertex_clustering_voxel_size=None,
+             fp=sys.stdout, mesh_name=None):
     if mesh_name is None:
         mesh_name, _ = osp.splitext(osp.basename(mesh_path))
     collision_mesh_filepath = osp.abspath(mesh_path)
@@ -23,4 +24,5 @@ def mesh2eus(mesh_path, fp=sys.stdout, mesh_name=None):
         temp.write(formatted_urdf.encode('utf-8'))
         temp.seek(0)
         urdf2eus(temp_urdf_path,
+                 simplify_vertex_clustering_voxel_size,
                  fp=fp)

@@ -6,17 +6,20 @@ import sys
 import numpy as np
 from skrobot.model import Link
 from skrobot.model import RobotModel
+import trimesh
 
 from urdfeus.common import collect_all_joints_of_robot
 from urdfeus.common import is_fixed_joint
 from urdfeus.common import is_linear_joint
 from urdfeus.common import meter2millimeter
 from urdfeus.mesh_utils import split_mesh_by_face_color
+from urdfeus.mesh_utils import to_open3d
 from urdfeus.read_yaml import read_config_from_yaml
 from urdfeus.templates import get_euscollada_string
 
 
-def print_link(link: Link, add_link_suffix: bool = True, fp=sys.stdout):
+def print_link(link: Link, simplify_vertex_clustering_voxel_size=None,
+               add_link_suffix: bool = True, fp=sys.stdout):
     if add_link_suffix:
         link_name = link.name + "_lk"
     else:
@@ -135,7 +138,8 @@ def print_mimic_joints(robot, fp=sys.stdout):
         print("       (setq ((send j :joint) . default-coords) (send j :joint :child-link :copy-coords)))", file=fp)  # NOQA
 
 
-def print_geometry(link, fp=sys.stdout):
+def print_geometry(link, simplify_vertex_clustering_voxel_size=None,
+                   fp=sys.stdout):
     x, y, z = link.translation
     name = link.name + '_geom' + str(0)
     print(f'  (:_make_instance_{name} ()', file=fp)
@@ -153,7 +157,7 @@ def print_geometry(link, fp=sys.stdout):
     print("       (instance gl::glvertices :init", end='', file=fp)
     if link.visual_mesh is not None and len(link.visual_mesh) > 0:
         # TODO(someone): use g.scale
-        print_mesh(link, fp=fp)
+        print_mesh(link, simplify_vertex_clustering_voxel_size, fp=fp)
     else:
         print('))', file=fp)
     print("      (send glv :transform local-cds)", file=fp)
@@ -168,33 +172,41 @@ def print_geometry(link, fp=sys.stdout):
     print("      geom))", file=fp)
 
 
-def print_mesh(link, fp=sys.stdout):
+def print_mesh(link, simplify_vertex_clustering_voxel_size=None,
+               fp=sys.stdout):
     print("\n                 (list ;; mesh list", file=fp)
-    for mesh in link.visual_mesh:
-        for input_mesh in split_mesh_by_face_color(mesh):
-            print("                  (list ;; mesh description", file=fp)
-            print("                   (list :type :triangles)", file=fp)
-            print("                   (list :material (list", file=fp)
-            print(f"                    (list :ambient (float-vector {input_mesh.visual.main_color[0] / 255.0} {input_mesh.visual.main_color[1]/ 255.0} {input_mesh.visual.main_color[2]/ 255.0} {input_mesh.visual.main_color[3]/ 255.0}))", file=fp)  # NOQA
-            print(f"                    (list :diffuse (float-vector {input_mesh.visual.main_color[0]/ 255.0} {input_mesh.visual.main_color[1]/ 255.0} {input_mesh.visual.main_color[2]/ 255.0} {input_mesh.visual.main_color[3]/ 255.0}))", end="", file=fp)  # NOQA
-            print("))", file=fp)
-            print("                   (list :indices #i(", end="", file=fp)
-            print(' '.join(map(str, input_mesh.faces.reshape(-1))), end="", file=fp)  # NOQA
-            print("))", file=fp)
-            print(f"                   (list :vertices (let ((mat (make-matrix {len(input_mesh.vertices)} 3))) (fvector-replace (array-entity mat) #f(", end="", file=fp)  # NOQA
-            vertices = np.array(input_mesh.vertices)
-            vertices = link.inverse_transformation().transform_vector(vertices)
-            vertices = meter2millimeter * vertices
-
-            # Modified the vertex printing format to reduce mesh file size, considering the unit is in millimeters (mm).  # NOQA
-            # Since the coordinates are in mm, having them formatted to just one decimal place is sufficiently precise for most applications.  # NOQA
-            # This change not only preserves the necessary precision for mm-scale measurements but also effectively compresses the data,  # NOQA
-            # resulting in a smaller file size due to reduced numerical precision in the vertex coordinates.  # NOQA
-            print(' '.join(map(lambda x: '{0:.1f}'.format(x), vertices.reshape(-1))),
-                  end='', file=fp)
-            print(")) mat))", end="", file=fp)
-            # TODO(someone) normal
-            print(")", end='', file=fp)
+    mesh = trimesh.util.concatenate(link.visual_mesh)
+    if simplify_vertex_clustering_voxel_size:
+        simple = to_open3d(mesh).simplify_vertex_clustering(
+            simplify_vertex_clustering_voxel_size)
+        mesh = trimesh.Trimesh(
+            vertices=simple.vertices,
+            faces=simple.triangles,
+            vertex_colors=simple.vertex_colors)
+    for input_mesh in split_mesh_by_face_color(mesh):
+        print("                  (list ;; mesh description", file=fp)
+        print("                   (list :type :triangles)", file=fp)
+        print("                   (list :material (list", file=fp)
+        print(f"                    (list :ambient (float-vector {input_mesh.visual.main_color[0] / 255.0} {input_mesh.visual.main_color[1]/ 255.0} {input_mesh.visual.main_color[2]/ 255.0} {input_mesh.visual.main_color[3]/ 255.0}))", file=fp)  # NOQA
+        print(f"                    (list :diffuse (float-vector {input_mesh.visual.main_color[0]/ 255.0} {input_mesh.visual.main_color[1]/ 255.0} {input_mesh.visual.main_color[2]/ 255.0} {input_mesh.visual.main_color[3]/ 255.0}))", end="", file=fp)  # NOQA
+        print("))", file=fp)
+        print("                   (list :indices #i(", end="", file=fp)
+        print(' '.join(map(str, input_mesh.faces.reshape(-1))), end="", file=fp)  # NOQA
+        print("))", file=fp)
+        print(f"                   (list :vertices (let ((mat (make-matrix {len(input_mesh.vertices)} 3))) (fvector-replace (array-entity mat) #f(", end="", file=fp)  # NOQA
+        vertices = np.array(input_mesh.vertices)
+        vertices = link.inverse_transformation().transform_vector(vertices)
+        vertices = meter2millimeter * vertices
+        # Modified the vertex printing format to reduce mesh file size, considering the unit is in millimeters (mm).  # NOQA
+        # Since the coordinates are in mm, having them formatted to just one decimal place is sufficiently precise for most applications.  # NOQA
+        # This change not only preserves the necessary precision for mm-scale measurements but also effectively compresses the data,  # NOQA
+        # resulting in a smaller file size due to reduced numerical precision in the vertex coordinates.  # NOQA
+        print(' '.join(map(lambda x: '{0:.1f}'.format(x),
+                           vertices.reshape(-1))),
+              end='', file=fp)
+        print(")) mat))", end="", file=fp)
+        # TODO(someone) normal
+        print(")", end='', file=fp)
     print(")))", file=fp)
 
 
@@ -253,7 +265,9 @@ def print_end_coords(robot, config_yaml_path=None,
             print(f"  (:{link_name} (&rest args) (forward-message-to {link_name} args))", file=fp)  # NOQA
 
 
-def urdf2eus(urdf_path, config_yaml_path=None, fp=sys.stdout):
+def urdf2eus(urdf_path, config_yaml_path=None,
+             simplify_vertex_clustering_voxel_size=None,
+             fp=sys.stdout):
     r = RobotModel()
     with open(urdf_path, 'r') as f:
         r.load_urdf_file(f)
@@ -332,7 +346,8 @@ def urdf2eus(urdf_path, config_yaml_path=None, fp=sys.stdout):
     print_end_coords(r, config_yaml_path, fp=fp)
 
     for link in r.link_list:
-        print_geometry(link, fp=fp)
+        print_geometry(link,
+                       simplify_vertex_clustering_voxel_size, fp=fp)
     print('  )', file=fp)
     print(file=fp)
     print(f'(provide :{robot_name} "({socket.gethostname()} {platform.platform()}) at {current_time_str}")', file=fp)  # NOQA
