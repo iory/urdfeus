@@ -185,7 +185,13 @@ def print_mesh(link, fp=sys.stdout):
             vertices = np.array(input_mesh.vertices)
             vertices = link.inverse_transformation().transform_vector(vertices)
             vertices = meter2millimeter * vertices
-            print(' '.join(map(str, vertices.reshape(-1))), end='', file=fp)
+
+            # Modified the vertex printing format to reduce mesh file size, considering the unit is in millimeters (mm).  # NOQA
+            # Since the coordinates are in mm, having them formatted to just one decimal place is sufficiently precise for most applications.  # NOQA
+            # This change not only preserves the necessary precision for mm-scale measurements but also effectively compresses the data,  # NOQA
+            # resulting in a smaller file size due to reduced numerical precision in the vertex coordinates.  # NOQA
+            print(' '.join(map(lambda x: '{0:.1f}'.format(x), vertices.reshape(-1))),
+                  end='', file=fp)
             print(")) mat))", end="", file=fp)
             # TODO(someone) normal
             print(")", end='', file=fp)
