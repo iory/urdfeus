@@ -23,6 +23,7 @@ def mesh2eus(mesh_path, simplify_vertex_clustering_voxel_size=None,
         temp_urdf_path = temp.name
         temp.write(formatted_urdf.encode('utf-8'))
         temp.seek(0)
+        voxel_size = simplify_vertex_clustering_voxel_size
         urdf2eus(temp_urdf_path,
-                 simplify_vertex_clustering_voxel_size,
+                 simplify_vertex_clustering_voxel_size=voxel_size,
                  fp=fp)
