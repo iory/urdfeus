@@ -1,4 +1,4 @@
 open3d
 pyglet<=1.5.17
 pyyaml
-scikit-robot
+scikit-robot>=0.0.35
