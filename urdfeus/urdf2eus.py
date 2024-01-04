@@ -6,14 +6,14 @@ import sys
 import numpy as np
 from skrobot.model import Link
 from skrobot.model import RobotModel
+from skrobot.utils.mesh import simplify_vertex_clustering
+from skrobot.utils.mesh import split_mesh_by_face_color
 import trimesh
 
 from urdfeus.common import collect_all_joints_of_robot
 from urdfeus.common import is_fixed_joint
 from urdfeus.common import is_linear_joint
 from urdfeus.common import meter2millimeter
-from urdfeus.mesh_utils import split_mesh_by_face_color
-from urdfeus.mesh_utils import to_open3d
 from urdfeus.read_yaml import read_config_from_yaml
 from urdfeus.templates import get_euscollada_string
 
@@ -177,12 +177,8 @@ def print_mesh(link, simplify_vertex_clustering_voxel_size=None,
     print("\n                 (list ;; mesh list", file=fp)
     mesh = trimesh.util.concatenate(link.visual_mesh)
     if simplify_vertex_clustering_voxel_size:
-        simple = to_open3d(mesh).simplify_vertex_clustering(
-            simplify_vertex_clustering_voxel_size)
-        mesh = trimesh.Trimesh(
-            vertices=simple.vertices,
-            faces=simple.triangles,
-            vertex_colors=simple.vertex_colors)
+        mesh = simplify_vertex_clustering(
+            mesh, simplify_vertex_clustering_voxel_size)[0]
     for input_mesh in split_mesh_by_face_color(mesh):
         print("                  (list ;; mesh description", file=fp)
         print("                   (list :type :triangles)", file=fp)
