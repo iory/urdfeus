@@ -1,4 +1,5 @@
 import datetime
+import os
 import platform
 import socket
 import sys
@@ -209,8 +210,9 @@ def print_mesh(link, simplify_vertex_clustering_voxel_size=None,
 def print_end_coords(robot, config_yaml_path=None,
                      add_link_suffix=True, add_joint_suffix=True,
                      fp=sys.stdout):
+    limbs = []
     if config_yaml_path is not None:
-        read_config_from_yaml(robot, config_yaml_path, fp=fp)
+        limbs = read_config_from_yaml(robot, config_yaml_path, fp=fp)
     else:
         print("     ;; init-ending\n", file=fp)
         print("     (send self :init-ending) ;; :urdf\n", file=fp)
@@ -259,6 +261,18 @@ def print_end_coords(robot, config_yaml_path=None,
             print(f"  (:{link_name}_lk (&rest args) (forward-message-to {link_name}_lk args))", file=fp)  # NOQA
         else:
             print(f"  (:{link_name} (&rest args) (forward-message-to {link_name} args))", file=fp)  # NOQA
+    return limbs
+
+
+def print_unique_limbs(limb_names, fp=sys.stdout):
+    print("\n  ;; non-default limbs\n", file=fp)
+    for limb in limb_names:
+        if limb == "torso" or limb == "larm" or limb == "rarm" \
+           or limb == "lleg" or limb == "rleg" or limb == "head":
+            continue
+        print(f"  (:{limb} (&rest args) (unless args (setq args (list nil))) (send* self :limb :{limb} args))", file=fp)  # NOQA
+        print(f"  (:{limb}-end-coords () {limb}-end-coords)", file=fp)
+        print(f"  (:{limb}-root-link () {limb}-root-link)", file=fp)
 
 
 def urdf2eus(urdf_path, config_yaml_path=None,
@@ -307,6 +321,16 @@ def urdf2eus(urdf_path, config_yaml_path=None,
     print("          " + ' '.join(joint_names), file=fp)
     print("          ;; sensor names", file=fp)
     print("          ;; non-default limb names", file=fp)
+    if config_yaml_path is not None:
+        sys.stdout = open(os.devnull, 'w')
+        limb_names = read_config_from_yaml(r, config_yaml_path, fp=sys.stdout)
+        for limb in limb_names:
+            if limb == "torso" or limb == "larm" or limb == "rarm" \
+               or limb == "lleg" or limb == "rleg" or limb == "head":
+                continue
+            print(f"          {limb} {limb}-end-coords {limb}-root-link",
+                  file=fp)
+        sys.stdout = sys.__stdout__
     print("          ))", file=fp)
     print('\n\n', end='', file=fp)
     print(f"(defmethod {r.urdf_robot_model.name}-robot", file=fp)
@@ -339,7 +363,9 @@ def urdf2eus(urdf_path, config_yaml_path=None,
     for j in collect_all_joints_of_robot(r):
         print_joint(j, fp=fp)
     print_mimic_joints(r, fp=fp)
-    print_end_coords(r, config_yaml_path, fp=fp)
+    limb_names = print_end_coords(r, config_yaml_path, fp=fp)
+
+    print_unique_limbs(limb_names, fp=fp)
 
     for link in r.link_list:
         print_geometry(link,

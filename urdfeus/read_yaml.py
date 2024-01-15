@@ -12,6 +12,7 @@ def read_config_from_yaml(
     with open(config_file, 'r') as file:
         doc = yaml.load(file, Loader=yaml.FullLoader)
 
+    limb_names = []
     for limb in [k for k in doc.keys() if k.endswith('-end-coords')]:
         suffix_to_remove = '-end-coords'
         limb_name = limb[:-len(suffix_to_remove)]
@@ -42,6 +43,7 @@ def read_config_from_yaml(
             print(f"     (send {end_coords_parent_name}_lk :assoc {limb_name}-end-coords)", file=fp)  # NOQA
         else:
             print(f"     (send {end_coords_parent_name} :assoc {limb_name}-end-coords)", file=fp)  # NOQA
+        limb_names.append(limb_name)
 
     print("", file=fp)
     print("     ;; limbs", file=fp)
@@ -163,3 +165,4 @@ def read_config_from_yaml(
 
             print("\n          (t (format t \"Unknown limb is passed: ~a~%\" limb))", file=fp)  # NOQA
             print("))\n      (send self :angle-vector))", file=fp)
+    return limb_names
