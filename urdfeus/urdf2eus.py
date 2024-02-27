@@ -214,6 +214,32 @@ def print_end_coords(robot, config_yaml_path=None,
     if config_yaml_path is not None:
         limbs = read_config_from_yaml(robot, config_yaml_path, fp=fp)
     else:
+        print("     ;; links", file=fp)
+        if add_link_suffix:
+            print(f"     (setq links (list {robot.__dict__['root_link'].name}_lk", end="", file=fp)  # NOQA
+        else:
+            print(f"     (setq links (list {robot.__dict__['root_link'].name}", end="", file=fp)  # NOQA
+
+        if add_link_suffix:
+            for link in robot.link_list:
+                print(f" {link.name}_lk", end="", file=fp)
+        else:
+            for link in robot.link_list:
+                print(f" {link.name}", end="", file=fp)
+
+        print("))", file=fp)
+        print("", file=fp)
+        print("     ;; joint-list", file=fp)
+        print("     (setq joint-list (list", end="", file=fp)
+        if add_joint_suffix:
+            for joint in robot.joint_list:
+                print(f" {joint.name}_jt", end="", file=fp)
+        else:
+            for joint in robot.joint_list:
+                print(f" {joint.name}", end="", file=fp)
+        print("))", file=fp)
+        print("", file=fp)
+
         print("     ;; init-ending\n", file=fp)
         print("     (send self :init-ending) ;; :urdf\n", file=fp)
         print("     ;; overwrite bodies to return draw-things links not (send link :bodies)\n", file=fp)  # NOQA
