@@ -216,9 +216,9 @@ def print_end_coords(robot, config_yaml_path=None,
     else:
         print("     ;; links", file=fp)
         if add_link_suffix:
-            print(f"     (setq links (list {robot.__dict__['root_link'].name}_lk", end="", file=fp)  # NOQA
+            print(f"     (setq links (list ", end="", file=fp)  # NOQA
         else:
-            print(f"     (setq links (list {robot.__dict__['root_link'].name}", end="", file=fp)  # NOQA
+            print(f"     (setq links (list ", end="", file=fp)  # NOQA
 
         if add_link_suffix:
             for link in robot.link_list:
