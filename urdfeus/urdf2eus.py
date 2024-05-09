@@ -10,6 +10,7 @@ from skrobot.model import RobotModel
 from skrobot.utils.mesh import simplify_vertex_clustering
 from skrobot.utils.mesh import split_mesh_by_face_color
 import trimesh
+import yaml
 
 from urdfeus.common import collect_all_joints_of_robot
 from urdfeus.common import is_fixed_joint
@@ -287,6 +288,18 @@ def print_end_coords(robot, config_yaml_path=None,
             print(f"  (:{link_name}_lk (&rest args) (forward-message-to {link_name}_lk args))", file=fp)  # NOQA
         else:
             print(f"  (:{link_name} (&rest args) (forward-message-to {link_name} args))", file=fp)  # NOQA
+
+    if config_yaml_path is not None:
+        with open(config_yaml_path, 'r') as file:
+            doc = yaml.load(file, Loader=yaml.FullLoader)
+        for limb_name in limbs:
+            try:
+                limb_doc = doc[limb_name]
+            except Exception as _:  # NOQA
+                continue
+            for limb_dict in limb_doc:
+                for urdf_joint_name, alias_joint_name in limb_dict.items():
+                    print(f"  (:{alias_joint_name} (&rest args) (forward-message-to {urdf_joint_name}_jt args))", file=fp)  # NOQA
     return limbs
 
 
