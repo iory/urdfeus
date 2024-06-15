@@ -48,11 +48,11 @@ def print_link(link: Link, simplify_vertex_clustering_voxel_size=None,
     iyx, iyy, iyz = 0, 0, 0
     izx, izy, izz = 0, 0, 0
     if inertial is not None:
-        weight = inertial.mass
+        weight = inertial.mass * 1000.0  # kg -> g
         centroid_x, centroid_y, centroid_z \
-            = inertial.origin[:3, 3]
+            = 1000 * inertial.origin[:3, 3]  # m -> mm
         ixx, ixy, ixz, iyx, iyy, iyz, izx, izy, izz \
-            = inertial.inertia.reshape(-1)
+            = 1e9 * inertial.inertia.reshape(-1)  # kg m^2 -> g mm^2
     print(f"       (progn (send {link_name} :weight {weight}) (setq ({link_name} . acentroid) (float-vector {centroid_x} {centroid_y} {centroid_z})) (send {link_name} :inertia-tensor #2f(({ixx} {ixy} {ixz})({iyx} {iyy} {iyz})({izx} {izy} {izz}))))", file=fp)  # NOQA
 
     print(f"       ;; global coordinates for {link_name}", file=fp)
