@@ -21,7 +21,8 @@ from urdfeus.templates import get_euscollada_string
 
 
 def print_link(link: Link, simplify_vertex_clustering_voxel_size=None,
-               add_link_suffix: bool = True, fp=sys.stdout):
+               add_link_suffix: bool = True,
+               inertial=None, fp=sys.stdout):
     if add_link_suffix:
         link_name = link.name + "_lk"
     else:
@@ -41,7 +42,18 @@ def print_link(link: Link, simplify_vertex_clustering_voxel_size=None,
     print("                       :init (make-cascoords)", file=fp)
     print(f"                       :bodies geom-lst", file=fp)  # NOQA
     print(f"                       :name \"{link.name}\"))", file=fp)
-    print(f"       (progn (send {link_name} :weight 0.0) (setq ({link_name} . acentroid) (float-vector 0 0 0)) (send {link_name} :inertia-tensor #2f((0 0 0)(0 0 0)(0 0 0))))", file=fp)  # NOQA
+    weight = 0.0
+    centroid_x, centroid_y, centroid_z = 0, 0, 0
+    ixx, ixy, ixz = 0, 0, 0
+    iyx, iyy, iyz = 0, 0, 0
+    izx, izy, izz = 0, 0, 0
+    if inertial is not None:
+        weight = inertial.mass
+        centroid_x, centroid_y, centroid_z \
+            = inertial.origin[:3, 3]
+        ixx, ixy, ixz, iyx, iyy, iyz, izx, izy, izz \
+            = inertial.inertia.reshape(-1)
+    print(f"       (progn (send {link_name} :weight {weight}) (setq ({link_name} . acentroid) (float-vector {centroid_x} {centroid_y} {centroid_z})) (send {link_name} :inertia-tensor #2f(({ixx} {ixy} {ixz})({iyx} {iyy} {iyz})({izx} {izy} {izz}))))", file=fp)  # NOQA
 
     print(f"       ;; global coordinates for {link_name}", file=fp)
     print("       (let ((world-cds (make-coords :pos ", end="", file=fp)
@@ -380,7 +392,9 @@ def urdf2eus(urdf_path, config_yaml_path=None,
     print("\n\n", file=fp)
 
     for link in r.link_list:
-        print_link(link, fp=fp)
+        print_link(link,
+                   inertial=r.urdf_robot_model.link_map[link.name].inertial,
+                   fp=fp)
 
     add_link_suffix = True
     checked_pairs = {}
