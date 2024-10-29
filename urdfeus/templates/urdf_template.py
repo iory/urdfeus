@@ -20,4 +20,4 @@ urdf_template = """<?xml version="1.0" ?>
     </visual>
   </link>
 </robot>
-"""  # NOQA
+"""

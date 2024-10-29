@@ -15,33 +15,17 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: 3.8
-    - name: Install Formatting
-      run: |
-        python -m pip install --upgrade pip
-        pip install hacking isort
-    - name: Check Formatting
-      run: |
-        flake8 .
-        grep -rlIP '[^\x00-\x7F]' urdfeus | grep '\.pyx\?' | sort > unicode.out; grep -rlI '# -\*- coding: \(utf-8\|latin-1\) -\*-' urdfeus | grep '\.pyx\?' | sort > coding.out; comm -23 unicode.out coding.out > test_code.out; cat test_code.out;  test \! -s test_code.out
-    - name: Check isort
-      run: |
-        isort -c .
-
-  requirements-formatting:
-    name: Check Requirements Formatting
-    runs-on: ubuntu-20.04
-    steps:
-    - uses: actions/checkout@v3
-    - name: Check Formatting
-      run: |
-        sort -C requirements.txt
+    - name: Install
+      run: pip install ruff
+    - name: Run Ruff
+      run: ruff check .
 
   tests:
     name: Run Unit Tests
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        python-version: [3.6.15, 3.8.16]
+        python-version: [3.8.16]
         os: [ubuntu-20.04]
     steps:
     - uses: actions/checkout@v3
@@ -59,28 +43,27 @@ jobs:
         pip install Cython
         pip install pytest hacking
     - name: Install urdfeus
-      run: pip install .[all]
+      run: pip install --no-cache-dir .
     - name: Run Pytest
       run: pytest -v tests
 
   pypi:
     name: Release To PyPi
-    needs: [formatting, requirements-formatting, tests]
+    needs: [formatting, tests]
     runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.x'
+        python-version: '3.11'
     - name: Install publishing dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install setuptools wheel
+        pip install build
     - name: Build
       run: |
-        python setup.py sdist
-        python setup.py bdist_wheel
+        pyproject-build --outdir dist .
     - name: Upload to PyPI
       uses: pypa/gh-action-pypi-publish@master
       with:
