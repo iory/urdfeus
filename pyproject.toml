@@ -7,7 +7,6 @@ name = "urdfeus"
 version = "0.0.13"
 description = "URDF converter for Euslisp"
 dependencies = [
-    "open3d",
     "pyyaml",
     "scikit-robot>=0.0.35"
 ]
@@ -22,6 +21,9 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent"
 ]
+
+[project.optional-dependencies]
+all = ["open3d"]
 
 [project.urls]
 "Homepage" = "https://github.com/iory/urdfeus"
