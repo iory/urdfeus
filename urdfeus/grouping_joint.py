@@ -151,7 +151,7 @@ def create_config(urdf_filepath, output_filepath):
         for joint in group:
             limb_config.append(f"  - {joint} : limb{i}-{joint.replace('_', '-')}")
         limb_config.append(f'limb{i}-end-coords:')
-        limb_config.append(f'  parent: {robot_model.__dict__[joint].child_link.name}')
+        limb_config.append(f'  parent: {getattr(robot_model, joint).child_link.name}')
         limb_config.append('  translate: [0, 0, 0]')
         limb_config.append('  rotate: [1, 0, 0, 0]')
 
