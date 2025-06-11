@@ -3,6 +3,7 @@ import os
 import platform
 import socket
 import sys
+import tempfile
 
 import numpy as np
 from skrobot.model import Link
@@ -437,6 +438,15 @@ def urdf2eus(
     simplify_vertex_clustering_voxel_size=None,
     fp=sys.stdout,
 ):
+    tmp_yaml_path = None
+    if config_yaml_path is None:
+        from urdfeus.grouping_joint import create_config
+        tmp_yaml_fd, tmp_yaml_path = tempfile.mkstemp(suffix=".yaml", prefix="urdf2eus_")
+        try:
+            create_config(urdf_path, tmp_yaml_path)
+            config_yaml_path = tmp_yaml_path
+        finally:
+            os.close(tmp_yaml_fd)
     r = RobotModel()
     with open(urdf_path) as f:
         r.load_urdf_file(f)
@@ -547,3 +557,6 @@ def urdf2eus(
         f'(provide :{robot_name} "({socket.gethostname()} {platform.platform()}) at {current_time_str}")',
         file=fp,
     )
+
+    if os.path.exists(tmp_yaml_path):
+        os.remove(tmp_yaml_path)

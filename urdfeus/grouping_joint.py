@@ -132,7 +132,28 @@ def extract_kinematic_groups_from_urdf(urdf_path):
 
     # Pass the structured map directly, avoiding string conversion.
     kinematic_groups = group_joints_by_branches(parent_map)
-    return kinematic_groups, len(robot_model.joint_list)
+    return robot_model, kinematic_groups, len(robot_model.joint_list)
+
+
+def create_config(urdf_filepath, output_filepath):
+    robot_model, groups, _ = extract_kinematic_groups_from_urdf(urdf_filepath)
+
+    total_joints_in_groups = 0
+    for group in groups:
+        if len(group) > 1:
+            total_joints_in_groups += len(group)
+    limb_config = []
+    for i, group in enumerate(groups):
+        limb_config.append(f"limb{i}:")
+        for joint in group:
+            limb_config.append(f"  - {joint} : limb{i}-{joint.replace('_', '-')}")
+        limb_config.append(f'limb{i}-end-coords:')
+        limb_config.append(f'  parent: {robot_model.__dict__[joint].child_link.name}')
+        limb_config.append('  translate: [0, 0, 0]')
+        limb_config.append('  rotate: [1, 0, 0, 0]')
+
+    with open(output_filepath, 'w') as f:
+        f.write("\n".join(limb_config))
 
 
 if __name__ == '__main__':
@@ -148,13 +169,23 @@ if __name__ == '__main__':
     for file_path in example_urdf_paths:
         try:
             print(f"Processing: {file_path}")
-            groups, total_joint_count = extract_kinematic_groups_from_urdf(file_path)
+            robot_model, groups, total_joint_count = extract_kinematic_groups_from_urdf(file_path)
 
             total_joints_in_groups = 0
             for group in groups:
                 if len(group) > 1:
                     print(group)
                     total_joints_in_groups += len(group)
+            limb_config = []
+            for i, group in enumerate(groups):
+                limb_config.append(f"limb{i}:")
+                for joint in group:
+                    limb_config.append(f"  - {joint} : limb{i}-{joint.replace('_', '-')}")
+                limb_config.append(f'limb{i}-end-coords:')
+                limb_config.append(f'  parent: {robot_model.__dict__[joint].child_link.name}')
+                limb_config.append('  translate: [0, 0, 0]')
+                limb_config.append('  rotate: [1, 0, 0, 0]')
+            print("\n".join(limb_config))
             print(f'Total joints in kinematic groups: {total_joints_in_groups}/{total_joint_count}')
         except Exception as e:
             print(f"Could not process {file_path}. Error: {e}")
