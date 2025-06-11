@@ -120,11 +120,14 @@ def extract_kinematic_groups_from_urdf(urdf_path):
     # Create a complete map of every joint to its non-fixed parent.
     # Root joints will have a parent of None.
     parent_map = {}
+    mimic_joint_names = {j.name for j in robot_model.urdf_robot_model.joints
+                         if j.mimic is not None}
     for joint in robot_model.joint_list:
         parent_joint_name = None
         parent_link = joint.parent_link
         while parent_link:
-            if parent_link.joint is not None and parent_link.joint.type != 'fixed':
+            if parent_link.joint is not None and parent_link.joint.type != 'fixed' \
+                and parent_link.joint.name not in mimic_joint_names:
                 parent_joint_name = parent_link.joint.name
                 break
             parent_link = parent_link.parent_link
