@@ -558,5 +558,5 @@ def urdf2eus(
         file=fp,
     )
 
-    if os.path.exists(tmp_yaml_path):
+    if tmp_yaml_path and os.path.exists(tmp_yaml_path):
         os.remove(tmp_yaml_path)
