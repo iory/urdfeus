@@ -91,7 +91,20 @@
                 (format nil ":make-~Amodel"
                         (string-right-trim "-COLLISION-CHECK" (string collision-func))))
                :fat fat
-               :faces usefs)))))))
+               :faces usefs))))))
+  ;; Get all links, including those not explicitly listed in the :links attribute.
+  ;; This is necessary because auto-generating from URDF can create links
+  ;; that are not explicitly listed in the YAML configuration file.
+  (:all-links
+   ()
+   (send self :get-links-recursive (car (send self :descendants))))
+  (:get-links-recursive
+   (parent-link)
+   (when parent-link
+     (cons parent-link
+           (mapcan #'(lambda (x) (send self :get-links-recursive x))
+                   (send parent-link :child-links)))))
+  )
 
 ;; copy euscollada-body class definition from euscollada/src/euscollada-robot.l
 ;; This euscollada-body class is for bodies in robot model converted from collada files.
