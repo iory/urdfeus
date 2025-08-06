@@ -97,7 +97,8 @@
   ;; that are not explicitly listed in the YAML configuration file.
   (:all-links
    ()
-   (send self :get-links-recursive (car (send self :descendants))))
+   (let ((root-link (car (last (send self :descendants)))))
+     (send self :get-links-recursive root-link)))
   (:get-links-recursive
    (parent-link)
    (when parent-link
