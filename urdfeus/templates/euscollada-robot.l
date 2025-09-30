@@ -105,6 +105,14 @@
      (cons parent-link
            (mapcan #'(lambda (x) (send self :get-links-recursive x))
                    (send parent-link :child-links)))))
+  ;; Get links that have valid collision models for collision avoidance in IK.
+  ;; Links without visual meshes (i.e., with nil :bodies) can cause IK solver failures
+  ;; when used with libraries like eus_qp/optmotiongen.
+  ;; This method returns only links with non-nil :bodies for safe collision checking.
+  (:collision-link-list
+   ()
+   (remove nil (send self :links)
+           :test #'(lambda (x y) (null (send y :bodies)))))
   )
 
 ;; copy euscollada-body class definition from euscollada/src/euscollada-robot.l
