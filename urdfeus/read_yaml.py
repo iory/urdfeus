@@ -180,7 +180,7 @@ def read_config_from_yaml(
             for limb in limbs:
                 limb_name = limb[0]
                 print(
-                    f"\n          (:{limb_name} (send self limb :angle-vector (float-vector",
+                    f"\n          (:{limb_name} (send self :{limb_name} :angle-vector (float-vector",
                     file=fp,
                 )
                 joint_names = limb[1][1]
