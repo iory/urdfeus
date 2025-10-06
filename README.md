@@ -10,6 +10,8 @@ URDFファイルをEusLispコードに変換するPythonライブラリ
 
 `urdfeus`は、ロボット記述ファイル（URDF）をEusLispのロボットモデル定義に変換するツールです。ROS環境で使用されるURDFファイルを、EusLispプログラミング環境で利用できる形式に変換できます。
 
+![URDF to EusLisp conversion](docs/urdf2eus-image.png)
+
 ## インストール
 
 ```bash
