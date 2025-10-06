@@ -1,5 +1,4 @@
 import datetime
-import os
 import platform
 import socket
 import sys
@@ -404,8 +403,16 @@ def print_end_coords(
                 continue
             for limb_dict in limb_doc:
                 for urdf_joint_name, alias_joint_name in limb_dict.items():
+                    # Handle both formats: 'symbol' and ':symbol'
+                    # Always ensure we have exactly one ':' at the beginning
+                    if alias_joint_name.startswith(':'):
+                        # Already has ':', use as-is but strip extra ':'
+                        clean_alias = alias_joint_name.lstrip(':')
+                    else:
+                        # No ':', use as-is
+                        clean_alias = alias_joint_name
                     print(
-                        f"  (:{alias_joint_name} (&rest args) (forward-message-to {urdf_joint_name}_jt args))",
+                        f"  (:{clean_alias} (&rest args) (forward-message-to {urdf_joint_name}_jt args))",
                         file=fp,
                     )
     return limbs
@@ -440,6 +447,7 @@ def urdf2eus(
     r = RobotModel()
     with open(urdf_path) as f:
         r.load_urdf_file(f)
+    limb_slot_names = []  # Initialize here for broader scope
     robot_name = r.urdf_robot_model.name
 
     current_time_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -488,20 +496,17 @@ def urdf2eus(
     print("          ;; sensor names", file=fp)
     print("          ;; non-default limb names", file=fp)
     if config_yaml_path is not None:
-        sys.stdout = open(os.devnull, "w")
-        limb_names = read_config_from_yaml(r, config_yaml_path, fp=sys.stdout)
-        for limb in limb_names:
-            if (
-                limb == "torso"
-                or limb == "larm"
-                or limb == "rarm"
-                or limb == "lleg"
-                or limb == "rleg"
-                or limb == "head"
-            ):
+        import io
+        dummy_fp = io.StringIO()
+        limb_names_from_yaml = read_config_from_yaml(r, config_yaml_path, fp=dummy_fp)
+        # robot-model parent class already defines these slots, so exclude them
+        parent_class_slots = ["torso", "larm", "rarm", "lleg", "rleg", "head"]
+        for limb in limb_names_from_yaml:
+            if limb in parent_class_slots:
                 continue
+            # Add only non-standard limbs to avoid duplication with parent class
+            limb_slot_names.append(limb)
             print(f"          {limb} {limb}-end-coords {limb}-root-link", file=fp)
-        sys.stdout = sys.__stdout__
     print("          ))", file=fp)
     print("\n\n", end="", file=fp)
     print(f"(defmethod {r.urdf_robot_model.name}-robot", file=fp)
@@ -537,7 +542,12 @@ def urdf2eus(
     print_mimic_joints(r, fp=fp)
     limb_names = print_end_coords(r, config_yaml_path, fp=fp)
 
-    print_unique_limbs(limb_names, fp=fp)
+    # Use limb_slot_names for non-standard limbs if YAML was provided
+    # Otherwise use limb_names from print_end_coords
+    if config_yaml_path is not None and limb_slot_names:
+        print_unique_limbs(limb_slot_names, fp=fp)
+    else:
+        print_unique_limbs(limb_names, fp=fp)
 
     for link in r.link_list:
         print_geometry(link, simplify_vertex_clustering_voxel_size, fp=fp)
