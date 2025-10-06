@@ -119,6 +119,24 @@
    ()
    (remove nil (send self :links)
            :test #'(lambda (x y) (null (send y :bodies)))))
+  (:get-link-list
+    (link-to
+     link-from
+     &key
+     (max-iter 100))
+    (block return-block
+      (when (eq link-to link-from)
+        (return-from return-block (list link-to)))
+      (let (link-list
+            (current-link link-to))
+        (dotimes (i max-iter (warn "max-iter reached, link-from not found~%"))
+          (when (eq current-link nil)
+            (return-from return-block nil))
+          (when (find current-link (send self :links))
+            (push current-link link-list))
+          (when (eq current-link link-from)
+            (return-from return-block link-list))
+          (setq current-link (send current-link :parent))))))
   )
 
 ;; copy euscollada-body class definition from euscollada/src/euscollada-robot.l
