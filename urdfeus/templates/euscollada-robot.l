@@ -99,9 +99,8 @@
     ()
     (car (last (send self :descendants))))
   (:all-links
-   ()
-   (let ((root-link (car (last (send self :descendants)))))
-     (send self :get-links-recursive root-link)))
+    ()
+    (send self :get-links-recursive (send self :root-link)))
   (:get-link
     (link-name)
     (find-if #'(lambda (link) (equal (send link :name) link-name)) (send self :all-links)))
