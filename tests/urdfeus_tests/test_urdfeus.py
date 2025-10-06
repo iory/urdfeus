@@ -14,5 +14,6 @@ class TestURDF2EUS(unittest.TestCase):
         urdf2eus(fetch_urdfpath())
         urdf2eus(fetch_urdfpath(), osp.join(data_dir, "fetch.yaml"))
         urdf2eus(pr2_urdfpath())
+        urdf2eus(pr2_urdfpath(), osp.join(data_dir, "pr2.yaml"))
 
         urdf2eus(pr2_urdfpath(), simplify_vertex_clustering_voxel_size=0.001)
