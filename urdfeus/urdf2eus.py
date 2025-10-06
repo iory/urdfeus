@@ -1,5 +1,6 @@
 import datetime
 import platform
+import re
 import socket
 import sys
 
@@ -18,6 +19,43 @@ from urdfeus.common import is_linear_joint
 from urdfeus.common import meter2millimeter
 from urdfeus.read_yaml import read_config_from_yaml
 from urdfeus.templates import get_euscollada_string
+
+
+def validate_euslisp_identifier(name):
+    """
+    Validate if a string is a valid EusLisp identifier.
+
+    EusLisp identifiers must:
+    - Start with a letter or underscore
+    - Contain only letters, digits, underscores, and hyphens
+    - Not be empty
+    - Not contain spaces or special characters except underscore and hyphen
+    """
+    if not name:
+        return False, "Name cannot be empty"
+
+    # Check if it starts with a letter or underscore
+    if not re.match(r'^[a-zA-Z_]', name):
+        return False, "Name must start with a letter or underscore"
+
+    # Check if it contains only valid characters
+    if not re.match(r'^[a-zA-Z0-9_-]+$', name):
+        return False, "Name can only contain letters, digits, underscores, and hyphens"
+
+    # Check for reserved words (common EusLisp keywords)
+    reserved_words = {
+        'and', 'or', 'not', 'if', 'then', 'else', 'cond', 'case', 'let', 'let*',
+        'defun', 'defclass', 'defmethod', 'lambda', 'quote', 'setq', 'setf',
+        'progn', 'prog1', 'prog2', 'when', 'unless', 'while', 'do', 'dolist',
+        'dotimes', 'loop', 'return', 'throw', 'catch', 'unwind-protect',
+        'eval', 'apply', 'funcall', 'car', 'cdr', 'cons', 'list', 'append',
+        'nil', 't', 'pi', 'reset',
+    }
+
+    if name.lower() in reserved_words:
+        return False, f"'{name}' is a reserved EusLisp keyword"
+
+    return True, "Valid EusLisp identifier"
 
 
 def print_link(
@@ -442,13 +480,22 @@ def urdf2eus(
     urdf_path,
     config_yaml_path=None,
     simplify_vertex_clustering_voxel_size=None,
+    robot_name=None,
     fp=sys.stdout,
 ):
     r = RobotModel()
     with open(urdf_path) as f:
         r.load_urdf_file(f)
     limb_slot_names = []  # Initialize here for broader scope
-    robot_name = r.urdf_robot_model.name
+
+    # Use custom robot name if provided, otherwise use URDF name
+    if robot_name is None:
+        robot_name = r.urdf_robot_model.name
+    else:
+        # Validate the custom robot name
+        is_valid, error_msg = validate_euslisp_identifier(robot_name)
+        if not is_valid:
+            raise ValueError(f"Invalid robot name '{robot_name}': {error_msg}")
 
     current_time_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     print(

@@ -35,6 +35,9 @@ urdf2eus robot.urdf robot.l
 # YAMLファイルと一緒に変換
 urdf2eus robot.urdf robot.l --yaml-path robot.yaml
 
+# カスタムロボット名を指定
+urdf2eus robot.urdf robot.l --name my_robot
+
 # メッシュ簡素化オプション付き
 urdf2eus robot.urdf robot.l --voxel-size 0.01
 ```
@@ -51,6 +54,10 @@ with open('robot.l', 'w') as f:
 # YAMLファイルと一緒に変換
 with open('robot.l', 'w') as f:
     urdf2eus('robot.urdf', 'robot.yaml', fp=f)
+
+# カスタムロボット名を指定
+with open('robot.l', 'w') as f:
+    urdf2eus('robot.urdf', robot_name='my_robot', fp=f)
 ```
 
 ### 生成されたEusLispファイルの使用
@@ -58,9 +65,26 @@ with open('robot.l', 'w') as f:
 ```lisp
 ;; EusLisp環境での使用例
 (load "robot.l")
-(setq *robot* (robot))
+(setq *robot* (robot))  ; URDFのロボット名または--nameで指定した名前
+(send *robot* :angle-vector)
+
+;; カスタム名を指定した場合
+(load "robot.l")
+(setq *robot* (my_robot))  ; --name my_robot で生成した場合
 (send *robot* :angle-vector)
 ```
+
+### ロボット名の制約
+
+`--name`オプションで指定するロボット名は、EusLispの識別子として有効である必要があります：
+
+- 文字または`_`で始まる
+- 文字、数字、`_`、`-`のみ使用可能
+- EusLispの予約語（`if`, `defun`, `nil`など）は使用不可
+- 空文字列やスペースを含む名前は使用不可
+
+**有効な例**: `my_robot`, `robot-v1`, `MyRobot`, `_robot`, `robot123`
+**無効な例**: `123robot`, `robot name`, `robot.name`, `if`, `defun`
 
 ## YAMLファイル
 

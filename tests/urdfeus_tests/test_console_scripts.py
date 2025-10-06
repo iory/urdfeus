@@ -52,3 +52,51 @@ class TestConsoleScripts(unittest.TestCase):
         for cmd in cmds:
             result = run_command(cmd)
             assert result.returncode == 0
+
+    def test_urdf2eus_custom_name(self):
+        """Test urdf2eus command with custom robot name."""
+        temp_dir = tempfile.mkdtemp()
+        output_eus_path = osp.join(temp_dir, "custom_robot.l")
+        yaml_path = osp.join(data_dir, "fetch.yaml")
+
+        # Test with valid custom name
+        valid_name_cmds = [
+            f"urdf2eus {self.urdfpath} {output_eus_path} --name my_robot",
+            f"urdf2eus {self.urdfpath} {output_eus_path} --name robot-v1 --yaml-path {yaml_path}",
+            f"urdf2eus {self.urdfpath} {output_eus_path} --name _test_robot --voxel-size 0.001",
+        ]
+
+        for cmd in valid_name_cmds:
+            with self.subTest(cmd=cmd):
+                result = run_command(cmd)
+                self.assertEqual(result.returncode, 0,
+                               f"Command failed: {cmd}\nstderr: {result.stderr.decode()}")
+
+                # Check if the custom name appears in the output file
+                if osp.exists(output_eus_path):
+                    with open(output_eus_path) as f:
+                        content = f.read()
+                        # Extract name from command
+                        name = cmd.split('--name ')[1].split()[0]
+                        self.assertIn(f"defun {name}", content)
+                        self.assertIn(f"defclass {name}-robot", content)
+
+        # Test with invalid custom names
+        invalid_name_cmds = [
+            f"urdf2eus {self.urdfpath} {output_eus_path} --name 123invalid",
+            f"urdf2eus {self.urdfpath} {output_eus_path} --name 'robot name'",
+            f"urdf2eus {self.urdfpath} {output_eus_path} --name robot.invalid",
+            f"urdf2eus {self.urdfpath} {output_eus_path} --name if",
+            f"urdf2eus {self.urdfpath} {output_eus_path} --name defun",
+        ]
+
+        for cmd in invalid_name_cmds:
+            with self.subTest(cmd=cmd):
+                result = run_command(cmd)
+                self.assertNotEqual(result.returncode, 0,
+                                  f"Command should have failed: {cmd}")
+                self.assertIn("Invalid robot name", result.stderr.decode())
+
+        # Clean up
+        import shutil
+        shutil.rmtree(temp_dir, ignore_errors=True)
