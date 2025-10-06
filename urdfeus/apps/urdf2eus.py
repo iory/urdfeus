@@ -13,6 +13,10 @@ def main():
     parser.add_argument("input_urdf_path", type=str, help="Input URDF path")
     parser.add_argument("output_euslisp_path", type=str, help="Output Euslisp path")
     parser.add_argument("--yaml-path", type=str, default=None, help="Config yaml path")
+    parser.add_argument("--name", type=str, default=None,
+                       help="Custom robot name for EusLisp functions (defun <name>). "
+                       + "Must be a valid EusLisp identifier (letters, digits, _, - only). "
+                       + "If not specified, uses the robot name from URDF.")
     parser.add_argument(
         "--simplify-vertex-clustering-voxel-size",
         "--voxel-size",
@@ -42,6 +46,7 @@ def main():
             args.input_urdf_path,
             args.yaml_path,
             args.simplify_vertex_clustering_voxel_size,
+            args.name,
             fp=f,
         )
     if tmp_yaml_path and os.path.exists(tmp_yaml_path):
