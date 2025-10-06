@@ -95,6 +95,9 @@
   ;; Get all links, including those not explicitly listed in the :links attribute.
   ;; This is necessary because auto-generating from URDF can create links
   ;; that are not explicitly listed in the YAML configuration file.
+  (:root-link
+    ()
+    (car (last (send self :descendants))))
   (:all-links
    ()
    (let ((root-link (car (last (send self :descendants)))))
