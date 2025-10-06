@@ -16,7 +16,14 @@ def read_config_from_yaml(
     for limb in [k for k in doc.keys() if k.endswith("-end-coords")]:
         suffix_to_remove = "-end-coords"
         limb_name = limb[: -len(suffix_to_remove)]
-        end_coords_parent_name = doc[f"{limb_name}-end-coords"]["parent"]
+
+        # Check if parent key exists, if not skip this end-coords definition
+        end_coords_config = doc[f"{limb_name}-end-coords"]
+        if "parent" not in end_coords_config:
+            print(f"     ;; Skipping {limb_name}-end-coords: no parent specified", file=fp)
+            continue
+
+        end_coords_parent_name = end_coords_config["parent"]
 
         if add_link_suffix:
             print(
@@ -30,7 +37,7 @@ def read_config_from_yaml(
             )
 
         try:
-            n = doc[f"{limb_name}-end-coords"]["translate"]
+            n = end_coords_config["translate"]
             values = [meter2millimeter * val for val in n[:3]]
             print(
                 f"     (send {limb_name}-end-coords :translate (float-vector {' '.join(map(str, values))}))",
@@ -40,7 +47,7 @@ def read_config_from_yaml(
             pass
 
         try:
-            n = doc[f"{limb_name}-end-coords"]["rotate"]
+            n = end_coords_config["rotate"]
             if n:
                 values = list(n[:3])
                 rotation_value = (3.141592653589793 / 180) * n[3]
