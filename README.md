@@ -45,7 +45,7 @@ urdf2eus robot.urdf robot.l --voxel-size 0.01
 ### Pythonスクリプト
 
 ```python
-from urdfeus import urdf2eus
+from urdfeus.urdf2eus import urdf2eus
 
 # URDFファイルをEusLispに変換
 with open('robot.l', 'w') as f:
