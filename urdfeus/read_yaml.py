@@ -12,8 +12,12 @@ def read_config_from_yaml(
     with open(config_file) as file:
         doc = yaml.load(file, Loader=yaml.FullLoader)
 
+    if doc is None:
+        doc = {}
+
     limb_names = []
     for limb in [k for k in doc.keys() if k.endswith("-end-coords")]:
+
         suffix_to_remove = "-end-coords"
         limb_name = limb[: -len(suffix_to_remove)]
 
