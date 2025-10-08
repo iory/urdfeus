@@ -152,6 +152,10 @@
          (if name (send self :name name))
          (setq glvertices gl::aglvertices)
          self)
+  ;; The :draw-on method in the faceset class (parent of collada-body) overrides
+  ;; the original method from its superclass, coordinates, but omits the :size keyword argument.
+  ;; This causes an error when calling :draw-on with :size (e.g., with the :debug-view option in inverse-kinematics-optmotiongen).
+  ;; To fix this, the :draw-on method is re-overridden in collada-body to include &rest args for accepting arbitrary arguments.
   (:draw-on (&rest args &key ((:viewer vwer) *viewer*)
               flush (width 1) (color #f(1 1 1))
               &allow-other-keys)
