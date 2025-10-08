@@ -152,6 +152,10 @@
          (if name (send self :name name))
          (setq glvertices gl::aglvertices)
          self)
+  (:draw-on (&rest args &key ((:viewer vwer) *viewer*)
+              flush (width 1) (color #f(1 1 1))
+              &allow-other-keys)
+    (send-super :draw-on :viewer vwer :flush flush :width width :color color))
   (:change-visual
    (&optional (visual :convex))
    (case visual
