@@ -1,8 +1,10 @@
 import datetime
+import os
 import platform
 import re
 import socket
 import sys
+import tempfile
 
 import numpy as np
 from skrobot.model import Link
@@ -17,6 +19,7 @@ from urdfeus.common import collect_all_joints_of_robot
 from urdfeus.common import is_fixed_joint
 from urdfeus.common import is_linear_joint
 from urdfeus.common import meter2millimeter
+from urdfeus.grouping_joint import create_config
 from urdfeus.read_yaml import read_config_from_yaml
 from urdfeus.templates import get_euscollada_string
 
@@ -483,6 +486,14 @@ def urdf2eus(
     robot_name=None,
     fp=sys.stdout,
 ):
+    tmp_yaml_path = None
+    if config_yaml_path is None:
+        tmp_yaml_fd, tmp_yaml_path = tempfile.mkstemp(suffix=".yaml", prefix="urdf2eus_")
+        try:
+            create_config(urdf_path, tmp_yaml_path)
+            config_yaml_path = tmp_yaml_path
+        finally:
+            os.close(tmp_yaml_fd)
     r = RobotModel()
     with open(urdf_path) as f:
         r.load_urdf_file(f)
@@ -556,11 +567,11 @@ def urdf2eus(
             print(f"          {limb} {limb}-end-coords {limb}-root-link", file=fp)
     print("          ))", file=fp)
     print("\n\n", end="", file=fp)
-    print(f"(defmethod {r.urdf_robot_model.name}-robot", file=fp)
+    print(f"(defmethod {robot_name}-robot", file=fp)
     print("  (:init", file=fp)
     print("   (&rest args)", file=fp)
     print("   (let ()", file=fp)
-    print(f'     (send-super* :init :name "{r.urdf_robot_model.name}" args)', file=fp)
+    print(f'     (send-super* :init :name "{robot_name}" args)', file=fp)
     print("\n\n", file=fp)
 
     for link in r.link_list:
@@ -604,3 +615,6 @@ def urdf2eus(
         f'(provide :{robot_name} "({socket.gethostname()} {platform.platform()}) at {current_time_str}")',
         file=fp,
     )
+
+    if tmp_yaml_path and os.path.exists(tmp_yaml_path):
+        os.remove(tmp_yaml_path)
