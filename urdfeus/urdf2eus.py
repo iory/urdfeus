@@ -175,7 +175,7 @@ def print_joint(joint, add_joint_suffix=True, add_link_suffix=True, fp=sys.stdou
         max_str = "*inf*" if max_val == float("inf") else str(max_angle)
         print(f":min {min_str} :max {max_str}", file=fp)
     print(f"                     :max-joint-velocity {joint.max_joint_velocity}", file=fp)
-    print(f"                     :max-joint-torque {joint.joint_torque}", end="", file=fp)
+    print(f"                     :max-joint-torque {joint.max_joint_torque}", end="", file=fp)
     print("))", file=fp)
 
 
