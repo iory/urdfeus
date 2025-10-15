@@ -371,6 +371,48 @@ def _compute_mesh_cache_key(mesh):
     return h
 
 
+def _remove_duplicate_vertices(vertices, faces, tolerance=1e-6):
+    """Remove duplicate vertices and update face indices accordingly.
+
+    Parameters
+    ----------
+    vertices : numpy.ndarray
+        Array of vertex coordinates (N x 3).
+    faces : numpy.ndarray
+        Array of face indices (M x 3).
+    tolerance : float
+        Distance threshold for considering vertices as duplicates.
+
+    Returns
+    -------
+    unique_vertices : numpy.ndarray
+        Array of unique vertex coordinates.
+    new_faces : numpy.ndarray
+        Updated face indices pointing to unique vertices.
+    """
+    # Round vertices to tolerance for comparison
+    scale = 1.0 / tolerance
+    rounded = np.round(vertices * scale).astype(np.int64)
+
+    # Find unique vertices using lexsort for stable ordering
+    # Convert to void type for unique operation
+    dtype = np.dtype((np.void, rounded.dtype.itemsize * rounded.shape[1]))
+    rounded_view = np.ascontiguousarray(rounded).view(dtype)
+
+    _unique_rounded, first_indices, inverse_indices = np.unique(
+        rounded_view, return_index=True, return_inverse=True
+    )
+
+    # Get unique vertices in original precision using first occurrence indices
+    unique_vertices = vertices[first_indices]
+
+    # Update face indices to point to unique vertices
+    # Flatten faces, map indices, then reshape back
+    new_faces = inverse_indices[faces.flatten()].reshape(faces.shape)
+
+    return unique_vertices, new_faces
+
+
 def print_mesh(link, simplify_vertex_clustering_voxel_size=None, fp=sys.stdout):
     print("\n                 (list ;; mesh list", file=fp)
     mesh = trimesh.util.concatenate(link.visual_mesh)
@@ -399,25 +441,33 @@ def print_mesh(link, simplify_vertex_clustering_voxel_size=None, fp=sys.stdout):
             file=fp,
         )
         print("))", file=fp)
-        print("                   (list :indices #i(", end="", file=fp)
-        # Use direct write for better performance
-        np.savetxt(fp, input_mesh.faces.reshape(1, -1), fmt='%d', delimiter=' ', newline='')
-        # fp.write(' '.join(map(str, input_mesh.faces.reshape(-1))))
-        print("))", file=fp)
-        print(
-            f"                   (list :vertices (let ((mat (make-matrix {len(input_mesh.vertices)} 3))) (fvector-replace (array-entity mat) #f(",
-            end="",
-            file=fp,
-        )
+
+        # Transform vertices first
         vertices = np.array(input_mesh.vertices)
         vertices = link.inverse_transformation().transform_vector(vertices)
         vertices = meter2millimeter * vertices
+
+        # Remove duplicate vertices and update face indices
+        # Use 0.05mm tolerance (half of our 0.1mm output precision)
+        unique_vertices, optimized_faces = _remove_duplicate_vertices(
+            vertices, input_mesh.faces, tolerance=0.05
+        )
+
+        print("                   (list :indices #i(", end="", file=fp)
+        # Use optimized face indices
+        np.savetxt(fp, optimized_faces.reshape(1, -1), fmt='%d', delimiter=' ', newline='')
+        print("))", file=fp)
+        print(
+            f"                   (list :vertices (let ((mat (make-matrix {len(unique_vertices)} 3))) (fvector-replace (array-entity mat) #f(",
+            end="",
+            file=fp,
+        )
         # Modified the vertex printing format to reduce mesh file size, considering the unit is in millimeters (mm).
         # Since the coordinates are in mm, having them formatted to just one decimal place is sufficiently precise for most applications.
         # This change not only preserves the necessary precision for mm-scale measurements but also effectively compresses the data,
         # resulting in a smaller file size due to reduced numerical precision in the vertex coordinates.
         # Use np.savetxt for fast C-level formatting and writing
-        vertices_flat = vertices.reshape(-1)
+        vertices_flat = unique_vertices.reshape(-1)
         np.savetxt(fp, vertices_flat.reshape(1, -1), fmt='%.1f', delimiter=' ', newline='')
         print(")) mat))", end="", file=fp)
         # TODO(someone) normal
