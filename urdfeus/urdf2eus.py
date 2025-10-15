@@ -126,18 +126,18 @@ def print_link(
             -1
         )  # kg m^2 -> g mm^2
     print(
-        f"       (progn (send {link_name} :weight {weight}) (setq ({link_name} . acentroid) (float-vector {centroid_x} {centroid_y} {centroid_z})) (send {link_name} :inertia-tensor #2f(({ixx} {ixy} {ixz})({iyx} {iyy} {iyz})({izx} {izy} {izz}))))",
+        f"       (progn (send {link_name} :weight {weight}) (setq ({link_name} . acentroid) #f({centroid_x} {centroid_y} {centroid_z})) (send {link_name} :inertia-tensor #2f(({ixx} {ixy} {ixz})({iyx} {iyy} {iyz})({izx} {izy} {izz}))))",
         file=fp,
     )
 
     print(f"       ;; global coordinates for {link_name}", file=fp)
     print("       (let ((world-cds (make-coords :pos ", end="", file=fp)
     x, y, z = meter2millimeter * link.worldpos()
-    print(f"(float-vector {x:.6f} {y:.6f} {z:.6f})", end="", file=fp)
+    print(f"#f({x:.6f} {y:.6f} {z:.6f})", end="", file=fp)
 
     qw, qx, qy, qz = link.copy_worldcoords().quaternion
     print(
-        f"\n                                     :rot (quaternion2matrix (float-vector {qw:.6f} {qx:.6f} {qy:.6f} {qz:.6f}))",
+        f"\n                                     :rot (quaternion2matrix #f({qw:.6f} {qx:.6f} {qy:.6f} {qz:.6f}))",
         end="",
         file=fp,
     )
@@ -177,10 +177,10 @@ def print_joint(joint, add_joint_suffix=True, add_link_suffix=True, fp=sys.stdou
 
     x, y, z = joint.axis
     if x == 0.0 and y == 0.0 and z == 0.0:
-        print("                     :axis (float-vector 1 1 1) ;; fixed joint??", file=fp)
+        print("                     :axis #f(1 1 1) ;; fixed joint??", file=fp)
     else:
         print(
-            f"                     :axis (float-vector {x:.16f} {y:.16f} {z:.16f})",
+            f"                     :axis #f({x:.16f} {y:.16f} {z:.16f})",
             file=fp,
         )
 
@@ -296,7 +296,7 @@ def print_geometry(link, simplify_vertex_clustering_voxel_size=None, fp=sys.stdo
     print("    (let (geom glv qhull", file=fp)
     print("          (local-cds (make-coords :pos ", end="", file=fp)
     print(
-        f"(float-vector {x * meter2millimeter:.6f} {y * meter2millimeter:.6f} {z * meter2millimeter:.6f})",
+        f"#f({x * meter2millimeter:.6f} {y * meter2millimeter:.6f} {z * meter2millimeter:.6f})",
         end="",
         file=fp,
     )
@@ -305,7 +305,7 @@ def print_geometry(link, simplify_vertex_clustering_voxel_size=None, fp=sys.stdo
 
     print("\n", end="", file=fp)
     print(f"                                  :rot (quaternion2matrix ", end="", file=fp)  # NOQA
-    print(f"(float-vector {qw:.6f} {qx:.6f} {qy:.6f} {qz:.6f}))", end="", file=fp)
+    print(f"#f({qw:.6f} {qx:.6f} {qy:.6f} {qz:.6f}))", end="", file=fp)
     print(")))", file=fp)
     print("      (setq glv", file=fp)
     print("       (instance gl::glvertices :init", end="", file=fp)
@@ -371,6 +371,48 @@ def _compute_mesh_cache_key(mesh):
     return h
 
 
+def _remove_duplicate_vertices(vertices, faces, tolerance=1e-6):
+    """Remove duplicate vertices and update face indices accordingly.
+
+    Parameters
+    ----------
+    vertices : numpy.ndarray
+        Array of vertex coordinates (N x 3).
+    faces : numpy.ndarray
+        Array of face indices (M x 3).
+    tolerance : float
+        Distance threshold for considering vertices as duplicates.
+
+    Returns
+    -------
+    unique_vertices : numpy.ndarray
+        Array of unique vertex coordinates.
+    new_faces : numpy.ndarray
+        Updated face indices pointing to unique vertices.
+    """
+    # Round vertices to tolerance for comparison
+    scale = 1.0 / tolerance
+    rounded = np.round(vertices * scale).astype(np.int64)
+
+    # Find unique vertices using lexsort for stable ordering
+    # Convert to void type for unique operation
+    dtype = np.dtype((np.void, rounded.dtype.itemsize * rounded.shape[1]))
+    rounded_view = np.ascontiguousarray(rounded).view(dtype)
+
+    _unique_rounded, first_indices, inverse_indices = np.unique(
+        rounded_view, return_index=True, return_inverse=True
+    )
+
+    # Get unique vertices in original precision using first occurrence indices
+    unique_vertices = vertices[first_indices]
+
+    # Update face indices to point to unique vertices
+    # Flatten faces, map indices, then reshape back
+    new_faces = inverse_indices[faces.flatten()].reshape(faces.shape)
+
+    return unique_vertices, new_faces
+
+
 def print_mesh(link, simplify_vertex_clustering_voxel_size=None, fp=sys.stdout):
     print("\n                 (list ;; mesh list", file=fp)
     mesh = trimesh.util.concatenate(link.visual_mesh)
@@ -390,34 +432,42 @@ def print_mesh(link, simplify_vertex_clustering_voxel_size=None, fp=sys.stdout):
         print("                   (list :type :triangles)", file=fp)
         print("                   (list :material (list", file=fp)
         print(
-            f"                    (list :ambient (float-vector {input_mesh.visual.main_color[0] / 255.0} {input_mesh.visual.main_color[1]/ 255.0} {input_mesh.visual.main_color[2]/ 255.0} {input_mesh.visual.main_color[3]/ 255.0}))",
+            f"                    (list :ambient #f({input_mesh.visual.main_color[0] / 255.0} {input_mesh.visual.main_color[1]/ 255.0} {input_mesh.visual.main_color[2]/ 255.0} {input_mesh.visual.main_color[3]/ 255.0}))",
             file=fp,
         )
         print(
-            f"                    (list :diffuse (float-vector {input_mesh.visual.main_color[0]/ 255.0} {input_mesh.visual.main_color[1]/ 255.0} {input_mesh.visual.main_color[2]/ 255.0} {input_mesh.visual.main_color[3]/ 255.0}))",
+            f"                    (list :diffuse #f({input_mesh.visual.main_color[0]/ 255.0} {input_mesh.visual.main_color[1]/ 255.0} {input_mesh.visual.main_color[2]/ 255.0} {input_mesh.visual.main_color[3]/ 255.0}))",
             end="",
             file=fp,
         )
         print("))", file=fp)
-        print("                   (list :indices #i(", end="", file=fp)
-        # Use direct write for better performance
-        np.savetxt(fp, input_mesh.faces.reshape(1, -1), fmt='%d', delimiter=' ', newline='')
-        # fp.write(' '.join(map(str, input_mesh.faces.reshape(-1))))
-        print("))", file=fp)
-        print(
-            f"                   (list :vertices (let ((mat (make-matrix {len(input_mesh.vertices)} 3))) (fvector-replace (array-entity mat) #f(",
-            end="",
-            file=fp,
-        )
+
+        # Transform vertices first
         vertices = np.array(input_mesh.vertices)
         vertices = link.inverse_transformation().transform_vector(vertices)
         vertices = meter2millimeter * vertices
+
+        # Remove duplicate vertices and update face indices
+        # Use 0.05mm tolerance (half of our 0.1mm output precision)
+        unique_vertices, optimized_faces = _remove_duplicate_vertices(
+            vertices, input_mesh.faces, tolerance=0.05
+        )
+
+        print("                   (list :indices #i(", end="", file=fp)
+        # Use optimized face indices
+        np.savetxt(fp, optimized_faces.reshape(1, -1), fmt='%d', delimiter=' ', newline='')
+        print("))", file=fp)
+        print(
+            f"                   (list :vertices (let ((mat (make-matrix {len(unique_vertices)} 3))) (fvector-replace (array-entity mat) #f(",
+            end="",
+            file=fp,
+        )
         # Modified the vertex printing format to reduce mesh file size, considering the unit is in millimeters (mm).
         # Since the coordinates are in mm, having them formatted to just one decimal place is sufficiently precise for most applications.
         # This change not only preserves the necessary precision for mm-scale measurements but also effectively compresses the data,
         # resulting in a smaller file size due to reduced numerical precision in the vertex coordinates.
         # Use np.savetxt for fast C-level formatting and writing
-        vertices_flat = vertices.reshape(-1)
+        vertices_flat = unique_vertices.reshape(-1)
         np.savetxt(fp, vertices_flat.reshape(1, -1), fmt='%.1f', delimiter=' ', newline='')
         print(")) mat))", end="", file=fp)
         # TODO(someone) normal
