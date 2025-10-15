@@ -44,7 +44,7 @@ def read_config_from_yaml(
             n = end_coords_config["translate"]
             values = [meter2millimeter * val for val in n[:3]]
             print(
-                f"     (send {limb_name}-end-coords :translate (float-vector {' '.join(map(str, values))}))",
+                f"     (send {limb_name}-end-coords :translate #f({' '.join(map(str, values))}))",
                 file=fp,
             )
         except Exception as _:
@@ -56,7 +56,7 @@ def read_config_from_yaml(
                 values = list(n[:3])
                 rotation_value = (3.141592653589793 / 180) * n[3]
                 print(
-                    f"     (send {limb_name}-end-coords :rotate {rotation_value} (float-vector {' '.join(map(str, values))}))",
+                    f"     (send {limb_name}-end-coords :rotate {rotation_value} #f({' '.join(map(str, values))}))",
                     file=fp,
                 )
         except Exception as _:
@@ -191,7 +191,7 @@ def read_config_from_yaml(
             for limb in limbs:
                 limb_name = limb[0]
                 print(
-                    f"\n          (:{limb_name} (send self :{limb_name} :angle-vector (float-vector",
+                    f"\n          (:{limb_name} (send self :{limb_name} :angle-vector #f(",
                     file=fp,
                 )
                 joint_names = limb[1][1]

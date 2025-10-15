@@ -126,18 +126,18 @@ def print_link(
             -1
         )  # kg m^2 -> g mm^2
     print(
-        f"       (progn (send {link_name} :weight {weight}) (setq ({link_name} . acentroid) (float-vector {centroid_x} {centroid_y} {centroid_z})) (send {link_name} :inertia-tensor #2f(({ixx} {ixy} {ixz})({iyx} {iyy} {iyz})({izx} {izy} {izz}))))",
+        f"       (progn (send {link_name} :weight {weight}) (setq ({link_name} . acentroid) #f({centroid_x} {centroid_y} {centroid_z})) (send {link_name} :inertia-tensor #2f(({ixx} {ixy} {ixz})({iyx} {iyy} {iyz})({izx} {izy} {izz}))))",
         file=fp,
     )
 
     print(f"       ;; global coordinates for {link_name}", file=fp)
     print("       (let ((world-cds (make-coords :pos ", end="", file=fp)
     x, y, z = meter2millimeter * link.worldpos()
-    print(f"(float-vector {x:.6f} {y:.6f} {z:.6f})", end="", file=fp)
+    print(f"#f({x:.6f} {y:.6f} {z:.6f})", end="", file=fp)
 
     qw, qx, qy, qz = link.copy_worldcoords().quaternion
     print(
-        f"\n                                     :rot (quaternion2matrix (float-vector {qw:.6f} {qx:.6f} {qy:.6f} {qz:.6f}))",
+        f"\n                                     :rot (quaternion2matrix #f({qw:.6f} {qx:.6f} {qy:.6f} {qz:.6f}))",
         end="",
         file=fp,
     )
@@ -177,10 +177,10 @@ def print_joint(joint, add_joint_suffix=True, add_link_suffix=True, fp=sys.stdou
 
     x, y, z = joint.axis
     if x == 0.0 and y == 0.0 and z == 0.0:
-        print("                     :axis (float-vector 1 1 1) ;; fixed joint??", file=fp)
+        print("                     :axis #f(1 1 1) ;; fixed joint??", file=fp)
     else:
         print(
-            f"                     :axis (float-vector {x:.16f} {y:.16f} {z:.16f})",
+            f"                     :axis #f({x:.16f} {y:.16f} {z:.16f})",
             file=fp,
         )
 
@@ -296,7 +296,7 @@ def print_geometry(link, simplify_vertex_clustering_voxel_size=None, fp=sys.stdo
     print("    (let (geom glv qhull", file=fp)
     print("          (local-cds (make-coords :pos ", end="", file=fp)
     print(
-        f"(float-vector {x * meter2millimeter:.6f} {y * meter2millimeter:.6f} {z * meter2millimeter:.6f})",
+        f"#f({x * meter2millimeter:.6f} {y * meter2millimeter:.6f} {z * meter2millimeter:.6f})",
         end="",
         file=fp,
     )
@@ -305,7 +305,7 @@ def print_geometry(link, simplify_vertex_clustering_voxel_size=None, fp=sys.stdo
 
     print("\n", end="", file=fp)
     print(f"                                  :rot (quaternion2matrix ", end="", file=fp)  # NOQA
-    print(f"(float-vector {qw:.6f} {qx:.6f} {qy:.6f} {qz:.6f}))", end="", file=fp)
+    print(f"#f({qw:.6f} {qx:.6f} {qy:.6f} {qz:.6f}))", end="", file=fp)
     print(")))", file=fp)
     print("      (setq glv", file=fp)
     print("       (instance gl::glvertices :init", end="", file=fp)
@@ -432,11 +432,11 @@ def print_mesh(link, simplify_vertex_clustering_voxel_size=None, fp=sys.stdout):
         print("                   (list :type :triangles)", file=fp)
         print("                   (list :material (list", file=fp)
         print(
-            f"                    (list :ambient (float-vector {input_mesh.visual.main_color[0] / 255.0} {input_mesh.visual.main_color[1]/ 255.0} {input_mesh.visual.main_color[2]/ 255.0} {input_mesh.visual.main_color[3]/ 255.0}))",
+            f"                    (list :ambient #f({input_mesh.visual.main_color[0] / 255.0} {input_mesh.visual.main_color[1]/ 255.0} {input_mesh.visual.main_color[2]/ 255.0} {input_mesh.visual.main_color[3]/ 255.0}))",
             file=fp,
         )
         print(
-            f"                    (list :diffuse (float-vector {input_mesh.visual.main_color[0]/ 255.0} {input_mesh.visual.main_color[1]/ 255.0} {input_mesh.visual.main_color[2]/ 255.0} {input_mesh.visual.main_color[3]/ 255.0}))",
+            f"                    (list :diffuse #f({input_mesh.visual.main_color[0]/ 255.0} {input_mesh.visual.main_color[1]/ 255.0} {input_mesh.visual.main_color[2]/ 255.0} {input_mesh.visual.main_color[3]/ 255.0}))",
             end="",
             file=fp,
         )
