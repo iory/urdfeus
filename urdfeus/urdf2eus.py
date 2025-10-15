@@ -23,6 +23,14 @@ from urdfeus.grouping_joint import create_config
 from urdfeus.read_yaml import read_config_from_yaml
 from urdfeus.templates import get_euscollada_string
 
+# Global cache for split_mesh_by_face_color results
+# Using trimesh's built-in identifier_hash for efficient mesh identification
+_mesh_split_cache = {}
+
+# Global cache for geometry instances: mesh_cache_key -> geometry_method_name
+# This prevents regenerating the same mesh geometry multiple times
+_geometry_cache = {}
+
 
 def validate_euslisp_identifier(name):
     """
@@ -77,9 +85,26 @@ def print_link(
 
     geom_counter = 0
     if link.visual_mesh is not None and len(link.visual_mesh) > 0:
-        print(
-            f"(send self :_make_instance_{link.name}_geom{geom_counter})", end="", file=fp
-        )
+        # Compute mesh cache key to check if we can reuse existing geometry
+        mesh = trimesh.util.concatenate(link.visual_mesh)
+        if simplify_vertex_clustering_voxel_size:
+            mesh = simplify_vertex_clustering(mesh, simplify_vertex_clustering_voxel_size)[0]
+        cache_key = _compute_mesh_cache_key(mesh)
+
+        # Check if this mesh geometry was already created
+        if cache_key in _geometry_cache:
+            # Reuse existing geometry method
+            existing_method_name = _geometry_cache[cache_key]
+            print(
+                f"(send self :{existing_method_name})", end="", file=fp
+            )
+        else:
+            # Create new geometry method and register it
+            method_name = f"_make_instance_{link.name}_geom{geom_counter}"
+            _geometry_cache[cache_key] = method_name
+            print(
+                f"(send self :{method_name})", end="", file=fp
+            )
         geom_counter += 1
 
     print(")))", file=fp)
@@ -237,9 +262,37 @@ def print_mimic_joints(robot, fp=sys.stdout):
 
 
 def print_geometry(link, simplify_vertex_clustering_voxel_size=None, fp=sys.stdout):
+    # Skip if link has no visual mesh
+    if link.visual_mesh is None or len(link.visual_mesh) == 0:
+        return
+
+    # Compute mesh cache key to check if geometry was already defined
+    mesh = trimesh.util.concatenate(link.visual_mesh)
+    if simplify_vertex_clustering_voxel_size:
+        mesh = simplify_vertex_clustering(mesh, simplify_vertex_clustering_voxel_size)[0]
+    cache_key = _compute_mesh_cache_key(mesh)
+
+    # Get the method name from cache (it should exist since print_link was called first)
+    method_name = _geometry_cache.get(cache_key)
+    if method_name is None:
+        # Fallback: create method name (should not happen in normal flow)
+        method_name = f"_make_instance_{link.name}_geom0"
+        _geometry_cache[cache_key] = method_name
+
+    # Check if this geometry method was already printed
+    # Use a separate set to track which methods have been printed
+    if not hasattr(print_geometry, '_printed_methods'):
+        print_geometry._printed_methods = set()
+
+    if method_name in print_geometry._printed_methods:
+        # Skip printing this method definition - it's already been printed
+        return
+
+    # Mark this method as printed
+    print_geometry._printed_methods.add(method_name)
+
     x, y, z = link.translation
-    name = link.name + "_geom" + str(0)
-    print(f"  (:_make_instance_{name} ()", file=fp)
+    print(f"  (:{method_name} ()", file=fp)
     print("    (let (geom glv qhull", file=fp)
     print("          (local-cds (make-coords :pos ", end="", file=fp)
     print(
@@ -276,12 +329,63 @@ def print_geometry(link, simplify_vertex_clustering_voxel_size=None, fp=sys.stdo
     print("      geom))", file=fp)
 
 
+def _compute_mesh_cache_key(mesh):
+    """Compute a fast cache key for mesh based on sampled geometry and colors.
+
+    Uses Python's built-in hash() for speed instead of cryptographic hashing.
+    Samples large arrays to balance accuracy with performance.
+
+    Parameters
+    ----------
+    mesh : trimesh.Trimesh
+        Mesh to compute cache key for.
+
+    Returns
+    -------
+    int
+        Fast hash value for cache key.
+    """
+    # Start with vertex and face counts for quick differentiation
+    h = hash((len(mesh.vertices), len(mesh.faces)))
+
+    # Sample vertices (hash first, middle, last)
+    vertices = mesh.vertices.flatten()
+    if len(vertices) > 30:
+        sample_indices = [0, len(vertices)//2, len(vertices)-1]
+        h = hash((h, tuple(vertices[sample_indices])))
+    else:
+        h = hash((h, vertices.tobytes()))
+
+    # Sample faces similarly
+    faces = mesh.faces.flatten()
+    if len(faces) > 30:
+        sample_indices = [0, len(faces)//2, len(faces)-1]
+        h = hash((h, tuple(faces[sample_indices])))
+    else:
+        h = hash((h, faces.tobytes()))
+
+    # Include face colors (critical for split_mesh_by_face_color)
+    if hasattr(mesh.visual, 'face_colors'):
+        h = hash((h, mesh.visual.face_colors.tobytes()))
+
+    return h
+
+
 def print_mesh(link, simplify_vertex_clustering_voxel_size=None, fp=sys.stdout):
     print("\n                 (list ;; mesh list", file=fp)
     mesh = trimesh.util.concatenate(link.visual_mesh)
     if simplify_vertex_clustering_voxel_size:
         mesh = simplify_vertex_clustering(mesh, simplify_vertex_clustering_voxel_size)[0]
-    for input_mesh in split_mesh_by_face_color(mesh):
+
+    # Check cache using fast hash-based key
+    cache_key = _compute_mesh_cache_key(mesh)
+    if cache_key in _mesh_split_cache:
+        split_meshes = _mesh_split_cache[cache_key]
+    else:
+        split_meshes = split_mesh_by_face_color(mesh)
+        _mesh_split_cache[cache_key] = split_meshes
+
+    for input_mesh in split_meshes:
         print("                  (list ;; mesh description", file=fp)
         print("                   (list :type :triangles)", file=fp)
         print("                   (list :material (list", file=fp)
@@ -296,7 +400,9 @@ def print_mesh(link, simplify_vertex_clustering_voxel_size=None, fp=sys.stdout):
         )
         print("))", file=fp)
         print("                   (list :indices #i(", end="", file=fp)
-        print(" ".join(map(str, input_mesh.faces.reshape(-1))), end="", file=fp)
+        # Use direct write for better performance
+        np.savetxt(fp, input_mesh.faces.reshape(1, -1), fmt='%d', delimiter=' ', newline='')
+        # fp.write(' '.join(map(str, input_mesh.faces.reshape(-1))))
         print("))", file=fp)
         print(
             f"                   (list :vertices (let ((mat (make-matrix {len(input_mesh.vertices)} 3))) (fvector-replace (array-entity mat) #f(",
@@ -310,11 +416,9 @@ def print_mesh(link, simplify_vertex_clustering_voxel_size=None, fp=sys.stdout):
         # Since the coordinates are in mm, having them formatted to just one decimal place is sufficiently precise for most applications.
         # This change not only preserves the necessary precision for mm-scale measurements but also effectively compresses the data,
         # resulting in a smaller file size due to reduced numerical precision in the vertex coordinates.
-        print(
-            " ".join(f"{x:.1f}" for x in vertices.reshape(-1)),
-            end="",
-            file=fp,
-        )
+        # Use np.savetxt for fast C-level formatting and writing
+        vertices_flat = vertices.reshape(-1)
+        np.savetxt(fp, vertices_flat.reshape(1, -1), fmt='%.1f', delimiter=' ', newline='')
         print(")) mat))", end="", file=fp)
         # TODO(someone) normal
         print(")", end="", file=fp)
@@ -486,6 +590,13 @@ def urdf2eus(
     robot_name=None,
     fp=sys.stdout,
 ):
+    # Clear global caches for new conversion
+    global _mesh_split_cache, _geometry_cache
+    _mesh_split_cache.clear()
+    _geometry_cache.clear()
+    if hasattr(print_geometry, '_printed_methods'):
+        print_geometry._printed_methods.clear()
+
     tmp_yaml_path = None
     if config_yaml_path is None:
         tmp_yaml_fd, tmp_yaml_path = tempfile.mkstemp(suffix=".yaml", prefix="urdf2eus_")
