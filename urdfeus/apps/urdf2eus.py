@@ -25,6 +25,12 @@ def main():
         + "mesh simplification. This process reduces the complexity"
         + " of the mesh by clustering vertices within the specified voxel size.",
     )
+    parser.add_argument(
+        "--no-cache",
+        action="store_true",
+        help="Disable mesh caching. By default, processed mesh data is cached "
+        + "to speed up repeated conversions of the same URDF file.",
+    )
     args = parser.parse_args()
 
     with open(args.output_euslisp_path, "w") as f:
@@ -34,6 +40,7 @@ def main():
             args.simplify_vertex_clustering_voxel_size,
             args.name,
             fp=f,
+            use_cache=not args.no_cache,
         )
 
 

@@ -20,6 +20,7 @@ from urdfeus.common import is_fixed_joint
 from urdfeus.common import is_linear_joint
 from urdfeus.common import meter2millimeter
 from urdfeus.grouping_joint import create_config
+from urdfeus.mesh_cache import get_default_cache
 from urdfeus.read_yaml import read_config_from_yaml
 from urdfeus.templates import get_euscollada_string
 
@@ -330,10 +331,13 @@ def print_geometry(link, simplify_vertex_clustering_voxel_size=None, fp=sys.stdo
 
 
 def _compute_mesh_cache_key(mesh):
-    """Compute a fast cache key for mesh based on sampled geometry and colors.
+    """Compute a fast cache key for mesh based on sampled geometry.
 
     Uses Python's built-in hash() for speed instead of cryptographic hashing.
     Samples large arrays to balance accuracy with performance.
+
+    Note: Avoids accessing face_colors property which is computationally expensive.
+    Instead uses vertex/face geometry and a hash of the color array if available.
 
     Parameters
     ----------
@@ -364,9 +368,20 @@ def _compute_mesh_cache_key(mesh):
     else:
         h = hash((h, faces.tobytes()))
 
-    # Include face colors (critical for split_mesh_by_face_color)
-    if hasattr(mesh.visual, 'face_colors'):
-        h = hash((h, mesh.visual.face_colors.tobytes()))
+    # Include color information but avoid expensive face_colors property
+    # Check for the underlying data directly to avoid computation
+    if hasattr(mesh.visual, '_data') and hasattr(mesh.visual._data, 'get'):
+        # Try to get face colors from cached data if available
+        face_colors = mesh.visual._data.get('face_colors')
+        if face_colors is not None:
+            h = hash((h, face_colors.tobytes()))
+    elif hasattr(mesh.visual, 'main_color'):
+        # Fallback: use main_color which is much faster
+        try:
+            main_color = mesh.visual.main_color
+            h = hash((h, tuple(main_color)))
+        except Exception:
+            pass
 
     return h
 
@@ -639,6 +654,7 @@ def urdf2eus(
     simplify_vertex_clustering_voxel_size=None,
     robot_name=None,
     fp=sys.stdout,
+    use_cache=True,
 ):
     # Clear global caches for new conversion
     global _mesh_split_cache, _geometry_cache
@@ -646,6 +662,13 @@ def urdf2eus(
     _geometry_cache.clear()
     if hasattr(print_geometry, '_printed_methods'):
         print_geometry._printed_methods.clear()
+
+    # Load all available mesh caches if enabled
+    # This allows reusing mesh data across different URDF configurations
+    mesh_cache = get_default_cache() if use_cache else None
+    if mesh_cache is not None:
+        cached_meshes = mesh_cache.load_all_mesh_caches()
+        _mesh_split_cache.update(cached_meshes)
 
     tmp_yaml_path = None
     if config_yaml_path is None:
@@ -779,3 +802,9 @@ def urdf2eus(
 
     if tmp_yaml_path and os.path.exists(tmp_yaml_path):
         os.remove(tmp_yaml_path)
+
+    # Save mesh split cache if enabled
+    # Save each mesh cache individually so they can be reused across URDFs
+    if mesh_cache is not None:
+        for cache_key, split_meshes in _mesh_split_cache.items():
+            mesh_cache.save_mesh_cache(cache_key, split_meshes)
