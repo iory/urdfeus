@@ -116,7 +116,7 @@
   ;; This method returns only links with non-nil :bodies for safe collision checking.
   (:collision-link-list
    ()
-   (remove nil (send self :links)
+   (remove nil (send self :all-links)
            :test #'(lambda (x y) (null (send y :bodies)))))
   (:get-link-list
     (link-to
