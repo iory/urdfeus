@@ -76,7 +76,10 @@ def print_link(
     add_link_suffix: bool = True,
     inertial=None,
     fp=sys.stdout,
+    use_urdf_material=False
 ):
+    global material_map, link_material_map
+
     if add_link_suffix:
         link_name = link.name + "_lk"
     else:
@@ -90,7 +93,12 @@ def print_link(
         mesh = trimesh.util.concatenate(link.visual_mesh)
         if simplify_vertex_clustering_voxel_size:
             mesh = simplify_vertex_clustering(mesh, simplify_vertex_clustering_voxel_size)[0]
-        cache_key = _compute_mesh_cache_key(mesh)
+        # Get material information for cache key when using material from urdf
+        material = None
+        if use_urdf_material:
+            if link.name in link_material_map:
+                material = link_material_map[link.name]
+        cache_key = _compute_mesh_cache_key(mesh, material)
 
         # Check if this mesh geometry was already created
         if cache_key in _geometry_cache:
@@ -262,7 +270,10 @@ def print_mimic_joints(robot, fp=sys.stdout):
         )
 
 
-def print_geometry(link, simplify_vertex_clustering_voxel_size=None, fp=sys.stdout):
+def print_geometry(link, simplify_vertex_clustering_voxel_size=None, fp=sys.stdout,
+                   use_urdf_material=False):
+    global link_material_map
+
     # Skip if link has no visual mesh
     if link.visual_mesh is None or len(link.visual_mesh) == 0:
         return
@@ -271,7 +282,12 @@ def print_geometry(link, simplify_vertex_clustering_voxel_size=None, fp=sys.stdo
     mesh = trimesh.util.concatenate(link.visual_mesh)
     if simplify_vertex_clustering_voxel_size:
         mesh = simplify_vertex_clustering(mesh, simplify_vertex_clustering_voxel_size)[0]
-    cache_key = _compute_mesh_cache_key(mesh)
+    # Get material information for cache key when using material from urdf
+    material = None
+    if use_urdf_material:
+        if link.name in link_material_map:
+            material = link_material_map[link.name]
+    cache_key = _compute_mesh_cache_key(mesh, material)
 
     # Get the method name from cache (it should exist since print_link was called first)
     method_name = _geometry_cache.get(cache_key)
@@ -312,7 +328,8 @@ def print_geometry(link, simplify_vertex_clustering_voxel_size=None, fp=sys.stdo
     print("       (instance gl::glvertices :init", end="", file=fp)
     if link.visual_mesh is not None and len(link.visual_mesh) > 0:
         # TODO(someone): use g.scale
-        print_mesh(link, simplify_vertex_clustering_voxel_size, fp=fp)
+        print_mesh(link, simplify_vertex_clustering_voxel_size, fp=fp,
+                   use_urdf_material=use_urdf_material)
     else:
         print("))", file=fp)
     print("      (send glv :transform local-cds)", file=fp)
@@ -330,7 +347,7 @@ def print_geometry(link, simplify_vertex_clustering_voxel_size=None, fp=sys.stdo
     print("      geom))", file=fp)
 
 
-def _compute_mesh_cache_key(mesh):
+def _compute_mesh_cache_key(mesh, material=None):
     """Compute a fast cache key for mesh based on sampled geometry.
 
     Uses Python's built-in hash() for speed instead of cryptographic hashing.
@@ -343,6 +360,8 @@ def _compute_mesh_cache_key(mesh):
     ----------
     mesh : trimesh.Trimesh
         Mesh to compute cache key for.
+    material : any, optional
+        An optional material identifier to include in the hash.
 
     Returns
     -------
@@ -382,6 +401,12 @@ def _compute_mesh_cache_key(mesh):
             h = hash((h, tuple(main_color)))
         except Exception:
             pass
+
+    # If material is provided, factor it into the hash key.
+    # This allows distinguishing meshes that are geometrically identical
+    # but have different materials assigned (e.g., when use_urdf_material=True).
+    if (material is not None) and (material.color is not None):
+        h = hash((h, tuple(material.color), material.texture))
 
     return h
 
@@ -428,7 +453,10 @@ def _remove_duplicate_vertices(vertices, faces, tolerance=1e-6):
     return unique_vertices, new_faces
 
 
-def print_mesh(link, simplify_vertex_clustering_voxel_size=None, fp=sys.stdout):
+def print_mesh(link, simplify_vertex_clustering_voxel_size=None, fp=sys.stdout,
+               use_urdf_material=False):
+    global material_map, link_material_map
+
     print("\n                 (list ;; mesh list", file=fp)
     mesh = trimesh.util.concatenate(link.visual_mesh)
     if simplify_vertex_clustering_voxel_size:
@@ -446,12 +474,19 @@ def print_mesh(link, simplify_vertex_clustering_voxel_size=None, fp=sys.stdout):
         print("                  (list ;; mesh description", file=fp)
         print("                   (list :type :triangles)", file=fp)
         print("                   (list :material (list", file=fp)
+        # Default to mesh color, but override with URDF material color if option is enabled.
+        c = [col/255.0 for col in input_mesh.visual.main_color]
+        if use_urdf_material:
+            if link.name in link_material_map:
+                material = link_material_map[link.name]
+                if material.color is not None:
+                    c = material.color
         print(
-            f"                    (list :ambient #f({input_mesh.visual.main_color[0] / 255.0} {input_mesh.visual.main_color[1]/ 255.0} {input_mesh.visual.main_color[2]/ 255.0} {input_mesh.visual.main_color[3]/ 255.0}))",
+            f"                    (list :ambient #f({c[0]} {c[1]} {c[2]} {c[3]}))",
             file=fp,
         )
         print(
-            f"                    (list :diffuse #f({input_mesh.visual.main_color[0]/ 255.0} {input_mesh.visual.main_color[1]/ 255.0} {input_mesh.visual.main_color[2]/ 255.0} {input_mesh.visual.main_color[3]/ 255.0}))",
+            f"                    (list :diffuse #f({c[0]} {c[1]} {c[2]} {c[3]}))",
             end="",
             file=fp,
         )
@@ -655,7 +690,10 @@ def urdf2eus(
     robot_name=None,
     fp=sys.stdout,
     use_cache=True,
+    use_urdf_material=False,
 ):
+    global material_map, link_material_map
+
     # Clear global caches for new conversion
     global _mesh_split_cache, _geometry_cache
     _mesh_split_cache.clear()
@@ -691,6 +729,18 @@ def urdf2eus(
         is_valid, error_msg = validate_euslisp_identifier(robot_name)
         if not is_valid:
             raise ValueError(f"Invalid robot name '{robot_name}': {error_msg}")
+
+    # Dump the active URDF material colors (if used instead of mesh colors).
+    if use_urdf_material:
+        # Cache material_map of robot model to use it in other methods (e.g., print_link/mesh).
+        material_map = r.urdf_robot_model.material_map
+        link_material_map = {}
+        for link in r.urdf_robot_model.links:
+            if link.visuals:
+                if link.visuals[0].material:
+                    # Get material from material_map, because material in link.visuals might not have color/texture properties (have only name).
+                    material_name = link.visuals[0].material.name
+                    link_material_map[link.name] = material_map[material_name]
 
     current_time_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     print(
@@ -759,7 +809,8 @@ def urdf2eus(
     print("\n\n", file=fp)
 
     for link in r.link_list:
-        print_link(link, inertial=r.urdf_robot_model.link_map[link.name].inertial, fp=fp)
+        print_link(link, inertial=r.urdf_robot_model.link_map[link.name].inertial, fp=fp,
+                   use_urdf_material=use_urdf_material)
 
     add_link_suffix = True
     checked_pairs = {}
@@ -792,7 +843,8 @@ def urdf2eus(
         print_unique_limbs(limb_names, fp=fp)
 
     for link in r.link_list:
-        print_geometry(link, simplify_vertex_clustering_voxel_size, fp=fp)
+        print_geometry(link, simplify_vertex_clustering_voxel_size, fp=fp,
+                       use_urdf_material=use_urdf_material)
     print("  )", file=fp)
     print(file=fp)
     print(

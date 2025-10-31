@@ -31,6 +31,13 @@ def main():
         help="Disable mesh caching. By default, processed mesh data is cached "
         + "to speed up repeated conversions of the same URDF file.",
     )
+    parser.add_argument(
+        "--use-urdf-material",
+        action="store_true",
+        help="Use the color specified in the URDF <material> tag instead of "
+        + "the mesh's internal color. This prevents splitting the mesh by "
+        + "face color and uses the material color loaded by skrobot.",
+    )
     args = parser.parse_args()
 
     with open(args.output_euslisp_path, "w") as f:
@@ -41,6 +48,7 @@ def main():
             args.name,
             fp=f,
             use_cache=not args.no_cache,
+            use_urdf_material=args.use_urdf_material,
         )
 
 
