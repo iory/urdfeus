@@ -24,14 +24,17 @@
                                         (m* (send (car links) :worldrot)
                                             (l . inertia-tensor)))))))
    (send-super :init-ending)
-   (send self :make-collision-model-for-links)
-   ;;
+   ;; Set up child-link relationships for fixed joints (not in joint-list)
+   ;; Must be done BEFORE :make-collision-model-for-links because :all-links
+   ;; traverses child-links to find all links in the hierarchy
    (dolist (j (mapcan #'(lambda (x) (if (and (derivedp (cdr x) joint)
                                              (not (memq (cdr x) (send self :joint-list))))
                                         (list (cdr x)))) (send self :slots)))
      (send (send j :child-link) :add-joint j)
      (send (send j :child-link) :add-parent-link (send j :parent-link))
-     (send (send j :parent-link) :add-child-links (send j :child-link))))
+     (send (send j :parent-link) :add-child-links (send j :child-link)))
+   ;; Use :all-links to include links not in :links (e.g., fixed joint links)
+   (send self :make-collision-model-for-links :links (send self :all-links)))
   (:change-visual
    (&optional (visual :convex))
    (dolist (lk (send self :links))
@@ -65,33 +68,51 @@
   ;; make collision model from faces or gl-vertices
   (:make-collision-model-for-links
    (&key (fat 0) (collision-func 'pqp-collision-check) ((:links ls) (send self :links)))
-   (dolist (ll ls)
-     (let (fs glv usefs)
-       (dolist (bd (send ll :bodies))
-         (if (derivedp bd collada-body)
-             (push (send bd :glvertices) glv)
-           (push (send bd :faces) fs)))
-       (setq fs (flatten fs))
-       (cond
-        ((and (not fs) glv) ;; if there is no faces, use glvertices for creating pqpmodel
-         (setq usefs (instance gl::glvertices :init nil))
-         (send usefs :transform (send ll :worldcoords))
-         (send usefs :append-glvertices glv)
-         (let ((m (send usefs (read-from-string
-                               (format nil ":make-~Amodel"
-                                       (string-right-trim "-COLLISION-CHECK" (string collision-func))))
+   (let (all-glv)  ;; collect all glvertices for robot pqpmodel
+     (dolist (ll ls)
+       (let (fs glv usefs collada-bodies)
+         (dolist (bd (send ll :bodies))
+           (if (derivedp bd collada-body)
+               (progn
+                 (push (send bd :glvertices) glv)
+                 (push bd collada-bodies))
+             (push (send bd :faces) fs)))
+         (setq fs (flatten fs))
+         (cond
+          ((and (not fs) glv) ;; if there is no faces, use glvertices for creating pqpmodel
+           (setq usefs (instance gl::glvertices :init nil))
+           (send usefs :transform (send ll :worldcoords))
+           (send usefs :append-glvertices glv)
+           (let ((m (send usefs (read-from-string
+                                 (format nil ":make-~Amodel"
+                                         (string-right-trim "-COLLISION-CHECK" (string collision-func))))
+                          :fat fat)))
+             (setf (get ll :pqpmodel) m)
+             ;; Also set pqpmodel to each collada-body for pqp-collision-distance with robot object
+             (dolist (bd collada-bodies)
+               (setf (get bd :pqpmodel) m)))
+           ;; collect glvertices for robot pqpmodel
+           (dolist (g glv) (push g all-glv)))
+          (fs
+           (setq usefs
+                 (append fs
+                         (mapcar #'(lambda (gv) (send gv :convert-to-faces :wrt :world)) glv)))
+           (send ll
+                 (read-from-string
+                  (format nil ":make-~Amodel"
+                          (string-right-trim "-COLLISION-CHECK" (string collision-func))))
+                 :fat fat
+                 :faces usefs)))))
+     ;; Create pqpmodel for the robot itself using all glvertices from all links
+     (when all-glv
+       (let ((robot-glv (instance gl::glvertices :init nil)))
+         (send robot-glv :transform (send self :worldcoords))
+         (send robot-glv :append-glvertices all-glv)
+         (let ((m (send robot-glv (read-from-string
+                                   (format nil ":make-~Amodel"
+                                           (string-right-trim "-COLLISION-CHECK" (string collision-func))))
                         :fat fat)))
-           (setf (get ll :pqpmodel) m)))
-        (fs
-         (setq usefs
-               (append fs
-                       (mapcar #'(lambda (gv) (send gv :convert-to-faces :wrt :world)) glv)))
-         (send ll
-               (read-from-string
-                (format nil ":make-~Amodel"
-                        (string-right-trim "-COLLISION-CHECK" (string collision-func))))
-               :fat fat
-               :faces usefs))))))
+           (setf (get self :pqpmodel) m))))))
   ;; Get all links, including those not explicitly listed in the :links attribute.
   ;; This is necessary because auto-generating from URDF can create links
   ;; that are not explicitly listed in the YAML configuration file.
