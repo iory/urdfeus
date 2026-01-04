@@ -24,14 +24,17 @@
                                         (m* (send (car links) :worldrot)
                                             (l . inertia-tensor)))))))
    (send-super :init-ending)
-   (send self :make-collision-model-for-links)
-   ;;
+   ;; Set up child-link relationships for fixed joints (not in joint-list)
+   ;; Must be done BEFORE :make-collision-model-for-links because :all-links
+   ;; traverses child-links to find all links in the hierarchy
    (dolist (j (mapcan #'(lambda (x) (if (and (derivedp (cdr x) joint)
                                              (not (memq (cdr x) (send self :joint-list))))
                                         (list (cdr x)))) (send self :slots)))
      (send (send j :child-link) :add-joint j)
      (send (send j :child-link) :add-parent-link (send j :parent-link))
-     (send (send j :parent-link) :add-child-links (send j :child-link))))
+     (send (send j :parent-link) :add-child-links (send j :child-link)))
+   ;; Use :all-links to include links not in :links (e.g., fixed joint links)
+   (send self :make-collision-model-for-links :links (send self :all-links)))
   (:change-visual
    (&optional (visual :convex))
    (dolist (lk (send self :links))
