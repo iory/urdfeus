@@ -4,7 +4,11 @@
 ![Python Versions](https://img.shields.io/pypi/pyversions/urdfeus.svg)
 [![Build Status](https://github.com/iory/urdfeus/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/iory/urdfeus/actions)
 
-URDFファイルをEusLispコードに変換するPythonライブラリ
+URDF ⇄ EusLisp を相互変換するPythonライブラリ
+
+[![eus2urdf gallery](docs/eus2urdf-gallery.gif)](https://iory.github.io/urdfeus/)
+
+`eus2urdf`で変換したjskeusの全モデル（ロボット・物体・シーン）をブラウザで閲覧・操作・ダウンロードできます → **<https://iory.github.io/urdfeus/>**
 
 ## 概要
 
@@ -65,7 +69,7 @@ with open('robot.l', 'w') as f:
 ## EusLisp → URDF 変換 (eus2urdf)
 
 `eus2urdf`は、EusLispのロボットモデルをURDF（ROSパッケージ形式）へ変換する逆方向のツールです。
-モデルは`irteusgl`で実体化してから抽出するため、`:init`内で手続き的に追加されるリンク・関節（脚や吸盤など）も取りこぼさず変換できます。メッシュは`glvertices`から`trimesh`経由で書き出します（デフォルトは色を保持できる`.glb`）。
+モデルは`irteusgl`で実体化してから抽出するため、`:init`内で手続き的に追加されるリンク・関節（脚や吸盤など）も取りこぼさず変換できます。メッシュは`glvertices`から`trimesh`経由で書き出します（デフォルトは色を保持できる`.glb`）。変換結果は[ギャラリー](https://iory.github.io/urdfeus/)で確認できます。
 
 ### 前提
 
