@@ -1,0 +1,1 @@
+[{"name": "handle0", "kind": "handle", "parent": "root_link", "xyz": [0.0, -0.0425, 0.100612], "rpy": [1.570796, 1.047197, 1.570796]}, {"name": "handle1", "kind": "handle", "parent": "root_link", "xyz": [0.0, 0.0425, 0.100612], "rpy": [-1.570796, 1.047197, -1.570796]}]

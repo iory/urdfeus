@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="washing-machine">
+  <link name="root">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://washing_machine_object/meshes/_root.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://washing_machine_object/meshes/_root.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="washing_machine_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://washing_machine_object/meshes/_washing-machine-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://washing_machine_object/meshes/_washing-machine-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="washing_machine_bodyset4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://washing_machine_object/meshes/_washing-machine-bodyset4.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://washing_machine_object/meshes/_washing-machine-bodyset4.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="washing_machine_bodyset3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://washing_machine_object/meshes/_washing-machine-bodyset3.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://washing_machine_object/meshes/_washing-machine-bodyset3.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="washing_machine_bodyset5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://washing_machine_object/meshes/_washing-machine-bodyset5.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://washing_machine_object/meshes/_washing-machine-bodyset5.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="lower_shelf" type="prismatic">
+    <parent link="root" />
+    <child link="washing_machine_bodyset2" />
+    <origin xyz="-0.08 0.005 0.115" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.19" />
+  </joint>
+  <joint name="upper_shelf" type="prismatic">
+    <parent link="root" />
+    <child link="washing_machine_bodyset4" />
+    <origin xyz="-0.08 0.005 0.285" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.17" />
+  </joint>
+  <joint name="lower_door" type="revolute">
+    <parent link="root" />
+    <child link="washing_machine_bodyset3" />
+    <origin xyz="0.15 -0.275 0.09" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="0" upper="1.5707963" />
+  </joint>
+  <joint name="upper_door" type="revolute">
+    <parent link="root" />
+    <child link="washing_machine_bodyset5" />
+    <origin xyz="-0.05 -0.275 0.415" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="-1.3962634" upper="0" />
+  </joint>
+</robot>

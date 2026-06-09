@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="room602-wheelchair">
+  <link name="room602_wheelchair_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_wheelchair_object/meshes/_room602-wheelchair-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_wheelchair_object/meshes/_room602-wheelchair-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="right_small">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_wheelchair_object/meshes/_right-small.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_wheelchair_object/meshes/_right-small.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="left_small">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_wheelchair_object/meshes/_left-small.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_wheelchair_object/meshes/_left-small.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="right_large">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_wheelchair_object/meshes/_right-large.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_wheelchair_object/meshes/_right-large.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="left_large">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_wheelchair_object/meshes/_left-large.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_wheelchair_object/meshes/_left-large.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_small" type="revolute">
+    <parent link="room602_wheelchair_bodyset2" />
+    <child link="right_small" />
+    <origin xyz="0.21 -0.23 0.075" rpy="0 -0 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="left_small" type="revolute">
+    <parent link="room602_wheelchair_bodyset2" />
+    <child link="left_small" />
+    <origin xyz="0.21 0.23 0.075" rpy="0 -0 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="right_large" type="revolute">
+    <parent link="room602_wheelchair_bodyset2" />
+    <child link="right_large" />
+    <origin xyz="0 -0.23 0" rpy="0 -0 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="left_large" type="revolute">
+    <parent link="room602_wheelchair_bodyset2" />
+    <child link="left_large" />
+    <origin xyz="0 0.23 0" rpy="0 -0 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+</robot>

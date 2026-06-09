@@ -1,0 +1,412 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="h3s">
+  <link name="root">
+    <inertial>
+      <origin xyz="0.000142373 -0.000644654 0.300876" rpy="0 0 0" />
+      <mass value="3.18" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://h3s_robot/meshes/_root.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://h3s_robot/meshes/_root.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="h3scout_tire_l">
+    <inertial>
+      <origin xyz="2.017866e-17 1.98952e-16 0.015" rpy="0 0 0" />
+      <mass value="0.8" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://h3s_robot/meshes/_h3scout-tire-l.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://h3s_robot/meshes/_h3scout-tire-l.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="h3scout_tire_r">
+    <inertial>
+      <origin xyz="-4.915314e-18 -5.684342e-17 0.015" rpy="0 0 0" />
+      <mass value="0.8" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://h3s_robot/meshes/_h3scout-tire-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://h3s_robot/meshes/_h3scout-tire-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="h3rarm_shoulder_y">
+    <inertial>
+      <origin xyz="0.0325169 -0.0241725 0.0209257" rpy="0 0 0" />
+      <mass value="0.05" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://h3s_robot/meshes/_h3rarm-shoulder-y.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://h3s_robot/meshes/_h3rarm-shoulder-y.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="h3rarm_shoulder_p">
+    <inertial>
+      <origin xyz="0.0169893 0.000287019 -0.0259877" rpy="0 0 0" />
+      <mass value="0.05" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://h3s_robot/meshes/_h3rarm-shoulder-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://h3s_robot/meshes/_h3rarm-shoulder-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="h3rarm_elbow_p">
+    <inertial>
+      <origin xyz="0.0389702 3.537988e-18 0.0150484" rpy="0 0 0" />
+      <mass value="0.1" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://h3s_robot/meshes/_h3rarm-elbow-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://h3s_robot/meshes/_h3rarm-elbow-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="h3rarm_wrist_r">
+    <inertial>
+      <origin xyz="0.00638476 -6.903304e-18 -0.0143166" rpy="0 0 0" />
+      <mass value="0.07" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://h3s_robot/meshes/_h3rarm-wrist-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://h3s_robot/meshes/_h3rarm-wrist-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="h3rarm_hand_y">
+    <inertial>
+      <origin xyz="-0.00117482 0.0318335 -1.939732e-17" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://h3s_robot/meshes/_h3rarm-hand-y.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://h3s_robot/meshes/_h3rarm-hand-y.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="h3larm_shoulder_y">
+    <inertial>
+      <origin xyz="0.0325169 -0.0241725 -0.0209257" rpy="0 0 0" />
+      <mass value="0.05" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://h3s_robot/meshes/_h3larm-shoulder-y.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://h3s_robot/meshes/_h3larm-shoulder-y.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="h3larm_shoulder_p">
+    <inertial>
+      <origin xyz="-0.0169893 -0.000287019 0.0259877" rpy="0 0 0" />
+      <mass value="0.05" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://h3s_robot/meshes/_h3larm-shoulder-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://h3s_robot/meshes/_h3larm-shoulder-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="h3larm_elbow_p">
+    <inertial>
+      <origin xyz="-0.0389702 2.576881e-18 -0.0150484" rpy="0 0 0" />
+      <mass value="0.1" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://h3s_robot/meshes/_h3larm-elbow-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://h3s_robot/meshes/_h3larm-elbow-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="h3larm_wrist_r">
+    <inertial>
+      <origin xyz="-0.00638476 7.866975e-19 0.0143166" rpy="0 0 0" />
+      <mass value="0.07" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://h3s_robot/meshes/_h3larm-wrist-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://h3s_robot/meshes/_h3larm-wrist-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="h3larm_hand_y">
+    <inertial>
+      <origin xyz="-0.00117482 0.0318335 5.383698e-18" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://h3s_robot/meshes/_h3larm-hand-y.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://h3s_robot/meshes/_h3larm-hand-y.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="h3head_neck_y">
+    <inertial>
+      <origin xyz="2.448468e-19 -0.00270396 0.071242" rpy="0 0 0" />
+      <mass value="0.05" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://h3s_robot/meshes/_h3head-neck-y.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://h3s_robot/meshes/_h3head-neck-y.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="h3head_neck_r">
+    <inertial>
+      <origin xyz="-1.8437e-18 -0.0136353 0.0295903" rpy="0 0 0" />
+      <mass value="0.05" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://h3s_robot/meshes/_h3head-neck-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://h3s_robot/meshes/_h3head-neck-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="h3head_neck_p">
+    <inertial>
+      <origin xyz="-0.0322712 -0.000497244 -1.696767e-17" rpy="0 0 0" />
+      <mass value="0.25" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://h3s_robot/meshes/_h3head-neck-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://h3s_robot/meshes/_h3head-neck-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="h3scout_tire_l" type="revolute">
+    <parent link="root" />
+    <child link="h3scout_tire_l" />
+    <origin xyz="0 0.17 0.2" rpy="-1.5707963 -0 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="h3scout_tire_r" type="revolute">
+    <parent link="root" />
+    <child link="h3scout_tire_r" />
+    <origin xyz="0 -0.2 0.2" rpy="-1.5707963 -0 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="h3rarm_shoulder_y" type="revolute">
+    <parent link="root" />
+    <child link="h3rarm_shoulder_y" />
+    <origin xyz="1.709743e-17 -0.077 0.824" rpy="-0 -0 -1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="h3rarm_shoulder_p" type="revolute">
+    <parent link="h3rarm_shoulder_y" />
+    <child link="h3rarm_shoulder_p" />
+    <origin xyz="0.075 5e-24 0.01" rpy="0 1.5707963 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="h3rarm_elbow_p" type="revolute">
+    <parent link="h3rarm_shoulder_p" />
+    <child link="h3rarm_elbow_p" />
+    <origin xyz="0.15 -3.4e-24 -0.021" rpy="-0 -0 -4.9303804e-32" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="h3rarm_wrist_r" type="revolute">
+    <parent link="h3rarm_elbow_p" />
+    <child link="h3rarm_wrist_r" />
+    <origin xyz="0.14 0 -3.1086244e-17" rpy="-0 -1.5707963 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="h3rarm_hand_y" type="revolute">
+    <parent link="h3rarm_wrist_r" />
+    <child link="h3rarm_hand_y" />
+    <origin xyz="0.021 1.8002313e-17 -0.024" rpy="-1.5707963 1.665335e-16 -3.1415927" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="h3larm_shoulder_y" type="revolute">
+    <parent link="root" />
+    <child link="h3larm_shoulder_y" />
+    <origin xyz="-1.709743e-17 0.077 0.824" rpy="-3.1415927 -1.224647e-16 1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="h3larm_shoulder_p" type="revolute">
+    <parent link="h3larm_shoulder_y" />
+    <child link="h3larm_shoulder_p" />
+    <origin xyz="0.075 -5e-24 -0.01" rpy="3.1415927 1.5707963 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="h3larm_elbow_p" type="revolute">
+    <parent link="h3larm_shoulder_p" />
+    <child link="h3larm_elbow_p" />
+    <origin xyz="-0.15 6.9206433e-18 0.021" rpy="1.9721533e-31 -8.881788e-16 -5.55112e-17" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="h3larm_wrist_r" type="revolute">
+    <parent link="h3larm_elbow_p" />
+    <child link="h3larm_wrist_r" />
+    <origin xyz="-0.14 1.2971368e-17 1.8651752e-16" rpy="-2.20427e-17 -1.5707963 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="h3larm_hand_y" type="revolute">
+    <parent link="h3larm_wrist_r" />
+    <child link="h3larm_hand_y" />
+    <origin xyz="-0.021 -1.9226953e-17 0.024" rpy="1.5707963 -1.5786e-17 1.665334e-16" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="h3head_neck_y" type="revolute">
+    <parent link="root" />
+    <child link="h3head_neck_y" />
+    <origin xyz="0 0 0.867" rpy="-0 -0 -1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="h3head_neck_r" type="revolute">
+    <parent link="h3head_neck_y" />
+    <child link="h3head_neck_r" />
+    <origin xyz="4.67438e-40 -1.224647e-17 0.092" rpy="-1.5707963 -0 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="h3head_neck_p" type="revolute">
+    <parent link="h3head_neck_r" />
+    <child link="h3head_neck_p" />
+    <origin xyz="-1.224647e-17 -0.028 1.846372e-17" rpy="1.5707963 -5.55112e-17 1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+</robot>

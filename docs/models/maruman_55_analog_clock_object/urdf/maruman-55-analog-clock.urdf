@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="maruman-55-analog-clock">
+  <link name="maruman_55_analog_clock_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://maruman_55_analog_clock_object/meshes/_maruman-55-analog-clock-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://maruman_55_analog_clock_object/meshes/_maruman-55-analog-clock-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="maruman_55_analog_clock_bodyset3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://maruman_55_analog_clock_object/meshes/_maruman-55-analog-clock-bodyset3.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://maruman_55_analog_clock_object/meshes/_maruman-55-analog-clock-bodyset3.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="maruman_55_analog_clock_bodyset4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://maruman_55_analog_clock_object/meshes/_maruman-55-analog-clock-bodyset4.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://maruman_55_analog_clock_object/meshes/_maruman-55-analog-clock-bodyset4.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="maruman_55_analog_clock_bodyset5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://maruman_55_analog_clock_object/meshes/_maruman-55-analog-clock-bodyset5.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://maruman_55_analog_clock_object/meshes/_maruman-55-analog-clock-bodyset5.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="hour_joint" type="revolute">
+    <parent link="maruman_55_analog_clock_bodyset2" />
+    <child link="maruman_55_analog_clock_bodyset3" />
+    <origin xyz="0.0075 0 0.0275" rpy="0 -0 0" />
+    <axis xyz="-1 0 0" />
+    <limit effort="100" velocity="5" lower="-6.2831853" upper="6.2831853" />
+  </joint>
+  <joint name="minute_joint" type="revolute">
+    <parent link="maruman_55_analog_clock_bodyset3" />
+    <child link="maruman_55_analog_clock_bodyset4" />
+    <origin xyz="0.001 0 0" rpy="0 -0 0" />
+    <axis xyz="-1 0 0" />
+    <limit effort="100" velocity="5" lower="-6.2831853" upper="6.2831853" />
+  </joint>
+  <joint name="second_joint" type="revolute">
+    <parent link="maruman_55_analog_clock_bodyset4" />
+    <child link="maruman_55_analog_clock_bodyset5" />
+    <origin xyz="0.001 0 0" rpy="0 -0 0" />
+    <axis xyz="-1 0 0" />
+    <limit effort="100" velocity="5" lower="-6.2831853" upper="6.2831853" />
+  </joint>
+</robot>

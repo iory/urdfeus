@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="gifuplastic-900-cart">
+  <link name="gifuplastic_900_cart_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gifuplastic_900_cart_object/meshes/_gifuplastic-900-cart-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gifuplastic_900_cart_object/meshes/_gifuplastic-900-cart-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="right_front_fork">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gifuplastic_900_cart_object/meshes/_right-front-fork.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gifuplastic_900_cart_object/meshes/_right-front-fork.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="front_right_wheel">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gifuplastic_900_cart_object/meshes/_front-right-wheel.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gifuplastic_900_cart_object/meshes/_front-right-wheel.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="left_front_fork">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gifuplastic_900_cart_object/meshes/_left-front-fork.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gifuplastic_900_cart_object/meshes/_left-front-fork.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="front_left_wheel">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gifuplastic_900_cart_object/meshes/_front-left-wheel.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gifuplastic_900_cart_object/meshes/_front-left-wheel.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rear_right_wheel">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gifuplastic_900_cart_object/meshes/_rear-right-wheel.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gifuplastic_900_cart_object/meshes/_rear-right-wheel.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rear_left_wheel">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gifuplastic_900_cart_object/meshes/_rear-left-wheel.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gifuplastic_900_cart_object/meshes/_rear-left-wheel.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="bar">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gifuplastic_900_cart_object/meshes/_bar.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gifuplastic_900_cart_object/meshes/_bar.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_front_fork" type="revolute">
+    <parent link="gifuplastic_900_cart_bodyset2" />
+    <child link="right_front_fork" />
+    <origin xyz="0.7 -0.245 0.17" rpy="0 -0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="-1.7453293e+08" upper="1.7453293e+08" />
+  </joint>
+  <joint name="front_right_wheel" type="revolute">
+    <parent link="right_front_fork" />
+    <child link="front_right_wheel" />
+    <origin xyz="-0.03 0 -0.11" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="-1.7453293e+08" upper="1.7453293e+08" />
+  </joint>
+  <joint name="left_front_fork" type="revolute">
+    <parent link="gifuplastic_900_cart_bodyset2" />
+    <child link="left_front_fork" />
+    <origin xyz="0.7 0.245 0.17" rpy="0 -0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="-1.7453293e+08" upper="1.7453293e+08" />
+  </joint>
+  <joint name="front_left_wheel" type="revolute">
+    <parent link="left_front_fork" />
+    <child link="front_left_wheel" />
+    <origin xyz="-0.03 0 -0.11" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="-1.7453293e+08" upper="1.7453293e+08" />
+  </joint>
+  <joint name="rear_right_wheel" type="revolute">
+    <parent link="gifuplastic_900_cart_bodyset2" />
+    <child link="rear_right_wheel" />
+    <origin xyz="0.14 -0.245 0.06" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="-1.7453293e+08" upper="1.7453293e+08" />
+  </joint>
+  <joint name="rear_left_wheel" type="revolute">
+    <parent link="gifuplastic_900_cart_bodyset2" />
+    <child link="rear_left_wheel" />
+    <origin xyz="0.14 0.245 0.06" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="-1.7453293e+08" upper="1.7453293e+08" />
+  </joint>
+  <joint name="bar" type="revolute">
+    <parent link="gifuplastic_900_cart_bodyset2" />
+    <child link="bar" />
+    <origin xyz="0.08 0 0.22" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="0" upper="1.5707963" />
+  </joint>
+</robot>

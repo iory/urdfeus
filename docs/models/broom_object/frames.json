@@ -1,0 +1,1 @@
+[{"name": "handle0", "kind": "handle", "parent": "broom_bodyset2", "xyz": [0.0, 0.0, 0.83], "rpy": [-0.0, -0.0, -1.047197]}, {"name": "handle1", "kind": "handle", "parent": "broom_bodyset2", "xyz": [0.0, 0.0, 1.04], "rpy": [0.0, -0.0, 1.047197]}, {"name": "attention0", "kind": "attention", "parent": "broom_bodyset2", "xyz": [0.0, 0.0, 0.0], "rpy": [0.0, -0.0, 0.0]}]

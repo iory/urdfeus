@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="nil">
+  <link name="root_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_hand/meshes/root-link.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_hand/meshes/root-link.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="oyayubi_link_0">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_hand/meshes/oyayubi-link-0.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_hand/meshes/oyayubi-link-0.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="oyayubi_link_1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_hand/meshes/oyayubi-link-1.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_hand/meshes/oyayubi-link-1.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="oyayubi_link_2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_hand/meshes/oyayubi-link-2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_hand/meshes/oyayubi-link-2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="hitosashi_link_0">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_hand/meshes/hitosashi-link-0.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_hand/meshes/hitosashi-link-0.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="hitosashi_link_1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_hand/meshes/hitosashi-link-1.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_hand/meshes/hitosashi-link-1.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="koyubi_link_0">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_hand/meshes/koyubi-link-0.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_hand/meshes/koyubi-link-0.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="koyubi_link_1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_hand/meshes/koyubi-link-1.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_hand/meshes/koyubi-link-1.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="j10" type="revolute">
+    <parent link="root_link" />
+    <child link="oyayubi_link_0" />
+    <origin xyz="0.03 0.023 -0.018" rpy="0 1.5707963 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="0.78539816" />
+  </joint>
+  <joint name="j11" type="revolute">
+    <parent link="oyayubi_link_0" />
+    <child link="oyayubi_link_1" />
+    <origin xyz="5.9952042e-18 0.002 0.027" rpy="-3.1415927 1.5707963 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="0" />
+  </joint>
+  <joint name="j11_1" type="revolute">
+    <parent link="oyayubi_link_1" />
+    <child link="oyayubi_link_2" />
+    <origin xyz="0 0 0.043" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="0" upper="2.0943951" />
+  </joint>
+  <joint name="j10_1" type="revolute">
+    <parent link="root_link" />
+    <child link="hitosashi_link_0" />
+    <origin xyz="-0.003 0.018 0.057" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="0" upper="2.0943951" />
+  </joint>
+  <joint name="j11_2" type="revolute">
+    <parent link="hitosashi_link_0" />
+    <child link="hitosashi_link_1" />
+    <origin xyz="0 0 0.075" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="0" upper="2.0943951" />
+  </joint>
+  <joint name="j00" type="revolute">
+    <parent link="root_link" />
+    <child link="koyubi_link_0" />
+    <origin xyz="-0.003 -0.022 0.057" rpy="0.14889054 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="0" upper="2.0943951" />
+  </joint>
+  <joint name="j01" type="revolute">
+    <parent link="koyubi_link_0" />
+    <child link="koyubi_link_1" />
+    <origin xyz="0 4.4502e-08 0.074999751" rpy="1.2076318e-18 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="0" upper="2.0943951" />
+  </joint>
+</robot>

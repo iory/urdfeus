@@ -1,0 +1,594 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="macra">
+  <link name="root">
+    <inertial>
+      <origin xyz="0 -1.425526e-19 -1.421085e-19" rpy="0 0 0" />
+      <mass value="2.106" />
+      <inertia ixx="1.66667e-10" ixy="0" ixz="0" iyy="1.66667e-10" iyz="0" izz="1.66667e-10" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_root.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_root.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="head_neck">
+    <inertial>
+      <origin xyz="0 1.333569e-20 2.775558e-20" rpy="0 0 0" />
+      <mass value="0.109" />
+      <inertia ixx="1.033552e-40" ixy="0" ixz="0" iyy="8.397055e-41" iyz="-4.034522e-41" izz="1.938462e-41" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_head-neck.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_head-neck.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="head_head">
+    <inertial>
+      <origin xyz="0 1.333569e-20 2.775558e-20" rpy="0 0 0" />
+      <mass value="0.347" />
+      <inertia ixx="3.290297e-40" ixy="0" ixz="0" iyy="2.673191e-40" iyz="-1.284385e-40" izz="6.171067e-41" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_head-head.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_head-head.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="arm_shoulder_p_1">
+    <inertial>
+      <origin xyz="0 1.333569e-20 2.775558e-20" rpy="0 0 0" />
+      <mass value="0.174" />
+      <inertia ixx="1.64989e-40" ixy="0" ixz="0" iyy="1.340447e-40" iyz="-6.44043e-41" izz="3.094425e-41" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_arm-shoulder-p-1.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_arm-shoulder-p-1.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="arm_shoulder_r_1">
+    <inertial>
+      <origin xyz="0 1.333569e-20 2.775558e-20" rpy="0 0 0" />
+      <mass value="0.033" />
+      <inertia ixx="3.129101e-41" ixy="0" ixz="0" iyy="2.542228e-41" iyz="-1.221461e-41" izz="5.868738e-42" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_arm-shoulder-r-1.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_arm-shoulder-r-1.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="arm_upperarm_1">
+    <inertial>
+      <origin xyz="0 1.333569e-20 2.775558e-20" rpy="0 0 0" />
+      <mass value="0.144" />
+      <inertia ixx="1.365426e-40" ixy="0" ixz="0" iyy="1.109336e-40" iyz="-5.330011e-41" izz="2.560904e-41" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_arm-upperarm-1.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_arm-upperarm-1.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="arm_forearm_1">
+    <inertial>
+      <origin xyz="0 1.333569e-20 2.775558e-20" rpy="0 0 0" />
+      <mass value="0.196" />
+      <inertia ixx="1.858497e-40" ixy="0" ixz="0" iyy="1.509929e-40" iyz="-7.254737e-41" izz="3.485675e-41" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_arm-forearm-1.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_arm-forearm-1.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="leg_crotch_bracket_1">
+    <inertial>
+      <origin xyz="0 1.333569e-20 2.775558e-20" rpy="0 0 0" />
+      <mass value="0.05" />
+      <inertia ixx="4.741063e-41" ixy="0" ixz="0" iyy="3.85186e-41" iyz="-1.850698e-41" izz="8.892027e-42" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_leg-crotch-bracket-1.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_leg-crotch-bracket-1.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="leg_crotch_1">
+    <inertial>
+      <origin xyz="0 1.333569e-20 2.775558e-20" rpy="0 0 0" />
+      <mass value="0.217" />
+      <inertia ixx="2.057621e-40" ixy="0" ixz="0" iyy="1.671707e-40" iyz="-8.032031e-41" izz="3.85914e-41" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_leg-crotch-1.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_leg-crotch-1.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="leg_thigh_1">
+    <inertial>
+      <origin xyz="0 1.333569e-20 2.775558e-20" rpy="0 0 0" />
+      <mass value="0.55" />
+      <inertia ixx="5.215169e-40" ixy="0" ixz="0" iyy="4.237046e-40" iyz="-2.035768e-40" izz="9.78123e-41" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_leg-thigh-1.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_leg-thigh-1.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="leg_shank_1">
+    <inertial>
+      <origin xyz="0 1.333569e-20 2.775558e-20" rpy="0 0 0" />
+      <mass value="0.34" />
+      <inertia ixx="3.223923e-40" ixy="0" ixz="0" iyy="2.619265e-40" iyz="-1.258475e-40" izz="6.046578e-41" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_leg-shank-1.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_leg-shank-1.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="leg_ankle_1">
+    <inertial>
+      <origin xyz="0 1.333569e-20 2.775558e-20" rpy="0 0 0" />
+      <mass value="0.23" />
+      <inertia ixx="2.180889e-40" ixy="0" ixz="0" iyy="1.771856e-40" iyz="-8.513212e-41" izz="4.090332e-41" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_leg-ankle-1.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_leg-ankle-1.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="leg_foot_1">
+    <inertial>
+      <origin xyz="0 1.333569e-20 2.775558e-20" rpy="0 0 0" />
+      <mass value="0.125" />
+      <inertia ixx="1.185266e-40" ixy="0" ixz="0" iyy="9.62965e-41" iyz="-4.626746e-41" izz="2.223007e-41" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_leg-foot-1.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_leg-foot-1.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="arm_shoulder_p_0">
+    <inertial>
+      <origin xyz="-3.399078e-36 1.333569e-20 -2.775558e-20" rpy="0 0 0" />
+      <mass value="0.174" />
+      <inertia ixx="1.64989e-40" ixy="7.887252e-57" ixz="-1.641574e-56" iyy="1.340447e-40" iyz="6.44043e-41" izz="3.094425e-41" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_arm-shoulder-p-0.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_arm-shoulder-p-0.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="arm_shoulder_r_0">
+    <inertial>
+      <origin xyz="-3.399078e-36 1.333569e-20 -2.775558e-20" rpy="0 0 0" />
+      <mass value="0.033" />
+      <inertia ixx="3.129101e-41" ixy="1.495858e-57" ixz="-3.113331e-57" iyy="2.542228e-41" iyz="1.221461e-41" izz="5.868738e-42" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_arm-shoulder-r-0.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_arm-shoulder-r-0.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="arm_upperarm_0">
+    <inertial>
+      <origin xyz="-3.399078e-36 1.333569e-20 -2.775558e-20" rpy="0 0 0" />
+      <mass value="0.144" />
+      <inertia ixx="1.365426e-40" ixy="6.527381e-57" ixz="-1.358544e-56" iyy="1.109336e-40" iyz="5.330011e-41" izz="2.560904e-41" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_arm-upperarm-0.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_arm-upperarm-0.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="arm_forearm_0">
+    <inertial>
+      <origin xyz="-3.399078e-36 1.333569e-20 -2.775558e-20" rpy="0 0 0" />
+      <mass value="0.196" />
+      <inertia ixx="1.858497e-40" ixy="8.884491e-57" ixz="-1.84913e-56" iyy="1.509929e-40" iyz="7.254737e-41" izz="3.485675e-41" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_arm-forearm-0.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_arm-forearm-0.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="leg_crotch_bracket_0">
+    <inertial>
+      <origin xyz="-3.399078e-36 1.333569e-20 -2.775558e-20" rpy="0 0 0" />
+      <mass value="0.05" />
+      <inertia ixx="4.741063e-41" ixy="2.266452e-57" ixz="-4.717168e-57" iyy="3.85186e-41" iyz="1.850698e-41" izz="8.892027e-42" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_leg-crotch-bracket-0.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_leg-crotch-bracket-0.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="leg_crotch_0">
+    <inertial>
+      <origin xyz="-3.399078e-36 1.333569e-20 -2.775558e-20" rpy="0 0 0" />
+      <mass value="0.217" />
+      <inertia ixx="2.057621e-40" ixy="9.836401e-57" ixz="-2.047251e-56" iyy="1.671707e-40" iyz="8.032031e-41" izz="3.85914e-41" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_leg-crotch-0.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_leg-crotch-0.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="leg_thigh_0">
+    <inertial>
+      <origin xyz="-3.399078e-36 1.333569e-20 -2.775558e-20" rpy="0 0 0" />
+      <mass value="0.55" />
+      <inertia ixx="5.215169e-40" ixy="2.493097e-56" ixz="-5.188885e-56" iyy="4.237046e-40" iyz="2.035768e-40" izz="9.78123e-41" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_leg-thigh-0.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_leg-thigh-0.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="leg_shank_0">
+    <inertial>
+      <origin xyz="-3.399078e-36 1.333569e-20 -2.775558e-20" rpy="0 0 0" />
+      <mass value="0.34" />
+      <inertia ixx="3.223923e-40" ixy="1.541187e-56" ixz="-3.207674e-56" iyy="2.619265e-40" iyz="1.258475e-40" izz="6.046578e-41" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_leg-shank-0.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_leg-shank-0.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="leg_ankle_0">
+    <inertial>
+      <origin xyz="-3.399078e-36 1.333569e-20 -2.775558e-20" rpy="0 0 0" />
+      <mass value="0.23" />
+      <inertia ixx="2.180889e-40" ixy="1.042568e-56" ixz="-2.169897e-56" iyy="1.771856e-40" iyz="8.513212e-41" izz="4.090332e-41" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_leg-ankle-0.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_leg-ankle-0.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="leg_foot_0">
+    <inertial>
+      <origin xyz="-3.399078e-36 1.333569e-20 -2.775558e-20" rpy="0 0 0" />
+      <mass value="0.125" />
+      <inertia ixx="1.185266e-40" ixy="5.666129e-57" ixz="-1.179292e-56" iyy="9.62965e-41" iyz="4.626746e-41" izz="2.223007e-41" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_leg-foot-0.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macra_robot/meshes/_leg-foot-0.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="head_neck_y" type="revolute">
+    <parent link="root" />
+    <child link="head_neck" />
+    <origin xyz="0 0 0.2" rpy="0 -0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="-1.7453293" upper="1.7453293" />
+  </joint>
+  <joint name="head_neck_p" type="revolute">
+    <parent link="head_neck" />
+    <child link="head_head" />
+    <origin xyz="-0.0175 0 0.0355" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="-1.7453293" upper="1.7453293" />
+  </joint>
+  <joint name="arm_1_shoulder_p" type="revolute">
+    <parent link="root" />
+    <child link="arm_shoulder_p_1" />
+    <origin xyz="0.0035 0.097 0.1705" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="-2.6179939" upper="1.0471976" />
+  </joint>
+  <joint name="arm_1_shoulder_r" type="revolute">
+    <parent link="arm_shoulder_p_1" />
+    <child link="arm_shoulder_r_1" />
+    <origin xyz="0 0 0" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="5" lower="-0.26179939" upper="2.6179939" />
+  </joint>
+  <joint name="arm_1_shoulder_y" type="revolute">
+    <parent link="arm_shoulder_r_1" />
+    <child link="arm_upperarm_1" />
+    <origin xyz="0.00032 0 0" rpy="0 -0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="arm_1_elbow_p" type="revolute">
+    <parent link="arm_upperarm_1" />
+    <child link="arm_forearm_1" />
+    <origin xyz="-0.00032 0 -0.11992" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="0.87266463" />
+  </joint>
+  <joint name="leg_1_crotch_y" type="revolute">
+    <parent link="root" />
+    <child link="leg_crotch_bracket_1" />
+    <origin xyz="0.02482 0.057 -0.064" rpy="0 -0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="-2.3561945" upper="2.3561945" />
+  </joint>
+  <joint name="leg_1_crotch_r" type="revolute">
+    <parent link="leg_crotch_bracket_1" />
+    <child link="leg_crotch_1" />
+    <origin xyz="0 0 0" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="5" lower="-0.52359878" upper="0.52359878" />
+  </joint>
+  <joint name="leg_1_crotch_p" type="revolute">
+    <parent link="leg_crotch_1" />
+    <child link="leg_thigh_1" />
+    <origin xyz="0 0 0" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="-1.9198622" upper="1.9198622" />
+  </joint>
+  <joint name="leg_1_knee_p" type="revolute">
+    <parent link="leg_thigh_1" />
+    <child link="leg_shank_1" />
+    <origin xyz="0 0 -0.125" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="0" upper="2.0071286" />
+  </joint>
+  <joint name="leg_1_ankle_p" type="revolute">
+    <parent link="leg_shank_1" />
+    <child link="leg_ankle_1" />
+    <origin xyz="0 0 -0.125" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="-0.95993109" upper="0.95993109" />
+  </joint>
+  <joint name="leg_1_ankle_r" type="revolute">
+    <parent link="leg_ankle_1" />
+    <child link="leg_foot_1" />
+    <origin xyz="0 0 0" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="5" lower="-0.34906585" upper="0.34906585" />
+  </joint>
+  <joint name="arm_0_shoulder_p" type="revolute">
+    <parent link="root" />
+    <child link="arm_shoulder_p_0" />
+    <origin xyz="0.0035 -0.097 0.1705" rpy="3.1415927 1.224647e-16 3.1415927" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="-2.6179939" upper="1.0471976" />
+  </joint>
+  <joint name="arm_0_shoulder_r" type="revolute">
+    <parent link="arm_shoulder_p_0" />
+    <child link="arm_shoulder_r_0" />
+    <origin xyz="0 0 0" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="5" lower="-0.26179939" upper="2.6179939" />
+  </joint>
+  <joint name="arm_0_shoulder_y" type="revolute">
+    <parent link="arm_shoulder_r_0" />
+    <child link="arm_upperarm_0" />
+    <origin xyz="-0.00032 0 3.9188704e-20" rpy="0 -0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="arm_0_elbow_p" type="revolute">
+    <parent link="arm_upperarm_0" />
+    <child link="arm_forearm_0" />
+    <origin xyz="0.00032 0 0.11992" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="0.87266463" />
+  </joint>
+  <joint name="leg_0_crotch_y" type="revolute">
+    <parent link="root" />
+    <child link="leg_crotch_bracket_0" />
+    <origin xyz="0.02482 -0.057 -0.064" rpy="3.1415927 1.224647e-16 3.1415927" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="-2.3561945" upper="2.3561945" />
+  </joint>
+  <joint name="leg_0_crotch_r" type="revolute">
+    <parent link="leg_crotch_bracket_0" />
+    <child link="leg_crotch_0" />
+    <origin xyz="0 0 0" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="5" lower="-0.52359878" upper="0.52359878" />
+  </joint>
+  <joint name="leg_0_crotch_p" type="revolute">
+    <parent link="leg_crotch_0" />
+    <child link="leg_thigh_0" />
+    <origin xyz="0 0 0" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="-1.9198622" upper="1.9198622" />
+  </joint>
+  <joint name="leg_0_knee_p" type="revolute">
+    <parent link="leg_thigh_0" />
+    <child link="leg_shank_0" />
+    <origin xyz="1.5308087e-17 0 0.125" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="0" upper="2.0071286" />
+  </joint>
+  <joint name="leg_0_ankle_p" type="revolute">
+    <parent link="leg_shank_0" />
+    <child link="leg_ankle_0" />
+    <origin xyz="1.5308087e-17 0 0.125" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="-0.95993109" upper="0.95993109" />
+  </joint>
+  <joint name="leg_0_ankle_r" type="revolute">
+    <parent link="leg_ankle_0" />
+    <child link="leg_foot_0" />
+    <origin xyz="0 0 0" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="5" lower="-0.34906585" upper="0.34906585" />
+  </joint>
+</robot>

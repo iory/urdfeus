@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="hasegawa-ladder">
+  <link name="hasegawa_ladder">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hasegawa_ladder_object/meshes/hasegawa-ladder.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hasegawa_ladder_object/meshes/hasegawa-ladder.glb" />
+      </geometry>
+    </collision>
+  </link>
+</robot>

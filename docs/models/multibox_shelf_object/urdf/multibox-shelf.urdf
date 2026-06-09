@@ -1,0 +1,230 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="multibox-shelf">
+  <link name="root">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://multibox_shelf_object/meshes/_root.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://multibox_shelf_object/meshes/_root.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="multibox_shelf_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://multibox_shelf_object/meshes/_multibox-shelf-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://multibox_shelf_object/meshes/_multibox-shelf-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="multibox_shelf_bodyset3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://multibox_shelf_object/meshes/_multibox-shelf-bodyset3.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://multibox_shelf_object/meshes/_multibox-shelf-bodyset3.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="multibox_shelf_bodyset4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://multibox_shelf_object/meshes/_multibox-shelf-bodyset4.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://multibox_shelf_object/meshes/_multibox-shelf-bodyset4.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="multibox_shelf_bodyset5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://multibox_shelf_object/meshes/_multibox-shelf-bodyset5.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://multibox_shelf_object/meshes/_multibox-shelf-bodyset5.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="multibox_shelf_bodyset6">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://multibox_shelf_object/meshes/_multibox-shelf-bodyset6.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://multibox_shelf_object/meshes/_multibox-shelf-bodyset6.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="multibox_shelf_bodyset7">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://multibox_shelf_object/meshes/_multibox-shelf-bodyset7.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://multibox_shelf_object/meshes/_multibox-shelf-bodyset7.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="multibox_shelf_bodyset8">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://multibox_shelf_object/meshes/_multibox-shelf-bodyset8.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://multibox_shelf_object/meshes/_multibox-shelf-bodyset8.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="multibox_shelf_bodyset9">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://multibox_shelf_object/meshes/_multibox-shelf-bodyset9.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://multibox_shelf_object/meshes/_multibox-shelf-bodyset9.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="drawer7" type="prismatic">
+    <parent link="root" />
+    <child link="multibox_shelf_bodyset2" />
+    <origin xyz="0 0.14 0.92" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.3" />
+  </joint>
+  <joint name="drawer6" type="prismatic">
+    <parent link="root" />
+    <child link="multibox_shelf_bodyset3" />
+    <origin xyz="0 0.14 0.67" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.3" />
+  </joint>
+  <joint name="drawer5" type="prismatic">
+    <parent link="root" />
+    <child link="multibox_shelf_bodyset4" />
+    <origin xyz="0 0.14 0.42" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.3" />
+  </joint>
+  <joint name="drawer4" type="prismatic">
+    <parent link="root" />
+    <child link="multibox_shelf_bodyset5" />
+    <origin xyz="0 0.14 0.17" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.3" />
+  </joint>
+  <joint name="drawer3" type="prismatic">
+    <parent link="root" />
+    <child link="multibox_shelf_bodyset6" />
+    <origin xyz="0 -0.14 0.92" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.3" />
+  </joint>
+  <joint name="drawer2" type="prismatic">
+    <parent link="root" />
+    <child link="multibox_shelf_bodyset7" />
+    <origin xyz="0 -0.14 0.67" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.3" />
+  </joint>
+  <joint name="drawer1" type="prismatic">
+    <parent link="root" />
+    <child link="multibox_shelf_bodyset8" />
+    <origin xyz="0 -0.14 0.42" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.3" />
+  </joint>
+  <joint name="drawer0" type="prismatic">
+    <parent link="root" />
+    <child link="multibox_shelf_bodyset9" />
+    <origin xyz="0 -0.14 0.17" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.3" />
+  </joint>
+</robot>

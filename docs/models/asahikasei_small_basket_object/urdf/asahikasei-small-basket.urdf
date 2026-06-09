@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="asahikasei-small-basket">
+  <link name="box">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://asahikasei_small_basket_object/meshes/_box.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://asahikasei_small_basket_object/meshes/_box.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="left">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://asahikasei_small_basket_object/meshes/_left.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://asahikasei_small_basket_object/meshes/_left.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="right">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://asahikasei_small_basket_object/meshes/_right.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://asahikasei_small_basket_object/meshes/_right.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="handle_hinge2" type="revolute">
+    <parent link="box" />
+    <child link="left" />
+    <origin xyz="0 -0.025 0.125" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="5" lower="-3.1415927" upper="0" />
+  </joint>
+  <joint name="handle_hinge1" type="revolute">
+    <parent link="box" />
+    <child link="right" />
+    <origin xyz="0 0.025 0.125" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="5" lower="0" upper="3.1415927" />
+  </joint>
+</robot>

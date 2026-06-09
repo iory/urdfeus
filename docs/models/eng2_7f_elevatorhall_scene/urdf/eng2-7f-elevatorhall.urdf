@@ -1,0 +1,748 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="eng2-7f-elevatorhall">
+  <link name="world" />
+  <link name="o0_eng2_7f_elevatorhall_2000x1800_elevator_call_panel_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o0__eng2-7f-elevatorhall-2000x1800-elevator-call-panel-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o0__eng2-7f-elevatorhall-2000x1800-elevator-call-panel-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o1_eng2_7f_elevatorhall_eng2_7f_elevatorhall_ground_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o1__eng2-7f-elevatorhall-eng2-7f-elevatorhall-ground-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o1__eng2-7f-elevatorhall-eng2-7f-elevatorhall-ground-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o2_eng2_7f_elevatorhall_wall61_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o2__eng2-7f-elevatorhall-wall61-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o2__eng2-7f-elevatorhall-wall61-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o3_eng2_7f_elevatorhall_wall59_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o3__eng2-7f-elevatorhall-wall59-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o3__eng2-7f-elevatorhall-wall59-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o4_eng2_7f_elevatorhall_wall57_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o4__eng2-7f-elevatorhall-wall57-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o4__eng2-7f-elevatorhall-wall57-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o5_eng2_7f_elevatorhall_wall55_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o5__eng2-7f-elevatorhall-wall55-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o5__eng2-7f-elevatorhall-wall55-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o6_eng2_7f_elevatorhall_wall53_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o6__eng2-7f-elevatorhall-wall53-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o6__eng2-7f-elevatorhall-wall53-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o7_eng2_7f_elevatorhall_wall51_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o7__eng2-7f-elevatorhall-wall51-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o7__eng2-7f-elevatorhall-wall51-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o8_eng2_7f_elevatorhall_wall49_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o8__eng2-7f-elevatorhall-wall49-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o8__eng2-7f-elevatorhall-wall49-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o9_eng2_7f_elevatorhall_wall47_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o9__eng2-7f-elevatorhall-wall47-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o9__eng2-7f-elevatorhall-wall47-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o10_eng2_7f_elevatorhall_wall45_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o10__eng2-7f-elevatorhall-wall45-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o10__eng2-7f-elevatorhall-wall45-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o11_eng2_7f_elevatorhall_wall43_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o11__eng2-7f-elevatorhall-wall43-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o11__eng2-7f-elevatorhall-wall43-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o12_eng2_7f_elevatorhall_wall41_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o12__eng2-7f-elevatorhall-wall41-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o12__eng2-7f-elevatorhall-wall41-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o13_eng2_7f_elevatorhall_wall39_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o13__eng2-7f-elevatorhall-wall39-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o13__eng2-7f-elevatorhall-wall39-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o14_eng2_7f_elevatorhall_wall37_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o14__eng2-7f-elevatorhall-wall37-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o14__eng2-7f-elevatorhall-wall37-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o15_eng2_7f_elevatorhall_wall35_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o15__eng2-7f-elevatorhall-wall35-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o15__eng2-7f-elevatorhall-wall35-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o16_eng2_7f_elevatorhall_wall33_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o16__eng2-7f-elevatorhall-wall33-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o16__eng2-7f-elevatorhall-wall33-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o17_eng2_7f_elevatorhall_wall31_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o17__eng2-7f-elevatorhall-wall31-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o17__eng2-7f-elevatorhall-wall31-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o18_eng2_7f_elevatorhall_wall29_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o18__eng2-7f-elevatorhall-wall29-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o18__eng2-7f-elevatorhall-wall29-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o19_eng2_7f_elevatorhall_wall27_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o19__eng2-7f-elevatorhall-wall27-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o19__eng2-7f-elevatorhall-wall27-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o20_eng2_7f_elevatorhall_wall25_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o20__eng2-7f-elevatorhall-wall25-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o20__eng2-7f-elevatorhall-wall25-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o21_eng2_7f_elevatorhall_wall23_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o21__eng2-7f-elevatorhall-wall23-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o21__eng2-7f-elevatorhall-wall23-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o22_eng2_7f_elevatorhall_wall21_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o22__eng2-7f-elevatorhall-wall21-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o22__eng2-7f-elevatorhall-wall21-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o23_eng2_7f_elevatorhall_wall19_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o23__eng2-7f-elevatorhall-wall19-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o23__eng2-7f-elevatorhall-wall19-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o24_eng2_7f_elevatorhall_wall17_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o24__eng2-7f-elevatorhall-wall17-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o24__eng2-7f-elevatorhall-wall17-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o25_eng2_7f_elevatorhall_wall15_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o25__eng2-7f-elevatorhall-wall15-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o25__eng2-7f-elevatorhall-wall15-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o26_eng2_7f_elevatorhall_wall13_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o26__eng2-7f-elevatorhall-wall13-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o26__eng2-7f-elevatorhall-wall13-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o27_eng2_7f_elevatorhall_wall11_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o27__eng2-7f-elevatorhall-wall11-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o27__eng2-7f-elevatorhall-wall11-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o28_eng2_7f_elevatorhall_wall9_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o28__eng2-7f-elevatorhall-wall9-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o28__eng2-7f-elevatorhall-wall9-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o29_eng2_7f_elevatorhall_wall7_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o29__eng2-7f-elevatorhall-wall7-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o29__eng2-7f-elevatorhall-wall7-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o30_eng2_7f_elevatorhall_wall5_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o30__eng2-7f-elevatorhall-wall5-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_elevatorhall_scene/meshes/o30__eng2-7f-elevatorhall-wall5-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="o0_mount" type="fixed">
+    <parent link="world" />
+    <child link="o0_eng2_7f_elevatorhall_2000x1800_elevator_call_panel_bodyset2" />
+    <origin xyz="3.345 -2.705 1.1595" rpy="0 -0 0" />
+  </joint>
+  <joint name="o1_mount" type="fixed">
+    <parent link="world" />
+    <child link="o1_eng2_7f_elevatorhall_eng2_7f_elevatorhall_ground_bodyset2" />
+    <origin xyz="3.117 -0.08 0" rpy="0 -0 0" />
+  </joint>
+  <joint name="o2_mount" type="fixed">
+    <parent link="world" />
+    <child link="o2_eng2_7f_elevatorhall_wall61_bodyset2" />
+    <origin xyz="0.58 0.545 1.375" rpy="0 -0 -3.1415927" />
+  </joint>
+  <joint name="o3_mount" type="fixed">
+    <parent link="world" />
+    <child link="o3_eng2_7f_elevatorhall_wall59_bodyset2" />
+    <origin xyz="1.125 0 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o4_mount" type="fixed">
+    <parent link="world" />
+    <child link="o4_eng2_7f_elevatorhall_wall57_bodyset2" />
+    <origin xyz="0.58 -0.545 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o5_mount" type="fixed">
+    <parent link="world" />
+    <child link="o5_eng2_7f_elevatorhall_wall55_bodyset2" />
+    <origin xyz="0.5 -1.13 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o6_mount" type="fixed">
+    <parent link="world" />
+    <child link="o6_eng2_7f_elevatorhall_wall53_bodyset2" />
+    <origin xyz="0.1 -4.8 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o7_mount" type="fixed">
+    <parent link="world" />
+    <child link="o7_eng2_7f_elevatorhall_wall51_bodyset2" />
+    <origin xyz="1.2725 -4.76 1.375" rpy="0 -0 -3.1415927" />
+  </joint>
+  <joint name="o8_mount" type="fixed">
+    <parent link="world" />
+    <child link="o8_eng2_7f_elevatorhall_wall49_bodyset2" />
+    <origin xyz="2.445 -5.35 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o9_mount" type="fixed">
+    <parent link="world" />
+    <child link="o9_eng2_7f_elevatorhall_wall47_bodyset2" />
+    <origin xyz="2.9125 -6.005 1.375" rpy="0 -0 -3.1415927" />
+  </joint>
+  <joint name="o10_mount" type="fixed">
+    <parent link="world" />
+    <child link="o10_eng2_7f_elevatorhall_wall45_bodyset2" />
+    <origin xyz="3.38 -5.26 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o11_mount" type="fixed">
+    <parent link="world" />
+    <child link="o11_eng2_7f_elevatorhall_wall43_bodyset2" />
+    <origin xyz="3.65075 -4.52952 1.375" rpy="0 -0 -2.976444" />
+  </joint>
+  <joint name="o12_mount" type="fixed">
+    <parent link="world" />
+    <child link="o12_eng2_7f_elevatorhall_wall41_bodyset2" />
+    <origin xyz="4.19 -4.48 1.375" rpy="0 -0 -3.1415927" />
+  </joint>
+  <joint name="o13_mount" type="fixed">
+    <parent link="world" />
+    <child link="o13_eng2_7f_elevatorhall_wall39_bodyset2" />
+    <origin xyz="4.19 -2.91 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o14_mount" type="fixed">
+    <parent link="world" />
+    <child link="o14_eng2_7f_elevatorhall_wall37_bodyset2" />
+    <origin xyz="3.65075 -2.86048 1.375" rpy="-0 -0 -0.16514868" />
+  </joint>
+  <joint name="o15_mount" type="fixed">
+    <parent link="world" />
+    <child link="o15_eng2_7f_elevatorhall_wall35_bodyset2" />
+    <origin xyz="3.38 -2.415 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o16_mount" type="fixed">
+    <parent link="world" />
+    <child link="o16_eng2_7f_elevatorhall_wall33_bodyset2" />
+    <origin xyz="3.65075 -1.96952 1.375" rpy="0 -0 -2.976444" />
+  </joint>
+  <joint name="o17_mount" type="fixed">
+    <parent link="world" />
+    <child link="o17_eng2_7f_elevatorhall_wall31_bodyset2" />
+    <origin xyz="4.07 -1.92 1.375" rpy="0 -0 -3.1415927" />
+  </joint>
+  <joint name="o18_mount" type="fixed">
+    <parent link="world" />
+    <child link="o18_eng2_7f_elevatorhall_wall29_bodyset2" />
+    <origin xyz="4.07 -1.05 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o19_mount" type="fixed">
+    <parent link="world" />
+    <child link="o19_eng2_7f_elevatorhall_wall27_bodyset2" />
+    <origin xyz="3.65075 -1.00048 1.375" rpy="-0 -0 -0.16514868" />
+  </joint>
+  <joint name="o20_mount" type="fixed">
+    <parent link="world" />
+    <child link="o20_eng2_7f_elevatorhall_wall25_bodyset2" />
+    <origin xyz="3.38 -0.175 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o21_mount" type="fixed">
+    <parent link="world" />
+    <child link="o21_eng2_7f_elevatorhall_wall23_bodyset2" />
+    <origin xyz="3.65075 0.650476 1.375" rpy="0 -0 -2.976444" />
+  </joint>
+  <joint name="o22_mount" type="fixed">
+    <parent link="world" />
+    <child link="o22_eng2_7f_elevatorhall_wall21_bodyset2" />
+    <origin xyz="4.07 0.7 1.375" rpy="0 -0 -3.1415927" />
+  </joint>
+  <joint name="o23_mount" type="fixed">
+    <parent link="world" />
+    <child link="o23_eng2_7f_elevatorhall_wall19_bodyset2" />
+    <origin xyz="4.07 1.57 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o24_mount" type="fixed">
+    <parent link="world" />
+    <child link="o24_eng2_7f_elevatorhall_wall17_bodyset2" />
+    <origin xyz="3.65075 1.61952 1.375" rpy="-0 -0 -0.16514868" />
+  </joint>
+  <joint name="o25_mount" type="fixed">
+    <parent link="world" />
+    <child link="o25_eng2_7f_elevatorhall_wall15_bodyset2" />
+    <origin xyz="3.38 2.1625 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o26_mount" type="fixed">
+    <parent link="world" />
+    <child link="o26_eng2_7f_elevatorhall_wall13_bodyset2" />
+    <origin xyz="3.88 2.655 1.375" rpy="0 -0 -3.1415927" />
+  </joint>
+  <joint name="o27_mount" type="fixed">
+    <parent link="world" />
+    <child link="o27_eng2_7f_elevatorhall_wall11_bodyset2" />
+    <origin xyz="4.45 4.2625 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o28_mount" type="fixed">
+    <parent link="world" />
+    <child link="o28_eng2_7f_elevatorhall_wall9_bodyset2" />
+    <origin xyz="2.7075 5.87 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o29_mount" type="fixed">
+    <parent link="world" />
+    <child link="o29_eng2_7f_elevatorhall_wall7_bodyset2" />
+    <origin xyz="0.965 5.355 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o30_mount" type="fixed">
+    <parent link="world" />
+    <child link="o30_eng2_7f_elevatorhall_wall5_bodyset2" />
+    <origin xyz="0.5 4.91 1.375" rpy="0 -0 0" />
+  </joint>
+</robot>

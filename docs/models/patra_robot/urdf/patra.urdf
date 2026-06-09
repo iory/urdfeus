@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="patra">
+  <link name="root">
+    <inertial>
+      <origin xyz="-0.0199467 -7.468226e-18 0.436842" rpy="0 0 0" />
+      <mass value="0.202" />
+      <inertia ixx="0.0003816954" ixy="-2.922466e-22" ixz="1.74272e-05" iyy="0.0003824912" iyz="6.400325e-21" izz="8.29078e-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://patra_robot/meshes/_root.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://patra_robot/meshes/_root.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="patra_lower_limb_patra_rear_link">
+    <inertial>
+      <origin xyz="-0.249741 -0.375994 0.00218976" rpy="0 0 0" />
+      <mass value="0.301" />
+      <inertia ixx="0.000162218" ixy="-9.39012e-05" ixz="5.46874e-07" iyy="8.32171e-05" iyz="8.23338e-07" izz="0.0002037588" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://patra_robot/meshes/_patra-lower-limb-patra-rear-link.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://patra_robot/meshes/_patra-lower-limb-patra-rear-link.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="patra_lower_limb_patra_front_link">
+    <inertial>
+      <origin xyz="0.156518 -0.378478 -7.398842e-16" rpy="0 0 0" />
+      <mass value="0.401" />
+      <inertia ixx="0.0001640875" ixy="5.92387e-05" ixz="1.148942e-19" iyy="4.53396e-05" iyz="-2.77827e-19" izz="0.0001677604" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://patra_robot/meshes/_patra-lower-limb-patra-front-link.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://patra_robot/meshes/_patra-lower-limb-patra-front-link.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="patra_back_limb_patra_back_link">
+    <inertial>
+      <origin xyz="0.112572 0.307987 0.000810285" rpy="0 0 0" />
+      <mass value="0.401" />
+      <inertia ixx="9.81985e-05" ixy="-3.46707e-05" ixz="-9.12153e-08" iyy="1.60148e-05" iyz="-2.49557e-07" izz="0.0001075453" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://patra_robot/meshes/_patra-back-limb-patra-back-link.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://patra_robot/meshes/_patra-back-limb-patra-back-link.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="patra_foot_limb_patra_foot_link">
+    <inertial>
+      <origin xyz="0.20083 -0.337754 1.616818e-17" rpy="0 0 0" />
+      <mass value="0.101" />
+      <inertia ixx="0.0001274191" ixy="6.78311e-05" ixz="-5.073597e-21" iyy="5.36744e-05" iyz="8.532709e-21" izz="0.0001544269" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://patra_robot/meshes/_patra-foot-limb-patra-foot-link.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://patra_robot/meshes/_patra-foot-limb-patra-foot-link.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="patra_lower_limb_rear" type="revolute">
+    <parent link="root" />
+    <child link="patra_lower_limb_patra_rear_link" />
+    <origin xyz="0 0 0.41" rpy="1.5707963 -6.133174e-19 1.013505e-18" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="patra_lower_limb_front" type="revolute">
+    <parent link="patra_lower_limb_patra_rear_link" />
+    <child link="patra_lower_limb_patra_front_link" />
+    <origin xyz="0 0 0" rpy="3.761582e-37 -4.336809e-19 -8.673617e-19" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="patra_back_limb_back" type="revolute">
+    <parent link="root" />
+    <child link="patra_back_limb_patra_back_link" />
+    <origin xyz="-0.3 5.04871e-32 0.44" rpy="1.5707963 -6.133174e-19 1.013505e-18" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="patra_foot_limb_foot" type="revolute">
+    <parent link="root" />
+    <child link="patra_foot_limb_patra_foot_link" />
+    <origin xyz="0.1 5.04871e-32 0.4" rpy="1.5707963 -6.133174e-19 1.013505e-18" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+</robot>

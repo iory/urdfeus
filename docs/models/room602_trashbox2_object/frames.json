@@ -1,0 +1,1 @@
+[{"name": "rear", "kind": "handle", "parent": "room602_trashbox2_bodyset2", "xyz": [-0.2, 0.0, 0.5], "rpy": [1.570593, -1.570592, 3.141592]}, {"name": "front", "kind": "handle", "parent": "room602_trashbox2_bodyset2", "xyz": [0.2, 0.0, 0.5], "rpy": [-1.570593, -1.570592, -3.141592]}]

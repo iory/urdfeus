@@ -1,0 +1,1150 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="room73a3">
+  <link name="world" />
+  <link name="o0_room73a3_73a3_ground_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o0__room73a3-73a3-ground-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o0__room73a3-73a3-ground-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o1_room73a3_door_right_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o1__room73a3-door-right-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o1__room73a3-door-right-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o1_room73a3_door_right_bodyset3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o1__room73a3-door-right-bodyset3.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o1__room73a3-door-right-bodyset3.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o1_room73a3_door_right_bodyset5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o1__room73a3-door-right-bodyset5.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o1__room73a3-door-right-bodyset5.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o1_room73a3_door_right_bodyset4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o1__room73a3-door-right-bodyset4.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o1__room73a3-door-right-bodyset4.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o2_room73a3_clock_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o2__room73a3-clock-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o2__room73a3-clock-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o2_room73a3_clock_bodyset3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o2__room73a3-clock-bodyset3.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o2__room73a3-clock-bodyset3.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o2_room73a3_clock_bodyset4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o2__room73a3-clock-bodyset4.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o2__room73a3-clock-bodyset4.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o2_room73a3_clock_bodyset5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o2__room73a3-clock-bodyset5.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o2__room73a3-clock-bodyset5.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o3_root">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o3__root.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o3__root.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o3_room73a3_plus_830_locker_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o3__room73a3-plus-830-locker-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o3__room73a3-plus-830-locker-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o3_room73a3_plus_830_locker_bodyset3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o3__room73a3-plus-830-locker-bodyset3.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o3__room73a3-plus-830-locker-bodyset3.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o4_room73a3_bariera_1400_middle_0_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o4__room73a3-bariera-1400-middle-0-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o4__room73a3-bariera-1400-middle-0-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o5_room73a3_bariera_1400_middle_1_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o5__room73a3-bariera-1400-middle-1-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o5__room73a3-bariera-1400-middle-1-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o6_room73a3_bariera_1400_middle_2_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o6__room73a3-bariera-1400-middle-2-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o6__room73a3-bariera-1400-middle-2-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o7_room73a3_bariera_1400_middle_3_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o7__room73a3-bariera-1400-middle-3-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o7__room73a3-bariera-1400-middle-3-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o8_room73a3_bariera_1400_middle_4_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o8__room73a3-bariera-1400-middle-4-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o8__room73a3-bariera-1400-middle-4-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o9_room73a3_askul_1600_desk_0_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o9__room73a3-askul-1600-desk-0-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o9__room73a3-askul-1600-desk-0-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o10_room73a3_askul_1600_desk_1_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o10__room73a3-askul-1600-desk-1-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o10__room73a3-askul-1600-desk-1-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o11_room73a3_askul_1200x700_desk_0_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o11__room73a3-askul-1200x700-desk-0-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o11__room73a3-askul-1200x700-desk-0-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o12_printer">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o12_printer.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o12_printer.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o12_scanner">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o12_scanner.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o12_scanner.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o13_room73a3_askul_1200x700_desk_1_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o13__room73a3-askul-1200x700-desk-1-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o13__room73a3-askul-1200x700-desk-1-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o14_room73a3_village_chair_0_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o14__room73a3-village-chair-0-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o14__room73a3-village-chair-0-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o15_room73a3_bariera_1400_middle_5_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o15__room73a3-bariera-1400-middle-5-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o15__room73a3-bariera-1400-middle-5-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o16_room73a3_bariera_1400_middle_6_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o16__room73a3-bariera-1400-middle-6-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o16__room73a3-bariera-1400-middle-6-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o17_room73a3_bariera_1400_middle_7_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o17__room73a3-bariera-1400-middle-7-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o17__room73a3-bariera-1400-middle-7-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o18_room73a3_bariera_1400_middle_8_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o18__room73a3-bariera-1400-middle-8-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o18__room73a3-bariera-1400-middle-8-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o19_room73a3_bariera_1400_middle_9_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o19__room73a3-bariera-1400-middle-9-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o19__room73a3-bariera-1400-middle-9-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o20_room73a3_village_chair_1_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o20__room73a3-village-chair-1-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o20__room73a3-village-chair-1-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o21_room73a3_village_chair_2_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o21__room73a3-village-chair-2-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o21__room73a3-village-chair-2-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o22_room73a3_village_chair_3_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o22__room73a3-village-chair-3-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o22__room73a3-village-chair-3-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o23_room73a3_village_chair_4_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o23__room73a3-village-chair-4-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o23__room73a3-village-chair-4-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o24_room73a3_village_chair_5_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o24__room73a3-village-chair-5-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o24__room73a3-village-chair-5-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o25_room73a3_askul_1600_desk_2_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o25__room73a3-askul-1600-desk-2-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o25__room73a3-askul-1600-desk-2-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o26_room73a3_askul_1400_desk_0_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o26__room73a3-askul-1400-desk-0-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o26__room73a3-askul-1400-desk-0-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o27_room73a3_askul_1400_desk_1_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o27__room73a3-askul-1400-desk-1-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o27__room73a3-askul-1400-desk-1-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o28_room73a3_askul_1400_desk_2_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o28__room73a3-askul-1400-desk-2-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o28__room73a3-askul-1400-desk-2-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o29_room73a3_unknown_1200_desk_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o29__room73a3-unknown-1200-desk-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o29__room73a3-unknown-1200-desk-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o30_root">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o30__root.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o30__root.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o31_root">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o31__root.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o31__root.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o32_root">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o32__root.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o32__root.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o33_room73a3_external_wall_3_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o33__room73a3-external-wall-3-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o33__room73a3-external-wall-3-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o34_room73a3_external_wall_2_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o34__room73a3-external-wall-2-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o34__room73a3-external-wall-2-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o35_room73a3_external_wall_1_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o35__room73a3-external-wall-1-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o35__room73a3-external-wall-1-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o36_room73a3_external_wall_0_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o36__room73a3-external-wall-0-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_scene/meshes/o36__room73a3-external-wall-0-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o37_door_spot" />
+  <link name="o38_table_spot" />
+  <link name="o39_cook_spot" />
+  <link name="o40_init_spot" />
+  <joint name="o0_mount" type="fixed">
+    <parent link="world" />
+    <child link="o0_room73a3_73a3_ground_bodyset2" />
+    <origin xyz="4.21 1.725 0" rpy="0 -0 0" />
+  </joint>
+  <joint name="o1_mount" type="fixed">
+    <parent link="world" />
+    <child link="o1_room73a3_door_right_bodyset2" />
+    <origin xyz="0 0.405 0" rpy="0 -0 0" />
+  </joint>
+  <joint name="o1_door" type="revolute">
+    <parent link="o1_room73a3_door_right_bodyset2" />
+    <child link="o1_room73a3_door_right_bodyset3" />
+    <origin xyz="-0.015 -0.39 0" rpy="0 -0 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="0" upper="1.5707963" />
+  </joint>
+  <joint name="o1_knob" type="revolute">
+    <parent link="o1_room73a3_door_right_bodyset3" />
+    <child link="o1_room73a3_door_right_bodyset5" />
+    <origin xyz="0.09 0.705 0.96" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="5" lower="0" upper="1.5707963" />
+  </joint>
+  <joint name="o1_lock" type="revolute">
+    <parent link="o1_room73a3_door_right_bodyset5" />
+    <child link="o1_room73a3_door_right_bodyset4" />
+    <origin xyz="-0.06 0 0.1" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="0" />
+  </joint>
+  <joint name="o2_mount" type="fixed">
+    <parent link="world" />
+    <child link="o2_room73a3_clock_bodyset2" />
+    <origin xyz="0.025 1.5 2.05" rpy="0 -0 0" />
+  </joint>
+  <joint name="o2_hour_joint" type="revolute">
+    <parent link="o2_room73a3_clock_bodyset2" />
+    <child link="o2_room73a3_clock_bodyset3" />
+    <origin xyz="0.006 0 0.15" rpy="0 -0 0" />
+    <axis xyz="-1 0 0" />
+    <limit effort="100" velocity="5" lower="-6.2831853" upper="6.2831853" />
+  </joint>
+  <joint name="o2_minute_joint" type="revolute">
+    <parent link="o2_room73a3_clock_bodyset3" />
+    <child link="o2_room73a3_clock_bodyset4" />
+    <origin xyz="0.001 0 0" rpy="0 -0 0" />
+    <axis xyz="-1 0 0" />
+    <limit effort="100" velocity="5" lower="-6.2831853" upper="6.2831853" />
+  </joint>
+  <joint name="o2_second_joint" type="revolute">
+    <parent link="o2_room73a3_clock_bodyset4" />
+    <child link="o2_room73a3_clock_bodyset5" />
+    <origin xyz="0.001 0 0" rpy="0 -0 0" />
+    <axis xyz="-1 0 0" />
+    <limit effort="100" velocity="5" lower="-6.2831853" upper="6.2831853" />
+  </joint>
+  <joint name="o3_mount" type="fixed">
+    <parent link="world" />
+    <child link="o3_root" />
+    <origin xyz="0.565 3.1 0" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o3_door_right" type="revolute">
+    <parent link="o3_root" />
+    <child link="o3_room73a3_plus_830_locker_bodyset2" />
+    <origin xyz="0.291 0.386 0.08" rpy="0 -0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="0" upper="1.5707963" />
+  </joint>
+  <joint name="o3_door_left" type="revolute">
+    <parent link="o3_root" />
+    <child link="o3_room73a3_plus_830_locker_bodyset3" />
+    <origin xyz="0.291 -0.009 0.08" rpy="0 -0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="0" upper="1.5707963" />
+  </joint>
+  <joint name="o4_mount" type="fixed">
+    <parent link="world" />
+    <child link="o4_room73a3_bariera_1400_middle_0_bodyset2" />
+    <origin xyz="7.05 3.45 0.035" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o5_mount" type="fixed">
+    <parent link="world" />
+    <child link="o5_room73a3_bariera_1400_middle_1_bodyset2" />
+    <origin xyz="5.65 3.45 0.035" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o6_mount" type="fixed">
+    <parent link="world" />
+    <child link="o6_room73a3_bariera_1400_middle_2_bodyset2" />
+    <origin xyz="4.25 3.45 0.035" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o7_mount" type="fixed">
+    <parent link="world" />
+    <child link="o7_room73a3_bariera_1400_middle_3_bodyset2" />
+    <origin xyz="2.85 3.45 0.035" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o8_mount" type="fixed">
+    <parent link="world" />
+    <child link="o8_room73a3_bariera_1400_middle_4_bodyset2" />
+    <origin xyz="1.45 3.45 0.035" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o9_mount" type="fixed">
+    <parent link="world" />
+    <child link="o9_room73a3_askul_1600_desk_0_bodyset2" />
+    <origin xyz="4.6 3 0" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o10_mount" type="fixed">
+    <parent link="world" />
+    <child link="o10_room73a3_askul_1600_desk_1_bodyset2" />
+    <origin xyz="6.2 3 0" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o11_mount" type="fixed">
+    <parent link="world" />
+    <child link="o11_room73a3_askul_1200x700_desk_0_bodyset2" />
+    <origin xyz="7.6 3.05 0" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o12_mount" type="fixed">
+    <parent link="world" />
+    <child link="o12_printer" />
+    <origin xyz="3.4 3.2 0" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o12_joint0" type="revolute">
+    <parent link="o12_printer" />
+    <child link="o12_scanner" />
+    <origin xyz="0 0 0.984" rpy="0 -0 0" />
+    <axis xyz="0 -1 0" />
+    <limit effort="100" velocity="5" lower="0" upper="3.1415927" />
+  </joint>
+  <joint name="o13_mount" type="fixed">
+    <parent link="world" />
+    <child link="o13_room73a3_askul_1200x700_desk_1_bodyset2" />
+    <origin xyz="2.2 3 0" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o14_mount" type="fixed">
+    <parent link="world" />
+    <child link="o14_room73a3_village_chair_0_bodyset2" />
+    <origin xyz="2.2 2.6 0" rpy="0 -0 3.1415927" />
+  </joint>
+  <joint name="o15_mount" type="fixed">
+    <parent link="world" />
+    <child link="o15_room73a3_bariera_1400_middle_5_bodyset2" />
+    <origin xyz="2.8 0.03 0.035" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o16_mount" type="fixed">
+    <parent link="world" />
+    <child link="o16_room73a3_bariera_1400_middle_6_bodyset2" />
+    <origin xyz="4.2 0.03 0.035" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o17_mount" type="fixed">
+    <parent link="world" />
+    <child link="o17_room73a3_bariera_1400_middle_7_bodyset2" />
+    <origin xyz="5.6 0.03 0.035" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o18_mount" type="fixed">
+    <parent link="world" />
+    <child link="o18_room73a3_bariera_1400_middle_8_bodyset2" />
+    <origin xyz="7 0.03 0.035" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o19_mount" type="fixed">
+    <parent link="world" />
+    <child link="o19_room73a3_bariera_1400_middle_9_bodyset2" />
+    <origin xyz="8.4 0.03 0.035" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o20_mount" type="fixed">
+    <parent link="world" />
+    <child link="o20_room73a3_village_chair_1_bodyset2" />
+    <origin xyz="7.5 0.8 0" rpy="0 -0 0" />
+  </joint>
+  <joint name="o21_mount" type="fixed">
+    <parent link="world" />
+    <child link="o21_room73a3_village_chair_2_bodyset2" />
+    <origin xyz="6 0.8 0" rpy="0 -0 0" />
+  </joint>
+  <joint name="o22_mount" type="fixed">
+    <parent link="world" />
+    <child link="o22_room73a3_village_chair_3_bodyset2" />
+    <origin xyz="4.6 0.8 0" rpy="0 -0 0" />
+  </joint>
+  <joint name="o23_mount" type="fixed">
+    <parent link="world" />
+    <child link="o23_room73a3_village_chair_4_bodyset2" />
+    <origin xyz="3.2 0.8 0" rpy="0 -0 0" />
+  </joint>
+  <joint name="o24_mount" type="fixed">
+    <parent link="world" />
+    <child link="o24_room73a3_village_chair_5_bodyset2" />
+    <origin xyz="1.9 0.8 0" rpy="0 -0 0" />
+  </joint>
+  <joint name="o25_mount" type="fixed">
+    <parent link="world" />
+    <child link="o25_room73a3_askul_1600_desk_2_bodyset2" />
+    <origin xyz="7.5 0.4 0" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o26_mount" type="fixed">
+    <parent link="world" />
+    <child link="o26_room73a3_askul_1400_desk_0_bodyset2" />
+    <origin xyz="6 0.4 0" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o27_mount" type="fixed">
+    <parent link="world" />
+    <child link="o27_room73a3_askul_1400_desk_1_bodyset2" />
+    <origin xyz="4.6 0.4 0" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o28_mount" type="fixed">
+    <parent link="world" />
+    <child link="o28_room73a3_askul_1400_desk_2_bodyset2" />
+    <origin xyz="3.2 0.4 0" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o29_mount" type="fixed">
+    <parent link="world" />
+    <child link="o29_room73a3_unknown_1200_desk_bodyset2" />
+    <origin xyz="1.9 0.4 0" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o30_mount" type="fixed">
+    <parent link="world" />
+    <child link="o30_root" />
+    <origin xyz="8.271 2 0" rpy="0 -0 3.1415927" />
+  </joint>
+  <joint name="o31_mount" type="fixed">
+    <parent link="world" />
+    <child link="o31_root" />
+    <origin xyz="8.271 2.585 0" rpy="0 -0 3.1415927" />
+  </joint>
+  <joint name="o32_mount" type="fixed">
+    <parent link="world" />
+    <child link="o32_root" />
+    <origin xyz="0.15 2 0" rpy="0 -0 0" />
+  </joint>
+  <joint name="o33_mount" type="fixed">
+    <parent link="world" />
+    <child link="o33_room73a3_external_wall_3_bodyset2" />
+    <origin xyz="8.571 1.725 1.35" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o34_mount" type="fixed">
+    <parent link="world" />
+    <child link="o34_room73a3_external_wall_2_bodyset2" />
+    <origin xyz="4.21 -0.15 1.35" rpy="0 -0 0" />
+  </joint>
+  <joint name="o35_mount" type="fixed">
+    <parent link="world" />
+    <child link="o35_room73a3_external_wall_1_bodyset2" />
+    <origin xyz="4.21 3.6 1.35" rpy="0 -0 0" />
+  </joint>
+  <joint name="o36_mount" type="fixed">
+    <parent link="world" />
+    <child link="o36_room73a3_external_wall_0_bodyset2" />
+    <origin xyz="-0.07 2.275 1.35" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o37_mount" type="fixed">
+    <parent link="world" />
+    <child link="o37_door_spot" />
+    <origin xyz="0.675 0.21 0" rpy="0 -0 3.1415927" />
+  </joint>
+  <joint name="o38_mount" type="fixed">
+    <parent link="world" />
+    <child link="o38_table_spot" />
+    <origin xyz="5 1.25 0" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o39_mount" type="fixed">
+    <parent link="world" />
+    <child link="o39_cook_spot" />
+    <origin xyz="1.1 1.6 0" rpy="0 -0 3.1415927" />
+  </joint>
+  <joint name="o40_mount" type="fixed">
+    <parent link="world" />
+    <child link="o40_init_spot" />
+    <origin xyz="0.5 0 0" rpy="0 -0 0" />
+  </joint>
+</robot>

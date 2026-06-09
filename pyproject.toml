@@ -26,6 +26,8 @@ classifiers = [
 
 [project.optional-dependencies]
 all = ["open3d"]
+# Draco mesh compression for eus2urdf --draco (KHR_draco_mesh_compression).
+draco = ["DracoPy"]
 
 [project.urls]
 "Homepage" = "https://github.com/iory/urdfeus"

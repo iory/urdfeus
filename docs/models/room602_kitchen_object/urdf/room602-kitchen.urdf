@@ -1,0 +1,490 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="room602-kitchen">
+  <link name="root">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/_root.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/_root.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="tap_handle_body">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/tap-handle-body.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/tap-handle-body.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="tap_tube">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/tap-tube.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/tap-tube.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="room602_kitchen_bodyset12">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/_room602-kitchen-bodyset12.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/_room602-kitchen-bodyset12.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="room602_kitchen_bodyset13">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/_room602-kitchen-bodyset13.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/_room602-kitchen-bodyset13.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="room602_kitchen_bodyset14">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/_room602-kitchen-bodyset14.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/_room602-kitchen-bodyset14.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="room602_kitchen_bodyset15">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/_room602-kitchen-bodyset15.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/_room602-kitchen-bodyset15.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="room602_kitchen_bodyset16">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/_room602-kitchen-bodyset16.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/_room602-kitchen-bodyset16.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="room602_kitchen_bodyset17">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/_room602-kitchen-bodyset17.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/_room602-kitchen-bodyset17.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="room602_kitchen_bodyset11">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/_room602-kitchen-bodyset11.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/_room602-kitchen-bodyset11.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="room602_kitchen_bodyset10">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/_room602-kitchen-bodyset10.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/_room602-kitchen-bodyset10.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="room602_kitchen_bodyset9">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/_room602-kitchen-bodyset9.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/_room602-kitchen-bodyset9.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="room602_kitchen_bodyset8">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/_room602-kitchen-bodyset8.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/_room602-kitchen-bodyset8.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="room602_kitchen_bodyset7">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/_room602-kitchen-bodyset7.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/_room602-kitchen-bodyset7.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="room602_kitchen_bodyset6">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/_room602-kitchen-bodyset6.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/_room602-kitchen-bodyset6.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="room602_kitchen_bodyset5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/_room602-kitchen-bodyset5.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/_room602-kitchen-bodyset5.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="room602_kitchen_bodyset4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/_room602-kitchen-bodyset4.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/_room602-kitchen-bodyset4.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="room602_kitchen_bodyset3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/_room602-kitchen-bodyset3.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/_room602-kitchen-bodyset3.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="room602_kitchen_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/_room602-kitchen-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_kitchen_object/meshes/_room602-kitchen-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="tap_handle_joint" type="revolute">
+    <parent link="root" />
+    <child link="tap_handle_body" />
+    <origin xyz="-0.0826664 1.11267 1.00531" rpy="-2.7755567e-17 -0.48869273 -0.78539816" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="tap_tube_joint" type="revolute">
+    <parent link="root" />
+    <child link="tap_tube" />
+    <origin xyz="-0.09 1.12 0.84" rpy="-0 -0 -1.5707963" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="button2_body_joint_1" type="prismatic">
+    <parent link="root" />
+    <child link="room602_kitchen_bodyset12" />
+    <origin xyz="0.34 -0.615 0.73" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="-0.09" upper="0.09" />
+  </joint>
+  <joint name="button2_body_joint_2" type="revolute">
+    <parent link="room602_kitchen_bodyset12" />
+    <child link="room602_kitchen_bodyset13" />
+    <origin xyz="0.005 0 0" rpy="-3.1415927 1.5707963 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="button1_body_joint_1" type="prismatic">
+    <parent link="root" />
+    <child link="room602_kitchen_bodyset14" />
+    <origin xyz="0.34 -0.55 0.75" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="-0.09" upper="0.09" />
+  </joint>
+  <joint name="button1_body_joint_2" type="revolute">
+    <parent link="room602_kitchen_bodyset14" />
+    <child link="room602_kitchen_bodyset15" />
+    <origin xyz="0.005 0 0" rpy="-3.1415927 1.5707963 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="button0_body_joint_1" type="prismatic">
+    <parent link="root" />
+    <child link="room602_kitchen_bodyset16" />
+    <origin xyz="0.34 -0.485 0.73" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="-0.09" upper="0.09" />
+  </joint>
+  <joint name="button0_body_joint_2" type="revolute">
+    <parent link="room602_kitchen_bodyset16" />
+    <child link="room602_kitchen_bodyset17" />
+    <origin xyz="0.005 0 0" rpy="-3.1415927 1.5707963 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="drawer" type="prismatic">
+    <parent link="root" />
+    <child link="room602_kitchen_bodyset11" />
+    <origin xyz="0.025 -0.805 0.66" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.63" />
+  </joint>
+  <joint name="center_top_drawer" type="prismatic">
+    <parent link="root" />
+    <child link="room602_kitchen_bodyset10" />
+    <origin xyz="0.025 0.006 0.685" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.63" />
+  </joint>
+  <joint name="left_top_drawer" type="prismatic">
+    <parent link="root" />
+    <child link="room602_kitchen_bodyset9" />
+    <origin xyz="0.025 -0.346 0.7" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.63" />
+  </joint>
+  <joint name="right_middle_drawer" type="prismatic">
+    <parent link="root" />
+    <child link="room602_kitchen_bodyset8" />
+    <origin xyz="0.025 0.603 0.405" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.63" />
+  </joint>
+  <joint name="center_middle_drawer" type="prismatic">
+    <parent link="root" />
+    <child link="room602_kitchen_bodyset7" />
+    <origin xyz="0.025 0.001 0.405" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.63" />
+  </joint>
+  <joint name="left_middle_drawer" type="prismatic">
+    <parent link="root" />
+    <child link="room602_kitchen_bodyset6" />
+    <origin xyz="0.025 -0.601 0.405" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.63" />
+  </joint>
+  <joint name="right_side_door" type="revolute">
+    <parent link="root" />
+    <child link="room602_kitchen_bodyset5" />
+    <origin xyz="0.315 1.123 0.06" rpy="0 -0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="0" upper="1.5707963" />
+  </joint>
+  <joint name="left_side_door" type="revolute">
+    <parent link="root" />
+    <child link="room602_kitchen_bodyset4" />
+    <origin xyz="0.315 -1.123 0.06" rpy="0 -0 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="0" upper="1.5707963" />
+  </joint>
+  <joint name="right_bottom_drawer" type="prismatic">
+    <parent link="root" />
+    <child link="room602_kitchen_bodyset3" />
+    <origin xyz="0.025 0.451 0.137" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.63" />
+  </joint>
+  <joint name="left_bottom_drawer" type="prismatic">
+    <parent link="root" />
+    <child link="room602_kitchen_bodyset2" />
+    <origin xyz="0.025 -0.524 0.137" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.63" />
+  </joint>
+</robot>

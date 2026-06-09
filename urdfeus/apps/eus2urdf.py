@@ -32,6 +32,12 @@ def main():
         + "glb/ply/obj preserve per-face colors; dae flattens them to a "
         + "texture (multi-color meshes become gray) and stl has no color.")
     parser.add_argument(
+        "--draco", action="store_true",
+        help="Compress glb meshes with Draco (KHR_draco_mesh_compression) "
+        + "via scikit-robot, preserving per-vertex color. Shrinks dense "
+        + "meshes by ~an order of magnitude. Forces glb and needs DracoPy; "
+        + "a glTF loader needs a Draco decoder to read the output.")
+    parser.add_argument(
         "--irteusgl", type=str, default="irteusgl",
         help="irteusgl executable to use.")
     args = parser.parse_args()
@@ -43,6 +49,7 @@ def main():
         robot_name=args.name,
         constructor=args.constructor,
         mesh_format=args.mesh_format,
+        draco=args.draco,
         irteusgl=args.irteusgl,
     )
     print(f"Wrote URDF: {urdf_path}")

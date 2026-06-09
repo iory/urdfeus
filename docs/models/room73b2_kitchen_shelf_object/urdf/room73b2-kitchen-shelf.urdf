@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="room73b2-kitchen-shelf">
+  <link name="root">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73b2_kitchen_shelf_object/meshes/_root.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73b2_kitchen_shelf_object/meshes/_root.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="room73b2_kitchen_shelf_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73b2_kitchen_shelf_object/meshes/_room73b2-kitchen-shelf-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73b2_kitchen_shelf_object/meshes/_room73b2-kitchen-shelf-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="room73b2_kitchen_shelf_bodyset3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73b2_kitchen_shelf_object/meshes/_room73b2-kitchen-shelf-bodyset3.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73b2_kitchen_shelf_object/meshes/_room73b2-kitchen-shelf-bodyset3.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="room73b2_kitchen_shelf_bodyset4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73b2_kitchen_shelf_object/meshes/_room73b2-kitchen-shelf-bodyset4.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73b2_kitchen_shelf_object/meshes/_room73b2-kitchen-shelf-bodyset4.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="room73b2_kitchen_shelf_bodyset5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73b2_kitchen_shelf_object/meshes/_room73b2-kitchen-shelf-bodyset5.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73b2_kitchen_shelf_object/meshes/_room73b2-kitchen-shelf-bodyset5.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="room73b2_kitchen_shelf_bodyset6">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73b2_kitchen_shelf_object/meshes/_room73b2-kitchen-shelf-bodyset6.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73b2_kitchen_shelf_object/meshes/_room73b2-kitchen-shelf-bodyset6.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="room73b2_kitchen_shelf_bodyset7">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73b2_kitchen_shelf_object/meshes/_room73b2-kitchen-shelf-bodyset7.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73b2_kitchen_shelf_object/meshes/_room73b2-kitchen-shelf-bodyset7.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="door_5" type="revolute">
+    <parent link="root" />
+    <child link="room73b2_kitchen_shelf_bodyset2" />
+    <origin xyz="0.18 -0.285 0" rpy="0 -0 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="0" upper="1.5707963" />
+  </joint>
+  <joint name="door_4" type="revolute">
+    <parent link="root" />
+    <child link="room73b2_kitchen_shelf_bodyset3" />
+    <origin xyz="0.18 0.285 0" rpy="0 -0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="0" upper="1.5707963" />
+  </joint>
+  <joint name="door_3" type="revolute">
+    <parent link="root" />
+    <child link="room73b2_kitchen_shelf_bodyset4" />
+    <origin xyz="0.18 0.315 0.25" rpy="0 -0 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="0" upper="1.5707963" />
+  </joint>
+  <joint name="door_2" type="revolute">
+    <parent link="root" />
+    <child link="room73b2_kitchen_shelf_bodyset5" />
+    <origin xyz="0.18 0.885 0.25" rpy="0 -0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="0" upper="1.5707963" />
+  </joint>
+  <joint name="door_1" type="revolute">
+    <parent link="root" />
+    <child link="room73b2_kitchen_shelf_bodyset6" />
+    <origin xyz="0.18 0.915 0.25" rpy="0 -0 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="0" upper="1.5707963" />
+  </joint>
+  <joint name="door_0" type="revolute">
+    <parent link="root" />
+    <child link="room73b2_kitchen_shelf_bodyset7" />
+    <origin xyz="0.18 1.485 0.25" rpy="0 -0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="0" upper="1.5707963" />
+  </joint>
+</robot>

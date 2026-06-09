@@ -1,0 +1,438 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="bishamon">
+  <link name="root">
+    <inertial>
+      <origin xyz="-0.00319583 2.197407e-18 0.0971598" rpy="0 0 0" />
+      <mass value="0.391751" />
+      <inertia ixx="0.0009855711" ixy="1.158128e-19" ixz="3.38967e-05" iyy="0.0004341677" iyz="6.006101e-20" izz="0.0006010103" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bishamon_robot/meshes/_root.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bishamon_robot/meshes/_root.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="torso_waist_p">
+    <inertial>
+      <origin xyz="-0.0220255 0.0358234 -2.213433e-17" rpy="0 0 0" />
+      <mass value="0.236" />
+      <inertia ixx="0.0004198223" ixy="8.92846e-05" ixz="2.352343e-20" iyy="0.0004071986" iyz="3.858037e-20" izz="0.0002517436" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bishamon_robot/meshes/_torso-waist-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bishamon_robot/meshes/_torso-waist-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rleg_crotch_r">
+    <inertial>
+      <origin xyz="-3.760093e-17 0.00852176 -0.016796" rpy="0 0 0" />
+      <mass value="0.0366319" />
+      <inertia ixx="3.32188e-05" ixy="-1.300761e-20" ixz="-3.128156e-20" iyy="3.83164e-05" iyz="-5.24317e-06" izz="1.9169e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bishamon_robot/meshes/_rleg-crotch-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bishamon_robot/meshes/_rleg-crotch-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rleg_crotch_p">
+    <inertial>
+      <origin xyz="0.0144 0.0325 4.34778e-20" rpy="0 0 0" />
+      <mass value="0.214" />
+      <inertia ixx="0.0001709833" ixy="-5.35733e-05" ixz="1.760882e-22" iyy="0.0001033941" iyz="7.08038e-22" izz="0.0001859227" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bishamon_robot/meshes/_rleg-crotch-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bishamon_robot/meshes/_rleg-crotch-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rleg_knee_p">
+    <inertial>
+      <origin xyz="-1.065814e-16 0.0610484 9.561531e-18" rpy="0 0 0" />
+      <mass value="0.172886" />
+      <inertia ixx="8.15185e-05" ixy="2.447744e-20" ixz="5.76576e-35" iyy="6.63363e-05" iyz="1.273696e-20" izz="7.82819e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bishamon_robot/meshes/_rleg-knee-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bishamon_robot/meshes/_rleg-knee-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lleg_crotch_r">
+    <inertial>
+      <origin xyz="-3.760093e-17 0.00852176 -0.016796" rpy="0 0 0" />
+      <mass value="0.0366319" />
+      <inertia ixx="3.32188e-05" ixy="-1.300761e-20" ixz="-3.128156e-20" iyy="3.83164e-05" iyz="-5.24317e-06" izz="1.9169e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bishamon_robot/meshes/_lleg-crotch-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bishamon_robot/meshes/_lleg-crotch-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lleg_crotch_p">
+    <inertial>
+      <origin xyz="0.0144 0.0325 4.34778e-20" rpy="0 0 0" />
+      <mass value="0.214" />
+      <inertia ixx="0.0001709833" ixy="-5.35733e-05" ixz="1.760882e-22" iyy="0.0001033941" iyz="7.08038e-22" izz="0.0001859227" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bishamon_robot/meshes/_lleg-crotch-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bishamon_robot/meshes/_lleg-crotch-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lleg_knee_p">
+    <inertial>
+      <origin xyz="-1.065814e-16 0.0610484 9.561531e-18" rpy="0 0 0" />
+      <mass value="0.172886" />
+      <inertia ixx="8.15185e-05" ixy="2.447744e-20" ixz="5.76576e-35" iyy="6.63363e-05" iyz="1.273696e-20" izz="7.82819e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bishamon_robot/meshes/_lleg-knee-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bishamon_robot/meshes/_lleg-knee-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rarm_shoulder_p">
+    <inertial>
+      <origin xyz="-0.00804616 0.00327903 0.0352349" rpy="0 0 0" />
+      <mass value="0.0777994" />
+      <inertia ixx="4.266e-05" ixy="-2.05263e-06" ixz="4.54787e-06" iyy="3.7631e-05" iyz="8.98864e-06" izz="2.51928e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bishamon_robot/meshes/_rarm-shoulder-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bishamon_robot/meshes/_rarm-shoulder-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rarm_shoulder_r">
+    <inertial>
+      <origin xyz="9.237056e-17 0.0518163 -0.00692328" rpy="0 0 0" />
+      <mass value="0.0592518" />
+      <inertia ixx="3.44538e-05" ixy="-2.643329e-21" ixz="-4.632801e-23" iyy="1.68348e-05" iyz="3.35709e-06" izz="2.27032e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bishamon_robot/meshes/_rarm-shoulder-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bishamon_robot/meshes/_rarm-shoulder-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rarm_elbow_y">
+    <inertial>
+      <origin xyz="1.49214e-16 0.00492471 -0.0133505" rpy="0 0 0" />
+      <mass value="0.0172959" />
+      <inertia ixx="7.17537e-06" ixy="3.187351e-22" ixz="9.063772e-22" iyy="7.79182e-06" iyz="-1.13716e-06" izz="4.18131e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bishamon_robot/meshes/_rarm-elbow-y.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bishamon_robot/meshes/_rarm-elbow-y.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rarm_elbow_p">
+    <inertial>
+      <origin xyz="6.534855e-19 0.0294578 -2.131628e-17" rpy="0 0 0" />
+      <mass value="0.066" />
+      <inertia ixx="2.96578e-05" ixy="-1.519231e-21" ixz="7.206203e-37" iyy="4.54925e-06" iyz="1.845256e-20" izz="2.90244e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bishamon_robot/meshes/_rarm-elbow-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bishamon_robot/meshes/_rarm-elbow-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="larm_shoulder_p">
+    <inertial>
+      <origin xyz="-0.00804616 0.00327903 -0.0352349" rpy="0 0 0" />
+      <mass value="0.0777994" />
+      <inertia ixx="4.266e-05" ixy="-2.05263e-06" ixz="-4.54787e-06" iyy="3.7631e-05" iyz="-8.98864e-06" izz="2.51928e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bishamon_robot/meshes/_larm-shoulder-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bishamon_robot/meshes/_larm-shoulder-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="larm_shoulder_r">
+    <inertial>
+      <origin xyz="7.81597e-17 0.0518163 -0.00692328" rpy="0 0 0" />
+      <mass value="0.0592518" />
+      <inertia ixx="3.44538e-05" ixy="-2.643329e-21" ixz="-4.632801e-23" iyy="1.68348e-05" iyz="3.35709e-06" izz="2.27032e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bishamon_robot/meshes/_larm-shoulder-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bishamon_robot/meshes/_larm-shoulder-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="larm_elbow_y">
+    <inertial>
+      <origin xyz="1.49214e-16 0.00492471 -0.0133505" rpy="0 0 0" />
+      <mass value="0.0172959" />
+      <inertia ixx="7.17537e-06" ixy="3.187351e-22" ixz="9.063772e-22" iyy="7.79182e-06" iyz="-1.13716e-06" izz="4.18131e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bishamon_robot/meshes/_larm-elbow-y.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bishamon_robot/meshes/_larm-elbow-y.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="larm_elbow_p">
+    <inertial>
+      <origin xyz="-1.621469e-18 0.0294578 1.421085e-17" rpy="0 0 0" />
+      <mass value="0.066" />
+      <inertia ixx="2.96578e-05" ixy="6.302449e-22" ixz="6.748636e-37" iyy="4.54925e-06" iyz="-1.511502e-20" izz="2.90244e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bishamon_robot/meshes/_larm-elbow-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bishamon_robot/meshes/_larm-elbow-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="head_neck_p">
+    <inertial>
+      <origin xyz="-0.0012516 0.0384202 6.107175e-18" rpy="0 0 0" />
+      <mass value="0.179789" />
+      <inertia ixx="4.3716e-05" ixy="-6.89587e-06" ixz="3.97278e-20" iyy="0.0002163707" iyz="5.104994e-21" izz="0.0002223357" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bishamon_robot/meshes/_head-neck-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bishamon_robot/meshes/_head-neck-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="torso_waist_p" type="revolute">
+    <parent link="root" />
+    <child link="torso_waist_p" />
+    <origin xyz="0 0 0.0015" rpy="1.5707963 -1.5707963 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-2.0071286" upper="1.134464" />
+  </joint>
+  <joint name="rleg_crotch_r" type="revolute">
+    <parent link="torso_waist_p" />
+    <child link="rleg_crotch_r" />
+    <origin xyz="-0.05 0.053 0.045" rpy="-1.5707963 1.5707963 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-0.87266463" upper="2.268928" />
+  </joint>
+  <joint name="rleg_crotch_p" type="revolute">
+    <parent link="rleg_crotch_r" />
+    <child link="rleg_crotch_p" />
+    <origin xyz="-2.0788928e-17 0 -0.0535" rpy="-1.5707963 -1.1344643 1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.3089969" upper="1.8325957" />
+  </joint>
+  <joint name="rleg_knee_p" type="revolute">
+    <parent link="rleg_crotch_p" />
+    <child link="rleg_knee_p" />
+    <origin xyz="0.028799828 0.064999632 -1.5631218e-17" rpy="1.503365e-16 -4.1971507e-16 -0.43633199" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-2.268928" upper="0.17453293" />
+  </joint>
+  <joint name="lleg_crotch_r" type="revolute">
+    <parent link="torso_waist_p" />
+    <child link="lleg_crotch_r" />
+    <origin xyz="-0.05 0.053 -0.045" rpy="-1.5707963 1.5707963 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-2.268928" upper="0.87266463" />
+  </joint>
+  <joint name="lleg_crotch_p" type="revolute">
+    <parent link="lleg_crotch_r" />
+    <child link="lleg_crotch_p" />
+    <origin xyz="-2.0788928e-17 0 -0.0535" rpy="-1.5707963 -1.1344643 1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.3089969" upper="1.5707963" />
+  </joint>
+  <joint name="lleg_knee_p" type="revolute">
+    <parent link="lleg_crotch_p" />
+    <child link="lleg_knee_p" />
+    <origin xyz="0.028799828 0.064999632 -1.5631218e-17" rpy="1.503365e-16 -4.1971507e-16 -0.43633199" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-2.268928" upper="0.17453293" />
+  </joint>
+  <joint name="rarm_shoulder_p" type="revolute">
+    <parent link="root" />
+    <child link="rarm_shoulder_p" />
+    <origin xyz="1.44329e-17 -0.065 0.1385" rpy="1.5707963 1.5707963 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-0.17453293" upper="2.9670597" />
+  </joint>
+  <joint name="rarm_shoulder_r" type="revolute">
+    <parent link="rarm_shoulder_p" />
+    <child link="rarm_shoulder_r" />
+    <origin xyz="0 0 0.0425" rpy="-1.5707963 -1.5707961 -7.1812787e-11" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="0.34906585" upper="3.4906585" />
+  </joint>
+  <joint name="rarm_elbow_y" type="revolute">
+    <parent link="rarm_shoulder_r" />
+    <child link="rarm_elbow_y" />
+    <origin xyz="-1.94779e-07 0.059999987 -1.4739085e-17" rpy="1.5707963 -5.2637661e-16 4.2459189e-18" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="1.5707963" upper="4.712389" />
+  </joint>
+  <joint name="rarm_elbow_p" type="revolute">
+    <parent link="rarm_elbow_y" />
+    <child link="rarm_elbow_p" />
+    <origin xyz="-7.1052909e-18 2.58343e-07 -0.037000073" rpy="-1.5707963 -4.2459189e-18 -1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-0.087266463" upper="3.0543262" />
+  </joint>
+  <joint name="larm_shoulder_p" type="revolute">
+    <parent link="root" />
+    <child link="larm_shoulder_p" />
+    <origin xyz="-1.44329e-17 0.065 0.1385" rpy="1.5707963 1.5707963 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-0.17453293" upper="2.3561945" />
+  </joint>
+  <joint name="larm_shoulder_r" type="revolute">
+    <parent link="larm_shoulder_p" />
+    <child link="larm_shoulder_r" />
+    <origin xyz="0 0 -0.0425" rpy="-1.5707963 -1.5707963 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-0.17453293" upper="2.9670597" />
+  </joint>
+  <joint name="larm_elbow_y" type="revolute">
+    <parent link="larm_shoulder_r" />
+    <child link="larm_elbow_y" />
+    <origin xyz="-2.3314686e-17 0.06 -1.3665949e-17" rpy="1.5707963 -6.661338e-16 -5.55111e-17" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="1.5707963" upper="4.712389" />
+  </joint>
+  <joint name="larm_elbow_p" type="revolute">
+    <parent link="larm_elbow_y" />
+    <child link="larm_elbow_p" />
+    <origin xyz="-7.1054302e-18 -1.64313e-17 -0.037" rpy="-1.5707963 1.4791142e-31 -1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-0.087266463" upper="3.0543262" />
+  </joint>
+  <joint name="head_neck_p" type="revolute">
+    <parent link="root" />
+    <child link="head_neck_p" />
+    <origin xyz="2.143132e-18 2.143132e-18 0.1505" rpy="1.5707963 4.710277e-16 -3.1415927" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+</robot>

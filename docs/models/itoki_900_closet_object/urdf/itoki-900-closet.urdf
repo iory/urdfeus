@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="itoki-900-closet">
+  <link name="root">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://itoki_900_closet_object/meshes/_root.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://itoki_900_closet_object/meshes/_root.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="itoki_900_closet_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://itoki_900_closet_object/meshes/_itoki-900-closet-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://itoki_900_closet_object/meshes/_itoki-900-closet-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="itoki_900_closet_bodyset3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://itoki_900_closet_object/meshes/_itoki-900-closet-bodyset3.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://itoki_900_closet_object/meshes/_itoki-900-closet-bodyset3.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="door_right" type="revolute">
+    <parent link="root" />
+    <child link="itoki_900_closet_bodyset2" />
+    <origin xyz="0.225 0.44 0.02" rpy="0 -0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="0" upper="1.5707963" />
+  </joint>
+  <joint name="door_left" type="revolute">
+    <parent link="root" />
+    <child link="itoki_900_closet_bodyset3" />
+    <origin xyz="0.225 -0.44 0.02" rpy="0 -0 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="0" upper="1.5707963" />
+  </joint>
+</robot>

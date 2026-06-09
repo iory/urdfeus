@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="akiba-room-door">
+  <link name="akiba_room_door_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akiba_room_door_object/meshes/_akiba-room-door-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akiba_room_door_object/meshes/_akiba-room-door-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="akiba_room_door_bodyset3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akiba_room_door_object/meshes/_akiba-room-door-bodyset3.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akiba_room_door_object/meshes/_akiba-room-door-bodyset3.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="akiba_room_door_bodyset5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akiba_room_door_object/meshes/_akiba-room-door-bodyset5.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akiba_room_door_object/meshes/_akiba-room-door-bodyset5.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="akiba_room_door_bodyset4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akiba_room_door_object/meshes/_akiba-room-door-bodyset4.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akiba_room_door_object/meshes/_akiba-room-door-bodyset4.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="door" type="revolute">
+    <parent link="akiba_room_door_bodyset2" />
+    <child link="akiba_room_door_bodyset3" />
+    <origin xyz="-0.015 -0.375 0" rpy="0 -0 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="0" upper="1.5707963" />
+  </joint>
+  <joint name="knob" type="revolute">
+    <parent link="akiba_room_door_bodyset3" />
+    <child link="akiba_room_door_bodyset5" />
+    <origin xyz="0.09 0.675 0.96" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="5" lower="0" upper="1.5707963" />
+  </joint>
+  <joint name="lock" type="revolute">
+    <parent link="akiba_room_door_bodyset5" />
+    <child link="akiba_room_door_bodyset4" />
+    <origin xyz="-0.06 0 0.1" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="0" />
+  </joint>
+</robot>

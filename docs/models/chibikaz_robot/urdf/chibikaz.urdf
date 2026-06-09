@@ -1,0 +1,490 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="chibikaz">
+  <link name="root">
+    <inertial>
+      <origin xyz="0.000543205 -1.4023e-05 0.00183589" rpy="0 0 0" />
+      <mass value="0.125" />
+      <inertia ixx="0.0001184078" ixy="1.18967e-08" ixz="-4.65194e-07" iyy="3.86243e-05" iyz="2.60174e-07" izz="9.14141e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_root.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_root.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="head_neck_p">
+    <inertial>
+      <origin xyz="-0.00518645 0.0229364 -4.784046e-18" rpy="0 0 0" />
+      <mass value="0.0106679" />
+      <inertia ixx="4.84937e-06" ixy="6.9512e-07" ixz="-3.318162e-22" iyy="2.2041e-06" iyz="9.658958e-22" izz="4.10155e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_head-neck-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_head-neck-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="head_neck_y">
+    <inertial>
+      <origin xyz="-3.152982e-19 0.00834694 -0.00185366" rpy="0 0 0" />
+      <mass value="0.041" />
+      <inertia ixx="3.03986e-06" ixy="1.533475e-23" ixz="-1.805538e-23" iyy="1.91156e-06" iyz="6.12843e-08" izz="1.7198e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_head-neck-y.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_head-neck-y.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="larm_collar_y">
+    <inertial>
+      <origin xyz="-0.0171079 0.0167566 -0.00467623" rpy="0 0 0" />
+      <mass value="0.0220935" />
+      <inertia ixx="5.31324e-06" ixy="8.19822e-07" ixz="-1.31079e-06" iyy="6.29939e-06" iyz="3.0329e-07" izz="5.86946e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_larm-collar-y.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_larm-collar-y.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="larm_shoulder_r">
+    <inertial>
+      <origin xyz="0 0.021 1.421085e-17" rpy="0 0 0" />
+      <mass value="0.042" />
+      <inertia ixx="1.43329e-05" ixy="0" ixz="0" iyy="3.67881e-06" iyz="-1.137695e-21" izz="1.18371e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_larm-shoulder-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_larm-shoulder-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="larm_elbow_r">
+    <inertial>
+      <origin xyz="-0.00210078 0.037933 0.00286759" rpy="0 0 0" />
+      <mass value="0.0368911" />
+      <inertia ixx="8.48162e-06" ixy="1.81608e-08" ixz="9.71777e-10" iyy="3.76127e-06" iyz="-4.34071e-07" izz="5.74165e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_larm-elbow-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_larm-elbow-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="larm_hand">
+    <inertial>
+      <origin xyz="-0.0218239 0.0111828 7.81597e-17" rpy="0 0 0" />
+      <mass value="0.0453339" />
+      <inertia ixx="1.69306e-06" ixy="9.42763e-08" ixz="8.684772e-21" iyy="4.01641e-06" iyz="-3.222924e-22" izz="2.98513e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_larm-hand.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_larm-hand.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lleg_crotch_p">
+    <inertial>
+      <origin xyz="-0.0046609 0.0218449 1.8988e-17" rpy="0 0 0" />
+      <mass value="0.0113807" />
+      <inertia ixx="4.53075e-06" ixy="4.85626e-07" ixz="1.626687e-23" iyy="3.71445e-06" iyz="-2.484217e-22" izz="2.26798e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_lleg-crotch-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_lleg-crotch-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lleg_knee_p">
+    <inertial>
+      <origin xyz="-2.339323e-18 0.021 3.291029e-18" rpy="0 0 0" />
+      <mass value="0.042" />
+      <inertia ixx="1.43329e-05" ixy="1.70989e-21" ixz="-3.703118e-22" iyy="3.67881e-06" iyz="-1.887735e-21" izz="1.18371e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_lleg-knee-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_lleg-knee-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lleg_ankle_p">
+    <inertial>
+      <origin xyz="-0.00443537 0.0163751 -2.044375e-17" rpy="0 0 0" />
+      <mass value="0.0103698" />
+      <inertia ixx="2.43385e-06" ixy="2.6744e-07" ixz="-6.102567e-22" iyy="3.06799e-06" iyz="4.135768e-22" izz="2.42678e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_lleg-ankle-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_lleg-ankle-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lleg_ankle_r">
+    <inertial>
+      <origin xyz="-1.421085e-17 0.00677259 -1.776357e-18" rpy="0 0 0" />
+      <mass value="0.021" />
+      <inertia ixx="2.91566e-06" ixy="6.626432e-36" ixz="-5.301145e-37" iyy="1.83941e-06" iyz="8.261881e-37" izz="1.66775e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_lleg-ankle-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_lleg-ankle-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rarm_collar_y">
+    <inertial>
+      <origin xyz="-0.0171079 0.0167566 0.00467623" rpy="0 0 0" />
+      <mass value="0.0220935" />
+      <inertia ixx="5.31324e-06" ixy="8.19822e-07" ixz="1.31079e-06" iyy="6.29939e-06" iyz="-3.0329e-07" izz="5.86946e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_rarm-collar-y.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_rarm-collar-y.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rarm_shoulder_r">
+    <inertial>
+      <origin xyz="0 0.021 -7.105427e-18" rpy="0 0 0" />
+      <mass value="0.042" />
+      <inertia ixx="1.43329e-05" ixy="0" ixz="0" iyy="3.67881e-06" iyz="1.061464e-21" izz="1.18371e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_rarm-shoulder-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_rarm-shoulder-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rarm_elbow_r">
+    <inertial>
+      <origin xyz="-0.00210078 0.037933 -0.00286759" rpy="0 0 0" />
+      <mass value="0.0368911" />
+      <inertia ixx="8.48162e-06" ixy="1.81608e-08" ixz="-9.71777e-10" iyy="3.76127e-06" iyz="4.34071e-07" izz="5.74165e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_rarm-elbow-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_rarm-elbow-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rarm_hand">
+    <inertial>
+      <origin xyz="-0.0218239 0.0111828 6.750156e-17" rpy="0 0 0" />
+      <mass value="0.0453339" />
+      <inertia ixx="1.69306e-06" ixy="9.42763e-08" ixz="7.857651e-21" iyy="4.01641e-06" iyz="-2.915979e-22" izz="2.98513e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_rarm-hand.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_rarm-hand.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rleg_crotch_p">
+    <inertial>
+      <origin xyz="-0.0046609 0.0218449 1.8988e-17" rpy="0 0 0" />
+      <mass value="0.0113807" />
+      <inertia ixx="4.53075e-06" ixy="4.85626e-07" ixz="1.626687e-23" iyy="3.71445e-06" iyz="-2.484217e-22" izz="2.26798e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_rleg-crotch-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_rleg-crotch-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rleg_knee_p">
+    <inertial>
+      <origin xyz="-2.339323e-18 0.021 3.291029e-18" rpy="0 0 0" />
+      <mass value="0.042" />
+      <inertia ixx="1.43329e-05" ixy="1.70989e-21" ixz="-3.703118e-22" iyy="3.67881e-06" iyz="-1.887735e-21" izz="1.18371e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_rleg-knee-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_rleg-knee-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rleg_ankle_p">
+    <inertial>
+      <origin xyz="-0.00443537 0.0163751 -2.367603e-17" rpy="0 0 0" />
+      <mass value="0.0103698" />
+      <inertia ixx="2.43385e-06" ixy="2.6744e-07" ixz="-4.149624e-22" iyy="3.06799e-06" iyz="4.55425e-22" izz="2.42678e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_rleg-ankle-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_rleg-ankle-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rleg_ankle_r">
+    <inertial>
+      <origin xyz="-9.947598e-17 0.00677259 5.329071e-18" rpy="0 0 0" />
+      <mass value="0.021" />
+      <inertia ixx="2.91566e-06" ixy="1.326581e-38" ixz="1.111872e-35" iyy="1.83941e-06" iyz="-2.115842e-39" izz="1.66775e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_rleg-ankle-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chibikaz_robot/meshes/_rleg-ankle-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="head_neck_p" type="revolute">
+    <parent link="root" />
+    <child link="head_neck_p" />
+    <origin xyz="0.00125 -0.00085 0.02325" rpy="1.5707963 -0 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-0.26179939" upper="1.3962634" />
+  </joint>
+  <joint name="head_neck_y" type="revolute">
+    <parent link="head_neck_p" />
+    <child link="head_neck_y" />
+    <origin xyz="0 0.0355 -7.8825833e-18" rpy="1.5707963 1.5707963 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.3089969" upper="1.3089969" />
+  </joint>
+  <joint name="larm_collar_y" type="revolute">
+    <parent link="root" />
+    <child link="larm_collar_y" />
+    <origin xyz="0.008 0.0315 0.0156" rpy="-3.1415927 -0 -1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-2.5307274" upper="0.17453293" />
+  </joint>
+  <joint name="larm_shoulder_r" type="revolute">
+    <parent link="larm_collar_y" />
+    <child link="larm_shoulder_r" />
+    <origin xyz="-0.0325 0.0195 -0.0295" rpy="1.5707963 1.110223e-16 3.1415927" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="0" upper="2.6179939" />
+  </joint>
+  <joint name="larm_elbow_r" type="revolute">
+    <parent link="larm_shoulder_r" />
+    <child link="larm_elbow_r" />
+    <origin xyz="-4.6629366e-18 0.042 3.030909e-17" rpy="-4.9303827e-32 1.665335e-16 -2.2204465e-16" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.3962634" upper="1.3962634" />
+  </joint>
+  <joint name="larm_hand" type="revolute">
+    <parent link="larm_elbow_r" />
+    <child link="larm_hand" />
+    <origin xyz="-1.1143865e-17 0.0365 0.00365" rpy="3.5606042e-16 2.775558e-16 -1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.0471976" upper="1.134464" />
+  </joint>
+  <joint name="lleg_crotch_p" type="revolute">
+    <parent link="root" />
+    <child link="lleg_crotch_p" />
+    <origin xyz="0.0075 0.03035 -0.01725" rpy="-1.5707963 1.962616e-16 3.1415927" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-2.0071286" upper="0.52359878" />
+  </joint>
+  <joint name="lleg_knee_p" type="revolute">
+    <parent link="lleg_crotch_p" />
+    <child link="lleg_knee_p" />
+    <origin xyz="6.0841096e-18 0.031 -6.8833826e-18" rpy="-5.4429296e-32 -2.9674621e-16 1.72723e-17" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-0.087266463" upper="1.5707963" />
+  </joint>
+  <joint name="lleg_ankle_p" type="revolute">
+    <parent link="lleg_knee_p" />
+    <child link="lleg_ankle_p" />
+    <origin xyz="8.9684238e-18 0.042 -9.3258732e-18" rpy="5.1254896e-33 2.9674621e-16 1.72723e-17" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.0471976" upper="1.5707963" />
+  </joint>
+  <joint name="lleg_ankle_r" type="revolute">
+    <parent link="lleg_ankle_p" />
+    <child link="lleg_ankle_r" />
+    <origin xyz="-0.0095 0.0302 -7.0786439e-18" rpy="1.5707963 -9.19739e-17 1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-0.6981317" upper="0.26179939" />
+  </joint>
+  <joint name="rarm_collar_y" type="revolute">
+    <parent link="root" />
+    <child link="rarm_collar_y" />
+    <origin xyz="0.008 -0.0315 0.0156" rpy="0 -0 1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-2.5307274" upper="0.17453293" />
+  </joint>
+  <joint name="rarm_shoulder_r" type="revolute">
+    <parent link="rarm_collar_y" />
+    <child link="rarm_shoulder_r" />
+    <origin xyz="-0.0325 0.0195 0.0295" rpy="-1.5707963 5.551115e-17 -3.1415927" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="0" upper="2.6179939" />
+  </joint>
+  <joint name="rarm_elbow_r" type="revolute">
+    <parent link="rarm_shoulder_r" />
+    <child link="rarm_elbow_r" />
+    <origin xyz="2.3314683e-18 0.042 9.3258732e-18" rpy="2.220446e-16 -5.551115e-17 -3.330669e-16" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.3962634" upper="1.3962634" />
+  </joint>
+  <joint name="rarm_hand" type="revolute">
+    <parent link="rarm_elbow_r" />
+    <child link="rarm_hand" />
+    <origin xyz="-8.1046279e-18 0.0365 -0.00365" rpy="-1.030373e-16 4.440892e-16 -1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.0471976" upper="1.134464" />
+  </joint>
+  <joint name="rleg_crotch_p" type="revolute">
+    <parent link="root" />
+    <child link="rleg_crotch_p" />
+    <origin xyz="0.0075 -0.03035 -0.01725" rpy="-1.5707963 1.962616e-16 3.1415927" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-2.0071286" upper="0.52359878" />
+  </joint>
+  <joint name="rleg_knee_p" type="revolute">
+    <parent link="rleg_crotch_p" />
+    <child link="rleg_knee_p" />
+    <origin xyz="6.0841096e-18 0.031 -6.8833826e-18" rpy="-5.4429296e-32 -2.9674621e-16 1.72723e-17" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-0.087266463" upper="1.5707963" />
+  </joint>
+  <joint name="rleg_ankle_p" type="revolute">
+    <parent link="rleg_knee_p" />
+    <child link="rleg_ankle_p" />
+    <origin xyz="8.9684238e-18 0.042 -9.3258732e-18" rpy="5.1254896e-33 2.9674621e-16 1.72723e-17" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.0471976" upper="1.5707963" />
+  </joint>
+  <joint name="rleg_ankle_r" type="revolute">
+    <parent link="rleg_ankle_p" />
+    <child link="rleg_ankle_r" />
+    <origin xyz="-0.0095 0.0302 -7.0786439e-18" rpy="-1.5707963 1.4353998e-16 1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-0.6981317" upper="0.26179939" />
+  </joint>
+</robot>

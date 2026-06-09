@@ -1,0 +1,386 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="sample-legged-robot-with-interlocking-joints">
+  <link name="root_link">
+    <inertial>
+      <origin xyz="0 -8.731149e-19 -9.313226e-18" rpy="0 0 0" />
+      <mass value="20" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_legged_robot/meshes/_root-link.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_legged_robot/meshes/_root-link.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lleg_link0">
+    <inertial>
+      <origin xyz="0 -6.020855e-19 -1.455192e-18" rpy="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_legged_robot/meshes/_lleg-link0.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_legged_robot/meshes/_lleg-link0.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lleg_link1">
+    <inertial>
+      <origin xyz="0 -6.020855e-19 -1.455192e-18" rpy="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_legged_robot/meshes/_lleg-link1.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_legged_robot/meshes/_lleg-link1.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lleg_link2">
+    <inertial>
+      <origin xyz="0 -6.020855e-19 -1.455192e-18" rpy="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_legged_robot/meshes/_lleg-link2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_legged_robot/meshes/_lleg-link2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lleg_link3">
+    <inertial>
+      <origin xyz="0 -6.020855e-19 -1.455192e-18" rpy="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_legged_robot/meshes/_lleg-link3.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_legged_robot/meshes/_lleg-link3.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lleg_link4">
+    <inertial>
+      <origin xyz="0 -6.020855e-19 -1.455192e-18" rpy="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_legged_robot/meshes/_lleg-link4.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_legged_robot/meshes/_lleg-link4.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lleg_link5">
+    <inertial>
+      <origin xyz="0 -6.020855e-19 -1.455192e-18" rpy="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_legged_robot/meshes/_lleg-link5.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_legged_robot/meshes/_lleg-link5.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lleg_link6">
+    <inertial>
+      <origin xyz="0 -6.020855e-19 -1.455192e-18" rpy="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_legged_robot/meshes/_lleg-link6.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_legged_robot/meshes/_lleg-link6.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rleg_link0">
+    <inertial>
+      <origin xyz="0 -6.020855e-19 -1.455192e-18" rpy="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_legged_robot/meshes/_rleg-link0.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_legged_robot/meshes/_rleg-link0.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rleg_link1">
+    <inertial>
+      <origin xyz="0 -6.020855e-19 -1.455192e-18" rpy="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_legged_robot/meshes/_rleg-link1.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_legged_robot/meshes/_rleg-link1.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rleg_link2">
+    <inertial>
+      <origin xyz="0 -6.020855e-19 -1.455192e-18" rpy="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_legged_robot/meshes/_rleg-link2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_legged_robot/meshes/_rleg-link2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rleg_link3">
+    <inertial>
+      <origin xyz="0 -6.020855e-19 -1.455192e-18" rpy="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_legged_robot/meshes/_rleg-link3.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_legged_robot/meshes/_rleg-link3.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rleg_link4">
+    <inertial>
+      <origin xyz="0 -6.020855e-19 -1.455192e-18" rpy="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_legged_robot/meshes/_rleg-link4.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_legged_robot/meshes/_rleg-link4.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rleg_link5">
+    <inertial>
+      <origin xyz="0 -6.020855e-19 -1.455192e-18" rpy="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_legged_robot/meshes/_rleg-link5.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_legged_robot/meshes/_rleg-link5.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rleg_link6">
+    <inertial>
+      <origin xyz="0 -6.020855e-19 -1.455192e-18" rpy="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_legged_robot/meshes/_rleg-link6.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_legged_robot/meshes/_rleg-link6.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="lleg_joint0" type="revolute">
+    <parent link="root_link" />
+    <child link="lleg_link0" />
+    <origin xyz="0 0.1 0" rpy="0 -0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="lleg_joint1" type="revolute">
+    <parent link="lleg_link0" />
+    <child link="lleg_link1" />
+    <origin xyz="0 0 -0.1" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="lleg_joint2" type="revolute">
+    <parent link="lleg_link1" />
+    <child link="lleg_link2" />
+    <origin xyz="0 0 -0.1" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="lleg_joint3" type="revolute">
+    <parent link="lleg_link2" />
+    <child link="lleg_link3" />
+    <origin xyz="0 0 -0.1" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="lleg_joint4" type="revolute">
+    <parent link="lleg_link3" />
+    <child link="lleg_link4" />
+    <origin xyz="0 0 -0.1" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="lleg_joint5" type="revolute">
+    <parent link="lleg_link4" />
+    <child link="lleg_link5" />
+    <origin xyz="0 0 -0.1" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="lleg_joint6" type="revolute">
+    <parent link="lleg_link5" />
+    <child link="lleg_link6" />
+    <origin xyz="0 0 -0.1" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="rleg_joint0" type="revolute">
+    <parent link="root_link" />
+    <child link="rleg_link0" />
+    <origin xyz="0 -0.1 0" rpy="0 -0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="rleg_joint1" type="revolute">
+    <parent link="rleg_link0" />
+    <child link="rleg_link1" />
+    <origin xyz="0 0 -0.1" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="rleg_joint2" type="revolute">
+    <parent link="rleg_link1" />
+    <child link="rleg_link2" />
+    <origin xyz="0 0 -0.1" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="rleg_joint3" type="revolute">
+    <parent link="rleg_link2" />
+    <child link="rleg_link3" />
+    <origin xyz="0 0 -0.1" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="rleg_joint4" type="revolute">
+    <parent link="rleg_link3" />
+    <child link="rleg_link4" />
+    <origin xyz="0 0 -0.1" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="rleg_joint5" type="revolute">
+    <parent link="rleg_link4" />
+    <child link="rleg_link5" />
+    <origin xyz="0 0 -0.1" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="rleg_joint6" type="revolute">
+    <parent link="rleg_link5" />
+    <child link="rleg_link6" />
+    <origin xyz="0 0 -0.1" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+</robot>
