@@ -9,6 +9,8 @@ import unittest
 import numpy as np
 from skrobot.model import RobotModel
 
+from urdfeus.eus2urdf import _ros_package_name
+from urdfeus.eus2urdf import _unique_name_map
 from urdfeus.eus2urdf import dump_eus_model
 from urdfeus.eus2urdf import eus2urdf
 
@@ -79,9 +81,12 @@ class TestEus2Urdf(unittest.TestCase):
         self.assertTrue(osp.isfile(osp.join(out_dir, "package.xml")))
         self.assertTrue(osp.isdir(osp.join(out_dir, "meshes")))
 
-        # Expected kinematics straight from the EusLisp model.
+        # Expected kinematics straight from the EusLisp model. URDF link names
+        # are sanitized, so key by the sanitized name to match.
         data = dump_eus_model(self.eus_path)
-        eus_pos = {link["name"]: np.array(link["pos"]) for link in data["links"]}
+        _, link_names = _unique_name_map(data["links"])
+        eus_pos = {link_names[link["name"]]: np.array(link["pos"])
+                   for link in data["links"]}
 
         # Load generated URDF (resolve package:// to the local package dir).
         urdf = open(urdf_path).read().replace("package://pkg/", out_dir + "/")
@@ -174,10 +179,12 @@ class TestEus2UrdfJskeus(unittest.TestCase):
         urdf_path = eus2urdf(eus_path, out_dir, package_name=name)
 
         data = dump_eus_model(eus_path)
-        eus_pos = {link["name"]: np.array(link["pos"]) for link in data["links"]}
+        _, link_names = _unique_name_map(data["links"])
+        eus_pos = {link_names[link["name"]]: np.array(link["pos"])
+                   for link in data["links"]}
 
         urdf = open(urdf_path).read().replace(
-            f"package://{name}/", out_dir + "/")
+            f"package://{_ros_package_name(name)}/", out_dir + "/")
         abs_path = osp.join(out_dir, "urdf", "_abs.urdf")
         with open(abs_path, "w") as f:
             f.write(urdf)

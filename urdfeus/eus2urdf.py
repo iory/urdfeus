@@ -7,6 +7,7 @@ are converted to a URDF + Collada meshes laid out as a ROS package::
 
     <output_dir>/
       package.xml
+      CMakeLists.txt
       urdf/<robot>.urdf
       meshes/<link>.<ext>
 
@@ -280,6 +281,22 @@ def _package_xml(package_name):
     return pkg
 
 
+def _cmakelists(package_name):
+    """Minimal catkin CMakeLists for a mesh/URDF-only description package.
+
+    The package.xml declares a catkin build, which needs a CMakeLists.txt;
+    this installs the urdf/ and meshes/ directories so the package builds and
+    ``package://`` resolves after ``catkin build`` / ``catkin_make``.
+    """
+    return f"""cmake_minimum_required(VERSION 3.0.2)
+project({package_name})
+find_package(catkin REQUIRED)
+catkin_package()
+install(DIRECTORY meshes urdf
+  DESTINATION ${{CATKIN_PACKAGE_SHARE_DESTINATION}})
+"""
+
+
 def _indent_write(element, path):
     tree = ET.ElementTree(element)
     ET.indent(tree, space="  ")
@@ -293,6 +310,7 @@ def eus2urdf(
     robot_name=None,
     constructor=None,
     mesh_format="glb",
+    draco=False,
     irteusgl="irteusgl",
 ):
     """Convert an EusLisp model to a URDF ROS package.
@@ -316,6 +334,12 @@ def eus2urdf(
         (trimesh's Collada exporter flattens per-face colour into a texture),
         so single-colour meshes keep their colour but multi-colour meshes turn
         grey.
+    draco : bool
+        Compress glb meshes with Draco (``KHR_draco_mesh_compression``) via
+        scikit-robot, preserving per-vertex colour. Shrinks dense meshes by
+        roughly an order of magnitude. Forces ``mesh_format`` to ``glb`` and
+        requires the ``DracoPy`` package; a glTF loader needs a Draco decoder
+        to read the result.
     irteusgl : str
         irteusgl executable.
 
@@ -324,11 +348,24 @@ def eus2urdf(
     str
         Path to the written ``.urdf`` file.
     """
+    export_draco = None
+    if draco:
+        mesh_format = "glb"
+        from skrobot.utils.draco import export_glb_with_draco
+        from skrobot.utils.draco import is_dracopy_available
+        if not is_dracopy_available():
+            raise RuntimeError(
+                "draco=True requires the DracoPy package "
+                + "(pip install dracopy).")
+        export_draco = export_glb_with_draco
+
     data = dump_eus_model(eus_path, constructor=constructor, irteusgl=irteusgl)
 
     output_dir = osp.abspath(output_dir)
     if package_name is None:
         package_name = osp.basename(output_dir.rstrip("/"))
+    # ROS package names must be lower_case_with_underscores (no dashes etc.).
+    package_name = _ros_package_name(package_name)
     if robot_name is None:
         robot_name = data["robot_name"]
 
@@ -353,11 +390,18 @@ def eus2urdf(
 
     robot_el = ET.Element("robot", name=robot_name)
 
+    # EusLisp names (e.g. :torso-waist-y, o9_/eng2/room-table) contain ':' '-'
+    # '/' etc. that are not valid URDF/ROS identifiers, so map every link and
+    # joint name to a sanitized, unique one and use it everywhere a name is
+    # referenced (link, joint, parent/child, mimic master, frames parent).
+    _, link_names = _unique_name_map(data["links"])
+    joint_unames, joint_names = _unique_name_map(data["joints"])
+
     # Links (+ meshes).
     used_fnames = set()
     for link in data["links"]:
         name = link["name"]
-        link_el = ET.SubElement(robot_el, "link", name=name)
+        link_el = ET.SubElement(robot_el, "link", name=link_names[name])
         _add_inertial(link_el, link)
 
         pos, rot = link_pose[name]
@@ -372,7 +416,10 @@ def eus2urdf(
                 fname = f"{stem}_{n}.{mesh_format}"
                 n += 1
             used_fnames.add(fname)
-            mesh.export(osp.join(meshes_dir, fname))
+            if export_draco is not None:
+                export_draco([mesh], osp.join(meshes_dir, fname))
+            else:
+                mesh.export(osp.join(meshes_dir, fname))
             uri = f"package://{package_name}/meshes/{fname}"
             for tag in ("visual", "collision"):
                 el = ET.SubElement(link_el, tag)
@@ -380,17 +427,20 @@ def eus2urdf(
                 geom = ET.SubElement(el, "geometry")
                 ET.SubElement(geom, "mesh", filename=uri)
 
-    # Joints.
-    for joint in data["joints"]:
+    # Joints. ``joint_unames`` already gives each joint a unique sanitized name
+    # (handling both invalid characters and models that reuse a name across
+    # parts, e.g. a hand reusing :j10/:j11 on every finger).
+    for i, joint in enumerate(data["joints"]):
         name = joint["name"]
         parent = joint["parent"]
         child = joint["child"]
         is_follower = name in follower_mimic
         jtype = _classify_joint(joint, is_follower)
 
-        joint_el = ET.SubElement(robot_el, "joint", name=name, type=jtype)
-        ET.SubElement(joint_el, "parent", link=parent)
-        ET.SubElement(joint_el, "child", link=child)
+        joint_el = ET.SubElement(
+            robot_el, "joint", name=joint_unames[i], type=jtype)
+        ET.SubElement(joint_el, "parent", link=link_names[parent])
+        ET.SubElement(joint_el, "child", link=link_names[child])
 
         child0 = _joint_zero_child_pose(
             link_pose[child], jtype, joint["axis"], joint.get("q"))
@@ -409,18 +459,20 @@ def eus2urdf(
 
         if is_follower:
             master, multiplier, offset = follower_mimic[name]
-            ET.SubElement(joint_el, "mimic", joint=master,
+            ET.SubElement(joint_el, "mimic", joint=joint_names[master],
                           multiplier=f"{multiplier:.8g}", offset=f"{offset:.8g}")
 
     urdf_path = osp.join(urdf_dir, f"{_safe_name(robot_name)}.urdf")
     _indent_write(robot_el, urdf_path)
     _indent_write(_package_xml(package_name), osp.join(output_dir, "package.xml"))
+    with open(osp.join(output_dir, "CMakeLists.txt"), "w") as f:
+        f.write(_cmakelists(package_name))
 
     # Grasp/attention frames (eus :handle / :attention). URDF has no standard
     # frame tag, so write a sidecar frames.json with each frame's pose relative
     # to its parent link (so a viewer can attach it to that link).
     with open(osp.join(output_dir, "frames.json"), "w") as f:
-        json.dump(frames_relative(data), f)
+        json.dump(frames_relative(data, link_names), f)
     # scene object name map (prefix -> name) for per-object labelling
     if data.get("scene_objects"):
         with open(osp.join(output_dir, "objects.json"), "w") as f:
@@ -428,9 +480,13 @@ def eus2urdf(
     return urdf_path
 
 
-def frames_relative(data):
+def frames_relative(data, link_names=None):
     """Convert dumped grasp/attention frames (world pose) to poses relative to
-    their parent link, as ``[{name, kind, parent, xyz(m), rpy}]``."""
+    their parent link, as ``[{name, kind, parent, xyz(m), rpy}]``.
+
+    ``link_names`` optionally maps original link names to the sanitized URDF
+    link names, so the ``parent`` field matches the link names in the URDF.
+    """
     link_pose = {}
     for link in data["links"]:
         link_pose[link["name"]] = (
@@ -441,6 +497,8 @@ def frames_relative(data):
         f_pose = (np.array(fr["pos"], dtype=np.float64), _mat3(fr["rot"]))
         if parent in link_pose:
             xyz, rpy = _origin_xyz_rpy(link_pose[parent], f_pose)
+            if link_names is not None:
+                parent = link_names[parent]
         else:
             parent = None  # attach to world root
             xyz = f_pose[0] / meter2millimeter
@@ -473,3 +531,56 @@ def _add_limit(joint_el, joint, jtype):
 def _safe_name(name):
     """Sanitize a link/robot name for use as a file name."""
     return re.sub(r"[^0-9A-Za-z_.-]", "_", name)
+
+
+def _ros_name(name):
+    """Sanitize an EusLisp link/joint name into a valid URDF/ROS identifier.
+
+    Strips the leading ``:`` keyword marker, turns every character outside
+    ``[A-Za-z0-9_]`` (``-``, ``/``, ``:``, whitespace, ...) into ``_``, and
+    collapses runs of ``_``. Case is preserved (URDF identifiers are
+    case-sensitive and have no lower-case requirement).
+    """
+    s = re.sub(r"[^0-9A-Za-z_]", "_", str(name).lstrip(":"))
+    s = re.sub(r"_{2,}", "_", s).strip("_")
+    if not s:
+        return "link"
+    if not (s[0].isalpha() or s[0] == "_"):
+        s = "_" + s
+    return s
+
+
+def _ros_package_name(name):
+    """Sanitize a name into a conventional ROS package name.
+
+    Lower-case letters, digits and underscores only (per REP 144 / catkin_pkg);
+    other characters such as ``-`` become ``_``.
+    """
+    s = re.sub(r"[^0-9A-Za-z_]", "_", str(name))
+    s = re.sub(r"_{2,}", "_", s).strip("_").lower()
+    return s or "package"
+
+
+def _unique_name_map(items):
+    """Map each item's original name to a unique sanitized URDF identifier.
+
+    ``items`` is the list of dumped link/joint dicts (taken in order). Distinct
+    originals that sanitize to the same string are disambiguated with a numeric
+    suffix. Returns a list of the per-item unique names (parallel to ``items``)
+    and a dict from original name to unique name (last occurrence wins, which is
+    fine for mimic masters whose names are unique).
+    """
+    names = []
+    by_orig = {}
+    used = set()
+    for it in items:
+        base = _ros_name(it["name"])
+        uniq = base
+        n = 1
+        while uniq in used:
+            uniq = f"{base}_{n}"
+            n += 1
+        used.add(uniq)
+        names.append(uniq)
+        by_orig[it["name"]] = uniq
+    return names, by_orig

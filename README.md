@@ -90,6 +90,7 @@ eus2urdf robot.l out --name my_robot --constructor my-robot --mesh-format obj
 ```
 output_package_dir/
   package.xml
+  CMakeLists.txt             # 最小のcatkin定義（catkin build/catkin_makeで通る）
   urdf/<robot>.urdf          # package://<pkg>/meshes/<link>.glb を参照
   meshes/<link>.glb
 ```
@@ -109,6 +110,7 @@ urdf_path = eus2urdf('robot.l', 'output_package_dir',
 - `--name`: `<robot name>`とURDFファイル名（既定はモデルが返すロボット名）
 - `--constructor`: EusLispのコンストラクタ関数名（既定はファイル名のstem）
 - `--mesh-format`: `trimesh.export`が扱う拡張子（既定`glb`）。`glb`/`ply`/`obj`は面ごとの色を保持。`dae`はtrimeshのColladaエクスポータが色をtextureに潰すため**多色メッシュがグレーになる**（単色メッシュは保持）。`stl`は色なし
+- `--draco`: glbメッシュをDraco圧縮（`KHR_draco_mesh_compression`）。頂点色を保ったまま密なメッシュを概ね1桁小さくする。`glb`固定で`DracoPy`が必要（`pip install urdfeus[draco]`）。読み込み側のglTFローダにはDracoデコーダが要る
 - `--irteusgl`: 使用する`irteusgl`実行ファイル
 
 #### ジオメトリの扱い
