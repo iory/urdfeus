@@ -39,8 +39,7 @@ def _default_constructor_name(eus_path):
     """Return the conventional constructor name for an EusLisp model file.
 
     urdfeus-generated files define ``(defun <stem> () ...)`` where ``<stem>``
-    is the file name without extension (e.g. ``yamaguchi-arm.l`` ->
-    ``yamaguchi-arm``).
+    is the file name without extension (e.g. ``robot.l`` -> ``robot``).
     """
     return osp.splitext(osp.basename(eus_path))[0]
 
@@ -202,8 +201,7 @@ def _joint_zero_child_pose(child_pose, jtype, axis, q):
         return c_pos - c_rot @ (q * a), c_rot
     # revolute / continuous: rotation about the axis through the joint origin,
     # so the origin position is unchanged and only the orientation is undone.
-    # NOTE: EusLisp rotational :joint-angle is in DEGREES (e.g. yamaguchi
-    # joint1 limits are +-134.989), hence deg2rad here. Do not remove.
+    # EusLisp rotational :joint-angle is in degrees, hence the deg2rad.
     r_undo = _rodrigues(axis, -np.deg2rad(q))
     return c_pos, c_rot @ r_undo
 
