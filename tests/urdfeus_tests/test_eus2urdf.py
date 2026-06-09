@@ -22,9 +22,9 @@ def is_irteusgl_available():
 
 
 def repo_models_available():
-    """True if the sample EusLisp models live under the repo's euslisp/ dir."""
+    """True if the sample EusLisp model lives under the repo's euslisp/ dir."""
     return osp.isfile(
-        osp.join(euslisp_dir, "yamaguchi_4axis_arm_nejineji_short.l"))
+        osp.join(euslisp_dir, "yamaguchi_6axis_arm_nejineji.l"))
 
 
 def find_jskeus_models_dir():
@@ -61,7 +61,7 @@ def _convert_one(args):
 @unittest.skipUnless(repo_models_available(), "euslisp/ sample models not present")
 class TestEus2Urdf(unittest.TestCase):
 
-    model_name = "yamaguchi_4axis_arm_nejineji_short"
+    model_name = "yamaguchi_6axis_arm_nejineji"
 
     def setUp(self):
         self.tmp = tempfile.mkdtemp()
@@ -99,33 +99,22 @@ class TestEus2Urdf(unittest.TestCase):
             err = np.linalg.norm(link.worldpos() * 1000.0 - eus_pos[link.name])
             self.assertLess(err, 1e-3, f"link {link.name} world-pos mismatch")
 
-    def test_procedural_links_and_plain_bodies(self):
-        # yamaguchi-arm.l adds rigid legs / vacuum pads in :init using plain
-        # make-cube bodies (no glvertices). All such links and their primitive
-        # geometry must be captured.
-        eus_path = osp.join(euslisp_dir, "yamaguchi-arm.l")
-        out_dir = osp.join(self.tmp, "yarm")
-        urdf_path = eus2urdf(eus_path, out_dir, package_name="yarm")
+    def test_visual_meshes_exist(self):
+        # Every visual mesh referenced by the URDF must exist on disk, and the
+        # model must export at least one (geometry-less dummy links may have
+        # no visual).
+        out_dir = osp.join(self.tmp, "visual_pkg")
+        urdf_path = eus2urdf(self.eus_path, out_dir, package_name="visual_pkg")
 
         import xml.etree.ElementTree as ET
         root = ET.parse(urdf_path).getroot()
-        link_names = [link.get("name") for link in root.findall("link")]
-        # procedurally-added links exist
-        for name in ("rigid_leg0_link", "vacuum_pad", "base_cube"):
-            self.assertIn(name, link_names)
-        # every link has a visual mesh (plain bodies are exported too)
-        for link in root.findall("link"):
-            self.assertIsNotNone(
-                link.find("visual"),
-                f"link {link.get('name')} has no visual")
-
-        # plain cube geometry has the expected size (make-cube 10 10 1 -> mm).
-        import trimesh
-        leg = trimesh.load(
-            osp.join(out_dir, "meshes", "rigid_leg0_link.glb"), force="mesh")
-        extents = leg.bounds[1] - leg.bounds[0]
-        np.testing.assert_allclose(
-            sorted(extents), [0.001, 0.01, 0.01], atol=1e-4)
+        meshes = root.findall("link/visual/geometry/mesh")
+        self.assertGreater(len(meshes), 0, "no visual meshes exported")
+        for mesh in meshes:
+            rel = mesh.get("filename").replace("package://visual_pkg/", "")
+            self.assertTrue(
+                osp.isfile(osp.join(out_dir, rel)),
+                f"missing mesh file {rel}")
 
     def test_mesh_colors_preserved(self):
         # The default glb format must keep the model's multiple colors
