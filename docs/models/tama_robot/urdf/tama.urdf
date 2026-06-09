@@ -1,0 +1,438 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="tama">
+  <link name="root">
+    <inertial>
+      <origin xyz="-0.000767986 -1.029034e-18 0.0177569" rpy="0 0 0" />
+      <mass value="0.715443" />
+      <inertia ixx="0.0002973517" ixy="-3.630274e-19" ixz="8.5717e-05" iyy="0.0007762833" iyz="1.389331e-19" izz="0.0006950177" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tama_robot/meshes/_root.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tama_robot/meshes/_root.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rfleg_crotch_y">
+    <inertial>
+      <origin xyz="0.0151474 0.0098526 -0.005" rpy="0 0 0" />
+      <mass value="0.129" />
+      <inertia ixx="3.11778e-05" ixy="-2.88017e-07" ixz="9.77007e-06" iyy="5.43232e-05" iyz="9.50716e-08" izz="5.7551e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tama_robot/meshes/_rfleg-crotch-y.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tama_robot/meshes/_rfleg-crotch-y.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rfleg_knee_r">
+    <inertial>
+      <origin xyz="-1.598721e-17 0.051878 -5.329071e-18" rpy="0 0 0" />
+      <mass value="0.0707717" />
+      <inertia ixx="2.93111e-05" ixy="3.910675e-21" ixz="-2.324595e-36" iyy="1.36658e-05" iyz="3.074959e-21" izz="2.03634e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tama_robot/meshes/_rfleg-knee-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tama_robot/meshes/_rfleg-knee-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rfleg_ankle_r">
+    <inertial>
+      <origin xyz="-1.776357e-17 0.0897446 1.776357e-17" rpy="0 0 0" />
+      <mass value="0.108756" />
+      <inertia ixx="3.91881e-05" ixy="5.598234e-21" ixz="-4.243495e-36" iyy="4.48978e-06" iyz="2.217788e-20" izz="3.5282e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tama_robot/meshes/_rfleg-ankle-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tama_robot/meshes/_rfleg-ankle-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rbleg_crotch_y">
+    <inertial>
+      <origin xyz="0.0151474 0.0098526 -0.005" rpy="0 0 0" />
+      <mass value="0.129" />
+      <inertia ixx="3.11778e-05" ixy="-2.88017e-07" ixz="9.77007e-06" iyy="5.43232e-05" iyz="9.50716e-08" izz="5.7551e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tama_robot/meshes/_rbleg-crotch-y.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tama_robot/meshes/_rbleg-crotch-y.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rbleg_knee_r">
+    <inertial>
+      <origin xyz="-1.598721e-17 0.051878 -5.329071e-18" rpy="0 0 0" />
+      <mass value="0.0707717" />
+      <inertia ixx="2.93111e-05" ixy="3.910675e-21" ixz="-2.324595e-36" iyy="1.36658e-05" iyz="3.074959e-21" izz="2.03634e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tama_robot/meshes/_rbleg-knee-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tama_robot/meshes/_rbleg-knee-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rbleg_ankle_r">
+    <inertial>
+      <origin xyz="-1.776357e-17 0.0897446 1.776357e-17" rpy="0 0 0" />
+      <mass value="0.108756" />
+      <inertia ixx="3.91881e-05" ixy="5.598234e-21" ixz="-4.243495e-36" iyy="4.48978e-06" iyz="2.217788e-20" izz="3.5282e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tama_robot/meshes/_rbleg-ankle-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tama_robot/meshes/_rbleg-ankle-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="head_pan_y">
+    <inertial>
+      <origin xyz="-1.185015e-18 -0.0062767 0.0376208" rpy="0 0 0" />
+      <mass value="0.0539463" />
+      <inertia ixx="3.04965e-05" ixy="-3.823908e-22" ixz="3.73956e-22" iyy="2.5707e-05" iyz="6.90168e-06" izz="1.58581e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tama_robot/meshes/_head-pan-y.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tama_robot/meshes/_head-pan-y.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="head_tilt_p">
+    <inertial>
+      <origin xyz="0.0177396 0.0291559 0.00594496" rpy="0 0 0" />
+      <mass value="0.193441" />
+      <inertia ixx="4.51079e-05" ixy="-2.89671e-06" ixz="1.58952e-05" iyy="0.000338454" iyz="-9.70754e-07" izz="0.0003163579" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tama_robot/meshes/_head-tilt-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tama_robot/meshes/_head-tilt-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="head_wrist">
+    <inertial>
+      <origin xyz="-0.0213566 0.0465469 -0.00306964" rpy="0 0 0" />
+      <mass value="0.027" />
+      <inertia ixx="3.2522e-06" ixy="2.76783e-07" ixz="-5.59195e-08" iyy="2.04991e-06" iyz="5.2999e-08" izz="2.40603e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tama_robot/meshes/_head-wrist.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tama_robot/meshes/_head-wrist.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="head_gripper">
+    <inertial>
+      <origin xyz="9.094947e-16 0.0218503 -7.105427e-17" rpy="0 0 0" />
+      <mass value="0.00740568" />
+      <inertia ixx="5.59448e-06" ixy="-6.414004e-24" ixz="1.195151e-33" iyy="4.22952e-06" iyz="-4.547474e-22" izz="1.85867e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tama_robot/meshes/_head-gripper.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tama_robot/meshes/_head-gripper.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lfleg_crotch_y">
+    <inertial>
+      <origin xyz="0.0151474 0.0098526 0.005" rpy="0 0 0" />
+      <mass value="0.129" />
+      <inertia ixx="3.11778e-05" ixy="-2.88017e-07" ixz="-9.77007e-06" iyy="5.43232e-05" iyz="-9.50716e-08" izz="5.7551e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tama_robot/meshes/_lfleg-crotch-y.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tama_robot/meshes/_lfleg-crotch-y.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lfleg_knee_r">
+    <inertial>
+      <origin xyz="-1.421085e-17 0.051878 -1.24345e-17" rpy="0 0 0" />
+      <mass value="0.0707717" />
+      <inertia ixx="2.93111e-05" ixy="1.953298e-21" ixz="-6.906937e-36" iyy="1.36658e-05" iyz="1.900533e-21" izz="2.03634e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tama_robot/meshes/_lfleg-knee-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tama_robot/meshes/_lfleg-knee-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lfleg_ankle_r">
+    <inertial>
+      <origin xyz="7.105427e-18 0.0897446 1.776357e-17" rpy="0 0 0" />
+      <mass value="0.108756" />
+      <inertia ixx="3.91881e-05" ixy="-2.220302e-21" ixz="4.336607e-22" iyy="4.48978e-06" iyz="2.226142e-20" izz="3.5282e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tama_robot/meshes/_lfleg-ankle-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tama_robot/meshes/_lfleg-ankle-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lbleg_crotch_y">
+    <inertial>
+      <origin xyz="0.0151474 0.0098526 0.005" rpy="0 0 0" />
+      <mass value="0.129" />
+      <inertia ixx="3.11778e-05" ixy="-2.88017e-07" ixz="-9.77007e-06" iyy="5.43232e-05" iyz="-9.50716e-08" izz="5.7551e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tama_robot/meshes/_lbleg-crotch-y.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tama_robot/meshes/_lbleg-crotch-y.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lbleg_knee_r">
+    <inertial>
+      <origin xyz="-1.421085e-17 0.051878 -1.24345e-17" rpy="0 0 0" />
+      <mass value="0.0707717" />
+      <inertia ixx="2.93111e-05" ixy="1.953298e-21" ixz="-6.906937e-36" iyy="1.36658e-05" iyz="1.900533e-21" izz="2.03634e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tama_robot/meshes/_lbleg-knee-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tama_robot/meshes/_lbleg-knee-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lbleg_ankle_r">
+    <inertial>
+      <origin xyz="7.105427e-18 0.0897446 1.776357e-17" rpy="0 0 0" />
+      <mass value="0.108756" />
+      <inertia ixx="3.91881e-05" ixy="-2.220302e-21" ixz="4.336607e-22" iyy="4.48978e-06" iyz="2.226142e-20" izz="3.5282e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tama_robot/meshes/_lbleg-ankle-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tama_robot/meshes/_lbleg-ankle-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="rfleg_crotch_y" type="revolute">
+    <parent link="root" />
+    <child link="rfleg_crotch_y" />
+    <origin xyz="0.08 -0.0675 0.026" rpy="-0 -0 -1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="0" upper="3.1415927" />
+  </joint>
+  <joint name="rfleg_knee_r" type="revolute">
+    <parent link="rfleg_crotch_y" />
+    <child link="rfleg_knee_r" />
+    <origin xyz="0.04 0.01 -0.01" rpy="-1.5707963 -1.5707963 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="rfleg_ankle_r" type="revolute">
+    <parent link="rfleg_knee_r" />
+    <child link="rfleg_ankle_r" />
+    <origin xyz="0 0.065 -5.1028003e-17" rpy="2.220448e-16 -2.220446e-16 -1.2150753e-31" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="3.1415927" />
+  </joint>
+  <joint name="rbleg_crotch_y" type="revolute">
+    <parent link="root" />
+    <child link="rbleg_crotch_y" />
+    <origin xyz="-0.08 -0.0675 0.026" rpy="-0 -0 -1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="0" upper="3.1415927" />
+  </joint>
+  <joint name="rbleg_knee_r" type="revolute">
+    <parent link="rbleg_crotch_y" />
+    <child link="rbleg_knee_r" />
+    <origin xyz="0.04 0.01 -0.01" rpy="-1.5707963 -1.5707963 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="0" />
+  </joint>
+  <joint name="rbleg_ankle_r" type="revolute">
+    <parent link="rbleg_knee_r" />
+    <child link="rbleg_ankle_r" />
+    <origin xyz="0 0.065 -5.1028003e-17" rpy="2.220448e-16 -2.220446e-16 -1.2150753e-31" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="3.1415927" />
+  </joint>
+  <joint name="head_pan_y" type="revolute">
+    <parent link="root" />
+    <child link="head_pan_y" />
+    <origin xyz="0.09 6.494805e-17 0.02" rpy="-0 -0 -1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="head_tilt_p" type="revolute">
+    <parent link="head_pan_y" />
+    <child link="head_tilt_p" />
+    <origin xyz="-2.75545e-18 1.2236656e-33 0.045" rpy="1.5707963 1.570092e-16 -1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="0" upper="3.1415927" />
+  </joint>
+  <joint name="head_wrist" type="revolute">
+    <parent link="head_tilt_p" />
+    <child link="head_wrist" />
+    <origin xyz="-0.005 0.03 0.015" rpy="1.74143e-17 -1.665335e-16 -1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="0" upper="3.1415927" />
+  </joint>
+  <joint name="head_gripper" type="revolute">
+    <parent link="head_wrist" />
+    <child link="head_gripper" />
+    <origin xyz="-0.025 0.05 0.003" rpy="-1.5707963 -4.020473e-16 3.1415927" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="lfleg_crotch_y" type="revolute">
+    <parent link="root" />
+    <child link="lfleg_crotch_y" />
+    <origin xyz="0.08 0.0675 0.026" rpy="3.1415927 -0 1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="lfleg_knee_r" type="revolute">
+    <parent link="lfleg_crotch_y" />
+    <child link="lfleg_knee_r" />
+    <origin xyz="0.04 0.01 0.01" rpy="1.5707963 1.5707963 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-0.78539816" upper="2.3561945" />
+  </joint>
+  <joint name="lfleg_ankle_r" type="revolute">
+    <parent link="lfleg_knee_r" />
+    <child link="lfleg_ankle_r" />
+    <origin xyz="-3.9801027e-18 0.065 -5.1028003e-17" rpy="-2.220446e-16 2.220446e-16 -2.2204455e-16" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="0" upper="3.1415927" />
+  </joint>
+  <joint name="lbleg_crotch_y" type="revolute">
+    <parent link="root" />
+    <child link="lbleg_crotch_y" />
+    <origin xyz="-0.08 0.0675 0.026" rpy="3.1415927 -0 1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="lbleg_knee_r" type="revolute">
+    <parent link="lbleg_crotch_y" />
+    <child link="lbleg_knee_r" />
+    <origin xyz="0.04 0.01 0.01" rpy="1.5707963 1.5707963 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-0.78539816" upper="2.3561945" />
+  </joint>
+  <joint name="lbleg_ankle_r" type="revolute">
+    <parent link="lbleg_knee_r" />
+    <child link="lbleg_ankle_r" />
+    <origin xyz="-3.9801027e-18 0.065 -5.1028003e-17" rpy="-2.220446e-16 2.220446e-16 -2.2204455e-16" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="0" upper="3.1415927" />
+  </joint>
+</robot>

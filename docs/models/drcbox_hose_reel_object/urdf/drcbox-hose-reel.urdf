@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="drcbox-hose-reel">
+  <link name="root_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://drcbox_hose_reel_object/meshes/_root-link.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://drcbox_hose_reel_object/meshes/_root-link.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="connect_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://drcbox_hose_reel_object/meshes/_connect-link.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://drcbox_hose_reel_object/meshes/_connect-link.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="reel_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://drcbox_hose_reel_object/meshes/_reel-link.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://drcbox_hose_reel_object/meshes/_reel-link.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="root_joint" type="revolute">
+    <parent link="root_link" />
+    <child link="connect_link" />
+    <origin xyz="0 0.05 0.005" rpy="0 -0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="-62.831853" upper="62.831853" />
+  </joint>
+  <joint name="reel_joint" type="revolute">
+    <parent link="connect_link" />
+    <child link="reel_link" />
+    <origin xyz="0 0.4 0" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="5" lower="-62.831853" upper="62.831853" />
+  </joint>
+</robot>

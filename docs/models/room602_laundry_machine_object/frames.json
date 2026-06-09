@@ -1,0 +1,1 @@
+[{"name": "contents", "kind": "handle", "parent": "b0", "xyz": [0.505, 0.0, 0.58], "rpy": [-0.0, 1.047197, -0.0]}, {"name": "handle-cap", "kind": "handle", "parent": "cap", "xyz": [0.0, 0.4, 0.0], "rpy": [3.141593, 0.0, -1.570796]}, {"name": "open-button", "kind": "handle", "parent": "button", "xyz": [0.0, 0.0, 0.0], "rpy": [-0.0, -0.0, -0.0]}]

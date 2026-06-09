@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="room602-fridge">
+  <link name="root">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_fridge_object/meshes/_root.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_fridge_object/meshes/_root.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="room602_fridge_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_fridge_object/meshes/_room602-fridge-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_fridge_object/meshes/_room602-fridge-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="room602_fridge_bodyset3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_fridge_object/meshes/_room602-fridge-bodyset3.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_fridge_object/meshes/_room602-fridge-bodyset3.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="room602_fridge_bodyset4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_fridge_object/meshes/_room602-fridge-bodyset4.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_fridge_object/meshes/_room602-fridge-bodyset4.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="room602_fridge_bodyset5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_fridge_object/meshes/_room602-fridge-bodyset5.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_fridge_object/meshes/_room602-fridge-bodyset5.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="room602_fridge_bodyset6">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_fridge_object/meshes/_room602-fridge-bodyset6.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_fridge_object/meshes/_room602-fridge-bodyset6.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="room602_fridge_bodyset7">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_fridge_object/meshes/_room602-fridge-bodyset7.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room602_fridge_object/meshes/_room602-fridge-bodyset7.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="bottom_drawer" type="prismatic">
+    <parent link="root" />
+    <child link="room602_fridge_bodyset2" />
+    <origin xyz="0.035 0 0.23" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.5" />
+  </joint>
+  <joint name="right_freezer" type="prismatic">
+    <parent link="root" />
+    <child link="room602_fridge_bodyset3" />
+    <origin xyz="0.035 0.135 0.525" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.5" />
+  </joint>
+  <joint name="left_freezer" type="prismatic">
+    <parent link="root" />
+    <child link="room602_fridge_bodyset4" />
+    <origin xyz="0.035 -0.165 0.525" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.5" />
+  </joint>
+  <joint name="vegetable_drawer" type="prismatic">
+    <parent link="root" />
+    <child link="room602_fridge_bodyset5" />
+    <origin xyz="0.035 0 0.805" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.5" />
+  </joint>
+  <joint name="right_door" type="revolute">
+    <parent link="root" />
+    <child link="room602_fridge_bodyset6" />
+    <origin xyz="0.26 0.275 1.015" rpy="0 -0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="0" upper="1.5707963" />
+  </joint>
+  <joint name="left_door" type="revolute">
+    <parent link="root" />
+    <child link="room602_fridge_bodyset7" />
+    <origin xyz="0.26 -0.275 1.015" rpy="0 -0 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="0" upper="1.5707963" />
+  </joint>
+</robot>

@@ -1,0 +1,542 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="tamaii">
+  <link name="root">
+    <inertial>
+      <origin xyz="0.00924832 -1.191208e-17 0.0117953" rpy="0 0 0" />
+      <mass value="0.635" />
+      <inertia ixx="0.003661888" ixy="-6.72705e-20" ixz="-0.0002560092" iyy="0.004111439" iyz="-1.557293e-19" izz="0.006708109" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_root.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_root.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="head_pan1">
+    <inertial>
+      <origin xyz="-5.888801e-19 0.00400868 0.0500394" rpy="0 0 0" />
+      <mass value="0.0567813" />
+      <inertia ixx="6.16031e-05" ixy="-2.347578e-22" ixz="-1.070071e-21" iyy="5.24698e-05" iyz="1.04732e-05" izz="1.38323e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_head-pan1.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_head-pan1.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="head_pan2">
+    <inertial>
+      <origin xyz="-1.893712e-18 -0.0062767 0.0418009" rpy="0 0 0" />
+      <mass value="0.0539463" />
+      <inertia ixx="3.40094e-05" ixy="3.209175e-22" ixz="-3.623348e-22" iyy="2.92199e-05" iyz="7.66853e-06" izz="1.58581e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_head-pan2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_head-pan2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="head_tilt">
+    <inertial>
+      <origin xyz="0.0118464 -0.00650015 6.768968e-18" rpy="0 0 0" />
+      <mass value="0.0372875" />
+      <inertia ixx="0.0001414925" ixy="2.00874e-05" ixz="1.225227e-20" iyy="1.21922e-05" iyz="-5.726296e-20" izz="0.0001403648" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_head-tilt.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_head-tilt.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="arm_shoulder2">
+    <inertial>
+      <origin xyz="4.285749e-18 0.035 -1.655031e-19" rpy="0 0 0" />
+      <mass value="0.129" />
+      <inertia ixx="0.0001169376" ixy="-1.275751e-20" ixz="2.376107e-37" iyy="2.15e-05" iyz="-6.058452e-37" izz="0.0001040376" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_arm-shoulder2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_arm-shoulder2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="arm_shoulder1">
+    <inertial>
+      <origin xyz="8.821566e-18 0.02 -2.886936e-17" rpy="0 0 0" />
+      <mass value="0.0176925" />
+      <inertia ixx="1.11199e-05" ixy="-2.885324e-22" ixz="5.696445e-36" iyy="8.77316e-06" iyz="2.867667e-34" izz="5.00059e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_arm-shoulder1.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_arm-shoulder1.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="arm_elbow">
+    <inertial>
+      <origin xyz="3.166475e-20 0.0199536 0.00172116" rpy="0 0 0" />
+      <mass value="0.0865" />
+      <inertia ixx="4.75661e-05" ixy="1.088359e-21" ixz="3.487679e-22" iyy="1.32484e-05" iyz="-4.47332e-06" izz="3.92374e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_arm-elbow.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_arm-elbow.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="arm_wrist">
+    <inertial>
+      <origin xyz="-0.0203704 -0.000189619 1.98952e-16" rpy="0 0 0" />
+      <mass value="0.027" />
+      <inertia ixx="1.74721e-06" ixy="-4.38932e-09" ixz="-2.343199e-20" iyy="2.3232e-06" iyz="-8.280034e-23" izz="3.45074e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_arm-wrist.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_arm-wrist.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="arm_gripper">
+    <inertial>
+      <origin xyz="4.689582e-15 0.0218503 2.309264e-16" rpy="0 0 0" />
+      <mass value="0.00740568" />
+      <inertia ixx="5.59448e-06" ixy="-6.414004e-24" ixz="-4.32011e-33" iyy="4.22952e-06" iyz="-4.547474e-22" izz="1.85867e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_arm-gripper.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_arm-gripper.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rbleg_crotch">
+    <inertial>
+      <origin xyz="-0.00889434 0.0781661 -0.026683" rpy="0 0 0" />
+      <mass value="0.120301" />
+      <inertia ixx="0.0001072086" ixy="7.1891e-06" ixz="-3.54918e-06" iyy="5.24213e-05" iyz="2.15673e-05" izz="0.000103376" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_rbleg-crotch.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_rbleg-crotch.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rbleg_knee">
+    <inertial>
+      <origin xyz="2.842171e-17 0.0781661 2.131628e-17" rpy="0 0 0" />
+      <mass value="0.120301" />
+      <inertia ixx="0.0001112789" ixy="-1.018627e-20" ixz="-5.295804e-35" iyy="4.05907e-05" iyz="1.277041e-21" izz="8.74751e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_rbleg-knee.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_rbleg-knee.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rbleg_ankle">
+    <inertial>
+      <origin xyz="-1.918465e-16 0.112105 9.592327e-17" rpy="0 0 0" />
+      <mass value="0.0681613" />
+      <inertia ixx="0.0001217524" ixy="2.438039e-19" ixz="3.765323e-34" iyy="1.64227e-05" iyz="-1.425987e-19" izz="0.0001080539" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_rbleg-ankle.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_rbleg-ankle.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rfleg_crotch">
+    <inertial>
+      <origin xyz="0.00889434 0.0781661 -0.026683" rpy="0 0 0" />
+      <mass value="0.120301" />
+      <inertia ixx="0.0001072086" ixy="-7.1891e-06" ixz="3.54918e-06" iyy="5.24213e-05" iyz="2.15673e-05" izz="0.000103376" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_rfleg-crotch.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_rfleg-crotch.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rfleg_knee">
+    <inertial>
+      <origin xyz="5.684342e-17 0.0781661 2.664535e-17" rpy="0 0 0" />
+      <mass value="0.120301" />
+      <inertia ixx="0.0001112789" ixy="-5.078104e-21" ixz="3.268019e-21" iyy="4.05907e-05" iyz="-7.089964e-21" izz="8.74751e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_rfleg-knee.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_rfleg-knee.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rfleg_ankle">
+    <inertial>
+      <origin xyz="1.776357e-17 0.112105 6.927792e-17" rpy="0 0 0" />
+      <mass value="0.0681613" />
+      <inertia ixx="0.0001217524" ixy="-3.219352e-20" ixz="-3.779627e-35" iyy="1.64227e-05" iyz="-1.08099e-19" izz="0.0001080539" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_rfleg-ankle.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_rfleg-ankle.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lbleg_crotch">
+    <inertial>
+      <origin xyz="-0.00889434 0.0781661 0.026683" rpy="0 0 0" />
+      <mass value="0.120301" />
+      <inertia ixx="0.0001072086" ixy="7.1891e-06" ixz="3.54918e-06" iyy="5.24213e-05" iyz="-2.15673e-05" izz="0.000103376" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_lbleg-crotch.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_lbleg-crotch.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lbleg_knee">
+    <inertial>
+      <origin xyz="2.131628e-17 0.0781661 1.953993e-17" rpy="0 0 0" />
+      <mass value="0.120301" />
+      <inertia ixx="0.0001112789" ixy="-7.632187e-21" ixz="-2.478342e-35" iyy="4.05907e-05" iyz="-3.831124e-21" izz="8.74751e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_lbleg-knee.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_lbleg-knee.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lbleg_ankle">
+    <inertial>
+      <origin xyz="3.765876e-16 0.112105 2.504663e-16" rpy="0 0 0" />
+      <mass value="0.0681613" />
+      <inertia ixx="0.0001217524" ixy="-4.921893e-19" ixz="-1.851902e-33" iyy="1.64227e-05" iyz="-3.472968e-19" izz="0.0001080539" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_lbleg-ankle.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_lbleg-ankle.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lfleg_crotch">
+    <inertial>
+      <origin xyz="0.00889434 0.0781661 0.026683" rpy="0 0 0" />
+      <mass value="0.120301" />
+      <inertia ixx="0.0001072086" ixy="-7.1891e-06" ixz="-3.54918e-06" iyy="5.24213e-05" iyz="-2.15673e-05" izz="0.000103376" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_lfleg-crotch.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_lfleg-crotch.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lfleg_knee">
+    <inertial>
+      <origin xyz="8.171241e-17 0.0781661 -2.842171e-17" rpy="0 0 0" />
+      <mass value="0.120301" />
+      <inertia ixx="0.0001112789" ixy="-2.295668e-20" ixz="-3.268019e-21" iyy="4.05907e-05" iyz="1.602925e-20" izz="8.74751e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_lfleg-knee.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_lfleg-knee.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lfleg_ankle">
+    <inertial>
+      <origin xyz="-5.790923e-16 0.112105 2.060574e-16" rpy="0 0 0" />
+      <mass value="0.0681613" />
+      <inertia ixx="0.0001217524" ixy="7.607078e-19" ixz="2.416198e-33" iyy="1.64227e-05" iyz="-2.920973e-19" izz="0.0001080539" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_lfleg-ankle.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://tamaii_robot/meshes/_lfleg-ankle.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="head_pan1" type="revolute">
+    <parent link="root" />
+    <child link="head_pan1" />
+    <origin xyz="0.06 4.32987e-17 0.07" rpy="-0 -0 -1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="head_pan2" type="revolute">
+    <parent link="head_pan1" />
+    <child link="head_pan2" />
+    <origin xyz="1.224642e-18 0.01 0.063" rpy="-0 -0 -2.220446e-16" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="head_tilt" type="revolute">
+    <parent link="head_pan2" />
+    <child link="head_tilt" />
+    <origin xyz="3.06162e-18 -6.7981619e-34 0.05" rpy="1.5707963 -0 1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-3.1415927" upper="0" />
+  </joint>
+  <joint name="arm_shoulder2" type="revolute">
+    <parent link="head_tilt" />
+    <child link="arm_shoulder2" />
+    <origin xyz="0.04 -0.128 -5.2920802e-17" rpy="4.900761e-16 -1.110223e-16 -1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="arm_shoulder1" type="revolute">
+    <parent link="arm_shoulder2" />
+    <child link="arm_shoulder1" />
+    <origin xyz="-7.771561e-18 0.07 -3.3e-23" rpy="5.55112e-17 -5.55112e-17 -1.665335e-16" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="arm_elbow" type="revolute">
+    <parent link="arm_shoulder1" />
+    <child link="arm_elbow" />
+    <origin xyz="-1.1102232e-17 0.04 -4e-24" rpy="5.55111e-17 -5.55111e-17 -4.440892e-16" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="arm_wrist" type="revolute">
+    <parent link="arm_elbow" />
+    <child link="arm_wrist" />
+    <origin xyz="-0.01 0.08 0.007" rpy="1.5707963 9.19739e-17 -3.1415927" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="arm_gripper" type="revolute">
+    <parent link="arm_wrist" />
+    <child link="arm_gripper" />
+    <origin xyz="-0.025 -0.007 3.3529855e-18" rpy="1.177569e-16 1.5707963 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="rbleg_crotch" type="revolute">
+    <parent link="root" />
+    <child link="rbleg_crotch" />
+    <origin xyz="-0.1 -0.085 0" rpy="0 -0 -3.1415927" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="rbleg_knee" type="revolute">
+    <parent link="rbleg_crotch" />
+    <child link="rbleg_knee" />
+    <origin xyz="-0.01 0.1 -0.03" rpy="-3.140185e-16 -1.5707963 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="rbleg_ankle" type="revolute">
+    <parent link="rbleg_knee" />
+    <child link="rbleg_ankle" />
+    <origin xyz="-1.972152e-32 0.1 -5.741599e-17" rpy="-3.330669e-16 7.395571e-32 1.110223e-16" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-0.78539816" upper="2.3561945" />
+  </joint>
+  <joint name="rfleg_crotch" type="revolute">
+    <parent link="root" />
+    <child link="rfleg_crotch" />
+    <origin xyz="0.105 -0.085 0" rpy="0 -0 -3.1415927" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="rfleg_knee" type="revolute">
+    <parent link="rfleg_crotch" />
+    <child link="rfleg_knee" />
+    <origin xyz="0.01 0.1 -0.03" rpy="-0 -1.5707963 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="rfleg_ankle" type="revolute">
+    <parent link="rfleg_knee" />
+    <child link="rfleg_ankle" />
+    <origin xyz="-1.570092e-17 0.1 -5.551115e-17" rpy="-4.2296166e-33 -2.220446e-16 3.330669e-16" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-0.78539816" upper="2.3561945" />
+  </joint>
+  <joint name="lbleg_crotch" type="revolute">
+    <parent link="root" />
+    <child link="lbleg_crotch" />
+    <origin xyz="-0.1 0.085 0" rpy="-3.1415927 2.763898e-32 -3.1415927" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="lbleg_knee" type="revolute">
+    <parent link="lbleg_crotch" />
+    <child link="lbleg_knee" />
+    <origin xyz="-0.01 0.1 0.03" rpy="-1.570092e-16 1.5707963 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="lbleg_ankle" type="revolute">
+    <parent link="lbleg_knee" />
+    <child link="lbleg_ankle" />
+    <origin xyz="6.123236e-18 0.1 -3.981023e-17" rpy="-4.440892e-16 -1.4791142e-31 -4.4408916e-16" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-0.78539816" upper="2.3561945" />
+  </joint>
+  <joint name="lfleg_crotch" type="revolute">
+    <parent link="root" />
+    <child link="lfleg_crotch" />
+    <origin xyz="0.105 0.085 0" rpy="3.1415927 1.74074e-32 -3.1415927" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="lfleg_knee" type="revolute">
+    <parent link="lfleg_crotch" />
+    <child link="lfleg_knee" />
+    <origin xyz="0.01 0.1 0.03" rpy="-1.570092e-16 1.5707963 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="lfleg_ankle" type="revolute">
+    <parent link="lfleg_knee" />
+    <child link="lfleg_ankle" />
+    <origin xyz="-5.322601e-17 0.1 -7.311692e-17" rpy="-2.775558e-16 -4.440892e-16 -2.220446e-16" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-0.78539816" upper="2.3561945" />
+  </joint>
+</robot>

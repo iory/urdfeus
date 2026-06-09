@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="nil">
+  <link name="crank_root_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_crank/meshes/_crank-root-link.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_crank/meshes/_crank-root-link.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="crank_handle_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_crank/meshes/_crank-handle-link.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_crank/meshes/_crank-handle-link.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="crank_joint" type="continuous">
+    <parent link="crank_root_link" />
+    <child link="crank_handle_link" />
+    <origin xyz="0 0 0.55" rpy="0 -0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" />
+  </joint>
+</robot>

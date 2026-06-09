@@ -1,0 +1,1 @@
+[{"name": "door", "kind": "handle", "parent": "toshiba_microwave_oven_bodyset2", "xyz": [0.06, 0.195, 0.285], "rpy": [1.570796, -0.0, 0.0]}, {"name": "knob", "kind": "handle", "parent": "toshiba_microwave_oven_bodyset3", "xyz": [0.0, 0.0, 0.0], "rpy": [3.141593, 0.0, 3.141593]}]

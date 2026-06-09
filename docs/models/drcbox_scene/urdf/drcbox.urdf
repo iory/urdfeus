@@ -1,0 +1,326 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="drcbox">
+  <link name="world" />
+  <link name="o0_root_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://drcbox_scene/meshes/o0__root-link.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://drcbox_scene/meshes/o0__root-link.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o0_connect_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://drcbox_scene/meshes/o0__connect-link.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://drcbox_scene/meshes/o0__connect-link.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o0_reel_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://drcbox_scene/meshes/o0__reel-link.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://drcbox_scene/meshes/o0__reel-link.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o1_root_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://drcbox_scene/meshes/o1__root-link.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://drcbox_scene/meshes/o1__root-link.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o2_drcbox_drill_table_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://drcbox_scene/meshes/o2__drcbox-drill-table-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://drcbox_scene/meshes/o2__drcbox-drill-table-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o3_drcbox_drill_wall_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://drcbox_scene/meshes/o3__drcbox-drill-wall-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://drcbox_scene/meshes/o3__drcbox-drill-wall-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o4_crank_root_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://drcbox_scene/meshes/o4__crank-root-link.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://drcbox_scene/meshes/o4__crank-root-link.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o4_valve_handle_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://drcbox_scene/meshes/o4__valve-handle-link.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://drcbox_scene/meshes/o4__valve-handle-link.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o5_crank_root_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://drcbox_scene/meshes/o5__crank-root-link.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://drcbox_scene/meshes/o5__crank-root-link.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o5_valve_handle_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://drcbox_scene/meshes/o5__valve-handle-link.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://drcbox_scene/meshes/o5__valve-handle-link.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o6_crank_root_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://drcbox_scene/meshes/o6__crank-root-link.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://drcbox_scene/meshes/o6__crank-root-link.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o6_valve_handle_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://drcbox_scene/meshes/o6__valve-handle-link.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://drcbox_scene/meshes/o6__valve-handle-link.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o7_base">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://drcbox_scene/meshes/o7__base.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://drcbox_scene/meshes/o7__base.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="o0_mount" type="fixed">
+    <parent link="world" />
+    <child link="o0_root_link" />
+    <origin xyz="0.312 0.462 1.006" rpy="0 -0 0" />
+  </joint>
+  <joint name="o0_root_joint" type="revolute">
+    <parent link="o0_root_link" />
+    <child link="o0_connect_link" />
+    <origin xyz="0 0.05 0.005" rpy="0 -0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="-62.831853" upper="62.831853" />
+  </joint>
+  <joint name="o0_reel_joint" type="revolute">
+    <parent link="o0_connect_link" />
+    <child link="o0_reel_link" />
+    <origin xyz="0 0.4 0" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="5" lower="-62.831853" upper="62.831853" />
+  </joint>
+  <joint name="o1_mount" type="fixed">
+    <parent link="world" />
+    <child link="o1_root_link" />
+    <origin xyz="-0.225 0.462 0.993" rpy="-1.5707963 -1.5707963 0" />
+  </joint>
+  <joint name="o2_mount" type="fixed">
+    <parent link="world" />
+    <child link="o2_drcbox_drill_table_bodyset2" />
+    <origin xyz="0.547 -0.4105 0.866" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o3_mount" type="fixed">
+    <parent link="world" />
+    <child link="o3_drcbox_drill_wall_bodyset2" />
+    <origin xyz="0 -0.444 0.693" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o4_mount" type="fixed">
+    <parent link="world" />
+    <child link="o4_crank_root_link" />
+    <origin xyz="-0.18275 -0.39 1.063" rpy="-1.5707963 -0 1.5707963" />
+  </joint>
+  <joint name="o4_crank_joint" type="revolute">
+    <parent link="o4_crank_root_link" />
+    <child link="o4_valve_handle_link" />
+    <origin xyz="0 0 0.353" rpy="0 -0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="-62.831853" upper="62.831853" />
+  </joint>
+  <joint name="o5_mount" type="fixed">
+    <parent link="world" />
+    <child link="o5_crank_root_link" />
+    <origin xyz="-0.19675 -0.06 1.268" rpy="-0 -1.5707963 0" />
+  </joint>
+  <joint name="o5_crank_joint" type="revolute">
+    <parent link="o5_crank_root_link" />
+    <child link="o5_valve_handle_link" />
+    <origin xyz="-7.8381744e-17 0 0.353" rpy="0 -0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="-62.831853" upper="62.831853" />
+  </joint>
+  <joint name="o6_mount" type="fixed">
+    <parent link="world" />
+    <child link="o6_crank_root_link" />
+    <origin xyz="-0.14175 0.385 1.065" rpy="-0 -1.5707963 0" />
+  </joint>
+  <joint name="o6_crank_joint" type="revolute">
+    <parent link="o6_crank_root_link" />
+    <child link="o6_valve_handle_link" />
+    <origin xyz="-7.8381744e-17 0 0.353" rpy="0 -0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="-62.831853" upper="62.831853" />
+  </joint>
+  <joint name="o7_mount" type="fixed">
+    <parent link="world" />
+    <child link="o7_base" />
+    <origin xyz="0 0 0" rpy="0 -0 0" />
+  </joint>
+</robot>

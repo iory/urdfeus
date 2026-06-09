@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="laundry-machine">
+  <link name="b0">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://laundry_machine_object/meshes/b0.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://laundry_machine_object/meshes/b0.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="button">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://laundry_machine_object/meshes/button.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://laundry_machine_object/meshes/button.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="cap">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://laundry_machine_object/meshes/cap.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://laundry_machine_object/meshes/cap.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint1" type="prismatic">
+    <parent link="b0" />
+    <child link="button" />
+    <origin xyz="0.6 0.24 0.93" rpy="0 1.0471973 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="0.785398" lower="-0.09" upper="0.09" />
+  </joint>
+  <joint name="joint0" type="revolute">
+    <parent link="b0" />
+    <child link="cap" />
+    <origin xyz="0.64 -0.21 0.77" rpy="0 1.2217307 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="5" lower="0" upper="3.1415927" />
+  </joint>
+</robot>

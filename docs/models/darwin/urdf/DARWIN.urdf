@@ -1,0 +1,542 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="DARWIN">
+  <link name="BODY_LINK">
+    <inertial>
+      <origin xyz="-0.00311589 -0.0394437 -0.0196631" rpy="0 0 0" />
+      <mass value="0.975599" />
+      <inertia ixx="0.003108" ixy="-0.000255" ixz="0.002032" iyy="0.006379" iyz="0.000164" izz="0.005332" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/BODY_LINK.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/BODY_LINK.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="SHOULDERR_LINK">
+    <inertial>
+      <origin xyz="-0.0135226 -0.005736 0.00139357" rpy="0 0 0" />
+      <mass value="0.025913" />
+      <inertia ixx="9.77581e-06" ixy="1.69118e-06" ixz="-4.51743e-07" iyy="1.05111e-05" iyz="3.34069e-07" izz="5.47679e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/SHOULDERR_LINK.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/SHOULDERR_LINK.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="ARMUPPERR_LINK">
+    <inertial>
+      <origin xyz="0.000659787 -0.036239 0.000734065" rpy="0 0 0" />
+      <mass value="0.168377" />
+      <inertia ixx="0.000122" ixy="2.08126e-06" ixz="8.81434e-07" iyy="3.80884e-05" iyz="1.82514e-06" izz="0.000113" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/ARMUPPERR_LINK.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/ARMUPPERR_LINK.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="ARMLOWERR_LINK">
+    <inertial>
+      <origin xyz="0.00666564 -0.0458382 -0.0134901" rpy="0 0 0" />
+      <mass value="0.059288" />
+      <inertia ixx="8.68552e-05" ixy="-5.30203e-06" ixz="-4.3636e-07" iyy="2.11921e-05" iyz="-6.48559e-06" izz="8.68454e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/ARMLOWERR_LINK.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/ARMLOWERR_LINK.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="SHOULDERL_LINK">
+    <inertial>
+      <origin xyz="0.0135226 -0.005736 0.00139357" rpy="0 0 0" />
+      <mass value="0.025913" />
+      <inertia ixx="9.77581e-06" ixy="1.69118e-06" ixz="-4.51743e-07" iyy="1.05111e-05" iyz="3.34069e-07" izz="5.47679e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/SHOULDERL_LINK.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/SHOULDERL_LINK.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="ARMUPPERL_LINK">
+    <inertial>
+      <origin xyz="-0.000659787 -0.036239 0.000734065" rpy="0 0 0" />
+      <mass value="0.168377" />
+      <inertia ixx="0.000122" ixy="-2.08126e-06" ixz="-8.81434e-07" iyy="3.80884e-05" iyz="1.82514e-06" izz="0.000113" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/ARMUPPERL_LINK.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/ARMUPPERL_LINK.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="ARMLOWERL_LINK">
+    <inertial>
+      <origin xyz="-0.00666564 -0.0458382 -0.0134901" rpy="0 0 0" />
+      <mass value="0.059288" />
+      <inertia ixx="8.68552e-05" ixy="5.30203e-06" ixz="4.3636e-07" iyy="2.11921e-05" iyz="-6.48559e-06" izz="8.68454e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/ARMLOWERL_LINK.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/ARMLOWERL_LINK.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="PELVYR_LINK">
+    <inertial>
+      <origin xyz="2.842171e-17 0.0184372 0.000480135" rpy="0 0 0" />
+      <mass value="0.027069" />
+      <inertia ixx="1.50191e-05" ixy="7.783989e-21" ixz="2.237198e-21" iyy="1.13288e-05" iyz="-7.335e-07" izz="6.18255e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/PELVYR_LINK.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/PELVYR_LINK.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="PELVR_LINK">
+    <inertial>
+      <origin xyz="-7.9983e-05 -0.0138731 -0.0182424" rpy="0 0 0" />
+      <mass value="0.167108" />
+      <inertia ixx="0.000123" ixy="-7.11274e-07" ixz="-8.11439e-07" iyy="0.000111" iyz="-7.16354e-06" izz="4.18776e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/PELVR_LINK.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/PELVR_LINK.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="LEGUPPERR_LINK">
+    <inertial>
+      <origin xyz="0.000322635 -0.0629655 0.000691906" rpy="0 0 0" />
+      <mass value="0.119043" />
+      <inertia ixx="9.79502e-05" ixy="-1.21194e-06" ixz="2.1223e-07" iyy="3.28483e-05" iyz="-1.9474e-06" izz="0.000115" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/LEGUPPERR_LINK.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/LEGUPPERR_LINK.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="LEGLOWERR_LINK">
+    <inertial>
+      <origin xyz="0.000592469 -0.0390455 0.00654763" rpy="0 0 0" />
+      <mass value="0.07031" />
+      <inertia ixx="9.33695e-05" ixy="9.35673e-07" ixz="2.39921e-07" iyy="4.62955e-05" iyz="-1.28585e-05" izz="0.000114" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/LEGLOWERR_LINK.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/LEGLOWERR_LINK.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="ANKLER_LINK">
+    <inertial>
+      <origin xyz="0.000213732 0.0138731 -0.0185361" rpy="0 0 0" />
+      <mass value="0.167108" />
+      <inertia ixx="0.000121" ixy="7.9781e-07" ixz="3.93222e-07" iyy="0.000109" iyz="7.07701e-06" izz="4.18711e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/ANKLER_LINK.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/ANKLER_LINK.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="FOOTR_LINK">
+    <inertial>
+      <origin xyz="-0.00950588 -0.0259953 -0.000502877" rpy="0 0 0" />
+      <mass value="0.079446" />
+      <inertia ixx="6.83256e-05" ixy="-2.53305e-06" ixz="-2.18695e-07" iyy="8.78904e-05" iyz="9.76205e-07" izz="3.58407e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/FOOTR_LINK.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/FOOTR_LINK.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="PELVYL_LINK">
+    <inertial>
+      <origin xyz="-2.842171e-17 0.0184372 0.000480135" rpy="0 0 0" />
+      <mass value="0.027069" />
+      <inertia ixx="1.50191e-05" ixy="7.783989e-21" ixz="2.237198e-21" iyy="1.13288e-05" iyz="-7.335e-07" izz="6.18255e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/PELVYL_LINK.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/PELVYL_LINK.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="PELVL_LINK">
+    <inertial>
+      <origin xyz="7.9983e-05 -0.0138731 -0.0182424" rpy="0 0 0" />
+      <mass value="0.167108" />
+      <inertia ixx="0.000123" ixy="7.11274e-07" ixz="8.11439e-07" iyy="0.000111" iyz="-7.16354e-06" izz="4.18776e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/PELVL_LINK.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/PELVL_LINK.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="LEGUPPERL_LINK">
+    <inertial>
+      <origin xyz="-0.000322635 -0.0629655 0.000691906" rpy="0 0 0" />
+      <mass value="0.119043" />
+      <inertia ixx="9.79502e-05" ixy="1.21194e-06" ixz="-2.1223e-07" iyy="3.28483e-05" iyz="-1.9474e-06" izz="0.000115" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/LEGUPPERL_LINK.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/LEGUPPERL_LINK.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="LEGLOWERL_LINK">
+    <inertial>
+      <origin xyz="-0.000592469 -0.0390455 0.00654763" rpy="0 0 0" />
+      <mass value="0.07031" />
+      <inertia ixx="9.33695e-05" ixy="-9.35673e-07" ixz="-2.39921e-07" iyy="4.62955e-05" iyz="-1.28585e-05" izz="0.000114" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/LEGLOWERL_LINK.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/LEGLOWERL_LINK.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="ANKLEL_LINK">
+    <inertial>
+      <origin xyz="-0.000213732 0.0138731 -0.0185361" rpy="0 0 0" />
+      <mass value="0.167108" />
+      <inertia ixx="0.000121" ixy="-7.9781e-07" ixz="-3.93222e-07" iyy="0.000109" iyz="7.07701e-06" izz="4.18711e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/ANKLEL_LINK.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/ANKLEL_LINK.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="FOOTL_LINK">
+    <inertial>
+      <origin xyz="0.00950588 -0.0259953 -0.000502877" rpy="0 0 0" />
+      <mass value="0.079446" />
+      <inertia ixx="6.83256e-05" ixy="2.53305e-06" ixz="2.18695e-07" iyy="8.78904e-05" iyz="9.76205e-07" izz="3.58407e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/FOOTL_LINK.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/FOOTL_LINK.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="NECK_LINK">
+    <inertial>
+      <origin xyz="0.00142428 -0.0165676 -0.000712811" rpy="0 0 0" />
+      <mass value="0.024358" />
+      <inertia ixx="5.14111e-06" ixy="-5.75302e-07" ixz="-2.4729e-08" iyy="8.19157e-06" iyz="-1.92231e-07" izz="1.13798e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/NECK_LINK.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/NECK_LINK.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="HEAD_LINK">
+    <inertial>
+      <origin xyz="6.392e-05 0.0185645 0.00766662" rpy="0 0 0" />
+      <mass value="0.158042" />
+      <inertia ixx="0.000124" ixy="7.84943e-07" ixz="-7.64597e-08" iyy="0.000118" iyz="1.21992e-05" izz="0.000116" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/HEAD_LINK.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://darwin/meshes/HEAD_LINK.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="SHOULDERR" type="continuous">
+    <parent link="BODY_LINK" />
+    <child link="SHOULDERR_LINK" />
+    <origin xyz="-0.082 2.318664e-07 1.33602e-10" rpy="-4.4803067e-15 -4.4803066e-15 4.4803067e-15" />
+    <axis xyz="1 0 0" />
+    <limit effort="0" velocity="5" />
+  </joint>
+  <joint name="ARMUPPERR" type="continuous">
+    <parent link="SHOULDERR_LINK" />
+    <child link="ARMUPPERR_LINK" />
+    <origin xyz="-4.5242097e-08 -0.016 2.42096e-10" rpy="-4.4803067e-15 -4.4803066e-15 4.4803067e-15" />
+    <axis xyz="0 0 1" />
+    <limit effort="0" velocity="5" />
+  </joint>
+  <joint name="ARMLOWERR" type="continuous">
+    <parent link="ARMUPPERR_LINK" />
+    <child link="ARMLOWERR_LINK" />
+    <origin xyz="8.5100093e-08 -0.059999955 0.015999983" rpy="-4.4803067e-15 -4.4803066e-15 4.4803067e-15" />
+    <axis xyz="1 0 0" />
+    <limit effort="0" velocity="5" />
+  </joint>
+  <joint name="SHOULDERL" type="continuous">
+    <parent link="BODY_LINK" />
+    <child link="SHOULDERL_LINK" />
+    <origin xyz="0.082 -2.318664e-07 -1.33602e-10" rpy="-4.4803067e-15 -4.4803066e-15 4.4803067e-15" />
+    <axis xyz="1 0 0" />
+    <limit effort="0" velocity="5" />
+  </joint>
+  <joint name="ARMUPPERL" type="continuous">
+    <parent link="SHOULDERL_LINK" />
+    <child link="ARMUPPERL_LINK" />
+    <origin xyz="-4.5242097e-08 -0.016 2.42096e-10" rpy="-4.4803067e-15 -4.4803066e-15 4.4803067e-15" />
+    <axis xyz="0 0 1" />
+    <limit effort="0" velocity="5" />
+  </joint>
+  <joint name="ARMLOWERL" type="continuous">
+    <parent link="ARMUPPERL_LINK" />
+    <child link="ARMLOWERL_LINK" />
+    <origin xyz="8.5099912e-08 -0.059999955 0.016000047" rpy="-4.4803067e-15 -4.4803066e-15 4.4803067e-15" />
+    <axis xyz="1 0 0" />
+    <limit effort="0" velocity="5" />
+  </joint>
+  <joint name="PELVYR" type="continuous">
+    <parent link="BODY_LINK" />
+    <child link="PELVYR_LINK" />
+    <origin xyz="-0.037000031 -0.12219991 -0.0049999991" rpy="-4.4803067e-15 -4.4803066e-15 4.4803067e-15" />
+    <axis xyz="0 1 0" />
+    <limit effort="0" velocity="5" />
+  </joint>
+  <joint name="PELVR" type="continuous">
+    <parent link="PELVYR_LINK" />
+    <child link="PELVR_LINK" />
+    <origin xyz="0 0 0" rpy="-4.4803067e-15 -4.4803066e-15 4.4803067e-15" />
+    <axis xyz="0 0 1" />
+    <limit effort="0" velocity="5" />
+  </joint>
+  <joint name="LEGUPPERR" type="continuous">
+    <parent link="PELVR_LINK" />
+    <child link="LEGUPPERR_LINK" />
+    <origin xyz="0 0 0" rpy="-4.4803067e-15 -4.4803066e-15 4.4803067e-15" />
+    <axis xyz="1 0 0" />
+    <limit effort="0" velocity="5" />
+  </joint>
+  <joint name="LEGLOWERR" type="continuous">
+    <parent link="LEGUPPERR_LINK" />
+    <child link="LEGLOWERR_LINK" />
+    <origin xyz="3.7030308e-08 -0.093 2.9705313e-09" rpy="-4.4803067e-15 -4.4803066e-15 4.4803067e-15" />
+    <axis xyz="1 0 0" />
+    <limit effort="0" velocity="5" />
+  </joint>
+  <joint name="ANKLER" type="continuous">
+    <parent link="LEGLOWERR_LINK" />
+    <child link="ANKLER_LINK" />
+    <origin xyz="3.7030054e-08 -0.0930001 -7.0291859e-09" rpy="-4.4803067e-15 -4.4803066e-15 4.4803067e-15" />
+    <axis xyz="1 0 0" />
+    <limit effort="0" velocity="5" />
+  </joint>
+  <joint name="FOOTR" type="continuous">
+    <parent link="ANKLER_LINK" />
+    <child link="FOOTR_LINK" />
+    <origin xyz="0 0 0" rpy="-4.4803067e-15 -4.4803066e-15 4.4803067e-15" />
+    <axis xyz="0 0 1" />
+    <limit effort="0" velocity="5" />
+  </joint>
+  <joint name="PELVYL" type="continuous">
+    <parent link="BODY_LINK" />
+    <child link="PELVYL_LINK" />
+    <origin xyz="0.036999969 -0.12220012 -0.0049999998" rpy="-4.4803067e-15 -4.4803066e-15 4.4803067e-15" />
+    <axis xyz="0 1 0" />
+    <limit effort="0" velocity="5" />
+  </joint>
+  <joint name="PELVL" type="continuous">
+    <parent link="PELVYL_LINK" />
+    <child link="PELVL_LINK" />
+    <origin xyz="0 0 0" rpy="-4.4803067e-15 -4.4803066e-15 4.4803067e-15" />
+    <axis xyz="0 0 1" />
+    <limit effort="0" velocity="5" />
+  </joint>
+  <joint name="LEGUPPERL" type="continuous">
+    <parent link="PELVL_LINK" />
+    <child link="LEGUPPERL_LINK" />
+    <origin xyz="0 0 0" rpy="-4.4803067e-15 -4.4803066e-15 4.4803067e-15" />
+    <axis xyz="1 0 0" />
+    <limit effort="0" velocity="5" />
+  </joint>
+  <joint name="LEGLOWERL" type="continuous">
+    <parent link="LEGUPPERL_LINK" />
+    <child link="LEGLOWERL_LINK" />
+    <origin xyz="3.7030308e-08 -0.093 2.9705313e-09" rpy="-4.4803067e-15 -4.4803066e-15 4.4803067e-15" />
+    <axis xyz="1 0 0" />
+    <limit effort="0" velocity="5" />
+  </joint>
+  <joint name="ANKLEL" type="continuous">
+    <parent link="LEGLOWERL_LINK" />
+    <child link="ANKLEL_LINK" />
+    <origin xyz="3.7030619e-08 -0.0929999 -7.0297515e-09" rpy="-4.4803067e-15 -4.4803066e-15 4.4803067e-15" />
+    <axis xyz="1 0 0" />
+    <limit effort="0" velocity="5" />
+  </joint>
+  <joint name="FOOTL" type="continuous">
+    <parent link="ANKLEL_LINK" />
+    <child link="FOOTL_LINK" />
+    <origin xyz="0 0 0" rpy="-4.4803067e-15 -4.4803066e-15 4.4803067e-15" />
+    <axis xyz="0 0 1" />
+    <limit effort="0" velocity="5" />
+  </joint>
+  <joint name="NECK" type="continuous">
+    <parent link="BODY_LINK" />
+    <child link="NECK_LINK" />
+    <origin xyz="2.0918182e-10 0.051 -2.0958818e-10" rpy="-4.4803067e-15 -4.4803066e-15 4.4803067e-15" />
+    <axis xyz="0 1 0" />
+    <limit effort="0" velocity="5" />
+  </joint>
+  <joint name="HEADL" type="continuous">
+    <parent link="NECK_LINK" />
+    <child link="HEAD_LINK" />
+    <origin xyz="0 0 0" rpy="-4.4803067e-15 -4.4803066e-15 4.4803067e-15" />
+    <axis xyz="1 0 0" />
+    <limit effort="0" velocity="5" />
+  </joint>
+</robot>

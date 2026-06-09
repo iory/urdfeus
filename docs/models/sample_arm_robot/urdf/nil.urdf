@@ -1,0 +1,230 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="nil">
+  <link name="sarm_b0">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_arm_robot/meshes/_sarm-b0.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_arm_robot/meshes/_sarm-b0.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="sarm_b1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_arm_robot/meshes/_sarm-b1.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_arm_robot/meshes/_sarm-b1.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="sarm_b2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_arm_robot/meshes/_sarm-b2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_arm_robot/meshes/_sarm-b2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="sarm_b3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_arm_robot/meshes/_sarm-b3.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_arm_robot/meshes/_sarm-b3.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="sarm_b4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_arm_robot/meshes/_sarm-b4.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_arm_robot/meshes/_sarm-b4.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="sarm_b5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_arm_robot/meshes/_sarm-b5.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_arm_robot/meshes/_sarm-b5.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="sarm_b6">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_arm_robot/meshes/_sarm-b6.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_arm_robot/meshes/_sarm-b6.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="sarm_fl">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_arm_robot/meshes/_sarm-fl.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_arm_robot/meshes/_sarm-fl.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="sarm_fr">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_arm_robot/meshes/_sarm-fr.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://sample_arm_robot/meshes/_sarm-fr.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint0" type="revolute">
+    <parent link="sarm_b0" />
+    <child link="sarm_b1" />
+    <origin xyz="0 0 0.3" rpy="0 -0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="-1.4835299" upper="1.4835299" />
+  </joint>
+  <joint name="joint1" type="revolute">
+    <parent link="sarm_b1" />
+    <child link="sarm_b2" />
+    <origin xyz="0 0 0" rpy="1.5707963 -0 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-0.52359878" upper="2.0943951" />
+  </joint>
+  <joint name="joint2" type="revolute">
+    <parent link="sarm_b2" />
+    <child link="sarm_b3" />
+    <origin xyz="0 0.31 -4e-24" rpy="0 -0 1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-0.52359878" upper="2.6179939" />
+  </joint>
+  <joint name="joint3" type="revolute">
+    <parent link="sarm_b3" />
+    <child link="sarm_b4" />
+    <origin xyz="0 0 0" rpy="-6.50354e-17 1.5707963 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="-2.8797933" upper="2.8797933" />
+  </joint>
+  <joint name="joint4" type="revolute">
+    <parent link="sarm_b4" />
+    <child link="sarm_b5" />
+    <origin xyz="0 -2e-23 0.4" rpy="1.665335e-16 -1.5707963 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="joint5" type="revolute">
+    <parent link="sarm_b5" />
+    <child link="sarm_b6" />
+    <origin xyz="0 0 0" rpy="6.89804e-17 1.5707963 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="-3.1415927" upper="3.1415927" />
+  </joint>
+  <joint name="joint_fr" type="prismatic">
+    <parent link="sarm_b6" />
+    <child link="sarm_fl" />
+    <origin xyz="-6.5e-24 2.5e-24 0.075" rpy="1.5707963 -7.85046e-17 1.5707963" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.042" />
+  </joint>
+  <joint name="joint_fl" type="prismatic">
+    <parent link="sarm_b6" />
+    <child link="sarm_fr" />
+    <origin xyz="-6.5e-24 2.5e-24 0.075" rpy="1.5707963 -7.85046e-17 1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.042" />
+  </joint>
+</robot>

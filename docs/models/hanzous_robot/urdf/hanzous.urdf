@@ -1,0 +1,542 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="hanzous">
+  <link name="root">
+    <inertial>
+      <origin xyz="-0.033002 -0.00270992 -0.0316162" rpy="0 0 0" />
+      <mass value="0.496" />
+      <inertia ixx="0.0003718093" ixy="4.0085e-07" ixz="-0.0001347838" iyy="0.0002957407" iyz="2.04337e-07" izz="0.0003783044" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_root.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_root.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rarm_shoulder_y">
+    <inertial>
+      <origin xyz="4.902009e-18 0.0333309 0.00484035" rpy="0 0 0" />
+      <mass value="0.0705557" />
+      <inertia ixx="1.63525e-05" ixy="-9.573001e-22" ixz="-6.557242e-23" iyy="2.01341e-05" iyz="-5.70036e-07" izz="1.38221e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_rarm-shoulder-y.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_rarm-shoulder-y.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rarm_shoulder_r">
+    <inertial>
+      <origin xyz="-2.913225e-16 0.0313675 1.120894e-17" rpy="0 0 0" />
+      <mass value="0.0142714" />
+      <inertia ixx="1.25734e-05" ixy="3.532121e-22" ixz="1.230786e-35" iyy="6.92648e-06" iyz="-2.377971e-22" izz="6.5983e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_rarm-shoulder-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_rarm-shoulder-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rarm_elbow_p">
+    <inertial>
+      <origin xyz="0.000568014 -0.0143982 -0.001447" rpy="0 0 0" />
+      <mass value="0.0948254" />
+      <inertia ixx="0.0001496415" ixy="3.09901e-06" ixz="3.54487e-07" iyy="1.42727e-05" iyz="-6.57926e-06" izz="0.0001412606" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_rarm-elbow-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_rarm-elbow-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rarm_gripper">
+    <inertial>
+      <origin xyz="-0.00280986 0.015493 -1.314504e-16" rpy="0 0 0" />
+      <mass value="0.005751" />
+      <inertia ixx="2.48487e-06" ixy="3.52431e-08" ixz="1.52e-13" iyy="1.08679e-06" iyz="-6.84e-13" izz="1.66257e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_rarm-gripper.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_rarm-gripper.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="larm_shoulder_y">
+    <inertial>
+      <origin xyz="-2.234982e-18 0.0333309 -0.00484035" rpy="0 0 0" />
+      <mass value="0.0705557" />
+      <inertia ixx="1.63525e-05" ixy="-7.818271e-22" ixz="1.779784e-23" iyy="2.01341e-05" iyz="5.70036e-07" izz="1.38221e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_larm-shoulder-y.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_larm-shoulder-y.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="larm_shoulder_r">
+    <inertial>
+      <origin xyz="-1.207923e-16 0.0313675 -3.139661e-17" rpy="0 0 0" />
+      <mass value="0.0142714" />
+      <inertia ixx="1.25734e-05" ixy="3.532121e-22" ixz="-6.542023e-35" iyy="6.92648e-06" iyz="-2.377971e-22" izz="6.5983e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_larm-shoulder-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_larm-shoulder-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="larm_elbow_p">
+    <inertial>
+      <origin xyz="0.000568014 -0.0143982 0.001447" rpy="0 0 0" />
+      <mass value="0.0948254" />
+      <inertia ixx="0.0001496415" ixy="3.09901e-06" ixz="-7.02875e-08" iyy="1.42727e-05" iyz="8.14222e-06" izz="0.0001412606" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_larm-elbow-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_larm-elbow-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="larm_gripper">
+    <inertial>
+      <origin xyz="-0.00280986 0.015493 1.98952e-16" rpy="0 0 0" />
+      <mass value="0.005751" />
+      <inertia ixx="2.48487e-06" ixy="3.52431e-08" ixz="1.52e-13" iyy="1.08679e-06" iyz="-6.84e-13" izz="1.66257e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_larm-gripper.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_larm-gripper.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="head_neck_y">
+    <inertial>
+      <origin xyz="-6.543031e-20 0.00664517 0.0245521" rpy="0 0 0" />
+      <mass value="0.0259856" />
+      <inertia ixx="5.52921e-06" ixy="-4.332317e-24" ixz="1.254293e-22" iyy="5.60087e-06" iyz="-7.79133e-08" izz="3.16147e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_head-neck-y.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_head-neck-y.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="head_neck_p">
+    <inertial>
+      <origin xyz="0.00128885 0.0323725 1.238382e-17" rpy="0 0 0" />
+      <mass value="0.174593" />
+      <inertia ixx="3.5765e-05" ixy="2.73882e-06" ixz="-5.636479e-20" iyy="0.0002144233" iyz="3.078171e-22" izz="0.0002161517" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_head-neck-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_head-neck-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="spine_plate">
+    <inertial>
+      <origin xyz="0.0425 -4.03381e-20 6.529169e-20" rpy="0 0 0" />
+      <mass value="0.01596" />
+      <inertia ixx="5.32536e-07" ixy="4.193386e-54" ixz="-2.05e-13" iyy="1.51791e-05" iyz="7.274365e-72" izz="1.46489e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_spine-plate.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_spine-plate.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="spine_hip">
+    <inertial>
+      <origin xyz="0.00231967 -0.00552436 -6.217249e-18" rpy="0 0 0" />
+      <mass value="0.0723349" />
+      <inertia ixx="0.0001260951" ixy="-6.84715e-06" ixz="-1.8667e-11" iyy="0.0001340015" iyz="-2.7025e-11" izz="3.665e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_spine-hip.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_spine-hip.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rleg_crotch_p">
+    <inertial>
+      <origin xyz="-8.650177e-18 0.034 9.488844e-18" rpy="0 0 0" />
+      <mass value="0.129" />
+      <inertia ixx="0.0001105406" ixy="1.808341e-20" ixz="7.160939e-22" iyy="2.15e-05" iyz="-1.859505e-20" izz="9.76406e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_rleg-crotch-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_rleg-crotch-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rleg_knee_p">
+    <inertial>
+      <origin xyz="-3.769849e-19 0.0313675 -2.959385e-17" rpy="0 0 0" />
+      <mass value="0.0142714" />
+      <inertia ixx="1.25734e-05" ixy="-8.19626e-22" ixz="3.996678e-22" iyy="6.92648e-06" iyz="-3.664378e-22" izz="6.5983e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_rleg-knee-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_rleg-knee-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rleg_ankle_p">
+    <inertial>
+      <origin xyz="2.00451e-17 0.00681706 -0.000716175" rpy="0 0 0" />
+      <mass value="0.0694757" />
+      <inertia ixx="2.56374e-05" ixy="3.949266e-22" ixz="1.614477e-22" iyy="1.33065e-05" iyz="-1.86285e-06" izz="2.04883e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_rleg-ankle-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_rleg-ankle-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rleg_ankle_r">
+    <inertial>
+      <origin xyz="-0.00303377 0.00991715 0.0337691" rpy="0 0 0" />
+      <mass value="0.2295" />
+      <inertia ixx="0.0002060042" ixy="5.7685e-08" ixz="2.05079e-06" iyy="0.0001815586" iyz="-6.42096e-07" izz="6.15125e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_rleg-ankle-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_rleg-ankle-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lleg_crotch_p">
+    <inertial>
+      <origin xyz="-8.650177e-18 0.034 9.488844e-18" rpy="0 0 0" />
+      <mass value="0.129" />
+      <inertia ixx="0.0001105406" ixy="1.808341e-20" ixz="7.160939e-22" iyy="2.15e-05" iyz="-1.859505e-20" izz="9.76406e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_lleg-crotch-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_lleg-crotch-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lleg_knee_p">
+    <inertial>
+      <origin xyz="-3.769849e-19 0.0313675 -2.959385e-17" rpy="0 0 0" />
+      <mass value="0.0142714" />
+      <inertia ixx="1.25734e-05" ixy="-8.19626e-22" ixz="3.996678e-22" iyy="6.92648e-06" iyz="-3.664378e-22" izz="6.5983e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_lleg-knee-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_lleg-knee-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lleg_ankle_p">
+    <inertial>
+      <origin xyz="2.711415e-17 0.00681706 0.000716175" rpy="0 0 0" />
+      <mass value="0.0694757" />
+      <inertia ixx="2.56374e-05" ixy="-1.076066e-21" ixz="5.947374e-22" iyy="1.33065e-05" iyz="1.86285e-06" izz="2.04883e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_lleg-ankle-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_lleg-ankle-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lleg_ankle_r">
+    <inertial>
+      <origin xyz="-0.00303377 0.00991715 -0.0337691" rpy="0 0 0" />
+      <mass value="0.2295" />
+      <inertia ixx="0.0002060042" ixy="5.7685e-08" ixz="-2.05079e-06" iyy="0.0001815586" iyz="6.42096e-07" izz="6.15125e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_lleg-ankle-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hanzous_robot/meshes/_lleg-ankle-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="rarm_shoulder_y" type="revolute">
+    <parent link="root" />
+    <child link="rarm_shoulder_y" />
+    <origin xyz="-0.003 -0.053 -0.005" rpy="-1.570092e-16 -2.975747e-32 3.1415927" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="rarm_shoulder_r" type="revolute">
+    <parent link="rarm_shoulder_y" />
+    <child link="rarm_shoulder_r" />
+    <origin xyz="-7.771561e-18 0.035 0.015" rpy="1.5707963 -2.8708e-16 -1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-0.78539816" upper="2.3561945" />
+  </joint>
+  <joint name="rarm_elbow_p" type="revolute">
+    <parent link="rarm_shoulder_r" />
+    <child link="rarm_elbow_p" />
+    <origin xyz="3.1086244e-17 0.07 0" rpy="3.1415927 2.775557e-16 -2.220446e-16" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-0.78539816" upper="2.3561945" />
+  </joint>
+  <joint name="rarm_gripper" type="revolute">
+    <parent link="rarm_elbow_p" />
+    <child link="rarm_gripper" />
+    <origin xyz="0.003 -0.081 -0.005" rpy="2.220446e-16 2.220446e-16 -3.1415927" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="larm_shoulder_y" type="revolute">
+    <parent link="root" />
+    <child link="larm_shoulder_y" />
+    <origin xyz="-0.003 0.047 -0.005" rpy="3.1415927 -1.224647e-16 -3.1415927" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="larm_shoulder_r" type="revolute">
+    <parent link="larm_shoulder_y" />
+    <child link="larm_shoulder_r" />
+    <origin xyz="1.8369705e-18 0.035 -0.015" rpy="-1.5707963 -1.205466e-16 -1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-0.78539816" upper="2.3561945" />
+  </joint>
+  <joint name="larm_elbow_p" type="revolute">
+    <parent link="larm_shoulder_r" />
+    <child link="larm_elbow_p" />
+    <origin xyz="-1.9428906e-17 0.07 3.8857805e-18" rpy="3.1415927 -2.220446e-16 -5.55111e-17" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-0.78539816" upper="2.3561945" />
+  </joint>
+  <joint name="larm_gripper" type="revolute">
+    <parent link="larm_elbow_p" />
+    <child link="larm_gripper" />
+    <origin xyz="0.003 -0.081 0.005" rpy="1.110223e-16 1.110223e-16 -3.1415927" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="head_neck_y" type="revolute">
+    <parent link="root" />
+    <child link="head_neck_y" />
+    <origin xyz="-0.006 -0.003 0.005" rpy="3.2151136e-32 -1.570092e-16 1.5707963" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="head_neck_p" type="revolute">
+    <parent link="head_neck_y" />
+    <child link="head_neck_p" />
+    <origin xyz="4.5532668e-18 3.5745255e-34 0.029" rpy="1.5707963 -1.2325939e-32 -1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="spine_upper_p" type="revolute">
+    <parent link="root" />
+    <child link="spine_plate" />
+    <origin xyz="-0.001 -0.003 -0.0535" rpy="1.5707963 1.5707963 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="spine_lower_p" type="revolute">
+    <parent link="spine_plate" />
+    <child link="spine_hip" />
+    <origin xyz="0.0825 -0.002 8.881784e-19" rpy="0 -0 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="rleg_crotch_p" type="revolute">
+    <parent link="spine_hip" />
+    <child link="rleg_crotch_p" />
+    <origin xyz="0.043 1.5543122e-17 0.035" rpy="2.220446e-16 -2.870799e-16 -1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-0.78539816" upper="2.3561945" />
+  </joint>
+  <joint name="rleg_knee_p" type="revolute">
+    <parent link="rleg_crotch_p" />
+    <child link="rleg_knee_p" />
+    <origin xyz="-3.2029884e-17 0.068 -1.5099033e-17" rpy="1.9721529e-31 -2.2204463e-16 -7.771563e-16" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-2.3561945" upper="0.78539816" />
+  </joint>
+  <joint name="rleg_ankle_p" type="revolute">
+    <parent link="rleg_knee_p" />
+    <child link="rleg_ankle_p" />
+    <origin xyz="-8.737288e-17 0.07 -1.5543122e-17" rpy="4.440892e-16 2.2204457e-16 3.1415927" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="rleg_ankle_r" type="revolute">
+    <parent link="rleg_ankle_p" />
+    <child link="rleg_ankle_r" />
+    <origin xyz="7.5002599e-17 -0.04 -0.01" rpy="1.5707963 5.360631e-16 1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.0471976" upper="0.52359878" />
+  </joint>
+  <joint name="lleg_crotch_p" type="revolute">
+    <parent link="spine_hip" />
+    <child link="lleg_crotch_p" />
+    <origin xyz="0.043 -1.5543122e-17 -0.035" rpy="2.220446e-16 -2.870799e-16 -1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-0.78539816" upper="2.3561945" />
+  </joint>
+  <joint name="lleg_knee_p" type="revolute">
+    <parent link="lleg_crotch_p" />
+    <child link="lleg_knee_p" />
+    <origin xyz="-3.2029884e-17 0.068 -1.5099033e-17" rpy="1.9721529e-31 -2.2204463e-16 -7.771563e-16" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-2.3561945" upper="0.78539816" />
+  </joint>
+  <joint name="lleg_ankle_p" type="revolute">
+    <parent link="lleg_knee_p" />
+    <child link="lleg_ankle_p" />
+    <origin xyz="-8.737288e-17 0.07 -1.5543122e-17" rpy="4.440892e-16 2.2204457e-16 3.1415927" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="lleg_ankle_r" type="revolute">
+    <parent link="lleg_ankle_p" />
+    <child link="lleg_ankle_r" />
+    <origin xyz="6.9261001e-17 -0.04 0.01" rpy="-1.5707963 -1.34693e-17 1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.0471976" upper="0.52359878" />
+  </joint>
+</robot>

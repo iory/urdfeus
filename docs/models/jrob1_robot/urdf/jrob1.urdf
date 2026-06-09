@@ -1,0 +1,386 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="jrob1">
+  <link name="root">
+    <inertial>
+      <origin xyz="0.0143139 0.000627817 0.0914833" rpy="0 0 0" />
+      <mass value="16.16" />
+      <inertia ixx="0.3018883" ixy="0.003303746" ixz="-0.04076342" iyy="0.4498569" iyz="-0.001334999" izz="0.238747" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://jrob1_robot/meshes/_root.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://jrob1_robot/meshes/_root.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="titan_head_neck_y">
+    <inertial>
+      <origin xyz="-0.00386511 2.327826e-18 0.037277" rpy="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="0.001875727" ixy="-0.0008298022" ixz="-0.001237198" iyy="0.004322683" iyz="-0.00067497" izz="0.003769043" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://jrob1_robot/meshes/_titan-head-neck-y.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://jrob1_robot/meshes/_titan-head-neck-y.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="titan_head_neck_p">
+    <inertial>
+      <origin xyz="-0.00528347 -0.0332922 2.330172e-17" rpy="0 0 0" />
+      <mass value="0.48" />
+      <inertia ixx="0.003284628" ixy="-0.0004280869" ixz="-0.0007079684" iyy="0.003769302" iyz="-0.000886881" izz="0.001902376" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://jrob1_robot/meshes/_titan-head-neck-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://jrob1_robot/meshes/_titan-head-neck-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rb_crotch_y">
+    <inertial>
+      <origin xyz="1.131816e-17 2.637535e-17 0.06" rpy="0 0 0" />
+      <mass value="2" />
+      <inertia ixx="0.0056" ixy="0" ixz="0" iyy="0.0056" iyz="0" izz="0.0064" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://jrob1_robot/meshes/_rb-crotch-y.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://jrob1_robot/meshes/_rb-crotch-y.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rb_crotch_r">
+    <inertial>
+      <origin xyz="-2.131628e-17 0.0579866 -2.65439e-18" rpy="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="0.009135302" ixy="8.240388e-19" ixz="8.240388e-19" iyy="0.005820859" iyz="-0.003362443" izz="0.004227109" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://jrob1_robot/meshes/_rb-crotch-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://jrob1_robot/meshes/_rb-crotch-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rb_knee_r">
+    <inertial>
+      <origin xyz="1.136868e-16 0.102198 -2.388153e-17" rpy="0 0 0" />
+      <mass value="0.6" />
+      <inertia ixx="0.01192042" ixy="-4.344969e-18" ixz="-4.344969e-18" iyy="0.00504968" iyz="-0.003905877" izz="0.007049072" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://jrob1_robot/meshes/_rb-knee-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://jrob1_robot/meshes/_rb-knee-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rf_crotch_y">
+    <inertial>
+      <origin xyz="1.131816e-17 2.637535e-17 0.06" rpy="0 0 0" />
+      <mass value="2" />
+      <inertia ixx="0.0056" ixy="0" ixz="0" iyy="0.0056" iyz="0" izz="0.0064" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://jrob1_robot/meshes/_rf-crotch-y.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://jrob1_robot/meshes/_rf-crotch-y.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rf_crotch_r">
+    <inertial>
+      <origin xyz="-2.131628e-17 0.0579866 -2.65439e-18" rpy="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="0.009135302" ixy="8.240388e-19" ixz="8.240388e-19" iyy="0.005820859" iyz="-0.003362443" izz="0.004227109" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://jrob1_robot/meshes/_rf-crotch-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://jrob1_robot/meshes/_rf-crotch-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rf_knee_r">
+    <inertial>
+      <origin xyz="1.136868e-16 0.102198 -2.388153e-17" rpy="0 0 0" />
+      <mass value="0.6" />
+      <inertia ixx="0.01192042" ixy="-4.344969e-18" ixz="-4.344969e-18" iyy="0.00504968" iyz="-0.003905877" izz="0.007049072" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://jrob1_robot/meshes/_rf-knee-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://jrob1_robot/meshes/_rf-knee-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lb_crotch_y">
+    <inertial>
+      <origin xyz="1.131816e-17 2.637535e-17 0.06" rpy="0 0 0" />
+      <mass value="2" />
+      <inertia ixx="0.0056" ixy="0" ixz="0" iyy="0.0056" iyz="0" izz="0.0064" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://jrob1_robot/meshes/_lb-crotch-y.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://jrob1_robot/meshes/_lb-crotch-y.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lb_crotch_r">
+    <inertial>
+      <origin xyz="-2.131628e-17 0.0579866 -2.65439e-18" rpy="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="0.009135302" ixy="8.240388e-19" ixz="8.240388e-19" iyy="0.005820859" iyz="-0.003362443" izz="0.004227109" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://jrob1_robot/meshes/_lb-crotch-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://jrob1_robot/meshes/_lb-crotch-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lb_knee_r">
+    <inertial>
+      <origin xyz="1.136868e-16 0.102198 -2.388153e-17" rpy="0 0 0" />
+      <mass value="0.6" />
+      <inertia ixx="0.01192042" ixy="-4.344969e-18" ixz="-4.344969e-18" iyy="0.00504968" iyz="-0.003905877" izz="0.007049072" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://jrob1_robot/meshes/_lb-knee-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://jrob1_robot/meshes/_lb-knee-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lf_crotch_y">
+    <inertial>
+      <origin xyz="1.131816e-17 2.637535e-17 0.06" rpy="0 0 0" />
+      <mass value="2" />
+      <inertia ixx="0.0056" ixy="0" ixz="0" iyy="0.0056" iyz="0" izz="0.0064" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://jrob1_robot/meshes/_lf-crotch-y.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://jrob1_robot/meshes/_lf-crotch-y.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lf_crotch_r">
+    <inertial>
+      <origin xyz="-2.131628e-17 0.0579866 -2.65439e-18" rpy="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="0.009135302" ixy="8.240388e-19" ixz="8.240388e-19" iyy="0.005820859" iyz="-0.003362443" izz="0.004227109" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://jrob1_robot/meshes/_lf-crotch-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://jrob1_robot/meshes/_lf-crotch-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lf_knee_r">
+    <inertial>
+      <origin xyz="1.136868e-16 0.102198 -2.388153e-17" rpy="0 0 0" />
+      <mass value="0.6" />
+      <inertia ixx="0.01192042" ixy="-4.344969e-18" ixz="-4.344969e-18" iyy="0.00504968" iyz="-0.003905877" izz="0.007049072" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://jrob1_robot/meshes/_lf-knee-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://jrob1_robot/meshes/_lf-knee-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="titan_head_neck_y" type="revolute">
+    <parent link="root" />
+    <child link="titan_head_neck_y" />
+    <origin xyz="0.2 4.440892e-17 0.3" rpy="0 -0 -3.1415927" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="titan_head_neck_p" type="revolute">
+    <parent link="titan_head_neck_y" />
+    <child link="titan_head_neck_p" />
+    <origin xyz="-1.6315571e-33 -3.67394e-18 0.06" rpy="-1.5707963 7.850462e-17 -7.85046e-17" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="rb_crotch_y" type="revolute">
+    <parent link="root" />
+    <child link="rb_crotch_y" />
+    <origin xyz="-0.19 -0.11 -0.072" rpy="0 -0 1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="rb_crotch_r" type="revolute">
+    <parent link="rb_crotch_y" />
+    <child link="rb_crotch_r" />
+    <origin xyz="-0.045 9.992007e-18 0.06" rpy="-1.5707963 1.5707963 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="rb_knee_r" type="revolute">
+    <parent link="rb_crotch_r" />
+    <child link="rb_knee_r" />
+    <origin xyz="0 0.155 2.4336426e-17" rpy="1.665335e-16 3.235427e-16 -1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="rf_crotch_y" type="revolute">
+    <parent link="root" />
+    <child link="rf_crotch_y" />
+    <origin xyz="0.19 -0.11 -0.072" rpy="0 -0 1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="rf_crotch_r" type="revolute">
+    <parent link="rf_crotch_y" />
+    <child link="rf_crotch_r" />
+    <origin xyz="-0.045 9.992007e-18 0.06" rpy="-1.5707963 1.5707963 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="rf_knee_r" type="revolute">
+    <parent link="rf_crotch_r" />
+    <child link="rf_knee_r" />
+    <origin xyz="0 0.155 2.4336426e-17" rpy="1.665335e-16 3.235427e-16 -1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="lb_crotch_y" type="revolute">
+    <parent link="root" />
+    <child link="lb_crotch_y" />
+    <origin xyz="-0.19 0.11 -0.072" rpy="-0 -0 -1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="lb_crotch_r" type="revolute">
+    <parent link="lb_crotch_y" />
+    <child link="lb_crotch_r" />
+    <origin xyz="-0.045 9.992007e-18 0.06" rpy="-1.5707963 1.5707963 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="lb_knee_r" type="revolute">
+    <parent link="lb_crotch_r" />
+    <child link="lb_knee_r" />
+    <origin xyz="0 0.155 2.4336426e-17" rpy="-4.996004e-16 -5.646358e-16 -1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="lf_crotch_y" type="revolute">
+    <parent link="root" />
+    <child link="lf_crotch_y" />
+    <origin xyz="0.19 0.11 -0.072" rpy="-0 -0 -1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="lf_crotch_r" type="revolute">
+    <parent link="lf_crotch_y" />
+    <child link="lf_crotch_r" />
+    <origin xyz="-0.045 9.992007e-18 0.06" rpy="-1.5707963 1.5707963 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="lf_knee_r" type="revolute">
+    <parent link="lf_crotch_r" />
+    <child link="lf_knee_r" />
+    <origin xyz="0 0.155 2.4336426e-17" rpy="-4.996004e-16 -5.646358e-16 -1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+</robot>

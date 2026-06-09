@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="room73a3-clock">
+  <link name="room73a3_clock_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_clock_object/meshes/_room73a3-clock-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_clock_object/meshes/_room73a3-clock-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="room73a3_clock_bodyset3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_clock_object/meshes/_room73a3-clock-bodyset3.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_clock_object/meshes/_room73a3-clock-bodyset3.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="room73a3_clock_bodyset4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_clock_object/meshes/_room73a3-clock-bodyset4.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_clock_object/meshes/_room73a3-clock-bodyset4.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="room73a3_clock_bodyset5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_clock_object/meshes/_room73a3-clock-bodyset5.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room73a3_clock_object/meshes/_room73a3-clock-bodyset5.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="hour_joint" type="revolute">
+    <parent link="room73a3_clock_bodyset2" />
+    <child link="room73a3_clock_bodyset3" />
+    <origin xyz="0.006 0 0.15" rpy="0 -0 0" />
+    <axis xyz="-1 0 0" />
+    <limit effort="100" velocity="5" lower="-6.2831853" upper="6.2831853" />
+  </joint>
+  <joint name="minute_joint" type="revolute">
+    <parent link="room73a3_clock_bodyset3" />
+    <child link="room73a3_clock_bodyset4" />
+    <origin xyz="0.001 0 0" rpy="0 -0 0" />
+    <axis xyz="-1 0 0" />
+    <limit effort="100" velocity="5" lower="-6.2831853" upper="6.2831853" />
+  </joint>
+  <joint name="second_joint" type="revolute">
+    <parent link="room73a3_clock_bodyset4" />
+    <child link="room73a3_clock_bodyset5" />
+    <origin xyz="0.001 0 0" rpy="0 -0 0" />
+    <axis xyz="-1 0 0" />
+    <limit effort="100" velocity="5" lower="-6.2831853" upper="6.2831853" />
+  </joint>
+</robot>

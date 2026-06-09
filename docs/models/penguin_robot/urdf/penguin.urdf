@@ -1,0 +1,412 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="penguin">
+  <link name="root">
+    <inertial>
+      <origin xyz="0.00581465 -0.000120396 -0.020259" rpy="0 0 0" />
+      <mass value="0.718" />
+      <inertia ixx="0.004338325" ixy="-2.24049e-07" ixz="0.000208659" iyy="0.003770324" iyz="-1.2223e-06" izz="0.001732876" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://penguin_robot/meshes/_root.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://penguin_robot/meshes/_root.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="tail_tail_y">
+    <inertial>
+      <origin xyz="-3.026695e-18 0.0276092 -0.0142223" rpy="0 0 0" />
+      <mass value="0.0160557" />
+      <inertia ixx="5.45873e-06" ixy="2.298709e-22" ixz="-2.715909e-22" iyy="4.00379e-06" iyz="1.03839e-06" izz="1.85865e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://penguin_robot/meshes/_tail-tail-y.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://penguin_robot/meshes/_tail-tail-y.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rleg_crotch_y">
+    <inertial>
+      <origin xyz="-3.741946e-17 0.0225 6.496077e-18" rpy="0 0 0" />
+      <mass value="0.0121114" />
+      <inertia ixx="4.91652e-06" ixy="-6.493333e-22" ixz="5.273932e-22" iyy="5.55776e-06" iyz="2.111545e-22" izz="4.91652e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://penguin_robot/meshes/_rleg-crotch-y.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://penguin_robot/meshes/_rleg-crotch-y.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rleg_crotch_p">
+    <inertial>
+      <origin xyz="-0.00237115 0.0157044 2.501738e-18" rpy="0 0 0" />
+      <mass value="0.063" />
+      <inertia ixx="1.60408e-05" ixy="7.53923e-07" ixz="9.982515e-22" iyy="9.13132e-06" iyz="-1.036905e-21" izz="1.10388e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://penguin_robot/meshes/_rleg-crotch-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://penguin_robot/meshes/_rleg-crotch-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lleg_crotch_y">
+    <inertial>
+      <origin xyz="3.370167e-17 0.0225 3.236158e-18" rpy="0 0 0" />
+      <mass value="0.0121114" />
+      <inertia ixx="4.91652e-06" ixy="5.217192e-22" ixz="5.273932e-22" iyy="5.55776e-06" iyz="2.210915e-22" izz="4.91652e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://penguin_robot/meshes/_lleg-crotch-y.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://penguin_robot/meshes/_lleg-crotch-y.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lleg_crotch_p">
+    <inertial>
+      <origin xyz="-0.00237115 0.0157044 2.501738e-18" rpy="0 0 0" />
+      <mass value="0.063" />
+      <inertia ixx="1.60408e-05" ixy="7.53923e-07" ixz="9.982515e-22" iyy="9.13132e-06" iyz="-1.036905e-21" izz="1.10388e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://penguin_robot/meshes/_lleg-crotch-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://penguin_robot/meshes/_lleg-crotch-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rarm_shoulder_y">
+    <inertial>
+      <origin xyz="1.742355e-17 0.025 9.35207e-18" rpy="0 0 0" />
+      <mass value="0.0121114" />
+      <inertia ixx="5.41293e-06" ixy="7.162699e-22" ixz="-1.85205e-36" iyy="5.55776e-06" iyz="2.675655e-22" izz="5.41293e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://penguin_robot/meshes/_rarm-shoulder-y.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://penguin_robot/meshes/_rarm-shoulder-y.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rarm_shoulder_r">
+    <inertial>
+      <origin xyz="-7.105427e-17 0.0097052 -7.061466e-18" rpy="0 0 0" />
+      <mass value="0.053" />
+      <inertia ixx="1.41333e-05" ixy="-4.682678e-35" ixz="-1.764617e-35" iyy="8.83333e-06" iyz="-3.08808e-36" izz="8.83333e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://penguin_robot/meshes/_rarm-shoulder-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://penguin_robot/meshes/_rarm-shoulder-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="larm_shoulder_y">
+    <inertial>
+      <origin xyz="-3.282795e-18 0.025 4.064602e-18" rpy="0 0 0" />
+      <mass value="0.0121114" />
+      <inertia ixx="5.41293e-06" ixy="-1.525585e-22" ixz="1.26999e-38" iyy="5.55776e-06" iyz="3.426502e-22" izz="5.41293e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://penguin_robot/meshes/_larm-shoulder-y.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://penguin_robot/meshes/_larm-shoulder-y.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="larm_shoulder_r">
+    <inertial>
+      <origin xyz="7.105427e-18 0.0097052 1.765366e-18" rpy="0 0 0" />
+      <mass value="0.053" />
+      <inertia ixx="1.41333e-05" ixy="-2.871799e-36" ixz="6.362489e-38" iyy="8.83333e-06" iyz="6.362489e-38" izz="8.83333e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://penguin_robot/meshes/_larm-shoulder-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://penguin_robot/meshes/_larm-shoulder-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="head_neck_y">
+    <inertial>
+      <origin xyz="-6.041445e-19 0.00159479 0.0451375" rpy="0 0 0" />
+      <mass value="0.0590557" />
+      <inertia ixx="3.25489e-05" ixy="-9.015615e-24" ixz="2.798172e-23" iyy="2.53597e-05" iyz="4.2511e-06" izz="1.11263e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://penguin_robot/meshes/_head-neck-y.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://penguin_robot/meshes/_head-neck-y.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="head_neck_r">
+    <inertial>
+      <origin xyz="-7.229442e-19 0.0296685 1.068514e-17" rpy="0 0 0" />
+      <mass value="0.0137314" />
+      <inertia ixx="7.85801e-06" ixy="1.742818e-21" ixz="-3.904882e-36" iyy="6.5843e-06" iyz="1.88123e-21" izz="8.77655e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://penguin_robot/meshes/_head-neck-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://penguin_robot/meshes/_head-neck-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="head_neck_p">
+    <inertial>
+      <origin xyz="-0.045731 -0.0146336 -3.693067e-17" rpy="0 0 0" />
+      <mass value="0.266" />
+      <inertia ixx="0.0001048782" ixy="-0.0001208009" ixz="-4.3474e-20" iyy="0.00024978" iyz="-3.090198e-20" izz="0.0003040415" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://penguin_robot/meshes/_head-neck-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://penguin_robot/meshes/_head-neck-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="head_mouth">
+    <inertial>
+      <origin xyz="2.813749e-15 0.00933329 3.275434e-17" rpy="0 0 0" />
+      <mass value="0.00310257" />
+      <inertia ixx="8.7637e-07" ixy="5.293779e-26" ixz="-2.030239e-34" iyy="7.78627e-07" iyz="-2.842171e-23" izz="2.14089e-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://penguin_robot/meshes/_head-mouth.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://penguin_robot/meshes/_head-mouth.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="head_brow_l">
+    <inertial>
+      <origin xyz="1.122658e-14 0.0109788 -2.16005e-15" rpy="0 0 0" />
+      <mass value="0.0031714" />
+      <inertia ixx="1.08027e-06" ixy="-6.769651e-25" ixz="7.79182e-32" iyy="9.50901e-07" iyz="-4.263256e-23" izz="2.32965e-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://penguin_robot/meshes/_head-brow-l.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://penguin_robot/meshes/_head-brow-l.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="head_brow_r">
+    <inertial>
+      <origin xyz="3.410605e-15 0.0109788 3.126388e-16" rpy="0 0 0" />
+      <mass value="0.0031714" />
+      <inertia ixx="1.08027e-06" ixy="-6.769652e-25" ixz="-3.074287e-33" iyy="9.50901e-07" iyz="-4.263256e-23" izz="2.32965e-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://penguin_robot/meshes/_head-brow-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://penguin_robot/meshes/_head-brow-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="tail_tail_y" type="revolute">
+    <parent link="root" />
+    <child link="tail_tail_y" />
+    <origin xyz="-0.07 -1.554312e-17 -0.08" rpy="0 -0 1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-2.1816616" upper="0.97738438" />
+  </joint>
+  <joint name="rleg_crotch_y" type="revolute">
+    <parent link="root" />
+    <child link="rleg_crotch_y" />
+    <origin xyz="0.07 -0.05 -0.08" rpy="0 -0 -1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.6580628" upper="1.5009832" />
+  </joint>
+  <joint name="rleg_crotch_p" type="revolute">
+    <parent link="rleg_crotch_y" />
+    <child link="rleg_crotch_p" />
+    <origin xyz="-9.992007e-18 0.045 0" rpy="-1.5707963 -7.850462e-17 -1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-0.26179939" upper="2.8972466" />
+  </joint>
+  <joint name="lleg_crotch_y" type="revolute">
+    <parent link="root" />
+    <child link="lleg_crotch_y" />
+    <origin xyz="0.07 0.05 -0.08" rpy="3.1415927 -1.224647e-16 1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.2915436" upper="1.9198622" />
+  </joint>
+  <joint name="lleg_crotch_p" type="revolute">
+    <parent link="lleg_crotch_y" />
+    <child link="lleg_crotch_p" />
+    <origin xyz="-9.992007e-18 0.045 -5.5466775e-34" rpy="1.5707963 3.312908e-16 -1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-0.29670597" upper="2.9146999" />
+  </joint>
+  <joint name="rarm_shoulder_y" type="revolute">
+    <parent link="root" />
+    <child link="rarm_shoulder_y" />
+    <origin xyz="2.220446e-17 -0.1 0.125" rpy="0 -0 3.1415927" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.3264502" upper="1.6580628" />
+  </joint>
+  <joint name="rarm_shoulder_r" type="revolute">
+    <parent link="rarm_shoulder_y" />
+    <child link="rarm_shoulder_r" />
+    <origin xyz="-1.110223e-17 0.05 0" rpy="-1.5707963 2.220446e-16 1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-2.8099801" upper="0.17453293" />
+  </joint>
+  <joint name="larm_shoulder_y" type="revolute">
+    <parent link="root" />
+    <child link="larm_shoulder_y" />
+    <origin xyz="-2.220446e-17 0.1 0.125" rpy="3.1415927 -1.224647e-16 -3.1415927" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.2217305" upper="1.7453293" />
+  </joint>
+  <joint name="larm_shoulder_r" type="revolute">
+    <parent link="larm_shoulder_y" />
+    <child link="larm_shoulder_r" />
+    <origin xyz="-1.110223e-17 0.05 -6.1629773e-34" rpy="1.5707963 5.551115e-17 1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-2.0943951" upper="0.87266463" />
+  </joint>
+  <joint name="head_neck_y" type="revolute">
+    <parent link="root" />
+    <child link="head_neck_y" />
+    <origin xyz="0 0 0.06" rpy="0 -0 1.5707963" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="-1.6580628" upper="1.3439035" />
+  </joint>
+  <joint name="head_neck_r" type="revolute">
+    <parent link="head_neck_y" />
+    <child link="head_neck_r" />
+    <origin xyz="0 0 0.06" rpy="1.5707963 -0 3.1415927" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5184364" upper="1.4835299" />
+  </joint>
+  <joint name="head_neck_p" type="revolute">
+    <parent link="head_neck_r" />
+    <child link="head_neck_p" />
+    <origin xyz="7.960204e-18 0.065 -1.44329e-17" rpy="1.5707963 5.55112e-17 -1.5707963" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="-2.2514747" upper="0.76794487" />
+  </joint>
+  <joint name="head_mouth" type="revolute">
+    <parent link="head_neck_p" />
+    <child link="head_mouth" />
+    <origin xyz="-0.025 -7.2756271e-18 -1.3877773e-18" rpy="-1.6653345e-16 -6.1062265e-16 -3.1415927" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.1170107" upper="1.553343" />
+  </joint>
+  <joint name="head_brow_l" type="revolute">
+    <parent link="head_neck_p" />
+    <child link="head_brow_l" />
+    <origin xyz="-0.095 -0.04 0.025" rpy="1.5707963 6.6392195e-16 6.106227e-16" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.7976891" upper="0.89011792" />
+  </joint>
+  <joint name="head_brow_r" type="revolute">
+    <parent link="head_neck_p" />
+    <child link="head_brow_r" />
+    <origin xyz="-0.095 -0.04 -0.025" rpy="-1.5707963 3.5971655e-16 6.106227e-16" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-0.80285146" upper="1.8675023" />
+  </joint>
+</robot>

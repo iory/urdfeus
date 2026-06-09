@@ -1,0 +1,1718 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="room610">
+  <link name="world" />
+  <link name="o0_room610_bears_panel_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o0__room610-bears-panel-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o0__room610-bears-panel-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o1_room610_bears_panel_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o1__room610-bears-panel-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o1__room610-bears-panel-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o2_room610_bears_panel_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o2__room610-bears-panel-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o2__room610-bears-panel-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o3_room610_bears_panel_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o3__room610-bears-panel-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o3__room610-bears-panel-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o4_room610_610_ground_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o4__room610-610-ground-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o4__room610-610-ground-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o5_room610_tray_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o5__room610-tray-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o5__room610-tray-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o6_box">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o6__box.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o6__box.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o6_joint">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o6__joint.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o6__joint.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o6_bar">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o6__bar.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o6__bar.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o7_root">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o7__root.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o7__root.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o7_room610_cabinet_mamoru_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o7__room610-cabinet-mamoru-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o7__room610-cabinet-mamoru-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o7_room610_cabinet_mamoru_bodyset3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o7__room610-cabinet-mamoru-bodyset3.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o7__room610-cabinet-mamoru-bodyset3.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o8_root">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o8__root.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o8__root.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o8_room610_cabinet_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o8__room610-cabinet-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o8__room610-cabinet-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o8_room610_cabinet_bodyset3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o8__room610-cabinet-bodyset3.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o8__room610-cabinet-bodyset3.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o9_root">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o9__root.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o9__root.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o9_room610_shelf2_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o9__room610-shelf2-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o9__room610-shelf2-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o9_room610_shelf2_bodyset3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o9__room610-shelf2-bodyset3.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o9__room610-shelf2-bodyset3.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o9_room610_shelf2_bodyset4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o9__room610-shelf2-bodyset4.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o9__room610-shelf2-bodyset4.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o9_room610_shelf2_bodyset5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o9__room610-shelf2-bodyset5.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o9__room610-shelf2-bodyset5.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o9_room610_shelf2_bodyset6">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o9__room610-shelf2-bodyset6.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o9__room610-shelf2-bodyset6.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o10_root">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o10__root.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o10__root.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o10_room610_shelf1_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o10__room610-shelf1-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o10__room610-shelf1-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o10_room610_shelf1_bodyset3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o10__room610-shelf1-bodyset3.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o10__room610-shelf1-bodyset3.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o10_room610_shelf1_bodyset4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o10__room610-shelf1-bodyset4.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o10__room610-shelf1-bodyset4.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o10_room610_shelf1_bodyset5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o10__room610-shelf1-bodyset5.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o10__room610-shelf1-bodyset5.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o10_room610_shelf1_bodyset6">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o10__room610-shelf1-bodyset6.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o10__room610-shelf1-bodyset6.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o11_root">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o11__root.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o11__root.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o11_room610_shelf0_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o11__room610-shelf0-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o11__room610-shelf0-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o11_room610_shelf0_bodyset3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o11__room610-shelf0-bodyset3.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o11__room610-shelf0-bodyset3.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o11_room610_shelf0_bodyset4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o11__room610-shelf0-bodyset4.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o11__room610-shelf0-bodyset4.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o11_room610_shelf0_bodyset5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o11__room610-shelf0-bodyset5.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o11__room610-shelf0-bodyset5.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o11_room610_shelf0_bodyset6">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o11__room610-shelf0-bodyset6.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o11__room610-shelf0-bodyset6.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o12_root">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o12__root.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o12__root.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o12_room610_audio_shelf_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o12__room610-audio_shelf-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o12__room610-audio_shelf-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o12_room610_audio_shelf_bodyset3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o12__room610-audio_shelf-bodyset3.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o12__room610-audio_shelf-bodyset3.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o12_room610_audio_shelf_bodyset4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o12__room610-audio_shelf-bodyset4.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o12__room610-audio_shelf-bodyset4.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o12_room610_audio_shelf_bodyset5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o12__room610-audio_shelf-bodyset5.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o12__room610-audio_shelf-bodyset5.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o12_room610_audio_shelf_bodyset6">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o12__room610-audio_shelf-bodyset6.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o12__room610-audio_shelf-bodyset6.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o13_room610_x_leg_desk_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o13__room610-x-leg-desk-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o13__room610-x-leg-desk-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o14_room610_tv3_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o14__room610-tv3-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o14__room610-tv3-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o15_room610_tv1_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o15__room610-tv1-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o15__room610-tv1-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o16_root">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o16__root.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o16__root.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o16_room610_cupboard_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o16__room610-cupboard-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o16__room610-cupboard-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o16_room610_cupboard_bodyset3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o16__room610-cupboard-bodyset3.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o16__room610-cupboard-bodyset3.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o16_room610_cupboard_bodyset4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o16__room610-cupboard-bodyset4.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o16__room610-cupboard-bodyset4.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o16_room610_cupboard_bodyset5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o16__room610-cupboard-bodyset5.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o16__room610-cupboard-bodyset5.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o16_room610_cupboard_bodyset6">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o16__room610-cupboard-bodyset6.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o16__room610-cupboard-bodyset6.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o16_room610_cupboard_bodyset7">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o16__room610-cupboard-bodyset7.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o16__room610-cupboard-bodyset7.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o16_room610_cupboard_bodyset8">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o16__room610-cupboard-bodyset8.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o16__room610-cupboard-bodyset8.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o17_root">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o17__root.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o17__root.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o17_room610_fridge_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o17__room610-fridge-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o17__room610-fridge-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o17_room610_fridge_bodyset3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o17__room610-fridge-bodyset3.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o17__room610-fridge-bodyset3.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o17_room610_fridge_bodyset4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o17__room610-fridge-bodyset4.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o17__room610-fridge-bodyset4.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o17_room610_fridge_bodyset5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o17__room610-fridge-bodyset5.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o17__room610-fridge-bodyset5.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o17_room610_fridge_bodyset6">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o17__room610-fridge-bodyset6.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o17__room610-fridge-bodyset6.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o17_room610_fridge_bodyset7">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o17__room610-fridge-bodyset7.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o17__room610-fridge-bodyset7.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o18_room610_kitchen_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o18__room610-kitchen-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o18__room610-kitchen-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o19_room610_table_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o19__room610-table-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o19__room610-table-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o20_room610_chair_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o20__room610-chair-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o20__room610-chair-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o21_b0">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o21_b0.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o21_b0.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o21_button">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o21_button.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o21_button.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o21_cap">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o21_cap.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o21_cap.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o22_room610_external_wall_4_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o22__room610-external-wall-4-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o22__room610-external-wall-4-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o23_room610_external_wall_3_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o23__room610-external-wall-3-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o23__room610-external-wall-3-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o24_room610_external_wall_2_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o24__room610-external-wall-2-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o24__room610-external-wall-2-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o25_room610_external_wall_1_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o25__room610-external-wall-1-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o25__room610-external-wall-1-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o26_room610_external_wall_0_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o26__room610-external-wall-0-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://room610_scene/meshes/o26__room610-external-wall-0-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="o0_mount" type="fixed">
+    <parent link="world" />
+    <child link="o0_room610_bears_panel_bodyset2" />
+    <origin xyz="7.15 -1 0" rpy="0 -0 2.0943953" />
+  </joint>
+  <joint name="o1_mount" type="fixed">
+    <parent link="world" />
+    <child link="o1_room610_bears_panel_bodyset2" />
+    <origin xyz="6.5 -1.45 0" rpy="0 -0 2.0943953" />
+  </joint>
+  <joint name="o2_mount" type="fixed">
+    <parent link="world" />
+    <child link="o2_room610_bears_panel_bodyset2" />
+    <origin xyz="5.75 -1.73 0" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o3_mount" type="fixed">
+    <parent link="world" />
+    <child link="o3_room610_bears_panel_bodyset2" />
+    <origin xyz="5.3 -2.1 0" rpy="0 -0 0" />
+  </joint>
+  <joint name="o4_mount" type="fixed">
+    <parent link="world" />
+    <child link="o4_room610_610_ground_bodyset2" />
+    <origin xyz="4.65 0.11 0" rpy="0 -0 0" />
+  </joint>
+  <joint name="o5_mount" type="fixed">
+    <parent link="world" />
+    <child link="o5_room610_tray_bodyset2" />
+    <origin xyz="4.65 0.34 0.7" rpy="0 -0 -3.1415927" />
+  </joint>
+  <joint name="o6_mount" type="fixed">
+    <parent link="world" />
+    <child link="o6_box" />
+    <origin xyz="3.1 1.99 0" rpy="0 -0 0" />
+  </joint>
+  <joint name="o6_sweeper_p" type="revolute">
+    <parent link="o6_box" />
+    <child link="o6_joint" />
+    <origin xyz="0 0 0.05" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="o6_sweeper_r" type="revolute">
+    <parent link="o6_joint" />
+    <child link="o6_bar" />
+    <origin xyz="0 0 0" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="1.5707963" />
+  </joint>
+  <joint name="o7_mount" type="fixed">
+    <parent link="world" />
+    <child link="o7_root" />
+    <origin xyz="4.65 -0.91 0" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o7_door_upper_right" type="revolute">
+    <parent link="o7_root" />
+    <child link="o7_room610_cabinet_mamoru_bodyset2" />
+    <origin xyz="0.157 -0.39 0.01" rpy="0 -0 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="0" upper="1.5707963" />
+  </joint>
+  <joint name="o7_door_upper_left" type="revolute">
+    <parent link="o7_root" />
+    <child link="o7_room610_cabinet_mamoru_bodyset3" />
+    <origin xyz="0.157 0.39 0.01" rpy="0 -0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="0" upper="1.5707963" />
+  </joint>
+  <joint name="o8_mount" type="fixed">
+    <parent link="world" />
+    <child link="o8_root" />
+    <origin xyz="3.61 -2.16 0" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o8_door_upper_right" type="revolute">
+    <parent link="o8_root" />
+    <child link="o8_room610_cabinet_bodyset2" />
+    <origin xyz="0.157 -0.39 0.01" rpy="0 -0 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="0" upper="1.5707963" />
+  </joint>
+  <joint name="o8_door_upper_left" type="revolute">
+    <parent link="o8_root" />
+    <child link="o8_room610_cabinet_bodyset3" />
+    <origin xyz="0.157 0.39 0.01" rpy="0 -0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="0" upper="1.5707963" />
+  </joint>
+  <joint name="o9_mount" type="fixed">
+    <parent link="world" />
+    <child link="o9_root" />
+    <origin xyz="2.81 -2.16 0" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o9_drawer4" type="prismatic">
+    <parent link="o9_root" />
+    <child link="o9_room610_shelf2_bodyset2" />
+    <origin xyz="0.0055 -1.2212453e-18 1.00375" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.405" />
+  </joint>
+  <joint name="o9_drawer3" type="prismatic">
+    <parent link="o9_root" />
+    <child link="o9_room610_shelf2_bodyset3" />
+    <origin xyz="0.0055 -1.2212453e-18 0.82125" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.405" />
+  </joint>
+  <joint name="o9_drawer2" type="prismatic">
+    <parent link="o9_root" />
+    <child link="o9_room610_shelf2_bodyset4" />
+    <origin xyz="0.0055 -1.2212453e-18 0.63875" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.405" />
+  </joint>
+  <joint name="o9_drawer1" type="prismatic">
+    <parent link="o9_root" />
+    <child link="o9_room610_shelf2_bodyset5" />
+    <origin xyz="0.0055 -1.2212453e-18 0.45625" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.405" />
+  </joint>
+  <joint name="o9_drawer0" type="prismatic">
+    <parent link="o9_root" />
+    <child link="o9_room610_shelf2_bodyset6" />
+    <origin xyz="0.0055 -1.2212453e-18 0.175" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.405" />
+  </joint>
+  <joint name="o10_mount" type="fixed">
+    <parent link="world" />
+    <child link="o10_root" />
+    <origin xyz="2.01 -2.16 0" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o10_drawer4" type="prismatic">
+    <parent link="o10_root" />
+    <child link="o10_room610_shelf1_bodyset2" />
+    <origin xyz="0.0055 -1.2212453e-18 1.00375" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.405" />
+  </joint>
+  <joint name="o10_drawer3" type="prismatic">
+    <parent link="o10_root" />
+    <child link="o10_room610_shelf1_bodyset3" />
+    <origin xyz="0.0055 -1.2212453e-18 0.82125" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.405" />
+  </joint>
+  <joint name="o10_drawer2" type="prismatic">
+    <parent link="o10_root" />
+    <child link="o10_room610_shelf1_bodyset4" />
+    <origin xyz="0.0055 -1.2212453e-18 0.63875" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.405" />
+  </joint>
+  <joint name="o10_drawer1" type="prismatic">
+    <parent link="o10_root" />
+    <child link="o10_room610_shelf1_bodyset5" />
+    <origin xyz="0.0055 -1.2212453e-18 0.45625" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.405" />
+  </joint>
+  <joint name="o10_drawer0" type="prismatic">
+    <parent link="o10_root" />
+    <child link="o10_room610_shelf1_bodyset6" />
+    <origin xyz="0.0055 -1.2212453e-18 0.175" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.405" />
+  </joint>
+  <joint name="o11_mount" type="fixed">
+    <parent link="world" />
+    <child link="o11_root" />
+    <origin xyz="1.15 1.69 0" rpy="0 -0 0" />
+  </joint>
+  <joint name="o11_drawer4" type="prismatic">
+    <parent link="o11_root" />
+    <child link="o11_room610_shelf0_bodyset2" />
+    <origin xyz="0.0055 0 1.00375" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.405" />
+  </joint>
+  <joint name="o11_drawer3" type="prismatic">
+    <parent link="o11_root" />
+    <child link="o11_room610_shelf0_bodyset3" />
+    <origin xyz="0.0055 0 0.82125" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.405" />
+  </joint>
+  <joint name="o11_drawer2" type="prismatic">
+    <parent link="o11_root" />
+    <child link="o11_room610_shelf0_bodyset4" />
+    <origin xyz="0.0055 0 0.63875" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.405" />
+  </joint>
+  <joint name="o11_drawer1" type="prismatic">
+    <parent link="o11_root" />
+    <child link="o11_room610_shelf0_bodyset5" />
+    <origin xyz="0.0055 0 0.45625" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.405" />
+  </joint>
+  <joint name="o11_drawer0" type="prismatic">
+    <parent link="o11_root" />
+    <child link="o11_room610_shelf0_bodyset6" />
+    <origin xyz="0.0055 0 0.175" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.405" />
+  </joint>
+  <joint name="o12_mount" type="fixed">
+    <parent link="world" />
+    <child link="o12_root" />
+    <origin xyz="2.613 2.379 0" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o12_door_left" type="revolute">
+    <parent link="o12_root" />
+    <child link="o12_room610_audio_shelf_bodyset2" />
+    <origin xyz="0.222 0.195 0.08" rpy="0 -0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="0" upper="1.5707963" />
+  </joint>
+  <joint name="o12_door_right" type="revolute">
+    <parent link="o12_root" />
+    <child link="o12_room610_audio_shelf_bodyset3" />
+    <origin xyz="0.222 -0.565 0.08" rpy="0 -0 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="0" upper="1.5707963" />
+  </joint>
+  <joint name="o12_drawer3" type="prismatic">
+    <parent link="o12_root" />
+    <child link="o12_room610_audio_shelf_bodyset4" />
+    <origin xyz="8.6597394e-17 0.39 0.52" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.465" />
+  </joint>
+  <joint name="o12_drawer2" type="prismatic">
+    <parent link="o12_root" />
+    <child link="o12_room610_audio_shelf_bodyset5" />
+    <origin xyz="8.6597394e-17 0.39 0.37" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.465" />
+  </joint>
+  <joint name="o12_drawer1" type="prismatic">
+    <parent link="o12_root" />
+    <child link="o12_room610_audio_shelf_bodyset6" />
+    <origin xyz="8.6597394e-17 0.39 0.18" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.465" />
+  </joint>
+  <joint name="o13_mount" type="fixed">
+    <parent link="world" />
+    <child link="o13_room610_x_leg_desk_bodyset2" />
+    <origin xyz="4.45 2.29 0.188573" rpy="-5.858282e-16 -3.405978e-16 -1.5707963" />
+  </joint>
+  <joint name="o14_mount" type="fixed">
+    <parent link="world" />
+    <child link="o14_room610_tv3_bodyset2" />
+    <origin xyz="4.65 -2.16 0.1" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o15_mount" type="fixed">
+    <parent link="world" />
+    <child link="o15_room610_tv1_bodyset2" />
+    <origin xyz="4.45 2.29 0.4" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o16_mount" type="fixed">
+    <parent link="world" />
+    <child link="o16_root" />
+    <origin xyz="5.85 2.34 0" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o16_door_upper_left" type="revolute">
+    <parent link="o16_root" />
+    <child link="o16_room610_cupboard_bodyset2" />
+    <origin xyz="0.267 0.763 1.355" rpy="0 -0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="0" upper="1.5707963" />
+  </joint>
+  <joint name="o16_door_upper_right" type="revolute">
+    <parent link="o16_root" />
+    <child link="o16_room610_cupboard_bodyset3" />
+    <origin xyz="0.267 -0.763 1.355" rpy="0 -0 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="0" upper="1.5707963" />
+  </joint>
+  <joint name="o16_drawer4" type="prismatic">
+    <parent link="o16_root" />
+    <child link="o16_room610_cupboard_bodyset4" />
+    <origin xyz="1.2789769e-16 0.576 0.145" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.544" />
+  </joint>
+  <joint name="o16_drawer3" type="prismatic">
+    <parent link="o16_root" />
+    <child link="o16_room610_cupboard_bodyset5" />
+    <origin xyz="-1.2789769e-16 -0.576 0.429" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.544" />
+  </joint>
+  <joint name="o16_drawer2" type="prismatic">
+    <parent link="o16_root" />
+    <child link="o16_room610_cupboard_bodyset6" />
+    <origin xyz="0 0 0.679" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.544" />
+  </joint>
+  <joint name="o16_drawer1" type="prismatic">
+    <parent link="o16_root" />
+    <child link="o16_room610_cupboard_bodyset7" />
+    <origin xyz="0 0 0.445" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.544" />
+  </joint>
+  <joint name="o16_drawer0" type="prismatic">
+    <parent link="o16_root" />
+    <child link="o16_room610_cupboard_bodyset8" />
+    <origin xyz="0 0 0.145" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.544" />
+  </joint>
+  <joint name="o17_mount" type="fixed">
+    <parent link="world" />
+    <child link="o17_root" />
+    <origin xyz="7.05 2.29 0" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o17_drawer_lower2" type="prismatic">
+    <parent link="o17_root" />
+    <child link="o17_room610_fridge_bodyset2" />
+    <origin xyz="0 0 0.207" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.688" />
+  </joint>
+  <joint name="o17_drawer_lower1" type="prismatic">
+    <parent link="o17_root" />
+    <child link="o17_room610_fridge_bodyset3" />
+    <origin xyz="0 0 0.577" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.688" />
+  </joint>
+  <joint name="o17_drawer_middle_left" type="prismatic">
+    <parent link="o17_root" />
+    <child link="o17_room610_fridge_bodyset4" />
+    <origin xyz="3.7969627e-17 0.171 0.867" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.688" />
+  </joint>
+  <joint name="o17_drawer_middle_right" type="prismatic">
+    <parent link="o17_root" />
+    <child link="o17_room610_fridge_bodyset5" />
+    <origin xyz="-3.7969627e-17 -0.171 0.867" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.688" />
+  </joint>
+  <joint name="o17_door_upper_right" type="revolute">
+    <parent link="o17_root" />
+    <child link="o17_room610_fridge_bodyset6" />
+    <origin xyz="0.319 -0.317 1" rpy="0 -0 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="0" upper="1.5707963" />
+  </joint>
+  <joint name="o17_door_upper_left" type="revolute">
+    <parent link="o17_root" />
+    <child link="o17_room610_fridge_bodyset7" />
+    <origin xyz="0.319 0.317 1" rpy="0 -0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="0" upper="1.5707963" />
+  </joint>
+  <joint name="o18_mount" type="fixed">
+    <parent link="world" />
+    <child link="o18_room610_kitchen_bodyset2" />
+    <origin xyz="7.75 -1.01 0" rpy="0 -0 0" />
+  </joint>
+  <joint name="o19_mount" type="fixed">
+    <parent link="world" />
+    <child link="o19_room610_table_bodyset2" />
+    <origin xyz="4.65 -0.11 0" rpy="0 -0 0" />
+  </joint>
+  <joint name="o20_mount" type="fixed">
+    <parent link="world" />
+    <child link="o20_room610_chair_bodyset2" />
+    <origin xyz="4.3 -0.26 0" rpy="0 -0 0" />
+  </joint>
+  <joint name="o21_mount" type="fixed">
+    <parent link="world" />
+    <child link="o21_b0" />
+    <origin xyz="3.5 2.64 0" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o21_joint1" type="prismatic">
+    <parent link="o21_b0" />
+    <child link="o21_button" />
+    <origin xyz="0.6 0.24 0.93" rpy="2.5762675e-17 1.0471973 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="0.785398" lower="-0.09" upper="0.09" />
+  </joint>
+  <joint name="o21_joint0" type="revolute">
+    <parent link="o21_b0" />
+    <child link="o21_cap" />
+    <origin xyz="0.64 -0.21 0.77" rpy="-1.4017743e-17 1.2217307 -5.9740787e-17" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="5" lower="0" upper="3.1415927" />
+  </joint>
+  <joint name="o22_mount" type="fixed">
+    <parent link="world" />
+    <child link="o22_room610_external_wall_4_bodyset2" />
+    <origin xyz="9.16 0 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o23_mount" type="fixed">
+    <parent link="world" />
+    <child link="o23_room610_external_wall_3_bodyset2" />
+    <origin xyz="4.58 -3.87 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o24_mount" type="fixed">
+    <parent link="world" />
+    <child link="o24_room610_external_wall_2_bodyset2" />
+    <origin xyz="4.58 3.84 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o25_mount" type="fixed">
+    <parent link="world" />
+    <child link="o25_room610_external_wall_1_bodyset2" />
+    <origin xyz="0 2.33 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o26_mount" type="fixed">
+    <parent link="world" />
+    <child link="o26_room610_external_wall_0_bodyset2" />
+    <origin xyz="0 -2.345 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+</robot>

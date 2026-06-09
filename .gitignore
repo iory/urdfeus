@@ -6,3 +6,7 @@ build
 .\#*
 *.egg-info/
 dist/
+.venv/
+__pycache__/
+# Spinning-GIF gallery output
+gallery/

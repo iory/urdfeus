@@ -1,0 +1,672 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="macket">
+  <link name="root">
+    <inertial>
+      <origin xyz="-0.00171794 1.631359e-18 -0.0372" rpy="0 0 0" />
+      <mass value="0.075" />
+      <inertia ixx="2.54487e-05" ixy="-1.695159e-21" ixz="-1.95352e-05" iyy="4.04452e-05" iyz="-2.208207e-21" izz="1.49975e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_root.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_root.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="torso_lowertorso">
+    <inertial>
+      <origin xyz="0.0391908 2.86365e-18 -0.0036165" rpy="0 0 0" />
+      <mass value="0.226986" />
+      <inertia ixx="3.53957e-07" ixy="-1.405774e-21" ixz="1.77535e-06" iyy="9.28385e-06" iyz="2.794818e-22" izz="8.93089e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_torso-lowertorso.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_torso-lowertorso.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="torso_middletorso">
+    <inertial>
+      <origin xyz="-0.000417526 0.0176716 -0.00276588" rpy="0 0 0" />
+      <mass value="0.388" />
+      <inertia ixx="0.0002707257" ixy="-6.72837e-05" ixz="1.05733e-05" iyy="3.89704e-05" iyz="5.21421e-05" izz="0.0002870179" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_torso-middletorso.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_torso-middletorso.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="torso_uppertorso">
+    <inertial>
+      <origin xyz="0.0067624 4.372244e-18 0.0680037" rpy="0 0 0" />
+      <mass value="0.631093" />
+      <inertia ixx="0.0001125727" ixy="3.048463e-21" ixz="-8.84757e-06" iyy="6.80905e-05" iyz="4.945785e-20" izz="5.07912e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_torso-uppertorso.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_torso-uppertorso.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="head_neck">
+    <inertial>
+      <origin xyz="3.379932e-19 1.730525e-18 -0.0114189" rpy="0 0 0" />
+      <mass value="0.0113521" />
+      <inertia ixx="1.48121e-06" ixy="-6.639906e-39" ixz="4.381346e-23" iyy="1.48121e-06" iyz="2.243249e-22" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_head-neck.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_head-neck.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="head_head">
+    <inertial>
+      <origin xyz="0.0295366 -0.01775 0.0734915" rpy="0 0 0" />
+      <mass value="0.802" />
+      <inertia ixx="0.001272697" ixy="3.77477e-05" ixz="-0.0001401902" iyy="0.0007813429" iyz="9.39222e-05" izz="0.001221656" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_head-head.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_head-head.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rarm_shoulder_p">
+    <inertial>
+      <origin xyz="-0.00262524 -0.0272712 0.00262524" rpy="0 0 0" />
+      <mass value="0.0238503" />
+      <inertia ixx="2.50366e-05" ixy="-2.84159e-06" ixz="6.08705e-07" iyy="1.32017e-06" iyz="2.84159e-06" izz="2.50366e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_rarm-shoulder-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_rarm-shoulder-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rarm_upperarm">
+    <inertial>
+      <origin xyz="-0.00133191 -0.0103566 -0.023943" rpy="0 0 0" />
+      <mass value="0.288" />
+      <inertia ixx="0.0003540518" ixy="4.87923e-06" ixz="3.73249e-05" iyy="0.0003413899" iyz="-7.11576e-05" izz="2.56156e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_rarm-upperarm.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_rarm-upperarm.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rarm_forearm_bracket">
+    <inertial>
+      <origin xyz="-4.566544e-19 -2.211688e-17 0.0176486" rpy="0 0 0" />
+      <mass value="0.0124354" />
+      <inertia ixx="3.87427e-06" ixy="-1.255942e-37" ixz="1.002203e-22" iyy="3.87427e-06" iyz="4.853913e-21" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_rarm-forearm-bracket.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_rarm-forearm-bracket.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rarm_forearm">
+    <inertial>
+      <origin xyz="-3.512333e-19 -0.0178393 -0.0342821" rpy="0 0 0" />
+      <mass value="0.112" />
+      <inertia ixx="0.000107533" ixy="-4.511341e-22" ixz="-8.66952e-22" iyy="8.46197e-05" iyz="-4.40329e-05" izz="2.29143e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_rarm-forearm.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_rarm-forearm.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="larm_shoulder_p">
+    <inertial>
+      <origin xyz="-0.00262524 0.0272712 0.00262524" rpy="0 0 0" />
+      <mass value="0.0238503" />
+      <inertia ixx="2.50366e-05" ixy="2.84159e-06" ixz="6.08705e-07" iyy="1.32017e-06" iyz="-2.84159e-06" izz="2.50366e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_larm-shoulder-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_larm-shoulder-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="larm_upperarm">
+    <inertial>
+      <origin xyz="-0.00133191 0.0103566 -0.023943" rpy="0 0 0" />
+      <mass value="0.288" />
+      <inertia ixx="0.0003540518" ixy="-4.87923e-06" ixz="3.73249e-05" iyy="0.0003413899" iyz="7.11576e-05" izz="2.56156e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_larm-upperarm.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_larm-upperarm.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="larm_forearm_bracket">
+    <inertial>
+      <origin xyz="-4.566544e-19 -2.211688e-17 0.0176486" rpy="0 0 0" />
+      <mass value="0.0124354" />
+      <inertia ixx="3.87427e-06" ixy="-1.255942e-37" ixz="1.002203e-22" iyy="3.87427e-06" iyz="4.853913e-21" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_larm-forearm-bracket.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_larm-forearm-bracket.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="larm_forearm">
+    <inertial>
+      <origin xyz="-8.233278e-19 0.0178393 -0.0342821" rpy="0 0 0" />
+      <mass value="0.112" />
+      <inertia ixx="0.000107533" ixy="1.057506e-21" ixz="-2.032227e-21" iyy="8.46197e-05" iyz="4.40329e-05" izz="2.29143e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_larm-forearm.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_larm-forearm.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rleg_crotch_bracket">
+    <inertial>
+      <origin xyz="-0.0436005 -1.954847e-18 0.0162766" rpy="0 0 0" />
+      <mass value="0.146329" />
+      <inertia ixx="7.42015e-05" ixy="-4.47997e-21" ixz="4.38762e-06" iyy="0.0001657762" iyz="-1.051365e-21" izz="9.6125e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_rleg-crotch-bracket.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_rleg-crotch-bracket.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rleg_crotch">
+    <inertial>
+      <origin xyz="-0.0100149 0.00928889 0.00713155" rpy="0 0 0" />
+      <mass value="0.316" />
+      <inertia ixx="0.0001088365" ixy="3.46066e-05" ixz="8.28494e-06" iyy="1.75353e-05" iyz="-2.46432e-05" izz="0.0001145714" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_rleg-crotch.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_rleg-crotch.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rleg_thigh">
+    <inertial>
+      <origin xyz="2.025621e-18 -0.018885 -0.0879989" rpy="0 0 0" />
+      <mass value="0.152441" />
+      <inertia ixx="0.0003378152" ixy="1.997328e-21" ixz="1.255328e-20" iyy="0.0002614091" iyz="-0.000103167" izz="8.03732e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_rleg-thigh.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_rleg-thigh.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rleg_shank">
+    <inertial>
+      <origin xyz="0.0156998 5.138898e-18 -0.0584474" rpy="0 0 0" />
+      <mass value="0.06" />
+      <inertia ixx="0.0001213007" ixy="-1.023431e-21" ixz="1.98013e-05" iyy="0.0001189323" iyz="-7.753066e-21" izz="1.54258e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_rleg-shank.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_rleg-shank.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rleg_ankle">
+    <inertial>
+      <origin xyz="1.490892e-19 -0.0205 -0.0177032" rpy="0 0 0" />
+      <mass value="0.116" />
+      <inertia ixx="8.51048e-05" ixy="3.545341e-22" ixz="3.061652e-22" iyy="3.63558e-05" iyz="-4.20982e-05" izz="4.875e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_rleg-ankle.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_rleg-ankle.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rleg_foot">
+    <inertial>
+      <origin xyz="0.0536101 -0.00820651 -0.0485894" rpy="0 0 0" />
+      <mass value="0.365563" />
+      <inertia ixx="0.0002950949" ixy="4.85636e-05" ixz="0.0002993709" iyy="0.000634404" iyz="-4.77455e-05" izz="0.0003588738" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_rleg-foot.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_rleg-foot.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lleg_crotch_bracket">
+    <inertial>
+      <origin xyz="-0.0436005 -1.954847e-18 0.0162766" rpy="0 0 0" />
+      <mass value="0.146329" />
+      <inertia ixx="7.42015e-05" ixy="-4.47997e-21" ixz="4.38762e-06" iyy="0.0001657762" iyz="-1.051365e-21" izz="9.6125e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_lleg-crotch-bracket.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_lleg-crotch-bracket.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lleg_crotch">
+    <inertial>
+      <origin xyz="-0.0100149 -0.00928889 0.00713155" rpy="0 0 0" />
+      <mass value="0.316" />
+      <inertia ixx="0.0001088365" ixy="-3.46066e-05" ixz="8.28494e-06" iyy="1.75353e-05" iyz="2.46432e-05" izz="0.0001145714" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_lleg-crotch.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_lleg-crotch.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lleg_thigh">
+    <inertial>
+      <origin xyz="1.253442e-18 0.018885 -0.0879989" rpy="0 0 0" />
+      <mass value="0.152441" />
+      <inertia ixx="0.0003378152" ixy="-4.842583e-21" ixz="1.171215e-20" iyy="0.0002614091" iyz="0.000103167" izz="8.03732e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_lleg-thigh.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_lleg-thigh.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lleg_shank">
+    <inertial>
+      <origin xyz="0.0156998 5.138898e-18 -0.0584474" rpy="0 0 0" />
+      <mass value="0.06" />
+      <inertia ixx="0.0001213007" ixy="-1.023431e-21" ixz="1.98013e-05" iyy="0.0001189323" iyz="-7.753066e-21" izz="1.54258e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_lleg-shank.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_lleg-shank.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lleg_ankle">
+    <inertial>
+      <origin xyz="-1.490892e-19 0.0205 -0.0177032" rpy="0 0 0" />
+      <mass value="0.116" />
+      <inertia ixx="8.51048e-05" ixy="3.545341e-22" ixz="-3.061652e-22" iyy="3.63558e-05" iyz="4.20982e-05" izz="4.875e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_lleg-ankle.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_lleg-ankle.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lleg_foot">
+    <inertial>
+      <origin xyz="0.0536101 0.00820651 -0.0485894" rpy="0 0 0" />
+      <mass value="0.365563" />
+      <inertia ixx="0.0002950949" ixy="-4.85636e-05" ixz="0.0002993709" iyy="0.000634404" iyz="4.77455e-05" izz="0.0003588738" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_lleg-foot.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://macket_robot/meshes/_lleg-foot.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="torso_waist_y" type="revolute">
+    <parent link="root" />
+    <child link="torso_lowertorso" />
+    <origin xyz="-0.016 0 0.034" rpy="0 -0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="0.78539816" />
+  </joint>
+  <joint name="torso_waist_r" type="revolute">
+    <parent link="torso_lowertorso" />
+    <child link="torso_middletorso" />
+    <origin xyz="0.011 0 0.001" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="5" lower="-1.3962634" upper="0.78539816" />
+  </joint>
+  <joint name="torso_waist_p" type="revolute">
+    <parent link="torso_middletorso" />
+    <child link="torso_uppertorso" />
+    <origin xyz="0 0 0.005" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="0.38397244" />
+  </joint>
+  <joint name="head_neck_y" type="revolute">
+    <parent link="torso_uppertorso" />
+    <child link="head_neck" />
+    <origin xyz="0.02 0 0.1295" rpy="0 -0 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.7453293" upper="1.7453293" />
+  </joint>
+  <joint name="head_neck_p" type="revolute">
+    <parent link="head_neck" />
+    <child link="head_head" />
+    <origin xyz="0 0.01775 0.0014" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="-1.3962634" upper="1.3962634" />
+  </joint>
+  <joint name="rarm_shoulder_r" type="revolute">
+    <parent link="torso_uppertorso" />
+    <child link="rarm_shoulder_p" />
+    <origin xyz="0.02385 -0.0814 0.0715" rpy="0 -0 0" />
+    <axis xyz="-1 0 0" />
+    <limit effort="100" velocity="5" lower="-0.26179939" upper="1.3962634" />
+  </joint>
+  <joint name="rarm_shoulder_p" type="revolute">
+    <parent link="rarm_shoulder_p" />
+    <child link="rarm_upperarm" />
+    <origin xyz="0 -0.0485 0" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="-2.9670597" upper="0.95993109" />
+  </joint>
+  <joint name="rarm_shoulder_y" type="revolute">
+    <parent link="rarm_upperarm" />
+    <child link="rarm_forearm_bracket" />
+    <origin xyz="0.008 -0.02 -0.12195" rpy="0 -0 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-2.0943951" upper="2.0943951" />
+  </joint>
+  <joint name="rarm_elbow_p" type="revolute">
+    <parent link="rarm_forearm_bracket" />
+    <child link="rarm_forearm" />
+    <origin xyz="0 0.018 0" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="-2.1816616" upper="0" />
+  </joint>
+  <joint name="larm_shoulder_r" type="revolute">
+    <parent link="torso_uppertorso" />
+    <child link="larm_shoulder_p" />
+    <origin xyz="0.02385 0.0814 0.0715" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="5" lower="-0.26179939" upper="1.3962634" />
+  </joint>
+  <joint name="larm_shoulder_p" type="revolute">
+    <parent link="larm_shoulder_p" />
+    <child link="larm_upperarm" />
+    <origin xyz="0 0.0485 0" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="-2.9670597" upper="0.95993109" />
+  </joint>
+  <joint name="larm_shoulder_y" type="revolute">
+    <parent link="larm_upperarm" />
+    <child link="larm_forearm_bracket" />
+    <origin xyz="0.008 0.02 -0.12195" rpy="0 -0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="-2.0943951" upper="2.0943951" />
+  </joint>
+  <joint name="larm_elbow_p" type="revolute">
+    <parent link="larm_forearm_bracket" />
+    <child link="larm_forearm" />
+    <origin xyz="0 -0.018 0" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="-2.1816616" upper="0" />
+  </joint>
+  <joint name="rleg_crotch_y" type="revolute">
+    <parent link="root" />
+    <child link="rleg_crotch_bracket" />
+    <origin xyz="0.037182 -0.058287 -0.073" rpy="0 -0 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="0.26179939" />
+  </joint>
+  <joint name="rleg_crotch_r" type="revolute">
+    <parent link="rleg_crotch_bracket" />
+    <child link="rleg_crotch" />
+    <origin xyz="0.01 0.0005 -0.005" rpy="0 -0 0" />
+    <axis xyz="-1 0 0" />
+    <limit effort="100" velocity="5" lower="-0.6981317" upper="2.0943951" />
+  </joint>
+  <joint name="rleg_crotch_p" type="revolute">
+    <parent link="rleg_crotch" />
+    <child link="rleg_thigh" />
+    <origin xyz="0 0.0205 0.005" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="-2.2165682" upper="0.20943951" />
+  </joint>
+  <joint name="rleg_knee_p" type="revolute">
+    <parent link="rleg_thigh" />
+    <child link="rleg_shank" />
+    <origin xyz="0 -0.021 -0.125" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="0" upper="2.6179939" />
+  </joint>
+  <joint name="rleg_ankle_p" type="revolute">
+    <parent link="rleg_shank" />
+    <child link="rleg_ankle" />
+    <origin xyz="0.018 0.021 -0.135" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="0.78539816" />
+  </joint>
+  <joint name="rleg_ankle_r" type="revolute">
+    <parent link="rleg_ankle" />
+    <child link="rleg_foot" />
+    <origin xyz="-0.069 -0.021 0" rpy="0 -0 0" />
+    <axis xyz="-1 0 0" />
+    <limit effort="100" velocity="5" lower="-1.7453293" upper="1.7453293" />
+  </joint>
+  <joint name="lleg_crotch_y" type="revolute">
+    <parent link="root" />
+    <child link="lleg_crotch_bracket" />
+    <origin xyz="0.037182 0.058287 -0.073" rpy="0 -0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="0.26179939" />
+  </joint>
+  <joint name="lleg_crotch_r" type="revolute">
+    <parent link="lleg_crotch_bracket" />
+    <child link="lleg_crotch" />
+    <origin xyz="0.01 -0.0005 -0.005" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="5" lower="-0.6981317" upper="2.0943951" />
+  </joint>
+  <joint name="lleg_crotch_p" type="revolute">
+    <parent link="lleg_crotch" />
+    <child link="lleg_thigh" />
+    <origin xyz="0 -0.0205 0.005" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="-2.2165682" upper="0.20943951" />
+  </joint>
+  <joint name="lleg_knee_p" type="revolute">
+    <parent link="lleg_thigh" />
+    <child link="lleg_shank" />
+    <origin xyz="0 0.021 -0.125" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="0" upper="2.6179939" />
+  </joint>
+  <joint name="lleg_ankle_p" type="revolute">
+    <parent link="lleg_shank" />
+    <child link="lleg_ankle" />
+    <origin xyz="0.018 -0.021 -0.135" rpy="0 -0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="5" lower="-1.5707963" upper="0.78539816" />
+  </joint>
+  <joint name="lleg_ankle_r" type="revolute">
+    <parent link="lleg_ankle" />
+    <child link="lleg_foot" />
+    <origin xyz="-0.069 0.021 0" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="5" lower="-1.7453293" upper="1.7453293" />
+  </joint>
+</robot>

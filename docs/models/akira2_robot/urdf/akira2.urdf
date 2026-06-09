@@ -1,0 +1,438 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="akira2">
+  <link name="root">
+    <inertial>
+      <origin xyz="-0.0008064 -1.000102e-17 0.020618" rpy="0 0 0" />
+      <mass value="0.184623" />
+      <inertia ixx="0.0003642779" ixy="6.907885e-20" ixz="9.15396e-07" iyy="5.50832e-05" iyz="-3.067467e-20" izz="0.0003233265" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akira2_robot/meshes/_root.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akira2_robot/meshes/_root.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rleg_crotch_p">
+    <inertial>
+      <origin xyz="-1.522125e-17 0.035 8.771664e-18" rpy="0 0 0" />
+      <mass value="0.129" />
+      <inertia ixx="0.0001169376" ixy="4.46443e-20" ixz="2.148282e-21" iyy="2.15e-05" iyz="-2.096396e-20" izz="0.0001040376" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akira2_robot/meshes/_rleg-crotch-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akira2_robot/meshes/_rleg-crotch-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rleg_knee_p">
+    <inertial>
+      <origin xyz="-9.382174e-18 0.025 -9.054966e-18" rpy="0 0 0" />
+      <mass value="0.0121114" />
+      <inertia ixx="7.7881e-06" ixy="9.383602e-22" ixz="7.910898e-22" iyy="5.55776e-06" iyz="-7.879944e-22" izz="3.03776e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akira2_robot/meshes/_rleg-knee-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akira2_robot/meshes/_rleg-knee-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rleg_ankle_p">
+    <inertial>
+      <origin xyz="-0.00163117 0.00889947 -0.000332084" rpy="0 0 0" />
+      <mass value="0.0703397" />
+      <inertia ixx="2.04321e-05" ixy="-1.02109e-06" ixz="-4.20841e-07" iyy="1.37554e-05" iyz="-2.0788e-07" izz="1.64268e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akira2_robot/meshes/_rleg-ankle-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akira2_robot/meshes/_rleg-ankle-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rleg_ankle_r">
+    <inertial>
+      <origin xyz="2.273737e-16 0.0097052 3.738905e-19" rpy="0 0 0" />
+      <mass value="0.0645" />
+      <inertia ixx="1.72e-05" ixy="2.344621e-34" ixz="-8.185488e-37" iyy="1.075e-05" iyz="5.755421e-38" izz="1.075e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akira2_robot/meshes/_rleg-ankle-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akira2_robot/meshes/_rleg-ankle-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rarm_collar_y">
+    <inertial>
+      <origin xyz="0.00887222 0.0525285 0.0127984" rpy="0 0 0" />
+      <mass value="0.0705557" />
+      <inertia ixx="2.42454e-05" ixy="-2.17313e-06" ixz="-7.52182e-07" iyy="1.51354e-05" iyz="-3.1348e-06" izz="2.77566e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akira2_robot/meshes/_rarm-collar-y.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akira2_robot/meshes/_rarm-collar-y.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rarm_shoulder_p">
+    <inertial>
+      <origin xyz="-2.334905e-17 0.0564546 5.684342e-17" rpy="0 0 0" />
+      <mass value="0.0705557" />
+      <inertia ixx="3.16358e-05" ixy="7.677573e-21" ixz="1.887006e-22" iyy="1.35289e-05" iyz="-3.976517e-21" izz="2.28106e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akira2_robot/meshes/_rarm-shoulder-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akira2_robot/meshes/_rarm-shoulder-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rarm_elbow_p">
+    <inertial>
+      <origin xyz="-1.05682e-17 0.042613 2.842171e-16" rpy="0 0 0" />
+      <mass value="0.0160557" />
+      <inertia ixx="7.78795e-06" ixy="1.610734e-21" ixz="1.691587e-35" iyy="2.77888e-06" iyz="-4.663137e-20" izz="5.41278e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akira2_robot/meshes/_rarm-elbow-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akira2_robot/meshes/_rarm-elbow-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="larm_collar_y">
+    <inertial>
+      <origin xyz="0.00887222 0.0525285 -0.0127984" rpy="0 0 0" />
+      <mass value="0.0705557" />
+      <inertia ixx="2.42454e-05" ixy="-2.17313e-06" ixz="7.52182e-07" iyy="1.51354e-05" iyz="3.1348e-06" izz="2.77566e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akira2_robot/meshes/_larm-collar-y.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akira2_robot/meshes/_larm-collar-y.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="larm_shoulder_p">
+    <inertial>
+      <origin xyz="-2.117171e-17 0.0564546 2.131628e-17" rpy="0 0 0" />
+      <mass value="0.0705557" />
+      <inertia ixx="3.16358e-05" ixy="9.922955e-21" ixz="-6.967395e-22" iyy="1.35289e-05" iyz="-1.61689e-21" izz="2.28106e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akira2_robot/meshes/_larm-shoulder-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akira2_robot/meshes/_larm-shoulder-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="larm_elbow_p">
+    <inertial>
+      <origin xyz="1.875886e-18 0.042613 -1.634248e-16" rpy="0 0 0" />
+      <mass value="0.0160557" />
+      <inertia ixx="7.78795e-06" ixy="-4.284727e-22" ixz="2.579936e-36" iyy="2.77888e-06" iyz="2.672351e-20" izz="5.41278e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akira2_robot/meshes/_larm-elbow-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akira2_robot/meshes/_larm-elbow-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lleg_crotch_p">
+    <inertial>
+      <origin xyz="-1.522125e-17 0.035 8.771664e-18" rpy="0 0 0" />
+      <mass value="0.129" />
+      <inertia ixx="0.0001169376" ixy="4.46443e-20" ixz="2.148282e-21" iyy="2.15e-05" iyz="-2.096396e-20" izz="0.0001040376" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akira2_robot/meshes/_lleg-crotch-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akira2_robot/meshes/_lleg-crotch-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lleg_knee_p">
+    <inertial>
+      <origin xyz="-9.382174e-18 0.025 -9.054966e-18" rpy="0 0 0" />
+      <mass value="0.0121114" />
+      <inertia ixx="7.7881e-06" ixy="9.383602e-22" ixz="7.910898e-22" iyy="5.55776e-06" iyz="-7.879944e-22" izz="3.03776e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akira2_robot/meshes/_lleg-knee-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akira2_robot/meshes/_lleg-knee-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lleg_ankle_p">
+    <inertial>
+      <origin xyz="-0.00163117 0.00889947 0.000332084" rpy="0 0 0" />
+      <mass value="0.0703397" />
+      <inertia ixx="2.04321e-05" ixy="-1.02109e-06" ixz="4.20841e-07" iyy="1.37554e-05" iyz="2.0788e-07" izz="1.64268e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akira2_robot/meshes/_lleg-ankle-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akira2_robot/meshes/_lleg-ankle-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lleg_ankle_r">
+    <inertial>
+      <origin xyz="0 0.0097052 1.352686e-18" rpy="0 0 0" />
+      <mass value="0.0645" />
+      <inertia ixx="1.72e-05" ixy="7.160939e-22" ixz="2.148282e-21" iyy="1.075e-05" iyz="1.613869e-36" izz="1.075e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akira2_robot/meshes/_lleg-ankle-r.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akira2_robot/meshes/_lleg-ankle-r.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="head_neck_y">
+    <inertial>
+      <origin xyz="1.606459e-18 -0.00412894 0.0229806" rpy="0 0 0" />
+      <mass value="0.0277625" />
+      <inertia ixx="7.82618e-06" ixy="2.127303e-23" ixz="2.276488e-22" iyy="7.14911e-06" iyz="1.68327e-06" izz="4.14491e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akira2_robot/meshes/_head-neck-y.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akira2_robot/meshes/_head-neck-y.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="head_neck_p">
+    <inertial>
+      <origin xyz="-1.477139e-18 0.00842593 -1.870933e-18" rpy="0 0 0" />
+      <mass value="0.00641051" />
+      <inertia ixx="1.87652e-06" ixy="2.250726e-23" ixz="1.406944e-22" iyy="1.69463e-06" iyz="-1.773435e-22" izz="6.09261e-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akira2_robot/meshes/_head-neck-p.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://akira2_robot/meshes/_head-neck-p.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="rleg_crotch_p" type="revolute">
+    <parent link="root" />
+    <child link="rleg_crotch_p" />
+    <origin xyz="7.660539e-18 -0.0345 -0.038" rpy="-1.5707963 -0 3.1415927" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-2.443461" upper="0.6981317" />
+  </joint>
+  <joint name="rleg_knee_p" type="revolute">
+    <parent link="rleg_crotch_p" />
+    <child link="rleg_knee_p" />
+    <origin xyz="-3.1086241e-17 0.07 -1.5543122e-17" rpy="0 -0 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="0" upper="2.443461" />
+  </joint>
+  <joint name="rleg_ankle_p" type="revolute">
+    <parent link="rleg_knee_p" />
+    <child link="rleg_ankle_p" />
+    <origin xyz="-1.110223e-17 0.05 -1.110223e-17" rpy="5.551115e-17 -1.6653345e-16 -1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.2217305" upper="1.2217305" />
+  </joint>
+  <joint name="rleg_ankle_r" type="revolute">
+    <parent link="rleg_ankle_p" />
+    <child link="rleg_ankle_r" />
+    <origin xyz="-0.034 -6.3061528e-18 -0.004" rpy="1.5707963 6.7346e-18 2.220446e-16" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-0.78539816" upper="0.78539816" />
+  </joint>
+  <joint name="rarm_collar_y" type="revolute">
+    <parent link="root" />
+    <child link="rarm_collar_y" />
+    <origin xyz="1.24345e-17 -0.056 0.0265" rpy="0 -0 3.1415927" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-0.87266463" upper="0.87266463" />
+  </joint>
+  <joint name="rarm_shoulder_p" type="revolute">
+    <parent link="rarm_collar_y" />
+    <child link="rarm_shoulder_p" />
+    <origin xyz="-1.24345e-17 0.056 0.014" rpy="-1.5707963 -2.355139e-16 3.925231e-16" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-2.6179939" upper="1.6580628" />
+  </joint>
+  <joint name="rarm_elbow_p" type="revolute">
+    <parent link="rarm_shoulder_p" />
+    <child link="rarm_elbow_p" />
+    <origin xyz="-3.4972033e-17 0.07 -1.5543122e-17" rpy="2.220446e-16 1.110223e-16 4.9303807e-32" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-2.0943951" upper="0" />
+  </joint>
+  <joint name="larm_collar_y" type="revolute">
+    <parent link="root" />
+    <child link="larm_collar_y" />
+    <origin xyz="-1.24345e-17 0.056 0.0265" rpy="-3.1415927 9.785231e-33 -3.1415927" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-0.87266463" upper="0.87266463" />
+  </joint>
+  <joint name="larm_shoulder_p" type="revolute">
+    <parent link="larm_collar_y" />
+    <child link="larm_shoulder_p" />
+    <origin xyz="-1.2434495e-17 0.056 -0.014" rpy="1.5707963 1.727228e-17 2.355139e-16" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-2.6179939" upper="1.6580628" />
+  </joint>
+  <joint name="larm_elbow_p" type="revolute">
+    <parent link="larm_shoulder_p" />
+    <child link="larm_elbow_p" />
+    <origin xyz="-4.662938e-17 0.07 -1.5543122e-17" rpy="2.2186711e-31 3.330669e-16 6.6613378e-16" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-2.0943951" upper="0" />
+  </joint>
+  <joint name="lleg_crotch_p" type="revolute">
+    <parent link="root" />
+    <child link="lleg_crotch_p" />
+    <origin xyz="-7.660539e-18 0.0345 -0.038" rpy="-1.5707963 -0 3.1415927" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-2.443461" upper="0.6981317" />
+  </joint>
+  <joint name="lleg_knee_p" type="revolute">
+    <parent link="lleg_crotch_p" />
+    <child link="lleg_knee_p" />
+    <origin xyz="-3.1086239e-17 0.07 -1.5543122e-17" rpy="0 -0 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="0" upper="2.443461" />
+  </joint>
+  <joint name="lleg_ankle_p" type="revolute">
+    <parent link="lleg_knee_p" />
+    <child link="lleg_ankle_p" />
+    <origin xyz="-1.110223e-17 0.05 -1.110223e-17" rpy="5.551115e-17 -1.6653345e-16 -1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.2217305" upper="1.2217305" />
+  </joint>
+  <joint name="lleg_ankle_r" type="revolute">
+    <parent link="lleg_ankle_p" />
+    <child link="lleg_ankle_r" />
+    <origin xyz="-0.034 -5.7050544e-18 0.004" rpy="-1.5707963 -3.170969e-16 2.220446e-16" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-0.78539816" upper="0.78539816" />
+  </joint>
+  <joint name="head_neck_y" type="revolute">
+    <parent link="root" />
+    <child link="head_neck_y" />
+    <origin xyz="0 0 0.029" rpy="-0 -0 -1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.0471976" upper="1.0471976" />
+  </joint>
+  <joint name="head_neck_p" type="revolute">
+    <parent link="head_neck_y" />
+    <child link="head_neck_p" />
+    <origin xyz="0 0 0.029" rpy="1.5707963 -0 1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="-1.0471976" upper="1.0471976" />
+  </joint>
+</robot>

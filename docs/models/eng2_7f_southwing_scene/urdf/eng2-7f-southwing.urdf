@@ -1,0 +1,4516 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="eng2-7f-southwing">
+  <link name="world" />
+  <link name="o0_eng2_7f_southwing_wall402_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o0__eng2-7f-southwing-wall402-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o0__eng2-7f-southwing-wall402-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o1_eng2_7f_southwing_wall400_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o1__eng2-7f-southwing-wall400-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o1__eng2-7f-southwing-wall400-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o2_eng2_7f_southwing_wall398_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o2__eng2-7f-southwing-wall398-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o2__eng2-7f-southwing-wall398-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o3_eng2_7f_southwing_wall396_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o3__eng2-7f-southwing-wall396-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o3__eng2-7f-southwing-wall396-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o4_eng2_7f_southwing_wall394_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o4__eng2-7f-southwing-wall394-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o4__eng2-7f-southwing-wall394-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o5_eng2_7f_southwing_wall392_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o5__eng2-7f-southwing-wall392-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o5__eng2-7f-southwing-wall392-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o6_eng2_7f_southwing_eng2_7f_southwing_corridor_ground_2_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o6__eng2-7f-southwing-eng2-7f-southwing-corridor-ground-2-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o6__eng2-7f-southwing-eng2-7f-southwing-corridor-ground-2-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o7_eng2_7f_southwing_eng2_7f_southwing_corridor_ground_1_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o7__eng2-7f-southwing-eng2-7f-southwing-corridor-ground-1-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o7__eng2-7f-southwing-eng2-7f-southwing-corridor-ground-1-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o8_eng2_7f_southwing_eng2_7f_southwing_corridor_ground_0_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o8__eng2-7f-southwing-eng2-7f-southwing-corridor-ground-0-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o8__eng2-7f-southwing-eng2-7f-southwing-corridor-ground-0-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o9_eng2_7f_southwing_wall390_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o9__eng2-7f-southwing-wall390-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o9__eng2-7f-southwing-wall390-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o10_eng2_7f_southwing_wall383_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o10__eng2-7f-southwing-wall383-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o10__eng2-7f-southwing-wall383-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o11_eng2_7f_southwing_wall381_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o11__eng2-7f-southwing-wall381-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o11__eng2-7f-southwing-wall381-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o12_eng2_7f_southwing_wall379_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o12__eng2-7f-southwing-wall379-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o12__eng2-7f-southwing-wall379-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o13_eng2_7f_southwing_wall377_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o13__eng2-7f-southwing-wall377-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o13__eng2-7f-southwing-wall377-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o14_eng2_7f_southwing_wall375_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o14__eng2-7f-southwing-wall375-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o14__eng2-7f-southwing-wall375-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o15_eng2_7f_southwing_wall373_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o15__eng2-7f-southwing-wall373-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o15__eng2-7f-southwing-wall373-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o16_eng2_7f_southwing_wall371_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o16__eng2-7f-southwing-wall371-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o16__eng2-7f-southwing-wall371-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o17_eng2_7f_southwing_wall369_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o17__eng2-7f-southwing-wall369-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o17__eng2-7f-southwing-wall369-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o18_eng2_7f_southwing_wall367_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o18__eng2-7f-southwing-wall367-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o18__eng2-7f-southwing-wall367-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o19_eng2_7f_southwing_wall365_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o19__eng2-7f-southwing-wall365-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o19__eng2-7f-southwing-wall365-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o20_eng2_7f_southwing_wall363_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o20__eng2-7f-southwing-wall363-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o20__eng2-7f-southwing-wall363-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o21_eng2_7f_southwing_wall361_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o21__eng2-7f-southwing-wall361-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o21__eng2-7f-southwing-wall361-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o22_eng2_7f_southwing_wall359_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o22__eng2-7f-southwing-wall359-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o22__eng2-7f-southwing-wall359-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o23_eng2_7f_southwing_wall357_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o23__eng2-7f-southwing-wall357-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o23__eng2-7f-southwing-wall357-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o24_eng2_7f_southwing_wall355_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o24__eng2-7f-southwing-wall355-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o24__eng2-7f-southwing-wall355-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o25_eng2_7f_southwing_wall353_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o25__eng2-7f-southwing-wall353-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o25__eng2-7f-southwing-wall353-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o26_eng2_7f_southwing_wall351_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o26__eng2-7f-southwing-wall351-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o26__eng2-7f-southwing-wall351-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o27_eng2_7f_southwing_wall349_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o27__eng2-7f-southwing-wall349-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o27__eng2-7f-southwing-wall349-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o28_eng2_7f_southwing_wall347_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o28__eng2-7f-southwing-wall347-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o28__eng2-7f-southwing-wall347-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o29_eng2_7f_southwing_wall345_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o29__eng2-7f-southwing-wall345-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o29__eng2-7f-southwing-wall345-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o30_eng2_7f_southwing_wall343_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o30__eng2-7f-southwing-wall343-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o30__eng2-7f-southwing-wall343-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o31_eng2_7f_southwing_wall341_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o31__eng2-7f-southwing-wall341-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o31__eng2-7f-southwing-wall341-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o32_eng2_7f_southwing_wall339_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o32__eng2-7f-southwing-wall339-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o32__eng2-7f-southwing-wall339-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o33_eng2_7f_southwing_wall337_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o33__eng2-7f-southwing-wall337-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o33__eng2-7f-southwing-wall337-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o34_eng2_7f_southwing_wall335_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o34__eng2-7f-southwing-wall335-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o34__eng2-7f-southwing-wall335-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o35_eng2_7f_southwing_wall333_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o35__eng2-7f-southwing-wall333-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o35__eng2-7f-southwing-wall333-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o36_eng2_7f_southwing_wall331_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o36__eng2-7f-southwing-wall331-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o36__eng2-7f-southwing-wall331-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o37_eng2_7f_southwing_wall329_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o37__eng2-7f-southwing-wall329-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o37__eng2-7f-southwing-wall329-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o38_eng2_7f_southwing_wall327_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o38__eng2-7f-southwing-wall327-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o38__eng2-7f-southwing-wall327-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o39_eng2_7f_southwing_wall325_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o39__eng2-7f-southwing-wall325-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o39__eng2-7f-southwing-wall325-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o40_eng2_7f_southwing_wall323_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o40__eng2-7f-southwing-wall323-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o40__eng2-7f-southwing-wall323-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o41_eng2_7f_southwing_wall321_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o41__eng2-7f-southwing-wall321-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o41__eng2-7f-southwing-wall321-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o42_eng2_7f_southwing_wall319_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o42__eng2-7f-southwing-wall319-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o42__eng2-7f-southwing-wall319-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o43_eng2_7f_southwing_wall317_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o43__eng2-7f-southwing-wall317-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o43__eng2-7f-southwing-wall317-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o44_eng2_7f_southwing_wall315_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o44__eng2-7f-southwing-wall315-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o44__eng2-7f-southwing-wall315-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o45_eng2_7f_southwing_wall313_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o45__eng2-7f-southwing-wall313-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o45__eng2-7f-southwing-wall313-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o46_eng2_7f_southwing_wall311_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o46__eng2-7f-southwing-wall311-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o46__eng2-7f-southwing-wall311-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o47_eng2_7f_southwing_wall284_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o47__eng2-7f-southwing-wall284-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o47__eng2-7f-southwing-wall284-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o48_eng2_7f_southwing_wall282_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o48__eng2-7f-southwing-wall282-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o48__eng2-7f-southwing-wall282-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o49_eng2_7f_southwing_wall280_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o49__eng2-7f-southwing-wall280-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o49__eng2-7f-southwing-wall280-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o50_eng2_7f_southwing_wall278_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o50__eng2-7f-southwing-wall278-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o50__eng2-7f-southwing-wall278-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o51_eng2_7f_southwing_wall276_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o51__eng2-7f-southwing-wall276-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o51__eng2-7f-southwing-wall276-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o52_eng2_7f_southwing_wall274_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o52__eng2-7f-southwing-wall274-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o52__eng2-7f-southwing-wall274-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o53_eng2_7f_southwing_wall272_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o53__eng2-7f-southwing-wall272-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o53__eng2-7f-southwing-wall272-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o54_eng2_7f_southwing_wall270_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o54__eng2-7f-southwing-wall270-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o54__eng2-7f-southwing-wall270-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o55_eng2_7f_southwing_wall268_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o55__eng2-7f-southwing-wall268-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o55__eng2-7f-southwing-wall268-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o56_eng2_7f_southwing_wall266_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o56__eng2-7f-southwing-wall266-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o56__eng2-7f-southwing-wall266-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o57_eng2_7f_southwing_wall264_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o57__eng2-7f-southwing-wall264-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o57__eng2-7f-southwing-wall264-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o58_eng2_7f_southwing_wall262_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o58__eng2-7f-southwing-wall262-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o58__eng2-7f-southwing-wall262-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o59_eng2_7f_southwing_wall260_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o59__eng2-7f-southwing-wall260-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o59__eng2-7f-southwing-wall260-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o60_eng2_7f_southwing_wall258_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o60__eng2-7f-southwing-wall258-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o60__eng2-7f-southwing-wall258-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o61_eng2_7f_southwing_wall256_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o61__eng2-7f-southwing-wall256-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o61__eng2-7f-southwing-wall256-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o62_eng2_7f_southwing_wall254_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o62__eng2-7f-southwing-wall254-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o62__eng2-7f-southwing-wall254-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o63_eng2_7f_southwing_wall252_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o63__eng2-7f-southwing-wall252-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o63__eng2-7f-southwing-wall252-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o64_eng2_7f_southwing_wall250_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o64__eng2-7f-southwing-wall250-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o64__eng2-7f-southwing-wall250-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o65_eng2_7f_southwing_wall248_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o65__eng2-7f-southwing-wall248-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o65__eng2-7f-southwing-wall248-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o66_eng2_7f_southwing_wall246_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o66__eng2-7f-southwing-wall246-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o66__eng2-7f-southwing-wall246-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o67_eng2_7f_southwing_wall244_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o67__eng2-7f-southwing-wall244-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o67__eng2-7f-southwing-wall244-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o68_eng2_7f_southwing_wall242_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o68__eng2-7f-southwing-wall242-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o68__eng2-7f-southwing-wall242-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o69_eng2_7f_southwing_wall240_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o69__eng2-7f-southwing-wall240-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o69__eng2-7f-southwing-wall240-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o70_eng2_7f_southwing_wall238_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o70__eng2-7f-southwing-wall238-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o70__eng2-7f-southwing-wall238-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o71_eng2_7f_southwing_wall236_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o71__eng2-7f-southwing-wall236-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o71__eng2-7f-southwing-wall236-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o72_eng2_7f_southwing_wall234_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o72__eng2-7f-southwing-wall234-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o72__eng2-7f-southwing-wall234-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o73_eng2_7f_southwing_wall232_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o73__eng2-7f-southwing-wall232-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o73__eng2-7f-southwing-wall232-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o74_eng2_7f_southwing_wall230_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o74__eng2-7f-southwing-wall230-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o74__eng2-7f-southwing-wall230-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o75_eng2_7f_southwing_wall228_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o75__eng2-7f-southwing-wall228-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o75__eng2-7f-southwing-wall228-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o76_eng2_7f_southwing_wall226_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o76__eng2-7f-southwing-wall226-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o76__eng2-7f-southwing-wall226-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o77_eng2_7f_southwing_wall224_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o77__eng2-7f-southwing-wall224-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o77__eng2-7f-southwing-wall224-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o78_eng2_7f_southwing_wall222_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o78__eng2-7f-southwing-wall222-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o78__eng2-7f-southwing-wall222-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o79_eng2_7f_southwing_wall220_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o79__eng2-7f-southwing-wall220-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o79__eng2-7f-southwing-wall220-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o80_eng2_7f_southwing_wall218_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o80__eng2-7f-southwing-wall218-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o80__eng2-7f-southwing-wall218-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o81_eng2_7f_southwing_wall216_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o81__eng2-7f-southwing-wall216-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o81__eng2-7f-southwing-wall216-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o82_eng2_7f_southwing_wall214_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o82__eng2-7f-southwing-wall214-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o82__eng2-7f-southwing-wall214-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o83_eng2_7f_southwing_wall212_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o83__eng2-7f-southwing-wall212-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o83__eng2-7f-southwing-wall212-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o84_eng2_7f_southwing_wall210_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o84__eng2-7f-southwing-wall210-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o84__eng2-7f-southwing-wall210-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o85_eng2_7f_southwing_wall208_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o85__eng2-7f-southwing-wall208-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o85__eng2-7f-southwing-wall208-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o86_eng2_7f_southwing_wall206_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o86__eng2-7f-southwing-wall206-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o86__eng2-7f-southwing-wall206-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o87_eng2_7f_southwing_wall204_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o87__eng2-7f-southwing-wall204-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o87__eng2-7f-southwing-wall204-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o88_eng2_7f_southwing_wall202_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o88__eng2-7f-southwing-wall202-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o88__eng2-7f-southwing-wall202-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o89_eng2_7f_southwing_wall200_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o89__eng2-7f-southwing-wall200-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o89__eng2-7f-southwing-wall200-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o90_eng2_7f_southwing_wall198_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o90__eng2-7f-southwing-wall198-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o90__eng2-7f-southwing-wall198-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o91_eng2_7f_southwing_wall196_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o91__eng2-7f-southwing-wall196-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o91__eng2-7f-southwing-wall196-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o92_eng2_7f_southwing_wall194_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o92__eng2-7f-southwing-wall194-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o92__eng2-7f-southwing-wall194-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o93_eng2_7f_southwing_wall192_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o93__eng2-7f-southwing-wall192-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o93__eng2-7f-southwing-wall192-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o94_eng2_7f_southwing_wall190_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o94__eng2-7f-southwing-wall190-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o94__eng2-7f-southwing-wall190-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o95_eng2_7f_southwing_wall188_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o95__eng2-7f-southwing-wall188-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o95__eng2-7f-southwing-wall188-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o96_eng2_7f_southwing_wall186_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o96__eng2-7f-southwing-wall186-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o96__eng2-7f-southwing-wall186-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o97_eng2_7f_southwing_wall184_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o97__eng2-7f-southwing-wall184-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o97__eng2-7f-southwing-wall184-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o98_eng2_7f_southwing_wall182_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o98__eng2-7f-southwing-wall182-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o98__eng2-7f-southwing-wall182-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o99_eng2_7f_southwing_wall180_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o99__eng2-7f-southwing-wall180-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o99__eng2-7f-southwing-wall180-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o100_eng2_7f_southwing_wall178_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o100__eng2-7f-southwing-wall178-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o100__eng2-7f-southwing-wall178-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o101_eng2_7f_southwing_wall176_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o101__eng2-7f-southwing-wall176-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o101__eng2-7f-southwing-wall176-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o102_eng2_7f_southwing_wall174_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o102__eng2-7f-southwing-wall174-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o102__eng2-7f-southwing-wall174-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o103_eng2_7f_southwing_wall172_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o103__eng2-7f-southwing-wall172-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o103__eng2-7f-southwing-wall172-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o104_eng2_7f_southwing_wall170_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o104__eng2-7f-southwing-wall170-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o104__eng2-7f-southwing-wall170-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o105_eng2_7f_southwing_wall168_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o105__eng2-7f-southwing-wall168-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o105__eng2-7f-southwing-wall168-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o106_eng2_7f_southwing_wall166_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o106__eng2-7f-southwing-wall166-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o106__eng2-7f-southwing-wall166-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o107_eng2_7f_southwing_wall164_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o107__eng2-7f-southwing-wall164-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o107__eng2-7f-southwing-wall164-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o108_eng2_7f_southwing_wall162_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o108__eng2-7f-southwing-wall162-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o108__eng2-7f-southwing-wall162-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o109_eng2_7f_southwing_wall160_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o109__eng2-7f-southwing-wall160-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o109__eng2-7f-southwing-wall160-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o110_eng2_7f_southwing_wall158_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o110__eng2-7f-southwing-wall158-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o110__eng2-7f-southwing-wall158-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o111_eng2_7f_southwing_wall156_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o111__eng2-7f-southwing-wall156-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o111__eng2-7f-southwing-wall156-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o112_eng2_7f_southwing_wall154_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o112__eng2-7f-southwing-wall154-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o112__eng2-7f-southwing-wall154-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o113_eng2_7f_southwing_wall152_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o113__eng2-7f-southwing-wall152-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o113__eng2-7f-southwing-wall152-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o114_eng2_7f_southwing_wall150_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o114__eng2-7f-southwing-wall150-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o114__eng2-7f-southwing-wall150-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o115_eng2_7f_southwing_wall148_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o115__eng2-7f-southwing-wall148-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o115__eng2-7f-southwing-wall148-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o116_eng2_7f_southwing_wall146_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o116__eng2-7f-southwing-wall146-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o116__eng2-7f-southwing-wall146-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o117_eng2_7f_southwing_wall144_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o117__eng2-7f-southwing-wall144-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o117__eng2-7f-southwing-wall144-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o118_eng2_7f_southwing_wall142_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o118__eng2-7f-southwing-wall142-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o118__eng2-7f-southwing-wall142-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o119_eng2_7f_southwing_wall140_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o119__eng2-7f-southwing-wall140-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o119__eng2-7f-southwing-wall140-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o120_eng2_7f_southwing_wall138_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o120__eng2-7f-southwing-wall138-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o120__eng2-7f-southwing-wall138-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o121_eng2_7f_southwing_wall136_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o121__eng2-7f-southwing-wall136-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o121__eng2-7f-southwing-wall136-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o122_eng2_7f_southwing_wall134_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o122__eng2-7f-southwing-wall134-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o122__eng2-7f-southwing-wall134-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o123_eng2_7f_southwing_wall132_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o123__eng2-7f-southwing-wall132-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o123__eng2-7f-southwing-wall132-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o124_eng2_7f_southwing_wall130_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o124__eng2-7f-southwing-wall130-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o124__eng2-7f-southwing-wall130-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o125_eng2_7f_southwing_wall128_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o125__eng2-7f-southwing-wall128-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o125__eng2-7f-southwing-wall128-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o126_eng2_7f_southwing_wall126_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o126__eng2-7f-southwing-wall126-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o126__eng2-7f-southwing-wall126-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o127_eng2_7f_southwing_wall124_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o127__eng2-7f-southwing-wall124-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o127__eng2-7f-southwing-wall124-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o128_eng2_7f_southwing_wall122_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o128__eng2-7f-southwing-wall122-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o128__eng2-7f-southwing-wall122-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o129_eng2_7f_southwing_wall120_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o129__eng2-7f-southwing-wall120-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o129__eng2-7f-southwing-wall120-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o130_eng2_7f_southwing_wall118_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o130__eng2-7f-southwing-wall118-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o130__eng2-7f-southwing-wall118-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o131_eng2_7f_southwing_wall116_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o131__eng2-7f-southwing-wall116-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o131__eng2-7f-southwing-wall116-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o132_eng2_7f_southwing_wall114_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o132__eng2-7f-southwing-wall114-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o132__eng2-7f-southwing-wall114-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o133_eng2_7f_southwing_wall112_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o133__eng2-7f-southwing-wall112-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o133__eng2-7f-southwing-wall112-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o134_eng2_7f_southwing_wall110_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o134__eng2-7f-southwing-wall110-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o134__eng2-7f-southwing-wall110-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o135_eng2_7f_southwing_wall108_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o135__eng2-7f-southwing-wall108-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o135__eng2-7f-southwing-wall108-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o136_eng2_7f_southwing_wall106_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o136__eng2-7f-southwing-wall106-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o136__eng2-7f-southwing-wall106-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o137_eng2_7f_southwing_wall104_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o137__eng2-7f-southwing-wall104-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o137__eng2-7f-southwing-wall104-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o138_eng2_7f_southwing_wall102_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o138__eng2-7f-southwing-wall102-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o138__eng2-7f-southwing-wall102-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o139_eng2_7f_southwing_wall100_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o139__eng2-7f-southwing-wall100-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o139__eng2-7f-southwing-wall100-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o140_eng2_7f_southwing_wall98_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o140__eng2-7f-southwing-wall98-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o140__eng2-7f-southwing-wall98-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o141_eng2_7f_southwing_wall96_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o141__eng2-7f-southwing-wall96-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o141__eng2-7f-southwing-wall96-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o142_eng2_7f_southwing_wall94_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o142__eng2-7f-southwing-wall94-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o142__eng2-7f-southwing-wall94-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o143_eng2_7f_southwing_wall92_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o143__eng2-7f-southwing-wall92-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o143__eng2-7f-southwing-wall92-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o144_eng2_7f_southwing_wall90_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o144__eng2-7f-southwing-wall90-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o144__eng2-7f-southwing-wall90-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o145_eng2_7f_southwing_wall88_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o145__eng2-7f-southwing-wall88-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o145__eng2-7f-southwing-wall88-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o146_eng2_7f_southwing_wall86_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o146__eng2-7f-southwing-wall86-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o146__eng2-7f-southwing-wall86-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o147_eng2_7f_southwing_wall84_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o147__eng2-7f-southwing-wall84-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o147__eng2-7f-southwing-wall84-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o148_eng2_7f_southwing_wall82_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o148__eng2-7f-southwing-wall82-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o148__eng2-7f-southwing-wall82-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o149_eng2_7f_southwing_wall80_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o149__eng2-7f-southwing-wall80-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o149__eng2-7f-southwing-wall80-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o150_eng2_7f_southwing_wall78_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o150__eng2-7f-southwing-wall78-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o150__eng2-7f-southwing-wall78-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o151_eng2_7f_southwing_wall76_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o151__eng2-7f-southwing-wall76-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o151__eng2-7f-southwing-wall76-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o152_eng2_7f_southwing_wall74_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o152__eng2-7f-southwing-wall74-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o152__eng2-7f-southwing-wall74-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o153_eng2_7f_southwing_wall72_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o153__eng2-7f-southwing-wall72-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o153__eng2-7f-southwing-wall72-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o154_eng2_7f_southwing_wall70_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o154__eng2-7f-southwing-wall70-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o154__eng2-7f-southwing-wall70-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o155_eng2_7f_southwing_wall68_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o155__eng2-7f-southwing-wall68-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o155__eng2-7f-southwing-wall68-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o156_eng2_7f_southwing_wall66_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o156__eng2-7f-southwing-wall66-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o156__eng2-7f-southwing-wall66-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o157_eng2_7f_southwing_wall64_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o157__eng2-7f-southwing-wall64-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o157__eng2-7f-southwing-wall64-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o158_eng2_7f_southwing_wall62_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o158__eng2-7f-southwing-wall62-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o158__eng2-7f-southwing-wall62-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o159_eng2_7f_southwing_wall60_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o159__eng2-7f-southwing-wall60-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o159__eng2-7f-southwing-wall60-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o160_eng2_7f_southwing_wall58_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o160__eng2-7f-southwing-wall58-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o160__eng2-7f-southwing-wall58-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o161_eng2_7f_southwing_wall56_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o161__eng2-7f-southwing-wall56-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o161__eng2-7f-southwing-wall56-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o162_eng2_7f_southwing_wall54_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o162__eng2-7f-southwing-wall54-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o162__eng2-7f-southwing-wall54-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o163_eng2_7f_southwing_wall52_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o163__eng2-7f-southwing-wall52-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o163__eng2-7f-southwing-wall52-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o164_eng2_7f_southwing_wall50_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o164__eng2-7f-southwing-wall50-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o164__eng2-7f-southwing-wall50-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o165_eng2_7f_southwing_wall48_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o165__eng2-7f-southwing-wall48-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o165__eng2-7f-southwing-wall48-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o166_eng2_7f_southwing_wall46_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o166__eng2-7f-southwing-wall46-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o166__eng2-7f-southwing-wall46-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o167_eng2_7f_southwing_wall44_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o167__eng2-7f-southwing-wall44-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o167__eng2-7f-southwing-wall44-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o168_eng2_7f_southwing_wall42_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o168__eng2-7f-southwing-wall42-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o168__eng2-7f-southwing-wall42-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o169_eng2_7f_southwing_wall40_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o169__eng2-7f-southwing-wall40-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o169__eng2-7f-southwing-wall40-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o170_eng2_7f_southwing_wall38_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o170__eng2-7f-southwing-wall38-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o170__eng2-7f-southwing-wall38-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o171_eng2_7f_southwing_wall36_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o171__eng2-7f-southwing-wall36-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o171__eng2-7f-southwing-wall36-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o172_eng2_7f_southwing_wall34_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o172__eng2-7f-southwing-wall34-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o172__eng2-7f-southwing-wall34-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o173_eng2_7f_southwing_wall32_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o173__eng2-7f-southwing-wall32-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o173__eng2-7f-southwing-wall32-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o174_eng2_7f_southwing_wall30_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o174__eng2-7f-southwing-wall30-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o174__eng2-7f-southwing-wall30-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o175_eng2_7f_southwing_wall28_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o175__eng2-7f-southwing-wall28-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o175__eng2-7f-southwing-wall28-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o176_eng2_7f_southwing_wall26_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o176__eng2-7f-southwing-wall26-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o176__eng2-7f-southwing-wall26-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o177_eng2_7f_southwing_wall24_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o177__eng2-7f-southwing-wall24-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o177__eng2-7f-southwing-wall24-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o178_eng2_7f_southwing_wall22_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o178__eng2-7f-southwing-wall22-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o178__eng2-7f-southwing-wall22-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o179_eng2_7f_southwing_wall20_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o179__eng2-7f-southwing-wall20-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o179__eng2-7f-southwing-wall20-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o180_eng2_7f_southwing_wall18_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o180__eng2-7f-southwing-wall18-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o180__eng2-7f-southwing-wall18-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o181_eng2_7f_southwing_wall16_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o181__eng2-7f-southwing-wall16-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o181__eng2-7f-southwing-wall16-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o182_eng2_7f_southwing_wall14_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o182__eng2-7f-southwing-wall14-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o182__eng2-7f-southwing-wall14-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o183_eng2_7f_southwing_wall12_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o183__eng2-7f-southwing-wall12-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o183__eng2-7f-southwing-wall12-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o184_eng2_7f_southwing_wall10_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o184__eng2-7f-southwing-wall10-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o184__eng2-7f-southwing-wall10-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o185_eng2_7f_southwing_wall8_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o185__eng2-7f-southwing-wall8-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o185__eng2-7f-southwing-wall8-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o186_eng2_7f_southwing_wall6_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o186__eng2-7f-southwing-wall6-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o186__eng2-7f-southwing-wall6-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="o187_eng2_7f_southwing_wall4_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o187__eng2-7f-southwing-wall4-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://eng2_7f_southwing_scene/meshes/o187__eng2-7f-southwing-wall4-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="o0_mount" type="fixed">
+    <parent link="world" />
+    <child link="o0_eng2_7f_southwing_wall402_bodyset2" />
+    <origin xyz="0.1 20.255 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o1_mount" type="fixed">
+    <parent link="world" />
+    <child link="o1_eng2_7f_southwing_wall400_bodyset2" />
+    <origin xyz="11.64 28.755 1.375" rpy="0 -0 -3.1415927" />
+  </joint>
+  <joint name="o2_mount" type="fixed">
+    <parent link="world" />
+    <child link="o2_eng2_7f_southwing_wall398_bodyset2" />
+    <origin xyz="23.18 0 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o3_mount" type="fixed">
+    <parent link="world" />
+    <child link="o3_eng2_7f_southwing_wall396_bodyset2" />
+    <origin xyz="11.64 -28.755 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o4_mount" type="fixed">
+    <parent link="world" />
+    <child link="o4_eng2_7f_southwing_wall394_bodyset2" />
+    <origin xyz="0.1 -20.255 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o5_mount" type="fixed">
+    <parent link="world" />
+    <child link="o5_eng2_7f_southwing_wall392_bodyset2" />
+    <origin xyz="0.1 0 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o6_mount" type="fixed">
+    <parent link="world" />
+    <child link="o6_eng2_7f_southwing_eng2_7f_southwing_corridor_ground_2_bodyset2" />
+    <origin xyz="11.507 -10.355 0" rpy="0 -0 0" />
+  </joint>
+  <joint name="o7_mount" type="fixed">
+    <parent link="world" />
+    <child link="o7_eng2_7f_southwing_eng2_7f_southwing_corridor_ground_1_bodyset2" />
+    <origin xyz="11.507 10.355 0" rpy="0 -0 0" />
+  </joint>
+  <joint name="o8_mount" type="fixed">
+    <parent link="world" />
+    <child link="o8_eng2_7f_southwing_eng2_7f_southwing_corridor_ground_0_bodyset2" />
+    <origin xyz="13.135 0 0" rpy="0 -0 0" />
+  </joint>
+  <joint name="o9_mount" type="fixed">
+    <parent link="world" />
+    <child link="o9_eng2_7f_southwing_wall390_bodyset2" />
+    <origin xyz="6.055 11.69 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o10_mount" type="fixed">
+    <parent link="world" />
+    <child link="o10_eng2_7f_southwing_wall383_bodyset2" />
+    <origin xyz="6.045 9.02 1.375" rpy="0 -0 -3.1415927" />
+  </joint>
+  <joint name="o11_mount" type="fixed">
+    <parent link="world" />
+    <child link="o11_eng2_7f_southwing_wall381_bodyset2" />
+    <origin xyz="12.055 6.655 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o12_mount" type="fixed">
+    <parent link="world" />
+    <child link="o12_eng2_7f_southwing_wall379_bodyset2" />
+    <origin xyz="12.055 0 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o13_mount" type="fixed">
+    <parent link="world" />
+    <child link="o13_eng2_7f_southwing_wall377_bodyset2" />
+    <origin xyz="12.055 -6.655 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o14_mount" type="fixed">
+    <parent link="world" />
+    <child link="o14_eng2_7f_southwing_wall375_bodyset2" />
+    <origin xyz="6.045 -9.02 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o15_mount" type="fixed">
+    <parent link="world" />
+    <child link="o15_eng2_7f_southwing_wall373_bodyset2" />
+    <origin xyz="6.045 -11.69 1.375" rpy="0 -0 -3.1415927" />
+  </joint>
+  <joint name="o16_mount" type="fixed">
+    <parent link="world" />
+    <child link="o16_eng2_7f_southwing_wall371_bodyset2" />
+    <origin xyz="12.055 -14.055 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o17_mount" type="fixed">
+    <parent link="world" />
+    <child link="o17_eng2_7f_southwing_wall369_bodyset2" />
+    <origin xyz="12.055 -20.71 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o18_mount" type="fixed">
+    <parent link="world" />
+    <child link="o18_eng2_7f_southwing_wall367_bodyset2" />
+    <origin xyz="12.055 -26.7725 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o19_mount" type="fixed">
+    <parent link="world" />
+    <child link="o19_eng2_7f_southwing_wall365_bodyset2" />
+    <origin xyz="13.135 -28.615 1.375" rpy="0 -0 -3.1415927" />
+  </joint>
+  <joint name="o20_mount" type="fixed">
+    <parent link="world" />
+    <child link="o20_eng2_7f_southwing_wall363_bodyset2" />
+    <origin xyz="14.235 -28.0675 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o21_mount" type="fixed">
+    <parent link="world" />
+    <child link="o21_eng2_7f_southwing_wall361_bodyset2" />
+    <origin xyz="14.215 -25.305 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o22_mount" type="fixed">
+    <parent link="world" />
+    <child link="o22_eng2_7f_southwing_wall359_bodyset2" />
+    <origin xyz="14.215 -21.855 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o23_mount" type="fixed">
+    <parent link="world" />
+    <child link="o23_eng2_7f_southwing_wall357_bodyset2" />
+    <origin xyz="14.215 -18.405 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o24_mount" type="fixed">
+    <parent link="world" />
+    <child link="o24_eng2_7f_southwing_wall355_bodyset2" />
+    <origin xyz="14.215 -13.905 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o25_mount" type="fixed">
+    <parent link="world" />
+    <child link="o25_eng2_7f_southwing_wall353_bodyset2" />
+    <origin xyz="14.33 -11.69 1.375" rpy="0 -0 -3.1415927" />
+  </joint>
+  <joint name="o26_mount" type="fixed">
+    <parent link="world" />
+    <child link="o26_eng2_7f_southwing_wall351_bodyset2" />
+    <origin xyz="19.1725 -11.69 1.375" rpy="0 -0 -3.1415927" />
+  </joint>
+  <joint name="o27_mount" type="fixed">
+    <parent link="world" />
+    <child link="o27_eng2_7f_southwing_wall349_bodyset2" />
+    <origin xyz="23.05 -10.355 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o28_mount" type="fixed">
+    <parent link="world" />
+    <child link="o28_eng2_7f_southwing_wall347_bodyset2" />
+    <origin xyz="18.5975 -9.02 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o29_mount" type="fixed">
+    <parent link="world" />
+    <child link="o29_eng2_7f_southwing_wall345_bodyset2" />
+    <origin xyz="14.215 -7.97 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o30_mount" type="fixed">
+    <parent link="world" />
+    <child link="o30_eng2_7f_southwing_wall343_bodyset2" />
+    <origin xyz="14.215 -4.67 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o31_mount" type="fixed">
+    <parent link="world" />
+    <child link="o31_eng2_7f_southwing_wall341_bodyset2" />
+    <origin xyz="14.215 -1.145 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o32_mount" type="fixed">
+    <parent link="world" />
+    <child link="o32_eng2_7f_southwing_wall339_bodyset2" />
+    <origin xyz="14.215 2.305 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o33_mount" type="fixed">
+    <parent link="world" />
+    <child link="o33_eng2_7f_southwing_wall337_bodyset2" />
+    <origin xyz="14.215 6.805 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o34_mount" type="fixed">
+    <parent link="world" />
+    <child link="o34_eng2_7f_southwing_wall335_bodyset2" />
+    <origin xyz="18.5975 9.02 1.375" rpy="0 -0 -3.1415927" />
+  </joint>
+  <joint name="o35_mount" type="fixed">
+    <parent link="world" />
+    <child link="o35_eng2_7f_southwing_wall333_bodyset2" />
+    <origin xyz="23.05 10.355 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o36_mount" type="fixed">
+    <parent link="world" />
+    <child link="o36_eng2_7f_southwing_wall331_bodyset2" />
+    <origin xyz="18.5975 11.69 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o37_mount" type="fixed">
+    <parent link="world" />
+    <child link="o37_eng2_7f_southwing_wall329_bodyset2" />
+    <origin xyz="14.215 12.685 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o38_mount" type="fixed">
+    <parent link="world" />
+    <child link="o38_eng2_7f_southwing_wall327_bodyset2" />
+    <origin xyz="14.215 16.04 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o39_mount" type="fixed">
+    <parent link="world" />
+    <child link="o39_eng2_7f_southwing_wall325_bodyset2" />
+    <origin xyz="14.215 19.565 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o40_mount" type="fixed">
+    <parent link="world" />
+    <child link="o40_eng2_7f_southwing_wall323_bodyset2" />
+    <origin xyz="14.215 23.015 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o41_mount" type="fixed">
+    <parent link="world" />
+    <child link="o41_eng2_7f_southwing_wall321_bodyset2" />
+    <origin xyz="14.215 26.9225 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o42_mount" type="fixed">
+    <parent link="world" />
+    <child link="o42_eng2_7f_southwing_wall319_bodyset2" />
+    <origin xyz="13.135 28.615 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o43_mount" type="fixed">
+    <parent link="world" />
+    <child link="o43_eng2_7f_southwing_wall317_bodyset2" />
+    <origin xyz="12.055 20.1175 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o44_mount" type="fixed">
+    <parent link="world" />
+    <child link="o44_eng2_7f_southwing_wall315_bodyset2" />
+    <origin xyz="11.51 11.69 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o45_mount" type="fixed">
+    <parent link="world" />
+    <child link="o45_eng2_7f_southwing_wall313_bodyset2" />
+    <origin xyz="6.055 11.69 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o46_mount" type="fixed">
+    <parent link="world" />
+    <child link="o46_eng2_7f_southwing_wall311_bodyset2" />
+    <origin xyz="0.59 11.69 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o47_mount" type="fixed">
+    <parent link="world" />
+    <child link="o47_eng2_7f_southwing_wall284_bodyset2" />
+    <origin xyz="15.08 -13.325 0.425" rpy="0 -0 -3.1415927" />
+  </joint>
+  <joint name="o48_mount" type="fixed">
+    <parent link="world" />
+    <child link="o48_eng2_7f_southwing_wall282_bodyset2" />
+    <origin xyz="14.38 -12.64 1.2" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o49_mount" type="fixed">
+    <parent link="world" />
+    <child link="o49_eng2_7f_southwing_wall280_bodyset2" />
+    <origin xyz="15.08 -13.67 1.2" rpy="0 -0 -3.1415927" />
+  </joint>
+  <joint name="o50_mount" type="fixed">
+    <parent link="world" />
+    <child link="o50_eng2_7f_southwing_wall278_bodyset2" />
+    <origin xyz="15.78 -12.74 1.2" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o51_mount" type="fixed">
+    <parent link="world" />
+    <child link="o51_eng2_7f_southwing_wall276_bodyset2" />
+    <origin xyz="15.505 -11.755 1.2" rpy="0 -0 0" />
+  </joint>
+  <joint name="o52_mount" type="fixed">
+    <parent link="world" />
+    <child link="o52_eng2_7f_southwing_wall274_bodyset2" />
+    <origin xyz="12.055 -22.055 1.375" rpy="0 -0 -1.5707963" />
+  </joint>
+  <joint name="o53_mount" type="fixed">
+    <parent link="world" />
+    <child link="o53_eng2_7f_southwing_wall272_bodyset2" />
+    <origin xyz="6.195 -20.71 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o54_mount" type="fixed">
+    <parent link="world" />
+    <child link="o54_eng2_7f_southwing_wall270_bodyset2" />
+    <origin xyz="0.315 -24.235 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o55_mount" type="fixed">
+    <parent link="world" />
+    <child link="o55_eng2_7f_southwing_wall268_bodyset2" />
+    <origin xyz="0.775 -27.76 1.375" rpy="0 -0 3.1415927" />
+  </joint>
+  <joint name="o56_mount" type="fixed">
+    <parent link="world" />
+    <child link="o56_eng2_7f_southwing_wall266_bodyset2" />
+    <origin xyz="1.125 -28.1425 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o57_mount" type="fixed">
+    <parent link="world" />
+    <child link="o57_eng2_7f_southwing_wall264_bodyset2" />
+    <origin xyz="3.3275 -28.635 1.375" rpy="0 -0 3.1415927" />
+  </joint>
+  <joint name="o58_mount" type="fixed">
+    <parent link="world" />
+    <child link="o58_eng2_7f_southwing_wall262_bodyset2" />
+    <origin xyz="5.53 -28.1425 1.375" rpy="0 -0 -1.5707963" />
+  </joint>
+  <joint name="o59_mount" type="fixed">
+    <parent link="world" />
+    <child link="o59_eng2_7f_southwing_wall260_bodyset2" />
+    <origin xyz="6.055 -27.76 1.375" rpy="0 -0 3.1415927" />
+  </joint>
+  <joint name="o60_mount" type="fixed">
+    <parent link="world" />
+    <child link="o60_eng2_7f_southwing_wall258_bodyset2" />
+    <origin xyz="6.58 -28.1425 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o61_mount" type="fixed">
+    <parent link="world" />
+    <child link="o61_eng2_7f_southwing_wall256_bodyset2" />
+    <origin xyz="8.7825 -28.635 1.375" rpy="0 -0 3.1415927" />
+  </joint>
+  <joint name="o62_mount" type="fixed">
+    <parent link="world" />
+    <child link="o62_eng2_7f_southwing_wall254_bodyset2" />
+    <origin xyz="10.985 -28.1425 1.375" rpy="0 -0 -1.5707963" />
+  </joint>
+  <joint name="o63_mount" type="fixed">
+    <parent link="world" />
+    <child link="o63_eng2_7f_southwing_wall252_bodyset2" />
+    <origin xyz="11.475 -27.76 1.375" rpy="0 -0 3.1415927" />
+  </joint>
+  <joint name="o64_mount" type="fixed">
+    <parent link="world" />
+    <child link="o64_eng2_7f_southwing_wall250_bodyset2" />
+    <origin xyz="12.055 -26.335 1.375" rpy="0 -0 -1.5707963" />
+  </joint>
+  <joint name="o65_mount" type="fixed">
+    <parent link="world" />
+    <child link="o65_eng2_7f_southwing_wall248_bodyset2" />
+    <origin xyz="12.04 -24.56 1.375" rpy="0 -0 -1.5707963" />
+  </joint>
+  <joint name="o66_mount" type="fixed">
+    <parent link="world" />
+    <child link="o66_eng2_7f_southwing_wall246_bodyset2" />
+    <origin xyz="11.615 -23.365 1.375" rpy="0 -0 3.1415927" />
+  </joint>
+  <joint name="o67_mount" type="fixed">
+    <parent link="world" />
+    <child link="o67_eng2_7f_southwing_wall244_bodyset2" />
+    <origin xyz="12.055 -15.085 1.375" rpy="0 -0 -1.5707963" />
+  </joint>
+  <joint name="o68_mount" type="fixed">
+    <parent link="world" />
+    <child link="o68_eng2_7f_southwing_wall242_bodyset2" />
+    <origin xyz="6.545 -13.66 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o69_mount" type="fixed">
+    <parent link="world" />
+    <child link="o69_eng2_7f_southwing_wall240_bodyset2" />
+    <origin xyz="1.125 -13.19 1.375" rpy="0 -0 -1.5707963" />
+  </joint>
+  <joint name="o70_mount" type="fixed">
+    <parent link="world" />
+    <child link="o70_eng2_7f_southwing_wall238_bodyset2" />
+    <origin xyz="0.72 -12.61 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o71_mount" type="fixed">
+    <parent link="world" />
+    <child link="o71_eng2_7f_southwing_wall236_bodyset2" />
+    <origin xyz="0.315 -16.66 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o72_mount" type="fixed">
+    <parent link="world" />
+    <child link="o72_eng2_7f_southwing_wall234_bodyset2" />
+    <origin xyz="6.195 -20.71 1.375" rpy="0 -0 3.1415927" />
+  </joint>
+  <joint name="o73_mount" type="fixed">
+    <parent link="world" />
+    <child link="o73_eng2_7f_southwing_wall232_bodyset2" />
+    <origin xyz="12.055 -19.365 1.375" rpy="0 -0 -1.5707963" />
+  </joint>
+  <joint name="o74_mount" type="fixed">
+    <parent link="world" />
+    <child link="o74_eng2_7f_southwing_wall230_bodyset2" />
+    <origin xyz="12.04 -17.67 1.375" rpy="0 -0 -1.5707963" />
+  </joint>
+  <joint name="o75_mount" type="fixed">
+    <parent link="world" />
+    <child link="o75_eng2_7f_southwing_wall228_bodyset2" />
+    <origin xyz="11.615 -16.475 1.375" rpy="0 -0 3.1415927" />
+  </joint>
+  <joint name="o76_mount" type="fixed">
+    <parent link="world" />
+    <child link="o76_eng2_7f_southwing_wall226_bodyset2" />
+    <origin xyz="12.055 -1.345 1.375" rpy="0 -0 -1.5707963" />
+  </joint>
+  <joint name="o77_mount" type="fixed">
+    <parent link="world" />
+    <child link="o77_eng2_7f_southwing_wall224_bodyset2" />
+    <origin xyz="6.195 9.094947e-16 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o78_mount" type="fixed">
+    <parent link="world" />
+    <child link="o78_eng2_7f_southwing_wall222_bodyset2" />
+    <origin xyz="0.315 -4.05 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o79_mount" type="fixed">
+    <parent link="world" />
+    <child link="o79_eng2_7f_southwing_wall220_bodyset2" />
+    <origin xyz="0.72 -8.1 1.375" rpy="0 -0 3.1415927" />
+  </joint>
+  <joint name="o80_mount" type="fixed">
+    <parent link="world" />
+    <child link="o80_eng2_7f_southwing_wall218_bodyset2" />
+    <origin xyz="1.125 -7.52 1.375" rpy="0 -0 -1.5707963" />
+  </joint>
+  <joint name="o81_mount" type="fixed">
+    <parent link="world" />
+    <child link="o81_eng2_7f_southwing_wall216_bodyset2" />
+    <origin xyz="6.545 -7.05 1.375" rpy="0 -0 3.1415927" />
+  </joint>
+  <joint name="o82_mount" type="fixed">
+    <parent link="world" />
+    <child link="o82_eng2_7f_southwing_wall214_bodyset2" />
+    <origin xyz="12.055 -5.625 1.375" rpy="0 -0 -1.5707963" />
+  </joint>
+  <joint name="o83_mount" type="fixed">
+    <parent link="world" />
+    <child link="o83_eng2_7f_southwing_wall212_bodyset2" />
+    <origin xyz="12.04 -3.85 1.375" rpy="0 -0 -1.5707963" />
+  </joint>
+  <joint name="o84_mount" type="fixed">
+    <parent link="world" />
+    <child link="o84_eng2_7f_southwing_wall210_bodyset2" />
+    <origin xyz="11.615 -2.655 1.375" rpy="0 -0 3.1415927" />
+  </joint>
+  <joint name="o85_mount" type="fixed">
+    <parent link="world" />
+    <child link="o85_eng2_7f_southwing_wall208_bodyset2" />
+    <origin xyz="12.055 5.625 1.375" rpy="0 -0 -1.5707963" />
+  </joint>
+  <joint name="o86_mount" type="fixed">
+    <parent link="world" />
+    <child link="o86_eng2_7f_southwing_wall206_bodyset2" />
+    <origin xyz="6.545 7.05 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o87_mount" type="fixed">
+    <parent link="world" />
+    <child link="o87_eng2_7f_southwing_wall204_bodyset2" />
+    <origin xyz="1.125 7.52 1.375" rpy="0 -0 -1.5707963" />
+  </joint>
+  <joint name="o88_mount" type="fixed">
+    <parent link="world" />
+    <child link="o88_eng2_7f_southwing_wall202_bodyset2" />
+    <origin xyz="0.72 8.1 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o89_mount" type="fixed">
+    <parent link="world" />
+    <child link="o89_eng2_7f_southwing_wall200_bodyset2" />
+    <origin xyz="0.315 4.05 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o90_mount" type="fixed">
+    <parent link="world" />
+    <child link="o90_eng2_7f_southwing_wall198_bodyset2" />
+    <origin xyz="6.195 9.094947e-16 1.375" rpy="0 -0 3.1415927" />
+  </joint>
+  <joint name="o91_mount" type="fixed">
+    <parent link="world" />
+    <child link="o91_eng2_7f_southwing_wall196_bodyset2" />
+    <origin xyz="12.055 1.345 1.375" rpy="0 -0 -1.5707963" />
+  </joint>
+  <joint name="o92_mount" type="fixed">
+    <parent link="world" />
+    <child link="o92_eng2_7f_southwing_wall194_bodyset2" />
+    <origin xyz="12.04 3.04 1.375" rpy="0 -0 -1.5707963" />
+  </joint>
+  <joint name="o93_mount" type="fixed">
+    <parent link="world" />
+    <child link="o93_eng2_7f_southwing_wall192_bodyset2" />
+    <origin xyz="11.615 4.235 1.375" rpy="0 -0 3.1415927" />
+  </joint>
+  <joint name="o94_mount" type="fixed">
+    <parent link="world" />
+    <child link="o94_eng2_7f_southwing_wall190_bodyset2" />
+    <origin xyz="14.235 -28.0675 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o95_mount" type="fixed">
+    <parent link="world" />
+    <child link="o95_eng2_7f_southwing_wall188_bodyset2" />
+    <origin xyz="15.3375 -28.635 1.375" rpy="0 -0 -3.1415927" />
+  </joint>
+  <joint name="o96_mount" type="fixed">
+    <parent link="world" />
+    <child link="o96_eng2_7f_southwing_wall186_bodyset2" />
+    <origin xyz="16.44 -28.1425 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o97_mount" type="fixed">
+    <parent link="world" />
+    <child link="o97_eng2_7f_southwing_wall184_bodyset2" />
+    <origin xyz="16.965 -27.76 1.375" rpy="0 -0 -3.1415927" />
+  </joint>
+  <joint name="o98_mount" type="fixed">
+    <parent link="world" />
+    <child link="o98_eng2_7f_southwing_wall182_bodyset2" />
+    <origin xyz="17.49 -28.1425 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o99_mount" type="fixed">
+    <parent link="world" />
+    <child link="o99_eng2_7f_southwing_wall180_bodyset2" />
+    <origin xyz="19.6925 -28.635 1.375" rpy="0 -0 -3.1415927" />
+  </joint>
+  <joint name="o100_mount" type="fixed">
+    <parent link="world" />
+    <child link="o100_eng2_7f_southwing_wall178_bodyset2" />
+    <origin xyz="21.895 -28.1425 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o101_mount" type="fixed">
+    <parent link="world" />
+    <child link="o101_eng2_7f_southwing_wall176_bodyset2" />
+    <origin xyz="22.245 -27.76 1.375" rpy="0 -0 -3.1415927" />
+  </joint>
+  <joint name="o102_mount" type="fixed">
+    <parent link="world" />
+    <child link="o102_eng2_7f_southwing_wall174_bodyset2" />
+    <origin xyz="22.705 -25.96 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o103_mount" type="fixed">
+    <parent link="world" />
+    <child link="o103_eng2_7f_southwing_wall172_bodyset2" />
+    <origin xyz="18.45 -24.16 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o104_mount" type="fixed">
+    <parent link="world" />
+    <child link="o104_eng2_7f_southwing_wall170_bodyset2" />
+    <origin xyz="14.215 -25.36 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o105_mount" type="fixed">
+    <parent link="world" />
+    <child link="o105_eng2_7f_southwing_wall168_bodyset2" />
+    <origin xyz="14.23 -26.63 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o106_mount" type="fixed">
+    <parent link="world" />
+    <child link="o106_eng2_7f_southwing_wall166_bodyset2" />
+    <origin xyz="14.65 -27.535 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o107_mount" type="fixed">
+    <parent link="world" />
+    <child link="o107_eng2_7f_southwing_wall164_bodyset2" />
+    <origin xyz="18.415 -24.16 1.375" rpy="0 -0 -3.1415927" />
+  </joint>
+  <joint name="o108_mount" type="fixed">
+    <parent link="world" />
+    <child link="o108_eng2_7f_southwing_wall162_bodyset2" />
+    <origin xyz="22.705 -22.435 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o109_mount" type="fixed">
+    <parent link="world" />
+    <child link="o109_eng2_7f_southwing_wall160_bodyset2" />
+    <origin xyz="18.45 -20.71 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o110_mount" type="fixed">
+    <parent link="world" />
+    <child link="o110_eng2_7f_southwing_wall158_bodyset2" />
+    <origin xyz="14.23 -21.91 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o111_mount" type="fixed">
+    <parent link="world" />
+    <child link="o111_eng2_7f_southwing_wall156_bodyset2" />
+    <origin xyz="14.23 -23.18 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o112_mount" type="fixed">
+    <parent link="world" />
+    <child link="o112_eng2_7f_southwing_wall154_bodyset2" />
+    <origin xyz="14.65 -24.085 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o113_mount" type="fixed">
+    <parent link="world" />
+    <child link="o113_eng2_7f_southwing_wall152_bodyset2" />
+    <origin xyz="18.415 -20.71 1.375" rpy="0 -0 -3.1415927" />
+  </joint>
+  <joint name="o114_mount" type="fixed">
+    <parent link="world" />
+    <child link="o114_eng2_7f_southwing_wall150_bodyset2" />
+    <origin xyz="22.705 -18.985 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o115_mount" type="fixed">
+    <parent link="world" />
+    <child link="o115_eng2_7f_southwing_wall148_bodyset2" />
+    <origin xyz="18.45 -17.26 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o116_mount" type="fixed">
+    <parent link="world" />
+    <child link="o116_eng2_7f_southwing_wall146_bodyset2" />
+    <origin xyz="14.23 -18.46 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o117_mount" type="fixed">
+    <parent link="world" />
+    <child link="o117_eng2_7f_southwing_wall144_bodyset2" />
+    <origin xyz="14.23 -19.73 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o118_mount" type="fixed">
+    <parent link="world" />
+    <child link="o118_eng2_7f_southwing_wall142_bodyset2" />
+    <origin xyz="14.65 -20.635 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o119_mount" type="fixed">
+    <parent link="world" />
+    <child link="o119_eng2_7f_southwing_wall140_bodyset2" />
+    <origin xyz="18.415 -17.26 1.375" rpy="0 -0 -3.1415927" />
+  </joint>
+  <joint name="o120_mount" type="fixed">
+    <parent link="world" />
+    <child link="o120_eng2_7f_southwing_wall138_bodyset2" />
+    <origin xyz="22.705 -14.935 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o121_mount" type="fixed">
+    <parent link="world" />
+    <child link="o121_eng2_7f_southwing_wall136_bodyset2" />
+    <origin xyz="22.3 -12.61 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o122_mount" type="fixed">
+    <parent link="world" />
+    <child link="o122_eng2_7f_southwing_wall134_bodyset2" />
+    <origin xyz="21.895 -13.19 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o123_mount" type="fixed">
+    <parent link="world" />
+    <child link="o123_eng2_7f_southwing_wall132_bodyset2" />
+    <origin xyz="18.1 -13.66 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o124_mount" type="fixed">
+    <parent link="world" />
+    <child link="o124_eng2_7f_southwing_wall130_bodyset2" />
+    <origin xyz="14.215 -14.935 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o125_mount" type="fixed">
+    <parent link="world" />
+    <child link="o125_eng2_7f_southwing_wall128_bodyset2" />
+    <origin xyz="14.23 -16.28 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o126_mount" type="fixed">
+    <parent link="world" />
+    <child link="o126_eng2_7f_southwing_wall126_bodyset2" />
+    <origin xyz="14.65 -17.185 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o127_mount" type="fixed">
+    <parent link="world" />
+    <child link="o127_eng2_7f_southwing_wall124_bodyset2" />
+    <origin xyz="18.065 -7.05 1.375" rpy="0 -0 -3.1415927" />
+  </joint>
+  <joint name="o128_mount" type="fixed">
+    <parent link="world" />
+    <child link="o128_eng2_7f_southwing_wall122_bodyset2" />
+    <origin xyz="21.895 -7.52 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o129_mount" type="fixed">
+    <parent link="world" />
+    <child link="o129_eng2_7f_southwing_wall120_bodyset2" />
+    <origin xyz="22.3 -8.1 1.375" rpy="0 -0 -3.1415927" />
+  </joint>
+  <joint name="o130_mount" type="fixed">
+    <parent link="world" />
+    <child link="o130_eng2_7f_southwing_wall118_bodyset2" />
+    <origin xyz="22.705 -5.775 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o131_mount" type="fixed">
+    <parent link="world" />
+    <child link="o131_eng2_7f_southwing_wall116_bodyset2" />
+    <origin xyz="18.45 -3.45 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o132_mount" type="fixed">
+    <parent link="world" />
+    <child link="o132_eng2_7f_southwing_wall114_bodyset2" />
+    <origin xyz="14.215 -4.725 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o133_mount" type="fixed">
+    <parent link="world" />
+    <child link="o133_eng2_7f_southwing_wall112_bodyset2" />
+    <origin xyz="14.23 -6.07 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o134_mount" type="fixed">
+    <parent link="world" />
+    <child link="o134_eng2_7f_southwing_wall110_bodyset2" />
+    <origin xyz="14.65 -6.975 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o135_mount" type="fixed">
+    <parent link="world" />
+    <child link="o135_eng2_7f_southwing_wall108_bodyset2" />
+    <origin xyz="18.415 -3.45 1.375" rpy="0 -0 -3.1415927" />
+  </joint>
+  <joint name="o136_mount" type="fixed">
+    <parent link="world" />
+    <child link="o136_eng2_7f_southwing_wall106_bodyset2" />
+    <origin xyz="22.705 -1.725 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o137_mount" type="fixed">
+    <parent link="world" />
+    <child link="o137_eng2_7f_southwing_wall104_bodyset2" />
+    <origin xyz="18.45 0 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o138_mount" type="fixed">
+    <parent link="world" />
+    <child link="o138_eng2_7f_southwing_wall102_bodyset2" />
+    <origin xyz="14.23 -1.2 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o139_mount" type="fixed">
+    <parent link="world" />
+    <child link="o139_eng2_7f_southwing_wall100_bodyset2" />
+    <origin xyz="14.23 -2.47 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o140_mount" type="fixed">
+    <parent link="world" />
+    <child link="o140_eng2_7f_southwing_wall98_bodyset2" />
+    <origin xyz="14.65 -3.375 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o141_mount" type="fixed">
+    <parent link="world" />
+    <child link="o141_eng2_7f_southwing_wall96_bodyset2" />
+    <origin xyz="18.415 0 1.375" rpy="0 -0 -3.1415927" />
+  </joint>
+  <joint name="o142_mount" type="fixed">
+    <parent link="world" />
+    <child link="o142_eng2_7f_southwing_wall94_bodyset2" />
+    <origin xyz="22.705 1.725 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o143_mount" type="fixed">
+    <parent link="world" />
+    <child link="o143_eng2_7f_southwing_wall92_bodyset2" />
+    <origin xyz="18.45 3.45 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o144_mount" type="fixed">
+    <parent link="world" />
+    <child link="o144_eng2_7f_southwing_wall90_bodyset2" />
+    <origin xyz="14.23 2.25 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o145_mount" type="fixed">
+    <parent link="world" />
+    <child link="o145_eng2_7f_southwing_wall88_bodyset2" />
+    <origin xyz="14.23 0.98 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o146_mount" type="fixed">
+    <parent link="world" />
+    <child link="o146_eng2_7f_southwing_wall86_bodyset2" />
+    <origin xyz="14.65 0.075 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o147_mount" type="fixed">
+    <parent link="world" />
+    <child link="o147_eng2_7f_southwing_wall84_bodyset2" />
+    <origin xyz="18.415 3.45 1.375" rpy="0 -0 -3.1415927" />
+  </joint>
+  <joint name="o148_mount" type="fixed">
+    <parent link="world" />
+    <child link="o148_eng2_7f_southwing_wall82_bodyset2" />
+    <origin xyz="22.705 5.775 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o149_mount" type="fixed">
+    <parent link="world" />
+    <child link="o149_eng2_7f_southwing_wall80_bodyset2" />
+    <origin xyz="22.3 8.1 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o150_mount" type="fixed">
+    <parent link="world" />
+    <child link="o150_eng2_7f_southwing_wall78_bodyset2" />
+    <origin xyz="21.895 7.52 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o151_mount" type="fixed">
+    <parent link="world" />
+    <child link="o151_eng2_7f_southwing_wall76_bodyset2" />
+    <origin xyz="18.1 7.05 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o152_mount" type="fixed">
+    <parent link="world" />
+    <child link="o152_eng2_7f_southwing_wall74_bodyset2" />
+    <origin xyz="14.215 5.775 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o153_mount" type="fixed">
+    <parent link="world" />
+    <child link="o153_eng2_7f_southwing_wall72_bodyset2" />
+    <origin xyz="14.23 4.43 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o154_mount" type="fixed">
+    <parent link="world" />
+    <child link="o154_eng2_7f_southwing_wall70_bodyset2" />
+    <origin xyz="14.65 3.525 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o155_mount" type="fixed">
+    <parent link="world" />
+    <child link="o155_eng2_7f_southwing_wall68_bodyset2" />
+    <origin xyz="18.065 13.66 1.375" rpy="0 -0 -3.1415927" />
+  </joint>
+  <joint name="o156_mount" type="fixed">
+    <parent link="world" />
+    <child link="o156_eng2_7f_southwing_wall66_bodyset2" />
+    <origin xyz="21.895 13.19 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o157_mount" type="fixed">
+    <parent link="world" />
+    <child link="o157_eng2_7f_southwing_wall64_bodyset2" />
+    <origin xyz="22.3 12.61 1.375" rpy="0 -0 -3.1415927" />
+  </joint>
+  <joint name="o158_mount" type="fixed">
+    <parent link="world" />
+    <child link="o158_eng2_7f_southwing_wall62_bodyset2" />
+    <origin xyz="22.705 14.935 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o159_mount" type="fixed">
+    <parent link="world" />
+    <child link="o159_eng2_7f_southwing_wall60_bodyset2" />
+    <origin xyz="18.45 17.26 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o160_mount" type="fixed">
+    <parent link="world" />
+    <child link="o160_eng2_7f_southwing_wall58_bodyset2" />
+    <origin xyz="14.215 15.985 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o161_mount" type="fixed">
+    <parent link="world" />
+    <child link="o161_eng2_7f_southwing_wall56_bodyset2" />
+    <origin xyz="14.23 14.64 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o162_mount" type="fixed">
+    <parent link="world" />
+    <child link="o162_eng2_7f_southwing_wall54_bodyset2" />
+    <origin xyz="14.65 13.735 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o163_mount" type="fixed">
+    <parent link="world" />
+    <child link="o163_eng2_7f_southwing_wall52_bodyset2" />
+    <origin xyz="18.415 17.26 1.375" rpy="0 -0 -3.1415927" />
+  </joint>
+  <joint name="o164_mount" type="fixed">
+    <parent link="world" />
+    <child link="o164_eng2_7f_southwing_wall50_bodyset2" />
+    <origin xyz="22.705 18.985 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o165_mount" type="fixed">
+    <parent link="world" />
+    <child link="o165_eng2_7f_southwing_wall48_bodyset2" />
+    <origin xyz="18.45 20.71 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o166_mount" type="fixed">
+    <parent link="world" />
+    <child link="o166_eng2_7f_southwing_wall46_bodyset2" />
+    <origin xyz="14.23 19.51 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o167_mount" type="fixed">
+    <parent link="world" />
+    <child link="o167_eng2_7f_southwing_wall44_bodyset2" />
+    <origin xyz="14.23 18.24 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o168_mount" type="fixed">
+    <parent link="world" />
+    <child link="o168_eng2_7f_southwing_wall42_bodyset2" />
+    <origin xyz="14.65 17.335 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o169_mount" type="fixed">
+    <parent link="world" />
+    <child link="o169_eng2_7f_southwing_wall40_bodyset2" />
+    <origin xyz="18.415 20.71 1.375" rpy="0 -0 -3.1415927" />
+  </joint>
+  <joint name="o170_mount" type="fixed">
+    <parent link="world" />
+    <child link="o170_eng2_7f_southwing_wall38_bodyset2" />
+    <origin xyz="22.705 22.435 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o171_mount" type="fixed">
+    <parent link="world" />
+    <child link="o171_eng2_7f_southwing_wall36_bodyset2" />
+    <origin xyz="18.45 24.16 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o172_mount" type="fixed">
+    <parent link="world" />
+    <child link="o172_eng2_7f_southwing_wall34_bodyset2" />
+    <origin xyz="14.23 22.96 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o173_mount" type="fixed">
+    <parent link="world" />
+    <child link="o173_eng2_7f_southwing_wall32_bodyset2" />
+    <origin xyz="14.23 21.69 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o174_mount" type="fixed">
+    <parent link="world" />
+    <child link="o174_eng2_7f_southwing_wall30_bodyset2" />
+    <origin xyz="14.65 20.785 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o175_mount" type="fixed">
+    <parent link="world" />
+    <child link="o175_eng2_7f_southwing_wall28_bodyset2" />
+    <origin xyz="18.415 24.16 1.375" rpy="0 -0 -3.1415927" />
+  </joint>
+  <joint name="o176_mount" type="fixed">
+    <parent link="world" />
+    <child link="o176_eng2_7f_southwing_wall26_bodyset2" />
+    <origin xyz="22.705 25.96 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o177_mount" type="fixed">
+    <parent link="world" />
+    <child link="o177_eng2_7f_southwing_wall24_bodyset2" />
+    <origin xyz="22.245 27.76 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o178_mount" type="fixed">
+    <parent link="world" />
+    <child link="o178_eng2_7f_southwing_wall22_bodyset2" />
+    <origin xyz="21.895 28.1425 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o179_mount" type="fixed">
+    <parent link="world" />
+    <child link="o179_eng2_7f_southwing_wall20_bodyset2" />
+    <origin xyz="19.6925 28.635 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o180_mount" type="fixed">
+    <parent link="world" />
+    <child link="o180_eng2_7f_southwing_wall18_bodyset2" />
+    <origin xyz="17.49 28.1425 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o181_mount" type="fixed">
+    <parent link="world" />
+    <child link="o181_eng2_7f_southwing_wall16_bodyset2" />
+    <origin xyz="16.965 27.76 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o182_mount" type="fixed">
+    <parent link="world" />
+    <child link="o182_eng2_7f_southwing_wall14_bodyset2" />
+    <origin xyz="16.44 28.1425 1.375" rpy="-0 -0 -1.5707963" />
+  </joint>
+  <joint name="o183_mount" type="fixed">
+    <parent link="world" />
+    <child link="o183_eng2_7f_southwing_wall12_bodyset2" />
+    <origin xyz="15.3375 28.635 1.375" rpy="0 -0 0" />
+  </joint>
+  <joint name="o184_mount" type="fixed">
+    <parent link="world" />
+    <child link="o184_eng2_7f_southwing_wall10_bodyset2" />
+    <origin xyz="14.235 28.1425 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o185_mount" type="fixed">
+    <parent link="world" />
+    <child link="o185_eng2_7f_southwing_wall8_bodyset2" />
+    <origin xyz="14.215 26.485 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o186_mount" type="fixed">
+    <parent link="world" />
+    <child link="o186_eng2_7f_southwing_wall6_bodyset2" />
+    <origin xyz="14.23 25.14 1.375" rpy="0 -0 1.5707963" />
+  </joint>
+  <joint name="o187_mount" type="fixed">
+    <parent link="world" />
+    <child link="o187_eng2_7f_southwing_wall4_bodyset2" />
+    <origin xyz="14.65 24.235 1.375" rpy="0 -0 0" />
+  </joint>
+</robot>

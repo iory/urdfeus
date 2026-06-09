@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="square-600-closet">
+  <link name="root">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://square_600_closet_object/meshes/_root.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://square_600_closet_object/meshes/_root.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="square_600_closet_bodyset2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://square_600_closet_object/meshes/_square-600-closet-bodyset2.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://square_600_closet_object/meshes/_square-600-closet-bodyset2.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="square_600_closet_bodyset3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://square_600_closet_object/meshes/_square-600-closet-bodyset3.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://square_600_closet_object/meshes/_square-600-closet-bodyset3.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="square_600_closet_bodyset4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://square_600_closet_object/meshes/_square-600-closet-bodyset4.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://square_600_closet_object/meshes/_square-600-closet-bodyset4.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="square_600_closet_bodyset5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://square_600_closet_object/meshes/_square-600-closet-bodyset5.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://square_600_closet_object/meshes/_square-600-closet-bodyset5.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="square_600_closet_bodyset7">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://square_600_closet_object/meshes/_square-600-closet-bodyset7.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://square_600_closet_object/meshes/_square-600-closet-bodyset7.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="square_600_closet_bodyset6">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://square_600_closet_object/meshes/_square-600-closet-bodyset6.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://square_600_closet_object/meshes/_square-600-closet-bodyset6.glb" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="drawer4" type="prismatic">
+    <parent link="root" />
+    <child link="square_600_closet_bodyset2" />
+    <origin xyz="0.008 -0.147 0.123" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.564" />
+  </joint>
+  <joint name="drawer3" type="prismatic">
+    <parent link="root" />
+    <child link="square_600_closet_bodyset3" />
+    <origin xyz="0.008 -0.147 0.324" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.564" />
+  </joint>
+  <joint name="drawer2" type="prismatic">
+    <parent link="root" />
+    <child link="square_600_closet_bodyset4" />
+    <origin xyz="0.008 -0.147 0.501" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.564" />
+  </joint>
+  <joint name="drawer1" type="prismatic">
+    <parent link="root" />
+    <child link="square_600_closet_bodyset5" />
+    <origin xyz="0.008 -0.147 0.652" rpy="0 -0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="100" velocity="0.785398" lower="0" upper="0.564" />
+  </joint>
+  <joint name="door_right" type="revolute">
+    <parent link="root" />
+    <child link="square_600_closet_bodyset7" />
+    <origin xyz="0.281 0.285 0.034" rpy="0 -0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="5" lower="0" upper="1.5707963" />
+  </joint>
+  <joint name="door_left" type="revolute">
+    <parent link="root" />
+    <child link="square_600_closet_bodyset6" />
+    <origin xyz="0.281 -0.285 0.738" rpy="0 -0 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="100" velocity="5" lower="0" upper="1.5707963" />
+  </joint>
+</robot>
