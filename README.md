@@ -62,6 +62,60 @@ with open('robot.l', 'w') as f:
     urdf2eus('robot.urdf', robot_name='my_robot', fp=f)
 ```
 
+## EusLisp → URDF 変換 (eus2urdf)
+
+`eus2urdf`は、EusLispのロボットモデルをURDF（ROSパッケージ形式）へ変換する逆方向のツールです。
+モデルは`irteusgl`で実体化してから抽出するため、`:init`内で手続き的に追加されるリンク・関節（脚や吸盤など）も取りこぼさず変換できます。メッシュは`glvertices`から`trimesh`経由で書き出します（デフォルトは色を保持できる`.glb`）。
+
+### 前提
+
+- `irteusgl`（jskeus）がインストールされていること
+- メッシュ書き出しに`trimesh` / `pycollada`（依存に含まれます）
+
+### コマンドライン
+
+```bash
+# EusLispモデル -> ROSパッケージ一式 (package.xml + urdf/ + meshes/)
+eus2urdf robot.l output_package_dir
+
+# package:// で使うパッケージ名を指定
+eus2urdf robot.l output_package_dir --package-name my_robot_description
+
+# ロボット名・コンストラクタ・メッシュ形式を指定
+eus2urdf robot.l out --name my_robot --constructor my-robot --mesh-format obj
+```
+
+生成物のレイアウト：
+
+```
+output_package_dir/
+  package.xml
+  urdf/<robot>.urdf          # package://<pkg>/meshes/<link>.glb を参照
+  meshes/<link>.glb
+```
+
+### Pythonスクリプト
+
+```python
+from urdfeus.eus2urdf import eus2urdf
+
+urdf_path = eus2urdf('robot.l', 'output_package_dir',
+                     package_name='my_robot_description')
+```
+
+#### オプション
+
+- `--package-name`: `package://`で参照するROSパッケージ名（既定は出力ディレクトリ名）
+- `--name`: `<robot name>`とURDFファイル名（既定はモデルが返すロボット名）
+- `--constructor`: EusLispのコンストラクタ関数名（既定はファイル名のstem）
+- `--mesh-format`: `trimesh.export`が扱う拡張子（既定`glb`）。`glb`/`ply`/`obj`は面ごとの色を保持。`dae`はtrimeshのColladaエクスポータが色をtextureに潰すため**多色メッシュがグレーになる**（単色メッシュは保持）。`stl`は色なし
+- `--irteusgl`: 使用する`irteusgl`実行ファイル
+
+#### ジオメトリの扱い
+
+- colladaボディは`glvertices`から、`make-cube`等で生成されたプレーンなbody（例：`:init`で追加される可視化用の脚キューブや吸盤）は各faceを三角形分割してメッシュ化します。いずれもメッシュとして書き出されます。
+- プレーンbodyのface三角形分割は凸面を仮定します（プリミティブ形状では成立）。
+
 ### 生成されたEusLispファイルの使用
 
 ```lisp
