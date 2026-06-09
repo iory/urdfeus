@@ -59,6 +59,11 @@ jobs:
         Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
         # Set EusLisp environment
         export EUSDIR=/usr/share/euslisp
+        # Locate the apt-installed jskeus models so TestEus2UrdfJskeus runs
+        which irteusgl || true
+        models="$(find /usr /opt -path '*jskeus/eus/models/*-robot.l' -print -quit 2>/dev/null)"
+        if [ -n "$models" ]; then export JSKEUS_MODELS_DIR="$(dirname "$models")"; fi
+        echo "JSKEUS_MODELS_DIR=${JSKEUS_MODELS_DIR}"
         # Run tests
         pytest -v tests
 

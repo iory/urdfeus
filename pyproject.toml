@@ -8,7 +8,9 @@ version = "1.1.10"
 description = "URDF converter for Euslisp"
 dependencies = [
     "pyyaml",
-    "scikit-robot>=0.0.35"
+    "scikit-robot>=0.0.35",
+    "trimesh",
+    "pycollada"
 ]
 readme = "README.md"
 license = { file = "LICENSE" }
@@ -38,12 +40,14 @@ packages = [
 
 [tool.setuptools.package-data]
 urdfeus = [
-        "templates/euscollada-robot.l"
+        "templates/euscollada-robot.l",
+        "templates/eus2urdf_dump.l"
 ]
 
 [project.scripts]
 urdf2eus = "urdfeus.apps.urdf2eus:main"
 mesh2eus = "urdfeus.apps.mesh2eus:main"
+eus2urdf = "urdfeus.apps.eus2urdf:main"
 
 [tool.ruff]
 target-version = "py38"
