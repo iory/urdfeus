@@ -547,7 +547,7 @@ def _concatenate_visual_mesh(meshes):
     mesh : trimesh.Trimesh
     """
     mesh = trimesh.util.concatenate(meshes)
-    parts = meshes if isinstance(meshes, (list, tuple)) else [meshes]
+    parts = meshes if isinstance(meshes, list | tuple) else [meshes]
     stacked = []
     for part in parts:
         cache = getattr(part, '_cache', None)
