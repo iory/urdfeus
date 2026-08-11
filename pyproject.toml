@@ -43,7 +43,8 @@ packages = [
 [tool.setuptools.package-data]
 urdfeus = [
         "templates/euscollada-robot.l",
-        "templates/eus2urdf_dump.l"
+        "templates/eus2urdf_dump.l",
+        "templates/urdfeus-glvertices.l"
 ]
 
 [project.scripts]
