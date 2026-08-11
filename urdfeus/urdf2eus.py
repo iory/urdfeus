@@ -453,6 +453,95 @@ def _remove_duplicate_vertices(vertices, faces, tolerance=1e-6):
     return unique_vertices, new_faces
 
 
+#: Dihedral angle above which an edge is kept sharp when computing normals.
+default_crease_angle = np.deg2rad(60.0)
+
+
+def _compute_shading_normals(vertices, faces, crease_angle=None):
+    """Compute per-vertex normals that keep hard edges hard.
+
+    When a mesh carries no ``:normals`` array, irtgl's ``:calc-normals`` fills
+    one in from the triangle winding and switches the mesh to flat shading, so
+    every curved surface ends up faceted.  Simply averaging the adjacent face
+    normals per vertex fixes the curved parts but rounds off genuine edges,
+    which turns flat plates into gradients.
+
+    Faces are therefore grouped into smoothing groups -- connected components
+    of the face adjacency graph keeping only edges whose dihedral angle is
+    below ``crease_angle`` -- and a vertex shared by more than one group is
+    duplicated, once per group.  Normals are then averaged within a group only,
+    weighted by the corner angle each face subtends at the vertex.
+
+    Parameters
+    ----------
+    vertices : numpy.ndarray
+        Vertex coordinates (N x 3).
+    faces : numpy.ndarray
+        Triangle indices (M x 3).
+    crease_angle : float, optional
+        Dihedral angle in radians above which an edge is kept sharp.
+        Defaults to :data:`default_crease_angle`.
+
+    Returns
+    -------
+    vertices : numpy.ndarray
+        Vertex coordinates, split at creases (K x 3, K >= N).
+    faces : numpy.ndarray
+        Triangle indices into the split vertices (M x 3).
+    normals : numpy.ndarray
+        Unit normal per split vertex (K x 3).
+    """
+    if crease_angle is None:
+        crease_angle = default_crease_angle
+    if len(faces) == 0:
+        return vertices, faces, np.zeros((len(vertices), 3))
+
+    mesh = trimesh.Trimesh(vertices=vertices, faces=faces, process=False)
+    # trimesh hands out cached, read-only views
+    face_normals = np.array(mesh.face_normals, dtype=np.float64)
+    face_normals[~np.isfinite(face_normals).all(axis=1)] = 0.0
+    face_angles = np.array(mesh.face_angles, dtype=np.float64)
+    face_angles[~np.isfinite(face_angles)] = 0.0
+
+    # smoothing groups: faces joined only across edges that are not creases
+    adjacency = np.asarray(mesh.face_adjacency)
+    if len(adjacency):
+        angle = np.asarray(mesh.face_adjacency_angles, dtype=np.float64)
+        smooth_edges = adjacency[np.nan_to_num(angle, nan=np.pi) < crease_angle]
+    else:
+        smooth_edges = np.zeros((0, 2), dtype=np.int64)
+    groups = trimesh.graph.connected_component_labels(
+        smooth_edges, node_count=len(faces)
+    )
+
+    # one output vertex per (input vertex, smoothing group) pair
+    corner_vertex = faces.reshape(-1)
+    corner_group = np.repeat(groups, 3)
+    key = corner_vertex.astype(np.int64) * (int(groups.max()) + 1) + corner_group
+    _unique, first_indices, inverse = np.unique(
+        key, return_index=True, return_inverse=True
+    )
+    inverse = inverse.reshape(-1)
+
+    new_vertices = vertices[corner_vertex[first_indices]]
+    new_faces = inverse.reshape(faces.shape)
+
+    # corner-angle weighted average of the face normals within each group
+    weight = face_angles.reshape(-1)
+    corner_normal = np.repeat(face_normals, 3, axis=0) * weight[:, None]
+    normals = np.zeros((len(new_vertices), 3))
+    for axis in range(3):
+        normals[:, axis] = np.bincount(
+            inverse, weights=corner_normal[:, axis], minlength=len(new_vertices)
+        )
+    norm = np.linalg.norm(normals, axis=1)
+    degenerate = ~np.isfinite(norm) | (norm < 1e-12)
+    normals[degenerate] = np.array([0.0, 0.0, 1.0])
+    norm[degenerate] = 1.0
+    normals /= norm[:, None]
+    return new_vertices, new_faces, normals
+
+
 def print_mesh(link, simplify_vertex_clustering_voxel_size=None, fp=sys.stdout,
                use_urdf_material=False):
     global material_map, link_material_map
@@ -502,6 +591,11 @@ def print_mesh(link, simplify_vertex_clustering_voxel_size=None, fp=sys.stdout,
         unique_vertices, optimized_faces = _remove_duplicate_vertices(
             vertices, input_mesh.faces, tolerance=0.05
         )
+        # Ship normals so irtgl keeps smooth shading instead of recomputing
+        # flat per-face normals; this splits vertices back apart at creases.
+        unique_vertices, optimized_faces, normals = _compute_shading_normals(
+            unique_vertices, optimized_faces
+        )
 
         print("                   (list :indices #i(", end="", file=fp)
         # Use optimized face indices
@@ -520,7 +614,13 @@ def print_mesh(link, simplify_vertex_clustering_voxel_size=None, fp=sys.stdout,
         vertices_flat = unique_vertices.reshape(-1)
         np.savetxt(fp, vertices_flat.reshape(1, -1), fmt='%.1f', delimiter=' ', newline='')
         print(")) mat))", end="", file=fp)
-        # TODO(someone) normal
+        print(
+            f"\n                   (list :normals (let ((mat (make-matrix {len(normals)} 3))) (fvector-replace (array-entity mat) #f(",
+            end="",
+            file=fp,
+        )
+        np.savetxt(fp, normals.reshape(1, -1), fmt='%.4f', delimiter=' ', newline='')
+        print(")) mat))", end="", file=fp)
         print(")", end="", file=fp)
     print(")))", file=fp)
 
