@@ -91,7 +91,7 @@ def print_link(
     geom_counter = 0
     if link.visual_mesh is not None and len(link.visual_mesh) > 0:
         # Compute mesh cache key to check if we can reuse existing geometry
-        mesh = trimesh.util.concatenate(link.visual_mesh)
+        mesh = _concatenate_visual_mesh(link.visual_mesh)
         if simplify_vertex_clustering_voxel_size:
             mesh = simplify_vertex_clustering(mesh, simplify_vertex_clustering_voxel_size)[0]
         # Get material information for cache key when using material from urdf
@@ -280,7 +280,7 @@ def print_geometry(link, simplify_vertex_clustering_voxel_size=None, fp=sys.stdo
         return
 
     # Compute mesh cache key to check if geometry was already defined
-    mesh = trimesh.util.concatenate(link.visual_mesh)
+    mesh = _concatenate_visual_mesh(link.visual_mesh)
     if simplify_vertex_clustering_voxel_size:
         mesh = simplify_vertex_clustering(mesh, simplify_vertex_clustering_voxel_size)[0]
     # Get material information for cache key when using material from urdf
@@ -348,6 +348,12 @@ def print_geometry(link, simplify_vertex_clustering_voxel_size=None, fp=sys.stdo
     print("      geom))", file=fp)
 
 
+#: Bumped whenever what we cache changes, so entries written by an older
+#: urdfeus are ignored rather than silently reused.  Version 2 keeps the
+#: vertex normals loaded from the mesh file alongside the split geometry.
+_MESH_CACHE_VERSION = 2
+
+
 def _compute_mesh_cache_key(mesh, material=None):
     """Compute a fast cache key for mesh based on sampled geometry.
 
@@ -370,7 +376,7 @@ def _compute_mesh_cache_key(mesh, material=None):
         Fast hash value for cache key.
     """
     # Start with vertex and face counts for quick differentiation
-    h = hash((len(mesh.vertices), len(mesh.faces)))
+    h = hash((_MESH_CACHE_VERSION, len(mesh.vertices), len(mesh.faces)))
 
     # Sample vertices (hash first, middle, last)
     vertices = mesh.vertices.flatten()
@@ -412,7 +418,7 @@ def _compute_mesh_cache_key(mesh, material=None):
     return h
 
 
-def _remove_duplicate_vertices(vertices, faces, tolerance=1e-6):
+def _remove_duplicate_vertices(vertices, faces, tolerance=1e-6, normals=None):
     """Remove duplicate vertices and update face indices accordingly.
 
     Parameters
@@ -423,6 +429,12 @@ def _remove_duplicate_vertices(vertices, faces, tolerance=1e-6):
         Array of face indices (M x 3).
     tolerance : float
         Distance threshold for considering vertices as duplicates.
+    normals : numpy.ndarray, optional
+        Unit normal per vertex (N x 3).  When given, vertices are merged only
+        if their normals agree as well, so a hard edge -- which a mesh file
+        stores as coincident vertices carrying different normals -- is not
+        collapsed into a single smoothed vertex.  The merged normals are
+        returned alongside.
 
     Returns
     -------
@@ -430,10 +442,18 @@ def _remove_duplicate_vertices(vertices, faces, tolerance=1e-6):
         Array of unique vertex coordinates.
     new_faces : numpy.ndarray
         Updated face indices pointing to unique vertices.
+    unique_normals : numpy.ndarray
+        Only returned when ``normals`` was given.
     """
     # Round vertices to tolerance for comparison
     scale = 1.0 / tolerance
     rounded = np.round(vertices * scale).astype(np.int64)
+    if normals is not None:
+        # 0.01 quantises direction to well under a degree, fine enough to keep
+        # distinct normals apart without splitting on floating point noise.
+        rounded = np.hstack(
+            (rounded, np.round(np.asarray(normals) * 100.0).astype(np.int64))
+        )
 
     # Find unique vertices using lexsort for stable ordering
     # Convert to void type for unique operation
@@ -449,9 +469,95 @@ def _remove_duplicate_vertices(vertices, faces, tolerance=1e-6):
 
     # Update face indices to point to unique vertices
     # Flatten faces, map indices, then reshape back
+    inverse_indices = inverse_indices.reshape(-1)
     new_faces = inverse_indices[faces.flatten()].reshape(faces.shape)
 
-    return unique_vertices, new_faces
+    if normals is None:
+        return unique_vertices, new_faces
+    return unique_vertices, new_faces, np.asarray(normals)[first_indices]
+
+
+def _usable_authored_normals(mesh):
+    """Return the normals a mesh file supplied, or None if unusable.
+
+    ``vertex_normals`` is a lazily computed property, so only an array already
+    in the cache came from the file; reading the property otherwise fabricates
+    one by averaging.  Exporters also write them at whatever scale the file
+    uses (this robot's Collada stores them 25.4x long), and some sub-geometries
+    carry all-zero normals, which carry no information at all -- fall back to
+    inferring the whole submesh in that case.
+
+    Parameters
+    ----------
+    mesh : trimesh.Trimesh
+        Submesh to read from.
+
+    Returns
+    -------
+    normals : numpy.ndarray or None
+        Unit normal per vertex (N x 3), or None when the file supplied none or
+        supplied ones that cannot be trusted.
+    """
+    cache = getattr(mesh, '_cache', None)
+    stored = cache.cache.get('vertex_normals') if cache is not None else None
+    if stored is None:
+        return None
+    stored = np.asarray(stored, dtype=np.float64)
+    if stored.shape != (len(mesh.vertices), 3):
+        return None
+    length = np.linalg.norm(stored, axis=1)
+    degenerate = ~np.isfinite(length) | (length < 1e-9)
+    if degenerate.mean() > 0.01:
+        return None
+    length[degenerate] = 1.0
+    normals = stored / length[:, None]
+    if degenerate.any():
+        # A handful of bad entries: borrow the face normal instead of dropping
+        # the whole submesh back to inference.
+        faces = np.asarray(mesh.faces)
+        face_normals = np.asarray(mesh.face_normals, dtype=np.float64)
+        fixed = np.zeros((len(normals), 3))
+        for axis in range(3):
+            fixed[:, axis] = np.bincount(
+                faces.reshape(-1),
+                weights=np.repeat(face_normals[:, axis], 3),
+                minlength=len(normals),
+            )
+        fixed_len = np.linalg.norm(fixed, axis=1)
+        ok = degenerate & (fixed_len > 1e-9)
+        normals[ok] = fixed[ok] / fixed_len[ok, None]
+        normals[degenerate & ~ok] = np.array([0.0, 0.0, 1.0])
+    return normals
+
+
+def _concatenate_visual_mesh(meshes):
+    """Concatenate a link's visual meshes, keeping authored vertex normals.
+
+    ``trimesh.util.concatenate`` stacks the vertices in order but returns a
+    fresh mesh without the cache, so normals loaded from the mesh file are
+    lost.  Stack them by hand to match.
+
+    Parameters
+    ----------
+    meshes : list of trimesh.Trimesh
+        Meshes to concatenate.
+
+    Returns
+    -------
+    mesh : trimesh.Trimesh
+    """
+    mesh = trimesh.util.concatenate(meshes)
+    parts = meshes if isinstance(meshes, (list, tuple)) else [meshes]
+    stacked = []
+    for part in parts:
+        cache = getattr(part, '_cache', None)
+        stored = cache.cache.get('vertex_normals') if cache is not None else None
+        if stored is None or len(stored) != len(part.vertices):
+            return mesh
+        stacked.append(np.asarray(stored))
+    if stacked and sum(len(s) for s in stacked) == len(mesh.vertices):
+        mesh.vertex_normals = np.vstack(stacked)
+    return mesh
 
 
 #: Dihedral angle above which an edge is kept sharp when computing normals.
@@ -548,7 +654,7 @@ def print_mesh(link, simplify_vertex_clustering_voxel_size=None, fp=sys.stdout,
     global material_map, link_material_map
 
     print("\n                 (list ;; mesh list", file=fp)
-    mesh = trimesh.util.concatenate(link.visual_mesh)
+    mesh = _concatenate_visual_mesh(link.visual_mesh)
     if simplify_vertex_clustering_voxel_size:
         mesh = simplify_vertex_clustering(mesh, simplify_vertex_clustering_voxel_size)[0]
 
@@ -587,16 +693,25 @@ def print_mesh(link, simplify_vertex_clustering_voxel_size=None, fp=sys.stdout,
         vertices = link.inverse_transformation().transform_vector(vertices)
         vertices = meter2millimeter * vertices
 
-        # Remove duplicate vertices and update face indices
-        # Use 0.05mm tolerance (half of our 0.1mm output precision)
-        unique_vertices, optimized_faces = _remove_duplicate_vertices(
-            vertices, input_mesh.faces, tolerance=0.05
-        )
         # Ship normals so irtgl keeps smooth shading instead of recomputing
-        # flat per-face normals; this splits vertices back apart at creases.
-        unique_vertices, optimized_faces, normals = _compute_shading_normals(
-            unique_vertices, optimized_faces
-        )
+        # flat per-face normals.  Prefer the ones the mesh file supplied: they
+        # record which edges the author meant to be smooth.  Where the file has
+        # none, or stores unusable ones, fall back to inferring them.
+        authored = _usable_authored_normals(input_mesh)
+        if authored is not None:
+            authored = link.inverse_transformation().rotate_vector(authored)
+            # Vertices are merged on position *and* normal, so a hard edge --
+            # stored as coincident vertices with differing normals -- survives.
+            unique_vertices, optimized_faces, normals = _remove_duplicate_vertices(
+                vertices, input_mesh.faces, tolerance=0.05, normals=authored
+            )
+        else:
+            unique_vertices, optimized_faces = _remove_duplicate_vertices(
+                vertices, input_mesh.faces, tolerance=0.05
+            )
+            unique_vertices, optimized_faces, normals = _compute_shading_normals(
+                unique_vertices, optimized_faces
+            )
 
         print("                   (list :indices #i(", end="", file=fp)
         # Use optimized face indices
