@@ -18,16 +18,37 @@ URDF ⇄ EusLisp を相互変換するPythonライブラリ
 
 ## インストール
 
+Python 3.10以降が必要です。
+
+### uvを使う場合（推奨）
+
+[uv](https://docs.astral.sh/uv/)は高速なPythonパッケージマネージャです。仮想環境を作って`urdfeus`をインストールします：
+
+```bash
+uv venv
+source .venv/bin/activate  # Linux/macOS
+# .venv\Scripts\activate   # Windows
+uv pip install urdfeus
+```
+
+オプションの依存関係も含める場合：
+
+```bash
+uv pip install "urdfeus[all]"
+```
+
+### pipを使う場合
+
 ```bash
 pip install urdfeus
 ```
 
-開発版をインストールする場合：
+### 開発版
 
 ```bash
 git clone https://github.com/iory/urdfeus.git
 cd urdfeus
-pip install -e .
+uv pip install -e .   # または pip install -e .
 ```
 
 ## 使用方法

@@ -1,8 +1,6 @@
 import os
 from pathlib import Path
 import pickle
-from typing import Dict
-from typing import Optional
 
 
 class MeshCache:
@@ -13,7 +11,7 @@ class MeshCache:
     configurations that share the same mesh files to reuse cached data.
     """
 
-    def __init__(self, cache_dir: Optional[str] = None):
+    def __init__(self, cache_dir: str | None = None):
         """Initialize mesh cache.
 
         Parameters
@@ -47,7 +45,7 @@ class MeshCache:
             # If saving fails, just continue without cache
             print(f"Warning: Failed to save mesh cache: {e}")
 
-    def load_all_mesh_caches(self) -> Dict[int, list]:
+    def load_all_mesh_caches(self) -> dict[int, list]:
         """Load all mesh caches from disk into a dictionary.
 
         This is useful for loading all available mesh caches at startup,
