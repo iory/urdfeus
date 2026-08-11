@@ -23,6 +23,7 @@ from urdfeus.grouping_joint import create_config
 from urdfeus.mesh_cache import get_default_cache
 from urdfeus.read_yaml import read_config_from_yaml
 from urdfeus.templates import get_euscollada_string
+from urdfeus.templates import get_urdfeus_glvertices_string
 
 # Global cache for split_mesh_by_face_color results
 # Using trimesh's built-in identifier_hash for efficient mesh identification
@@ -325,7 +326,7 @@ def print_geometry(link, simplify_vertex_clustering_voxel_size=None, fp=sys.stdo
     print(f"#f({qw:.6f} {qx:.6f} {qy:.6f} {qz:.6f}))", end="", file=fp)
     print(")))", file=fp)
     print("      (setq glv", file=fp)
-    print("       (instance gl::glvertices :init", end="", file=fp)
+    print("       (instance gl::urdfeus-glvertices :init", end="", file=fp)
     if link.visual_mesh is not None and len(link.visual_mesh) > 0:
         # TODO(someone): use g.scale
         print_mesh(link, simplify_vertex_clustering_voxel_size, fp=fp,
@@ -854,6 +855,7 @@ def urdf2eus(
     )
 
     print(get_euscollada_string(), file=fp)
+    print(get_urdfeus_glvertices_string(), file=fp)
 
     joint_names = []
     for joint in collect_all_joints_of_robot(r):
