@@ -2,13 +2,15 @@
 
 import argparse
 
+from urdfeus.apps.common import add_diagnostic_arguments
+from urdfeus.apps.common import handle_doctor
 from urdfeus.mesh2eus import mesh2eus
 
 
 def main():
     parser = argparse.ArgumentParser(description="Convert mesh to Euslisp")
-    parser.add_argument("input_mesh_path", type=str, help="Input mesh file path")
-    parser.add_argument("output_euslisp_path", type=str, help="Output Euslisp path")
+    parser.add_argument("input_mesh_path", type=str, nargs="?", help="Input mesh file path")
+    parser.add_argument("output_euslisp_path", type=str, nargs="?", help="Output Euslisp path")
     parser.add_argument(
         "--simplify-vertex-clustering-voxel-size",
         "--voxel-size",
@@ -20,7 +22,10 @@ def main():
         + "mesh simplification. This process reduces the complexity"
         + " of the mesh by clustering vertices within the specified voxel size.",
     )
+    add_diagnostic_arguments(parser)
     args = parser.parse_args()
+    if handle_doctor(args, parser, ['input_mesh_path', 'output_euslisp_path']):
+        return
     with open(args.output_euslisp_path, "w") as f:
         mesh2eus(args.input_mesh_path, args.simplify_vertex_clustering_voxel_size, fp=f)
 

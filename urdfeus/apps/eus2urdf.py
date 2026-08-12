@@ -2,6 +2,8 @@
 
 import argparse
 
+from urdfeus.apps.common import add_diagnostic_arguments
+from urdfeus.apps.common import handle_doctor
 from urdfeus.eus2urdf import eus2urdf
 
 
@@ -9,9 +11,9 @@ def main():
     parser = argparse.ArgumentParser(
         description="Convert an EusLisp robot model to a URDF ROS package "
         + "(package.xml + urdf/ + meshes/).")
-    parser.add_argument("input_euslisp_path", type=str,
+    parser.add_argument("input_euslisp_path", type=str, nargs="?",
                         help="Input EusLisp .l model path")
-    parser.add_argument("output_dir", type=str,
+    parser.add_argument("output_dir", type=str, nargs="?",
                         help="Output ROS package directory to create")
     parser.add_argument(
         "--package-name", type=str, default=None,
@@ -40,7 +42,10 @@ def main():
     parser.add_argument(
         "--irteusgl", type=str, default="irteusgl",
         help="irteusgl executable to use.")
+    add_diagnostic_arguments(parser)
     args = parser.parse_args()
+    if handle_doctor(args, parser, ['input_euslisp_path', 'output_dir']):
+        return
 
     urdf_path = eus2urdf(
         args.input_euslisp_path,

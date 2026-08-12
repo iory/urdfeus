@@ -22,7 +22,16 @@ Python 3.10以降が必要です。
 
 ### uvを使う場合（推奨）
 
-[uv](https://docs.astral.sh/uv/)は高速なPythonパッケージマネージャです。仮想環境を作って`urdfeus`をインストールします：
+[uv](https://docs.astral.sh/uv/)は高速なPythonパッケージマネージャです。コマンドとして使うだけなら`uv tool`が最も確実です：
+
+```bash
+uv tool install urdfeus
+uv tool upgrade urdfeus
+```
+
+隔離された環境に入り、`~/.local/bin`のshimが絶対パスのインタプリタを指すので、カレントディレクトリにあるチェックアウトに影響されません。
+
+ライブラリとして使う場合は仮想環境に：
 
 ```bash
 uv venv
@@ -43,6 +52,8 @@ uv pip install "urdfeus[all]"
 pip install urdfeus
 ```
 
+`pip install --user`は避けてください。`~/.local`に残った古いコピーが、あとから入れた環境を隠すことがあります。
+
 ### 開発版
 
 ```bash
@@ -50,6 +61,25 @@ git clone https://github.com/iory/urdfeus.git
 cd urdfeus
 uv pip install -e .   # または pip install -e .
 ```
+
+### ROS環境との関係
+
+`urdf2eus`はROSのPythonインタプリタを必要としません。URDFの`package://`を解決するために`ROS_PACKAGE_PATH`が通っていれば、隔離された仮想環境から実行できます：
+
+```bash
+export ROS_PACKAGE_PATH=/path/to/your/ros/workspace
+urdf2eus robot.urdf robot.l
+```
+
+## 不具合の報告
+
+環境の取り違えが原因の不具合が多いため、報告には実行環境を添えてください：
+
+```bash
+urdf2eus --doctor
+```
+
+どのPython・どの`urdfeus`・どの`scikit-robot`が実際に読み込まれたかを、バージョンだけでなくパスまで表示します。変換が成功して結果だけがおかしい場合は、生成された`.l`の先頭20行でも同じ情報が得られます。
 
 ## 使用方法
 
