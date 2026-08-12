@@ -10,3 +10,7 @@ dist/
 __pycache__/
 # Spinning-GIF gallery output
 gallery/
+
+# Pin the interpreter for uv. Un-ignored explicitly because a global
+# ignore of dotfiles would otherwise drop it.
+!.python-version
