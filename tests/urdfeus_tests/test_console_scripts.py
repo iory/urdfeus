@@ -18,6 +18,15 @@ def run_command(cmd):
     return result
 
 
+def is_open3d_available():
+    """Mesh simplification goes through open3d, which has no wheel past cp312."""
+    try:
+        import open3d  # noqa: F401
+    except ImportError:
+        return False
+    return True
+
+
 def is_euslisp_available():
     """Check if roseus/euslisp is available."""
     result = run_command("which roseus")
@@ -38,20 +47,30 @@ class TestConsoleScripts(unittest.TestCase):
         target_mesh = osp.join(osp.dirname(self.urdfpath), "meshes", "base_link.dae")
         output_eus_path = osp.join(osp.dirname(self.urdfpath), "meshes", "base_link.l")
 
-        cmds = [
-            f"mesh2eus {target_mesh} {output_eus_path}",
-            f"mesh2eus {target_mesh} {output_eus_path} --voxel-size 0.001",
-        ]
-        for cmd in cmds:
-            result = run_command(cmd)
-            assert result.returncode == 0
+        result = run_command(f"mesh2eus {target_mesh} {output_eus_path}")
+        assert result.returncode == 0
+
+    @unittest.skipUnless(is_open3d_available(), "open3d not available")
+    def test_mesh2eus_with_voxel_size(self):
+        target_mesh = osp.join(osp.dirname(self.urdfpath), "meshes", "base_link.dae")
+        output_eus_path = osp.join(osp.dirname(self.urdfpath), "meshes", "base_link.l")
+
+        result = run_command(
+            f"mesh2eus {target_mesh} {output_eus_path} --voxel-size 0.001")
+        assert result.returncode == 0
 
     def test_urdf2eus(self):
+        output_eus_path = osp.join(osp.dirname(self.urdfpath), "fetch.l")
+
+        result = run_command(f"urdf2eus {self.urdfpath} {output_eus_path}")
+        assert result.returncode == 0
+
+    @unittest.skipUnless(is_open3d_available(), "open3d not available")
+    def test_urdf2eus_with_voxel_size(self):
         output_eus_path = osp.join(osp.dirname(self.urdfpath), "fetch.l")
         yaml_path = osp.join(data_dir, "fetch.yaml")
 
         cmds = [
-            f"urdf2eus {self.urdfpath} {output_eus_path}",
             f"urdf2eus {self.urdfpath} {output_eus_path} --voxel-size 0.001",
             f"urdf2eus {self.urdfpath} {output_eus_path}"
             + f" --voxel-size 0.001 --yaml-path {yaml_path}",
@@ -70,8 +89,11 @@ class TestConsoleScripts(unittest.TestCase):
         valid_name_cmds = [
             f"urdf2eus {self.urdfpath} {output_eus_path} --name my_robot",
             f"urdf2eus {self.urdfpath} {output_eus_path} --name robot-v1 --yaml-path {yaml_path}",
-            f"urdf2eus {self.urdfpath} {output_eus_path} --name _test_robot --voxel-size 0.001",
         ]
+        if is_open3d_available():
+            valid_name_cmds.append(
+                f"urdf2eus {self.urdfpath} {output_eus_path}"
+                + " --name _test_robot --voxel-size 0.001")
 
         for cmd in valid_name_cmds:
             with self.subTest(cmd=cmd):

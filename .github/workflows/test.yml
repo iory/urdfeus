@@ -30,8 +30,14 @@ jobs:
     name: Run Unit Tests
     runs-on: ${{ matrix.os }}
     strategy:
+      # One failing interpreter should not cancel the others: knowing whether a
+      # break is version-specific is most of the diagnosis.
+      fail-fast: false
+      # 3.12 is the newest interpreter open3d ships a wheel for, and 3.13 is
+      # the first one it does not; running both is what keeps the optional
+      # extra honest as interpreters move on.
       matrix:
-        python-version: [3.10.13, 3.11.7]
+        python-version: ['3.10', '3.11', '3.12', '3.13']
         os: [ubuntu-22.04]
     steps:
     - uses: actions/checkout@v4
@@ -105,6 +111,47 @@ jobs:
           MERGE_LABELS: "auto-merge-ok"
           MERGE_METHOD: squash
           MERGE_DELETE_BRANCH: true
+
+  released-resolution:
+    name: Resolve the published package
+    # A wider unit-test matrix cannot catch this. CI installs the checkout, so
+    # the resolver can never walk urdfeus itself backwards; installing the
+    # published package by name can, and did -- `urdfeus[all]` quietly resolved
+    # to 0.0.4 on 3.13 because open3d ships no wheel there, warning instead of
+    # failing. Only run where a red build is actionable, not on every PR.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.10', '3.12', '3.13']
+    steps:
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install the published package by name
+        run: pip install --no-cache-dir "urdfeus[all]"
+
+      - name: Fail if the resolver did not pick the newest release
+        run: |
+          python - <<'CHECK'
+          import json
+          import urllib.request
+          from importlib.metadata import version
+
+          with urllib.request.urlopen(
+                  "https://pypi.org/pypi/urdfeus/json") as response:
+              latest = json.load(response)["info"]["version"]
+          installed = version("urdfeus")
+          print(f"installed {installed}, latest on PyPI {latest}")
+          if installed != latest:
+              raise SystemExit(
+                  f"urdfeus[all] resolved to {installed}, not {latest}: an"
+                  " optional dependency is unsatisfiable on this interpreter"
+                  " and the resolver fell back to an older release")
+          CHECK
 
   tag-release:
     runs-on: ubuntu-latest
