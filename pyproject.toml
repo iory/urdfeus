@@ -29,7 +29,11 @@ classifiers = [
 ]
 
 [project.optional-dependencies]
-all = ["open3d"]
+# open3d publishes no wheel and no sdist beyond cp312, and asking for it
+# unconditionally makes the resolver walk urdfeus back to a release old enough
+# to drop the extra -- silently installing 0.0.4 instead of failing. Cap the
+# marker so newer interpreters get urdfeus without open3d.
+all = ["open3d; python_version<'3.13'"]
 # Draco mesh compression for eus2urdf --draco (KHR_draco_mesh_compression).
 draco = ["DracoPy"]
 
