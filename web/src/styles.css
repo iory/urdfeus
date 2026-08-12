@@ -1,0 +1,84 @@
+/* Palette copied from docs/index.html so the converter and the gallery read as
+   one site. */
+:root {
+  --bg: #13151a; --panel: #1d2026; --panel2: #23272f; --line: #2e333d;
+  --text: #e6e8ec; --muted: #9aa3b2; --accent: #4ea1ff; --accent2: #2bd4a7;
+  --warn: #ffb454; --danger: #ff6b6b;
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0; min-height: 100%; background: var(--bg); color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+main { max-width: 900px; margin: 0 auto; padding: 18px; }
+header {
+  display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;
+  border-bottom: 1px solid var(--line); padding-bottom: 12px; margin-bottom: 16px;
+}
+header h1 { font-size: 18px; margin: 0; font-weight: 650; }
+header h1 span { color: var(--muted); font-weight: 400; font-size: 12px; margin-left: 6px; }
+header a { margin-left: auto; color: var(--accent); font-size: 13px; text-decoration: none; }
+header a:hover { text-decoration: underline; }
+.lede { color: var(--muted); font-size: 13px; margin: 0 0 16px; }
+
+.dropzone {
+  display: flex; flex-direction: column; gap: 6px; align-items: center;
+  border: 2px dashed var(--line); border-radius: 10px; padding: 36px 18px;
+  text-align: center; cursor: pointer; transition: border-color .15s, background .15s;
+}
+.dropzone:hover, .dropzone.dragging { border-color: var(--accent); background: #172030; }
+.dropzone strong { font-size: 15px; font-weight: 600; }
+.dropzone span { color: var(--muted); font-size: 12px; }
+
+.panel {
+  background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+  padding: 14px; margin-top: 16px;
+}
+.panel-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.panel h2 { font-size: 14px; margin: 0; font-weight: 600; }
+.panel h2 em { color: var(--muted); font-style: normal; font-weight: 400; margin-left: 8px; font-size: 12px; }
+.actions { margin-left: auto; display: flex; gap: 8px; }
+
+button {
+  background: var(--panel2); color: var(--text); border: 1px solid var(--line);
+  border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer;
+}
+button:hover:not(:disabled) { border-color: var(--accent); }
+button:disabled { opacity: .5; cursor: default; }
+button.primary { background: var(--accent); border-color: var(--accent); color: #08111c; font-weight: 600; }
+
+.meshlist { list-style: none; margin: 12px 0 0; padding: 0; max-height: 280px; overflow-y: auto; }
+.meshlist li {
+  display: flex; align-items: center; gap: 8px; padding: 5px 8px;
+  border-radius: 5px; font-size: 12px;
+}
+.meshlist li + li { margin-top: 2px; }
+.meshlist li.ok { background: #16241f; }
+.meshlist li.missing { background: #2a1e1e; }
+.meshlist .mark { width: 14px; text-align: center; font-weight: 700; }
+.meshlist li.ok .mark { color: var(--accent2); }
+.meshlist li.missing .mark { color: var(--danger); }
+.meshlist code { color: var(--text); }
+.meshlist small { margin-left: auto; color: var(--muted); }
+
+.options { display: flex; flex-direction: column; gap: 12px; }
+.options label { font-size: 13px; display: flex; flex-direction: column; gap: 5px; }
+.options label.check { flex-direction: row; align-items: center; gap: 8px; color: var(--muted); }
+.options input[type="text"] {
+  background: var(--panel2); border: 1px solid var(--line); border-radius: 6px;
+  color: var(--text); padding: 7px 10px; font-size: 13px;
+}
+.options .primary { align-self: flex-start; padding: 8px 18px; font-size: 13px; }
+
+.status { color: var(--muted); font-size: 13px; margin-top: 16px; }
+.status small { font-size: 11px; }
+.warn { color: var(--warn); font-size: 12px; margin: 10px 0 0; }
+.panel.error { border-color: var(--danger); }
+.panel.error h2 { color: var(--danger); }
+pre {
+  background: #0e1015; border: 1px solid var(--line); border-radius: 6px;
+  padding: 10px; overflow-x: auto; font-size: 11px; line-height: 1.5;
+  color: var(--muted); white-space: pre-wrap; word-break: break-word;
+}
+.preview { max-height: 340px; overflow-y: auto; margin-top: 12px; }

@@ -33,10 +33,17 @@ setup is required.
 
 ## Deploy to GitHub Pages
 
-Enable Pages: repo *Settings → Pages → Build from a branch → `main` `/docs`*.
-The whole site is self-contained under `docs/` and committed (Draco-compressed
-`.glb` keeps `models/` to ~30 MB), so Pages serves it as-is — no git-lfs or
-external hosting needed.
+Pages builds from `.github/workflows/pages.yml` (repo *Settings → Pages →
+Source → GitHub Actions*). The workflow copies `docs/` to the site root and
+adds the browser converter, built from `web/`, alongside it:
+
+| URL | built from |
+| --- | ---------- |
+| `https://iory.github.io/urdfeus/` | `docs/` — this gallery |
+| `https://iory.github.io/urdfeus/convert/` | `web/` — URDF to EusLisp in the browser |
+
+The gallery itself stays a committed, build-free static site (Draco-compressed
+`.glb` keeps `models/` to ~30 MB), so no git-lfs or external hosting is needed.
 
 Regenerate everything (after changing the converter or model set):
 
