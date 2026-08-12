@@ -2,13 +2,15 @@
 
 import argparse
 
+from urdfeus.apps.common import add_diagnostic_arguments
+from urdfeus.apps.common import handle_doctor
 from urdfeus.urdf2eus import urdf2eus
 
 
 def main():
     parser = argparse.ArgumentParser(description="Convert URDF to Euslisp")
-    parser.add_argument("input_urdf_path", type=str, help="Input URDF path")
-    parser.add_argument("output_euslisp_path", type=str, help="Output Euslisp path")
+    parser.add_argument("input_urdf_path", type=str, nargs="?", help="Input URDF path")
+    parser.add_argument("output_euslisp_path", type=str, nargs="?", help="Output Euslisp path")
     parser.add_argument("--yaml-path", type=str, default=None, help="Config yaml path")
     parser.add_argument("--name", type=str, default=None,
                        help="Custom robot name for EusLisp functions (defun <name>). "
@@ -38,7 +40,10 @@ def main():
         + "the mesh's internal color. This prevents splitting the mesh by "
         + "face color and uses the material color loaded by skrobot.",
     )
+    add_diagnostic_arguments(parser)
     args = parser.parse_args()
+    if handle_doctor(args, parser, ['input_urdf_path', 'output_euslisp_path']):
+        return
 
     with open(args.output_euslisp_path, "w") as f:
         urdf2eus(
