@@ -60,6 +60,28 @@ uv pip install "urdfeus[all]"
 
 `[all]`が入れるopen3dはPython 3.12以下でのみインストールされます（open3dがcp313以降のホイールを配布していないため）。3.13以降では`urdfeus`本体だけが入り、メッシュ簡素化（`--voxel-size`）が使えません。
 
+### uvxを使う場合（PATHや環境を汚したくない場合）
+
+インストールせずに一度だけ変換したい、`~/.local/bin`にshimを置きたくない、という場合は`uvx`が使えます。実行のたびに一時的な隔離環境が作られ、終わったらキャッシュ以外は残りません。
+
+コマンド名がパッケージ名と違うので`--from urdfeus`が必要です：
+
+```bash
+uvx --from urdfeus urdf2eus robot.urdf robot.l
+uvx --from urdfeus eus2urdf robot.l output_package_dir
+uvx --from urdfeus urdf2eus --doctor
+```
+
+オプションの依存関係が要る場合（`--voxel-size`など）：
+
+```bash
+uvx --from "urdfeus[all]" urdf2eus robot.urdf robot.l --voxel-size 0.01
+```
+
+バージョンを固定したいときは`--from "urdfeus==1.2.1"`のように書けます。`ROS_PACKAGE_PATH`などの環境変数はそのまま引き継がれるので、`package://`の解決も通常どおり動きます。
+
+毎回パッケージの解決が走るので、常用するなら`uv tool install`のほうが向いています。
+
 ### pipを使う場合
 
 ```bash
