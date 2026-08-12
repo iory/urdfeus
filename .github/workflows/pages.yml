@@ -1,0 +1,69 @@
+name: Deploy Pages
+
+# The site used to be served straight from main:/docs with no build step. The
+# converter under /convert is a Vite bundle, so Pages now builds from here
+# instead; docs/ is still the source of the gallery and is copied in verbatim.
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'docs/**'
+      - 'web/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never let two deploys race; queue them instead of cancelling a live one.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - name: Install web dependencies
+        working-directory: web
+        run: npm ci
+
+      - name: Test the mesh-matching logic
+        working-directory: web
+        run: npm test
+
+      - name: Build the converter
+        working-directory: web
+        run: npm run build
+
+      - name: Assemble the site
+        run: |
+          mkdir -p _site
+          # `docs/.` rather than `docs/*` so .nojekyll comes along.
+          cp -r docs/. _site/
+          cp -r web/dist _site/convert
+          echo "assembled $(find _site -type f | wc -l) files"
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

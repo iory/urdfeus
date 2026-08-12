@@ -18,6 +18,9 @@
     border-bottom:1px solid var(--line);padding:12px 18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
   #bar h1{font-size:16px;margin:0;font-weight:650;white-space:nowrap}
   #bar h1 span{color:var(--muted);font-weight:400;font-size:12px;margin-left:6px}
+  #bar .convert{margin-left:auto;color:var(--accent);text-decoration:none;font-size:13px;
+    border:1px solid var(--line);border-radius:6px;padding:6px 12px;white-space:nowrap}
+  #bar .convert:hover{border-color:var(--accent)}
   .search{flex:1;min-width:180px;padding:9px 12px;border-radius:9px;border:1px solid var(--line);
     background:var(--panel);color:var(--text);font-size:14px;outline:none}
   .search:focus{border-color:var(--accent)}
@@ -85,6 +88,7 @@
       <div class="chip" data-k="object">Objects</div>
       <div class="chip" data-k="scene">Scenes</div>
     </div>
+    <a class="convert" href="convert/">Convert your own URDF &rarr;</a>
   </div>
   <div id="grid"></div>
   <div id="count2"></div>
