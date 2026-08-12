@@ -46,6 +46,8 @@ uv pip install urdfeus
 uv pip install "urdfeus[all]"
 ```
 
+`[all]`が入れるopen3dはPython 3.12以下でのみインストールされます（open3dがcp313以降のホイールを配布していないため）。3.13以降では`urdfeus`本体だけが入り、メッシュ簡素化（`--voxel-size`）が使えません。
+
 ### pipを使う場合
 
 ```bash
