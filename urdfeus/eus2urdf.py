@@ -348,6 +348,17 @@ def _classify_joint(joint, is_follower):
     linear = "linear" in jtype
     is_master = bool(joint["mimic"])
     min_v, max_v = joint["min"], joint["max"]
+
+    # A multi-DOF joint (6dof, sphere) keeps its limits as float-vectors, which
+    # the dump writes as null because they are not numbers. There is no 1-DOF
+    # URDF joint to map such a joint onto: a free one is URDF's "floating", and
+    # anything else -- including the immovable 6dof joint urdf2eus leaves at a
+    # model's root -- is honestly just a fixed connection.
+    if min_v is None or max_v is None:
+        if joint["movable"] and "6dof" in jtype:
+            return "floating"
+        return "fixed"
+
     inf = abs(min_v) >= _INF_LIMIT or abs(max_v) >= _INF_LIMIT
 
     # Fixed joints are emitted by urdf2eus as rotational-joints with 0/0
@@ -679,6 +690,12 @@ def movable_joint_spec(data):
         if not joint["movable"]:
             continue
         jtype = _classify_joint(joint, joint["name"] in follower)
+        if jtype not in ("revolute", "continuous", "prismatic"):
+            # A multi-DOF joint carries a vector, which no single scale factor
+            # describes and no URDF joint here can be driven by. EusLisp's
+            # eus2urdf-movable-joints leaves the same ones out, which is what
+            # keeps the two lists index-aligned.
+            continue
         scale = (1.0 / meter2millimeter) if jtype == "prismatic" \
             else float(np.pi / 180.0)
         spec.append((joint_unames[i], scale))

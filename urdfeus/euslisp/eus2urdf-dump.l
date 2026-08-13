@@ -81,7 +81,11 @@
   (let ((ax (j . axis)))
     (cond
       ((derivedp ax float-vector) ax)
-      ((listp ax) (coerce ax float-vector))
+      ;; A multi-DOF joint lists one entry per degree of freedom -- a
+      ;; sphere-joint carries (:x :y :z) -- and no single axis describes it,
+      ;; so say so rather than coercing keywords into a float-vector, which
+      ;; fails with "number expected".
+      ((listp ax) (if (every #'numberp ax) (coerce ax float-vector) nil))
       ((keywordp ax)
        (case ax
          (:x (float-vector 1 0 0)) (:-x (float-vector -1 0 0))
@@ -321,10 +325,20 @@
   ;; cascaded-coords objects are coordinate-only spots (door-spot, etc).
   (and (derivedp o cascaded-link) (send o :links)))
 
+(defun zero-joint (j)
+  ;; Set a joint to zero whatever its degrees of freedom. A 6dof-joint or a
+  ;; sphere-joint holds its value as a float-vector and rejects a scalar with
+  ;; "float vector expected", which is fatal, so match the shape of whatever
+  ;; the joint currently reports.
+  (let ((v (send j :joint-angle)))
+    (if (float-vector-p v)
+        (send j :joint-angle (instantiate float-vector (length v)))
+        (send j :joint-angle 0))))
+
 (defun dump-robot (r)
   (let (root all-links all-joints)
     ;; zero all movable joints so link world transforms give URDF joint origins
-    (dolist (j (send r :joint-list)) (send j :joint-angle 0))
+    (dolist (j (send r :joint-list)) (zero-joint j))
     (send r :worldcoords)
     (setq *movable-joints* (send r :joint-list))
     ;; Walk up to the true root in case (car links) is not it: climb while the
@@ -333,9 +347,15 @@
     (while (and (send root :parent) (derivedp (send root :parent) bodyset-link))
       (setq root (send root :parent)))
     (setq all-links (collect-all-links root))
-    ;; every non-root link contributes its parent joint (covers fixed joints too)
+    ;; every non-root link contributes its parent joint (covers fixed joints too),
+    ;; but only where the parent link is being dumped as well. The root's own
+    ;; joint can reach above the tree -- a 6dof joint tying the model to a
+    ;; virtual link, say -- and emitting it would name a parent that appears in
+    ;; no link, leaving the reader to look up a link that is not there.
     (setq all-joints
-          (remove nil (mapcar #'(lambda (l) (send l :joint)) all-links)))
+          (remove-if-not
+           #'(lambda (j) (memq (send j :parent-link) all-links))
+           (remove nil (mapcar #'(lambda (l) (send l :joint)) all-links))))
     (setq *out* (open *eus2urdf-out-path* :direction :output))
     (format *out* "{")
     (format *out* "\"robot_name\":") (pj-str (send r :name))
@@ -369,7 +389,7 @@
     ;; zero every physical object's movable joints
     (dolist (o objs)
       (when (scene-physical-p o)
-        (dolist (j (send o :joint-list)) (send j :joint-angle 0))))
+        (dolist (j (send o :joint-list)) (zero-joint j))))
     (send r :worldcoords)
     (setq *movable-joints*
           (apply #'append
@@ -509,7 +529,12 @@
     ((and (find-method obj :links) (send obj :links))
      (let ((jl (send obj :joint-list)))
        (remove-if-not
-        #'(lambda (j) (memq j jl))
+        ;; Multi-DOF joints are left out: their value is a float-vector, URDF
+        ;; has no single-DOF joint to carry them, and eus2urdf drops them to
+        ;; fixed. Excluding them here keeps this list index-aligned with the
+        ;; movable joints movable_joint_spec reports on the Python side.
+        #'(lambda (j) (and (memq j jl)
+                           (not (float-vector-p (send j :joint-angle)))))
         (remove nil (mapcar #'(lambda (l) (send l :joint))
                             (collect-all-links (object-root obj)))))))
     (t nil)))
