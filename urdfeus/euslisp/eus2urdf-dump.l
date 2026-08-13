@@ -1,4 +1,4 @@
-;; eus2urdf_dump.l
+;; eus2urdf-dump.l
 ;;
 ;; Loads an EusLisp robot model, instantiates it, zeroes all movable joints,
 ;; walks the whole link tree (including links connected by fixed joints and

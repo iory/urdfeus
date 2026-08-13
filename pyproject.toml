@@ -51,8 +51,8 @@ packages = [
 [tool.setuptools.package-data]
 urdfeus = [
         "templates/euscollada-robot.l",
-        "templates/eus2urdf_dump.l",
-        "templates/urdfeus-glvertices.l"
+        "templates/urdfeus-glvertices.l",
+        "euslisp/eus2urdf-dump.l"
 ]
 
 [project.scripts]
