@@ -72,6 +72,34 @@ def validate_euslisp_identifier(name):
     return True, "Valid EusLisp identifier"
 
 
+def move_to_urdf_zero(robot):
+    """Put every single-DOF joint at URDF joint value 0.
+
+    A URDF joint origin is defined at joint value 0, with the joint's motion
+    added on top. skrobot, though, clamps a joint to its limits as it loads,
+    so a prismatic joint declared ``lower="0.18"`` sits at 0.18 and not at 0.
+    Emitting link world poses from that state bakes the 0.18 into the EusLisp
+    model's zero pose while :func:`print_joint` copies the limits across
+    unchanged -- leaving a model whose ``q=0`` is a different physical
+    configuration than the URDF's, and whose ``q=180`` (its own minimum) is
+    180 mm past where the URDF's minimum puts it.
+
+    The limits are lifted for the duration of the move and put back
+    afterwards, because clamping is exactly what has to be bypassed here.
+    """
+    for joint in robot.joint_list:
+        # Multi-DOF joints (omniwheel) carry array limits and no meaningful
+        # scalar zero; fixed joints have nothing to move.
+        if getattr(joint, "joint_dof", 1) != 1:
+            continue
+        min_angle, max_angle = joint.min_angle, joint.max_angle
+        joint.min_angle, joint.max_angle = -np.inf, np.inf
+        try:
+            joint.joint_angle(0.0)
+        finally:
+            joint.min_angle, joint.max_angle = min_angle, max_angle
+
+
 def print_link(
     link: Link,
     simplify_vertex_clustering_voxel_size=None,
@@ -936,6 +964,9 @@ def urdf2eus(
     r = RobotModel()
     with open(urdf_path) as f:
         r.load_urdf_file(f)
+    # Every link pose written below is read off this model, so it has to sit
+    # at URDF joint value 0 -- not at whatever the limits clamped it to.
+    move_to_urdf_zero(r)
     limb_slot_names = []  # Initialize here for broader scope
 
     # Use custom robot name if provided, otherwise use URDF name
