@@ -1,7 +1,7 @@
 """Convert an EusLisp robot model to URDF (ROS package layout).
 
 The EusLisp model is instantiated with ``irteusgl`` (see
-``templates/eus2urdf_dump.l``) so that links/joints added procedurally in
+``euslisp/eus2urdf-dump.l``) so that links/joints added procedurally in
 ``:init`` are captured, then the dumped kinematics and ``glvertices`` meshes
 are converted to a URDF + Collada meshes laid out as a ROS package::
 
@@ -29,8 +29,10 @@ import trimesh
 
 from urdfeus.common import meter2millimeter
 
-# Path to the irteusgl dump script shipped with the package.
-_DUMP_SCRIPT = osp.join(osp.dirname(__file__), "templates", "eus2urdf_dump.l")
+# Path to the irteusgl dump script shipped with the package. It is a
+# program that irteusgl executes, not a template pasted into generated
+# models, so it does not live under templates/ with those.
+_DUMP_SCRIPT = osp.join(osp.dirname(__file__), "euslisp", "eus2urdf-dump.l")
 
 # Joints whose |limit| reaches this sentinel are treated as unlimited.
 _INF_LIMIT = 1e30
@@ -73,7 +75,7 @@ def dump_eus_model(eus_path, constructor=None, irteusgl="irteusgl", timeout=600)
     Returns
     -------
     dict
-        Parsed JSON dump (see ``templates/eus2urdf_dump.l`` for the schema).
+        Parsed JSON dump (see ``euslisp/eus2urdf-dump.l`` for the schema).
     """
     eus_path = osp.abspath(eus_path)
     if not osp.exists(eus_path):
@@ -489,7 +491,7 @@ def eus2urdf_from_data(
     """Write a URDF ROS package from an already-dumped EusLisp model.
 
     This is the half of :func:`eus2urdf` that does not need ``irteusgl``: it
-    takes the JSON dump described by ``templates/eus2urdf_dump.l`` and turns it
+    takes the JSON dump described by ``euslisp/eus2urdf-dump.l`` and turns it
     into ``package.xml`` + ``urdf/`` + ``meshes/``. Callers that obtain the dump
     some other way -- most notably ``dump-object-json`` called from inside a
     live irteusgl session, which can convert objects built at runtime such as
@@ -498,7 +500,7 @@ def eus2urdf_from_data(
     Parameters
     ----------
     data : dict
-        Parsed JSON dump (see ``templates/eus2urdf_dump.l`` for the schema).
+        Parsed JSON dump (see ``euslisp/eus2urdf-dump.l`` for the schema).
     output_dir : str
         Directory of the ROS package to create.
     package_name : str or None
