@@ -9,9 +9,17 @@
 ;;   *eus2urdf-model-path*   : path to the .l model file to (load)
 ;;   *eus2urdf-constructor*  : symbol/string naming the constructor function
 ;;   *eus2urdf-out-path*     : path to write the JSON dump to
+;;
+;; Leaving *eus2urdf-model-path* unset makes loading this file side-effect
+;; free, which is how a live irteusgl session picks up (dump-object-json obj
+;; path): the same dump, but of an object that already exists in the session
+;; -- including one built at runtime, e.g. (make-cube 100 200 300).
 
 (defvar *out*)
 (defvar *movable-joints* nil)
+(defvar *eus2urdf-model-path* nil)
+(defvar *eus2urdf-constructor* nil)
+(defvar *eus2urdf-out-path* nil)
 
 (defun pj-str (s)
   ;; print a JSON string (with minimal escaping) to *out*
@@ -424,12 +432,128 @@
     (format *out* "}")
     (close *out*)))
 
+(defun body-meshes-of (obj)
+  ;; "meshes" array for an object that is a body/bodyset rather than a link
+  ;; tree. Mirrors the mesh half of dump-link.
+  (let ((bs (if (find-method obj :bodies) (send obj :bodies) (list obj))))
+    (format *out* "[")
+    (let ((first t))
+      (dolist (b bs)
+        (cond
+          ((and (find-method b :glvertices) (send b :glvertices))
+           (unless first (format *out* ","))
+           (setq first nil)
+           (dump-mesh (send b :glvertices)))
+          ((and (find-method b :faces) (send b :faces))
+           (unless first (format *out* ","))
+           (setq first nil)
+           (dump-plain-body b)))))
+    (format *out* "]")))
+
+(defun dump-single-body (b)
+  ;; A standalone body has no link tree (make-cube, make-cylinder, a mesh
+  ;; loaded with load-mesh-file, ...). Emit it as a one-link model so it goes
+  ;; through exactly the same URDF path as a robot.
+  (let ((name (or (and (find-method b :name) (send b :name)) "body")))
+    (setq *movable-joints* nil)
+    (send b :worldcoords)
+    (setq *out* (open *eus2urdf-out-path* :direction :output))
+    (format *out* "{")
+    (format *out* "\"robot_name\":") (pj-str name)
+    (format *out* ",\"root_link\":") (pj-str name)
+    (format *out* ",\"links\":[{\"name\":") (pj-str name)
+    (format *out* ",\"parent\":null,\"joint\":null")
+    (format *out* ",\"pos\":") (pj-fvec (send b :worldpos))
+    (format *out* ",\"rot\":") (pj-mat (send b :worldrot))
+    (format *out* ",\"weight\":0,\"centroid\":null,\"inertia\":null")
+    (format *out* ",\"meshes\":") (body-meshes-of b)
+    (format *out* "}]")
+    (format *out* ",\"joints\":[],\"frames\":[]}")
+    (close *out*)))
+
+(defun eus2urdf-joint-list-of (o)
+  ;; joint-list of o, or nil for objects that have no joints
+  (if (find-method o :joint-list) (send o :joint-list) nil))
+
+(defun eus2urdf-save-angles (o)
+  ;; [(joint . angle) ...] for o and, for a scene-model, its member objects
+  (let ((saved nil))
+    (dolist (j (eus2urdf-joint-list-of o))
+      (push (cons j (send j :joint-angle)) saved))
+    (when (find-method o :objects)
+      (dolist (c (send o :objects))
+        (dolist (j (eus2urdf-joint-list-of c))
+          (push (cons j (send j :joint-angle)) saved))))
+    (nreverse saved)))
+
+(defun eus2urdf-restore-angles (saved)
+  (dolist (p saved) (send (car p) :joint-angle (cdr p))))
+
+(defun eus2urdf-movable-joints (obj)
+  "Movable joints of OBJ in the order dump-object-json emits them.
+
+   This is the ordering contract between a dump and anything that records
+   OBJ's joint angles over time: the i-th joint here is the i-th movable
+   entry of the dumped \"joints\" array, and so the i-th movable joint of the
+   URDF. Matching by index rather than by name matters because eus joint
+   names are not unique -- a hand reusing :j10/:j11 on every finger is
+   normal, and urdfeus renames such joints when it writes the URDF."
+  (cond
+    ((find-method obj :objects)
+     (apply #'append
+            (mapcar #'(lambda (o)
+                        (if (scene-physical-p o)
+                            (eus2urdf-movable-joints o)
+                            nil))
+                    (send obj :objects))))
+    ((and (find-method obj :links) (send obj :links))
+     (let ((jl (send obj :joint-list)))
+       (remove-if-not
+        #'(lambda (j) (memq j jl))
+        (remove nil (mapcar #'(lambda (l) (send l :joint))
+                            (collect-all-links (object-root obj)))))))
+    (t nil)))
+
+(defun eus2urdf-root-link (obj)
+  "Link whose frame the URDF written for OBJ is expressed in.
+
+   A dump bakes no world pose into the URDF, so this is the link a recorder
+   must query to place the model: its worldcoords is the model's root pose."
+  (cond
+    ((find-method obj :objects) nil)  ;; scene: root is the synthetic world
+    ((and (find-method obj :links) (send obj :links)) (object-root obj))
+    (t obj)))
+
+(defun dump-object-json (obj path)
+  "Dump OBJ to PATH as eus2urdf JSON, then restore OBJ's joint angles.
+
+   OBJ may be a robot/cascaded-link, a scene-model, or a plain body such as
+   the result of (make-cube 100 200 300). Dumping zeroes every movable joint
+   (that is what makes the link transforms usable as URDF joint origins), so
+   the previous angles are put back before returning -- this is safe to call
+   from inside a running motion."
+  (let ((prev-out *eus2urdf-out-path*)
+        (saved (eus2urdf-save-angles obj)))
+    (setq *eus2urdf-out-path* path)
+    (unwind-protect
+        (cond
+          ((find-method obj :objects) (dump-scene obj))
+          ((and (find-method obj :links) (send obj :links)) (dump-robot obj))
+          (t (dump-single-body obj)))
+      (eus2urdf-restore-angles saved)
+      (send obj :worldcoords)
+      (setq *eus2urdf-out-path* prev-out)))
+  path)
+
 (defun eus2urdf-dump ()
   (let ((r (eus2urdf-instantiate)))
     (if (find-method r :objects)
         (dump-scene r)
         (dump-robot r))))
 
-(load *eus2urdf-model-path*)
-(eus2urdf-dump)
-(exit)
+;; Only run the file+constructor conversion when a model path was supplied.
+;; Without it this file is a library: (load) it and call dump-object-json.
+(when *eus2urdf-model-path*
+  (load *eus2urdf-model-path*)
+  (eus2urdf-dump)
+  (exit))

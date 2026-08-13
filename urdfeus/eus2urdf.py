@@ -36,6 +36,17 @@ _DUMP_SCRIPT = osp.join(osp.dirname(__file__), "templates", "eus2urdf_dump.l")
 _INF_LIMIT = 1e30
 
 
+def dump_script_path():
+    """Return the path of the irteusgl dump script shipped with urdfeus.
+
+    A live irteusgl session can ``(load ...)`` it to get ``dump-object-json``,
+    which writes the same JSON dump :func:`eus2urdf_from_data` consumes. The
+    script only runs its own file+constructor conversion when
+    ``*eus2urdf-model-path*`` is set, so loading it is side-effect free.
+    """
+    return _DUMP_SCRIPT
+
+
 def _default_constructor_name(eus_path):
     """Return the conventional constructor name for an EusLisp model file.
 
@@ -456,6 +467,55 @@ def eus2urdf(
     str
         Path to the written ``.urdf`` file.
     """
+    data = dump_eus_model(eus_path, constructor=constructor, irteusgl=irteusgl)
+    return eus2urdf_from_data(
+        data,
+        output_dir,
+        package_name=package_name,
+        robot_name=robot_name,
+        mesh_format=mesh_format,
+        draco=draco,
+    )
+
+
+def eus2urdf_from_data(
+    data,
+    output_dir,
+    package_name=None,
+    robot_name=None,
+    mesh_format="glb",
+    draco=False,
+):
+    """Write a URDF ROS package from an already-dumped EusLisp model.
+
+    This is the half of :func:`eus2urdf` that does not need ``irteusgl``: it
+    takes the JSON dump described by ``templates/eus2urdf_dump.l`` and turns it
+    into ``package.xml`` + ``urdf/`` + ``meshes/``. Callers that obtain the dump
+    some other way -- most notably ``dump-object-json`` called from inside a
+    live irteusgl session, which can convert objects built at runtime such as
+    ``(make-cube 100 200 300)`` -- go through this entry point instead.
+
+    Parameters
+    ----------
+    data : dict
+        Parsed JSON dump (see ``templates/eus2urdf_dump.l`` for the schema).
+    output_dir : str
+        Directory of the ROS package to create.
+    package_name : str or None
+        ROS package name used in ``package://`` mesh paths. Defaults to the
+        output directory's base name.
+    robot_name : str or None
+        ``<robot name>`` and urdf file stem. Defaults to ``data['robot_name']``.
+    mesh_format : str
+        Mesh file extension understood by ``trimesh.export`` (default ``glb``).
+    draco : bool
+        Compress glb meshes with Draco. See :func:`eus2urdf`.
+
+    Returns
+    -------
+    str
+        Path to the written ``.urdf`` file.
+    """
     export_draco = None
     if draco:
         mesh_format = "glb"
@@ -466,8 +526,6 @@ def eus2urdf(
                 "draco=True requires the DracoPy package "
                 + "(pip install dracopy).")
         export_draco = export_glb_with_draco
-
-    data = dump_eus_model(eus_path, constructor=constructor, irteusgl=irteusgl)
 
     output_dir = osp.abspath(output_dir)
     if package_name is None:
@@ -586,6 +644,43 @@ def eus2urdf(
         with open(osp.join(output_dir, "objects.json"), "w") as f:
             json.dump(data["scene_objects"], f)
     return urdf_path
+
+
+def movable_joint_spec(data):
+    """Describe the movable joints of a dump in the order EusLisp reports them.
+
+    The i-th entry corresponds to the i-th joint of
+    ``(eus2urdf-movable-joints obj)``, which is how a caller that logged joint
+    angles from a live session lines them up with the URDF this dump produces.
+    Matching by index rather than by name is deliberate: eus joint names are
+    not unique across a model, so urdfeus renames some of them.
+
+    Parameters
+    ----------
+    data : dict
+        Parsed JSON dump.
+
+    Returns
+    -------
+    list[tuple[str, float]]
+        ``(urdf_joint_name, unit_scale)`` pairs. Multiplying the EusLisp joint
+        value (degrees for rotational joints, millimetres for linear ones) by
+        ``unit_scale`` gives the URDF value (radians, metres).
+    """
+    joint_unames, _ = _unique_name_map(data["joints"])
+    follower = set()
+    for joint in data["joints"]:
+        for f in (joint["mimic"] or []):
+            follower.add(f["joint"])
+    spec = []
+    for i, joint in enumerate(data["joints"]):
+        if not joint["movable"]:
+            continue
+        jtype = _classify_joint(joint, joint["name"] in follower)
+        scale = (1.0 / meter2millimeter) if jtype == "prismatic" \
+            else float(np.pi / 180.0)
+        spec.append((joint_unames[i], scale))
+    return spec
 
 
 def frames_relative(data, link_names=None):
