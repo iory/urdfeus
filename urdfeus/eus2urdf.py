@@ -133,6 +133,114 @@ def _mat3(rows):
     return np.array(rows, dtype=np.float64).reshape(3, 3)
 
 
+#: How far a decal is pushed off the surface it sits on, in metres. Small
+#: enough to be invisible at any sane render scale, large enough to beat the
+#: depth buffer's precision, and deliberately larger than ``_COPLANAR_TOL`` so
+#: that what has been separated no longer counts as sharing a plane.
+_DECAL_OFFSET = 5e-4
+
+
+def _face_planes(mesh):
+    """Per-face unit normal, plane offset and area, dropping degenerate faces.
+
+    The normal is canonicalised (first significant component positive) so that
+    two surfaces sharing a plane group together whichever way they are wound.
+    """
+    tri = np.asarray(mesh.vertices)[np.asarray(mesh.faces)]
+    cross = np.cross(tri[:, 1] - tri[:, 0], tri[:, 2] - tri[:, 0])
+    norm = np.linalg.norm(cross, axis=1)
+    keep = norm > 1e-12
+    if not keep.any():
+        return None
+    unit = cross[keep] / norm[keep][:, None]
+    # Canonical sign: flip whichever normals point "negative" so that opposite
+    # windings of one plane share a key.
+    lead = np.zeros(len(unit))
+    for axis in range(3):
+        unset = lead == 0
+        lead[unset] = unit[unset, axis]
+    unit = unit * np.where(lead < 0, -1.0, 1.0)[:, None]
+    offset = np.einsum("ij,ij->i", unit, tri[keep][:, 0])
+    return unit, offset, norm[keep] / 2.0
+
+
+#: Two surfaces closer than this (metres) are treated as sharing a plane.
+_COPLANAR_TOL = 3e-4
+
+
+def _link_plane_index(submeshes):
+    """Map each plane the link occupies to the area each submesh puts on it.
+
+    Faces are bucketed by quantised (normal, offset) rather than compared
+    against one another: a tessellated surface gives almost every face its own
+    plane, and a linear scan over accumulated planes turns quadratic in the
+    face count -- minutes of stall on a floor or a robot link. Each face is
+    also filed under the next offset bucket so a pair straddling a bucket
+    boundary still meets somewhere.
+    """
+    index = {}
+    for i, mesh in enumerate(submeshes):
+        computed = _face_planes(mesh)
+        if computed is None:
+            continue
+        unit, offset, area = computed
+        keys = np.round(unit, 3)
+        steps = np.floor(offset / _COPLANAR_TOL).astype(np.int64)
+        for key, step, face_area in zip(map(tuple, keys), steps, area):
+            for neighbour in (0, 1):
+                per = index.setdefault((key, int(step) + neighbour), {})
+                per[i] = per.get(i, 0.0) + float(face_area)
+    return index
+
+
+def _offset_coplanar_decals(submeshes):
+    """Nudge detail parts off the surfaces they are flush against.
+
+    EusLisp scene models build a detail -- a TV screen, a washing machine's
+    lid, a label -- as its own body sitting exactly flush with the panel
+    behind it, so both surfaces land on the same depth. Which one wins is then
+    decided by floating point noise, and the detail shimmers as the camera
+    moves. The coincidence lives in the geometry, so it follows the mesh into
+    the URDF and reappears in every renderer downstream.
+
+    These details are usually thin *boxes* rather than zero-thickness sheets,
+    so the test is not "is this submesh flat" but "do two submeshes of this
+    link share a plane". Whichever puts less area on the shared plane is taken
+    to be the detail, and the whole submesh is moved ``_DECAL_OFFSET`` clear of
+    the other -- moving all of it keeps the box closed rather than tearing one
+    face off it.
+    """
+    if len(submeshes) < 2:
+        return submeshes
+
+    centroids = [np.asarray(mesh.vertices).mean(axis=0) for mesh in submeshes]
+    # A part can sit flush against another on more than one face -- a screen
+    # set into a recess touches the back of it and its sides -- so keep the
+    # worst offender per (detail, plane normal) and move the part clear of all
+    # of them. Normals are canonicalised, so opposing faces share a key and
+    # cannot produce two offsets that cancel out.
+    best = {}
+    for (normal, _), per in _link_plane_index(submeshes).items():
+        if len(per) < 2:
+            continue
+        detail = min(per, key=per.get)
+        host = max(per, key=per.get)
+        key = (detail, normal)
+        if best.get(key, (0.0,))[0] < per[detail]:
+            best[key] = (per[detail], np.array(normal, dtype=np.float64), host)
+
+    shifts = {}
+    for (detail, _), (_, normal, host) in best.items():
+        away = centroids[detail] - centroids[host]
+        direction = 1.0 if float(np.dot(normal, away)) >= 0 else -1.0
+        shifts[detail] = shifts.get(detail, 0.0) + direction * normal
+
+    for detail, shift in shifts.items():
+        submeshes[detail].vertices = (
+            np.asarray(submeshes[detail].vertices) + _DECAL_OFFSET * shift)
+    return submeshes
+
+
 def _build_link_mesh(link, link_pos, link_rot):
     """Build a :class:`trimesh.Trimesh` for one link in its local frame.
 
@@ -170,7 +278,7 @@ def _build_link_mesh(link, link_pos, link_rot):
         return None
     if len(submeshes) == 1:
         return submeshes[0]
-    return trimesh.util.concatenate(submeshes)
+    return trimesh.util.concatenate(_offset_coplanar_decals(submeshes))
 
 
 def _rodrigues(axis, theta):
