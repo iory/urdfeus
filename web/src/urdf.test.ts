@@ -1,5 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { isAssetFile, matchMeshFiles, parseUrdfMeshRefs } from "./urdf";
+import { fileNameOf, rawFileUrl } from "./remote";
+import { pythonMessage } from "./worker";
 
 const urdf = (body: string) =>
   `<?xml version="1.0"?><robot name="t">${body}</robot>`;
@@ -86,5 +88,60 @@ describe("isAssetFile", () => {
     expect(isAssetFile("a.dae")).toBe(true);
     expect(isAssetFile("a.png")).toBe(true);
     expect(isAssetFile("README.md")).toBe(false);
+  });
+});
+
+describe("pythonMessage", () => {
+  it("keeps only what the model reported", () => {
+    const traceback = [
+      "Traceback (most recent call last):",
+      '  File "<exec>", line 97, in convert_eus',
+      '  File "/lib/urdfeus/eus_parse.py", line 1096, in eus_instance',
+      "    raise EusParseError(",
+      "urdfeus.eus_parse.EusParseError: 'room73b2-scene' is a scene: it",
+      "composes objects loaded from other files.",
+    ].join("\n");
+    expect(pythonMessage(traceback)).toBe(
+      "'room73b2-scene' is a scene: it\ncomposes objects loaded from other files.",
+    );
+  });
+
+  it("passes through a message that is not a traceback", () => {
+    expect(pythonMessage("No .l file in that drop.")).toBe(
+      "No .l file in that drop.",
+    );
+  });
+});
+
+describe("rawFileUrl", () => {
+  it("rewrites a GitHub blob page to the raw file", () => {
+    expect(
+      rawFileUrl(
+        "https://github.com/nakane11/walking_hand/blob/develop/handrobot_model/hand_robot.l",
+      ),
+    ).toBe(
+      "https://raw.githubusercontent.com/nakane11/walking_hand/develop/handrobot_model/hand_robot.l",
+    );
+  });
+
+  it("keeps a line anchor out of the raw URL", () => {
+    expect(
+      rawFileUrl("https://github.com/o/r/blob/main/a/b.l?plain=1#L42"),
+    ).toBe("https://raw.githubusercontent.com/o/r/main/a/b.l");
+  });
+
+  it("handles a refs/heads style ref", () => {
+    expect(
+      rawFileUrl("https://github.com/o/r/blob/refs/heads/main/b.l"),
+    ).toBe("https://raw.githubusercontent.com/o/r/refs/heads/main/b.l");
+  });
+
+  it("passes a raw URL through unchanged", () => {
+    const raw = "https://raw.githubusercontent.com/o/r/main/b.l";
+    expect(rawFileUrl(raw)).toBe(raw);
+  });
+
+  it("names the file after the last path segment", () => {
+    expect(fileNameOf("https://example.com/models/robot.l")).toBe("robot.l");
   });
 });
