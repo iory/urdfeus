@@ -12,15 +12,33 @@ URDF ⇄ EusLisp を相互変換するPythonライブラリ
 
 ## ブラウザで変換する（インストール不要）
 
-手元のURDFをその場でEusLispに変換できます → **<https://iory.github.io/urdfeus/convert/>**
+手元のモデルをその場で相互変換できます → **<https://iory.github.io/urdfeus/convert/>**
 
-`urdf2eus`がWebAssembly（Pyodide）として動くため、Pythonの環境構築が要りません。変換はすべてブラウザ内で完結するので、**ファイルはどこにもアップロードされません**。
+`urdfeus`がWebAssembly（Pyodide）として動くため、Pythonの環境構築が要りません。変換はすべてブラウザ内で完結するので、**ファイルはどこにもアップロードされません**。
+
+### URDF → EusLisp
 
 URDFをドラッグ&ドロップすると必要なメッシュが一覧表示されるので、「Select files」か「Select directory」でメッシュを渡してください。ファイル名を手がかりに`package://`のパスへ自動で突き合わせるので、メッシュの入ったフォルダごと指定して構いません。URDFとメッシュが同じフォルダにあるなら、フォルダごとドロップするだけで済みます。
 
+### EusLisp → URDF
+
+`.l`をドロップすると、その場でURDFパッケージに変換し**3Dで表示**します。関節はスライダで動かせ、`package.xml` + `urdf/` + `meshes/`一式をzipでダウンロードできます。生成モデル（`euscollada`/`urdfeus`のロボット、jskeusの物体モデル）は幾何情報をファイル内に持っているので、メッシュを別途渡す必要はありません。
+
+**GitHubのURLを貼るだけでも変換できます。** ファイルページのURL（`https://github.com/<owner>/<repo>/blob/<ref>/<path>.l`）を貼ると`raw.githubusercontent.com`に読み替えて取得します。リンクをドロップしても同じです。
+
+`?url=`を付ければ、開いた時点で取得と変換まで走ります（URLはパーセントエンコードしてください）。モデルをそのまま共有できます：
+
+```
+https://iory.github.io/urdfeus/convert/?url=https%3A%2F%2Fgithub.com%2Fowner%2Frepo%2Fblob%2Fmain%2Frobot.l
+```
+
+取得はブラウザからの直接アクセスなので、CORSを許可しているホストに限られます（GitHubのrawは許可しています）。それ以外のURLは失敗するので、ファイルを落としてドロップしてください。
+
+`irteusgl`はネイティブプログラムなのでブラウザでは動きません。代わりに`.l`を直接読む[静的パーサ](#eus2urdfのバックエンド)を使います。コードでリンクを組み立てるモデルや、他ファイルを`load`するシーンはこの経路では読めないので、[インストール](#インストール)した`eus2urdf`（irteusgl経由）を使ってください。
+
 初回のみPython実行環境（約33MB）を取得するため数秒かかります。2回目以降はブラウザのキャッシュが効きます。
 
-ブラウザ版で使えない機能が2つあります。`eus2urdf`（EusLisp → URDF）はEusLisp処理系（`irteusgl`）の起動が必要なため動きません。`--voxel-size`によるメッシュ簡素化もopen3dに依存するため使えません。どちらも[インストール](#インストール)した`urdfeus`を使ってください。
+`--voxel-size`によるメッシュ簡素化はopen3dに依存するため、ブラウザでは使えません。
 
 ## 概要
 
@@ -160,7 +178,7 @@ with open('robot.l', 'w') as f:
 
 ### 前提
 
-- `irteusgl`（jskeus）がインストールされていること
+- `irteusgl`（jskeus）がインストールされていること（無い場合は後述の静的パーサが使われます）
 - メッシュ書き出しに`trimesh` / `pycollada`（依存に含まれます）
 
 ### コマンドライン
@@ -203,6 +221,32 @@ urdf_path = eus2urdf('robot.l', 'output_package_dir',
 - `--mesh-format`: `trimesh.export`が扱う拡張子（既定`glb`）。`glb`/`ply`/`obj`は面ごとの色を保持。`dae`はtrimeshのColladaエクスポータが色をtextureに潰すため**多色メッシュがグレーになる**（単色メッシュは保持）。`stl`は色なし
 - `--draco`: glbメッシュをDraco圧縮（`KHR_draco_mesh_compression`）。頂点色を保ったまま密なメッシュを概ね1桁小さくする。`glb`固定で`DracoPy`が必要（`pip install urdfeus[draco]`）。読み込み側のglTFローダにはDracoデコーダが要る
 - `--irteusgl`: 使用する`irteusgl`実行ファイル
+- `--backend`: モデルの読み方（後述）
+
+#### eus2urdfのバックエンド
+
+モデルを読む経路は2つあります。
+
+| `--backend` | 読み方 | 対応範囲 |
+| --- | --- | --- |
+| `irteusgl` | `irteusgl`でモデルを実体化してダンプ | どんなモデルでも読める。EusLispのインストールが必要 |
+| `static` | `.l`ファイルを直接パースする（`urdfeus.eus_parse`） | 生成モデル限定。EusLispは不要 |
+| `auto`（既定） | `irteusgl`がPATHにあればそちら、無ければ`static` | |
+
+`static`が読めるのは**生成された**モデルです。`euscollada`/`urdfeus`がURDF・colladaから吐いたロボット（`gl::glvertices`で幾何を持つもの）と、jskeusの物体モデル（`faceset`で幾何を持つもの）が該当します。手書きでリンクを計算するモデルや、他ファイルを`load`するシーン（`*-scene.l`）は読めず、その旨のエラーになります（黙って一部だけ変換することはありません）。
+
+`static`は`:assoc`や`:newcoords`といったEusLispの座標系の意味論を再現しており、jskeusの全モデル651個で`irteusgl`のダンプと突き合わせて検証しています（641個が完全一致、2個は下限が正のジョイントに関する差でURDFとしては等価、8個はシーンで対象外）。
+
+```bash
+# EusLispが入っていない環境でも変換できる
+eus2urdf robot.l out --backend static
+```
+
+```python
+from urdfeus.eus_parse import parse_eus_model
+
+data = parse_eus_model('robot.l')   # irteusgl不要。dumpと同じ辞書が返る
+```
 
 #### ジオメトリの扱い
 
