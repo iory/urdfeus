@@ -19,6 +19,7 @@ import json
 import os
 import os.path as osp
 import re
+import shutil
 import subprocess
 import tempfile
 import xml.etree.ElementTree as ET
@@ -140,6 +141,53 @@ def dump_eus_model(eus_path, constructor=None, irteusgl="irteusgl", timeout=600)
             if osp.exists(p):
                 os.remove(p)
     return data
+
+
+def load_eus_model(eus_path, constructor=None, irteusgl="irteusgl",
+                   backend="auto", timeout=600):
+    """Return the dump of an EusLisp model, via irteusgl or by parsing it.
+
+    Parameters
+    ----------
+    eus_path : str
+        Path to the ``.l`` model file.
+    constructor : str or None
+        Constructor function (or class) name. Defaults to the file stem.
+    irteusgl : str
+        irteusgl executable, used by the ``irteusgl`` and ``auto`` backends.
+    backend : str
+        ``irteusgl`` instantiates the model in EusLisp, which handles any
+        model but needs EusLisp installed. ``static`` reads the file with
+        :func:`urdfeus.eus_parse.parse_eus_model`, which needs nothing but
+        only understands generated models. ``auto`` (the default) uses
+        irteusgl when it is on PATH and falls back to the static parser.
+    timeout : float
+        irteusgl subprocess timeout in seconds.
+
+    Returns
+    -------
+    dict
+        The dump described by ``euslisp/eus2urdf-dump.l``.
+    """
+    if backend not in ("auto", "static", "irteusgl"):
+        raise ValueError(
+            "backend must be 'auto', 'static' or 'irteusgl', not "
+            + repr(backend))
+    if backend == "static" or (
+            backend == "auto" and shutil.which(irteusgl) is None):
+        from urdfeus.eus_parse import EusParseError
+        from urdfeus.eus_parse import parse_eus_model
+        try:
+            return parse_eus_model(eus_path, constructor=constructor)
+        except EusParseError as e:
+            if backend == "static":
+                raise
+            raise RuntimeError(
+                f"'{irteusgl}' is not on PATH and {eus_path} cannot be read "
+                + "without it: " + str(e)
+                + "\nInstall EusLisp (jskeus) to convert this model.")
+    return dump_eus_model(eus_path, constructor=constructor,
+                          irteusgl=irteusgl, timeout=timeout)
 
 
 def _mat3(rows):
@@ -444,6 +492,7 @@ def eus2urdf(
     mesh_format="glb",
     draco=False,
     irteusgl="irteusgl",
+    backend="auto",
 ):
     """Convert an EusLisp model to a URDF ROS package.
 
@@ -474,13 +523,17 @@ def eus2urdf(
         to read the result.
     irteusgl : str
         irteusgl executable.
+    backend : str
+        How to read the model: ``irteusgl``, ``static`` (parse the file, no
+        EusLisp needed) or ``auto``. See :func:`load_eus_model`.
 
     Returns
     -------
     str
         Path to the written ``.urdf`` file.
     """
-    data = dump_eus_model(eus_path, constructor=constructor, irteusgl=irteusgl)
+    data = load_eus_model(eus_path, constructor=constructor,
+                          irteusgl=irteusgl, backend=backend)
     return eus2urdf_from_data(
         data,
         output_dir,

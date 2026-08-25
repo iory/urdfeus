@@ -42,6 +42,14 @@ def main():
     parser.add_argument(
         "--irteusgl", type=str, default="irteusgl",
         help="irteusgl executable to use.")
+    parser.add_argument(
+        "--backend", choices=("auto", "static", "irteusgl"), default="auto",
+        help="How to read the model. 'irteusgl' instantiates it in EusLisp, "
+        + "which handles any model but needs EusLisp installed. 'static' "
+        + "parses the .l file directly, which needs no EusLisp but only "
+        + "understands generated models (euscollada/urdfeus robots and "
+        + "jskeus objects; not scenes). 'auto' (default) uses irteusgl when "
+        + "it is on PATH and parses the file otherwise.")
     add_diagnostic_arguments(parser)
     args = parser.parse_args()
     if handle_doctor(args, parser, ['input_euslisp_path', 'output_dir']):
@@ -56,6 +64,7 @@ def main():
         mesh_format=args.mesh_format,
         draco=args.draco,
         irteusgl=args.irteusgl,
+        backend=args.backend,
     )
     print(f"Wrote URDF: {urdf_path}")
 

@@ -82,3 +82,39 @@ pre {
   color: var(--muted); white-space: pre-wrap; word-break: break-word;
 }
 .preview { max-height: 340px; overflow-y: auto; margin-top: 12px; }
+
+/* --- direction tabs --- */
+.tabs { display: flex; gap: 6px; margin-bottom: 14px; }
+.tabs button {
+  background: var(--panel); color: var(--muted); border: 1px solid var(--line);
+  border-radius: 8px; padding: 7px 13px; font-size: 13px; cursor: pointer;
+}
+.tabs button:hover { color: var(--text); }
+.tabs button.on { background: var(--panel2); color: var(--text); border-color: var(--accent); }
+
+/* --- 3D preview of a converted model --- */
+.viewer { display: flex; flex-direction: column; gap: 10px; }
+.viewcanvas {
+  width: 100%; height: 380px; display: block; border-radius: 8px;
+  border: 1px solid var(--line); background: var(--bg); touch-action: none;
+}
+.joints { max-height: 230px; overflow-y: auto; }
+.joints h3 { font-size: 13px; margin: 0; font-weight: 600; }
+.joints h3 em { color: var(--muted); font-style: normal; font-weight: 400; margin-left: 6px; }
+.joint {
+  display: grid; grid-template-columns: minmax(0, 1fr) 2fr 56px; gap: 8px;
+  align-items: center; font-size: 12px; padding: 2px 0;
+}
+.joint span { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.joint em { color: var(--muted); font-style: normal; text-align: right; font-variant-numeric: tabular-nums; }
+.joint input[type="range"] { width: 100%; accent-color: var(--accent); }
+
+/* --- fetch a model by link --- */
+.urlbar { display: flex; gap: 10px; align-items: flex-end; }
+.urlbar label { flex: 1; display: flex; flex-direction: column; gap: 5px;
+  font-size: 12px; color: var(--muted); }
+.urlbar input {
+  background: var(--panel2); border: 1px solid var(--line); border-radius: 7px;
+  color: var(--text); padding: 7px 9px; font-size: 13px; width: 100%;
+}
+.urlbar input:focus { outline: none; border-color: var(--accent); }

@@ -3,11 +3,24 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>urdf2eus - convert URDF in the browser</title>
+    <title>urdfeus - convert URDF and EusLisp in the browser</title>
     <meta
       name="description"
-      content="Convert a URDF into an EusLisp model in the browser. urdfeus runs as WebAssembly; no file leaves your machine."
+      content="Convert a URDF into an EusLisp model, or a generated EusLisp model back into a URDF package you can view. urdfeus runs as WebAssembly; no file leaves your machine."
     />
+    <!-- The 3D preview loads three.js and urdf-loader from the same CDN the
+         gallery uses; urdf-loader imports "three" by name, so the map is what
+         lets it resolve. Both are fetched only when a model is shown. -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/",
+          "three/examples/jsm/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/",
+          "urdf-loader": "https://cdn.jsdelivr.net/npm/urdf-loader@0.12.7/src/URDFLoader.js"
+        }
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

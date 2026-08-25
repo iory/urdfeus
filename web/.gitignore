@@ -1,3 +1,7 @@
 node_modules/
 dist/
 *.tsbuildinfo
+
+# Built by tools/build_web_wheel.py before the site build.
+public/urdfeus-*.whl
+public/wheel.json
