@@ -1,23 +1,33 @@
 # urdfeus model gallery (web)
 
-Interactive browser gallery of the **657 EusLisp models** converted to URDF by
-`eus2urdf` (jskeus robots/objects/scenes + darwin + irteus/demo sample robots).
-Search and
-filter the grid, click a model to view it in 3D, and drag the joint sliders to
-articulate it (open drawers/doors, pose arms, …).
+Interactive browser gallery of the **718 EusLisp models** converted to URDF by
+`eus2urdf`, from two model sets:
+
+- **jskeus** (657) — robots/objects/scenes + darwin + irteus/demo sample robots
+- **kxreus** (61) — the [kxreus](https://github.com/inabajsk/kxreus) robots
+  (`*kxr-all-robot-names*` + `*khr-robot-names*`), which are built procedurally
+  in EusLisp rather than stored as `.l` model files
+
+Search and filter the grid by type *and* by source, click a model to view it in
+3D, and drag the joint sliders to articulate it (open drawers/doors, pose arms,
+…).
 
 - `index.html` — single-page gallery + viewer (three.js + [urdf-loader], CDN, no build step)
-  - grid with search / type filter; click a model for a full-screen 3D viewer
+  - grid with search / type filter / source filter (the source chip row only
+    appears when the manifest holds more than one collection); click a model
+    for a full-screen 3D viewer
   - joint sliders (articulate doors/drawers/arms), **Frames** (eus `:handle`
     grasp poses + `:attention` points; shown by default, markers always on,
     names appear on hover), a **Move** gizmo (click an object →
     translate/rotate it; e.g. rearrange furniture in a scene), and **hover an
     object to see its name** (per-object in scenes, via `objects.json`)
   - deep links: `?m=<name>` opens a model, add `&frames=1` to show grasp frames
-- `manifest.json` — model list (name, kind, link/joint counts, urdf path)
+- `manifest.json` — model list (name, kind, collection, link/joint counts, urdf path)
 - `thumbnails/` — one preview WebP per model (lossless, ~2.5x smaller than PNG)
 - `models/` — the converted ROS packages: `<name>/urdf/*.urdf`,
-  `<name>/meshes/*.glb`, and `<name>/frames.json` (grasp/attention frames)
+  `<name>/meshes/*.glb`, and `<name>/frames.json` (grasp/attention frames).
+  `<name>/collection.txt` names the model set a package came from; packages
+  without one are jskeus'
 
 ## Run locally
 
@@ -43,13 +53,23 @@ adds the browser converter, built from `web/`, alongside it:
 | `https://iory.github.io/urdfeus/convert/` | `web/` — URDF to EusLisp in the browser |
 
 The gallery itself stays a committed, build-free static site (Draco-compressed
-`.glb` keeps `models/` to ~30 MB), so no git-lfs or external hosting is needed.
+`.glb` keeps `models/` to ~40 MB), so no git-lfs or external hosting is needed.
 
 Regenerate everything (after changing the converter or model set):
 
 ```bash
 python3 tools/export_models.py        # (re)writes docs/models/<name>/ (Draco glb)
+
+# kxreus' robots, which need a kxreus checkout and irteusgl to instantiate
+python3 tools/export_kxr_models.py --kxreus ~/src/github.com/inabajsk/kxreus \
+    --out docs/models --layout packages --draco --set all
+
 python3 tools/make_gallery_site.py    # rebuilds docs/thumbnails/ + manifest.json
 ```
+
+`make_gallery_site.py` reuses thumbnails that already exist, so adding a few
+models only renders those few; pass `--force` to re-render everything (e.g.
+after changing the renderer). Draco compression needs `DracoPy`, which the
+`draco` extra pulls in: `uv run --extra draco python tools/...`.
 
 [urdf-loader]: https://github.com/gkjohnson/urdf-loaders

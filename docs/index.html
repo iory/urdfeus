@@ -24,7 +24,10 @@
   .search{flex:1;min-width:180px;padding:9px 12px;border-radius:9px;border:1px solid var(--line);
     background:var(--panel);color:var(--text);font-size:14px;outline:none}
   .search:focus{border-color:var(--accent)}
-  .chips{display:flex;gap:6px}
+  .chips{display:flex;gap:6px;flex-wrap:wrap}
+  /* Second filter axis, on its own line under the kind chips. */
+  .chips.srcrow{flex-basis:100%;align-items:center}
+  .chips.srcrow .lbl{color:var(--muted);font-size:12px;margin-right:2px}
   .chip{padding:6px 13px;border-radius:999px;border:1px solid var(--line);background:var(--panel);
     color:var(--muted);font-size:13px;cursor:pointer;user-select:none;white-space:nowrap}
   .chip.on{background:var(--accent);border-color:var(--accent);color:#04121f;font-weight:600}
@@ -38,6 +41,10 @@
   .meta .mt{font-size:11px;color:var(--muted);margin-top:4px;display:flex;align-items:center;gap:6px}
   .badge{font-size:10px;padding:2px 7px;border-radius:5px}
   .b-robot{background:#2a3550;color:#9cc2ff}.b-object{background:#2a4338;color:#86e6bd}.b-scene{background:#4a3320;color:#f0b878}
+  /* Where a model came from. jskeus is the bulk of the gallery, so it stays
+     quiet; anything else is tinted so it stands out at a glance. */
+  .b-src{background:#33283f;color:#d5b3f0}
+  .b-src-jskeus{background:#262b34;color:var(--muted)}
   #count2{padding:0 18px 24px;color:var(--muted);font-size:12px}
   /* viewer overlay */
   #viewer{position:fixed;inset:0;z-index:20;background:#0f1115;display:none}
@@ -89,6 +96,7 @@
       <div class="chip" data-k="scene">Scenes</div>
     </div>
     <a class="convert" href="convert/">Convert your own URDF &rarr;</a>
+    <div class="chips srcrow" id="srcchips"></div>
   </div>
   <div id="grid"></div>
   <div id="count2"></div>
@@ -249,7 +257,7 @@ function frame(obj){
 function loadModel(e){
   currentEntry=e;
   $('#viewer').classList.add('show'); $('#spin').style.display='flex';
-  $('#vtitle').innerHTML=`${e.name}<small>${e.kind} · ${e.links} links · ${e.movable} movable joints</small>`;
+  $('#vtitle').innerHTML=`${e.name}<small>${e.kind} · ${collectionOf(e)} · ${e.links} links · ${e.movable} movable joints</small>`;
   const manager=new THREE.LoadingManager();
   const loader=new URDFLoader(manager);
   loader.packages=(pkg)=>`${MODELS_BASE}/${pkg}`;
@@ -369,10 +377,31 @@ $('#back').onclick=closeViewer;
 addEventListener('keydown',e=>{if(e.key==='Escape')closeViewer();});
 
 // ---------- gallery ----------
-let DATA=[], kind='all', q='';
+let DATA=[], kind='all', src='all', q='';
 const grid=$('#grid');
+// Manifests written before models carried a collection have none; those models
+// all came from jskeus.
+const DEFAULT_COLLECTION='jskeus';
+const collectionOf=e=>e.collection||DEFAULT_COLLECTION;
+const srcClass=c=>'b-src b-src-'+c.replace(/[^a-z0-9_-]/gi,'-').toLowerCase();
+function buildSrcChips(){
+  const cols=[...new Set(DATA.map(collectionOf))].sort();
+  // One source is no choice at all -- leave the row out entirely.
+  if(cols.length<2){ $('#srcchips').replaceChildren(); return; }
+  const frag=document.createDocumentFragment();
+  const lbl=document.createElement('span'); lbl.className='lbl'; lbl.textContent='Source';
+  frag.append(lbl);
+  for(const c of ['all',...cols]){
+    const el=document.createElement('div');
+    el.className='chip'+(c===src?' on':''); el.dataset.s=c;
+    el.textContent=c==='all'?'All':c;
+    frag.append(el);
+  }
+  $('#srcchips').replaceChildren(frag);
+}
 function render(){
-  const list=DATA.filter(e=>(kind==='all'||e.kind===kind)&&(!q||e.name.toLowerCase().includes(q)));
+  const list=DATA.filter(e=>(kind==='all'||e.kind===kind)
+    &&(src==='all'||collectionOf(e)===src)&&(!q||e.name.toLowerCase().includes(q)));
   $('#count').textContent=`(${list.length}/${DATA.length})`;
   $('#count2').textContent=list.length+' models';
   const frag=document.createDocumentFragment();
@@ -381,8 +410,11 @@ function render(){
     const t=document.createElement('div'); t.className='thumb';
     t.style.backgroundImage=`url(thumbnails/${e.name}.webp)`;
     const m=document.createElement('div'); m.className='meta';
+    const col=collectionOf(e);
     m.innerHTML=`<div class="nm" title="${e.name}">${e.name}</div>
-      <div class="mt"><span class="badge b-${e.kind}">${e.kind}</span><span>${e.movable} movable</span></div>`;
+      <div class="mt"><span class="badge b-${e.kind}">${e.kind}</span>`
+      + `<span class="badge ${srcClass(col)}" title="from ${col}">${col}</span>`
+      + `<span>${e.movable} movable</span></div>`;
     c.append(t,m);
     c.onclick=()=>{history.replaceState(null,'','?m='+encodeURIComponent(e.name)); loadModel(e);};
     frag.append(c);
@@ -391,9 +423,13 @@ function render(){
 }
 $('#q').oninput=ev=>{q=ev.target.value.toLowerCase();render();};
 $('#chips').onclick=ev=>{const t=ev.target.closest('.chip');if(!t)return;
-  document.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));t.classList.add('on');kind=t.dataset.k;render();};
+  $('#chips').querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));
+  t.classList.add('on');kind=t.dataset.k;render();};
+$('#srcchips').onclick=ev=>{const t=ev.target.closest('.chip');if(!t)return;
+  $('#srcchips').querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));
+  t.classList.add('on');src=t.dataset.s;render();};
 fetch('manifest.json').then(r=>r.json()).then(d=>{
-  DATA=d; render();
+  DATA=d; buildSrcChips(); render();
   const m=new URLSearchParams(location.search).get('m');
   if(m){const e=DATA.find(x=>x.name===m); if(e) loadModel(e);}
 }).catch(()=>{$('#count').textContent='Failed to load manifest.json';});

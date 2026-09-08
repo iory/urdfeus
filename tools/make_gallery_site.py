@@ -29,12 +29,33 @@ DOCS = osp.join(_ROOT, "docs")
 EUSMODELS = osp.join(_ROOT, "docs", "models")
 
 
+#: Sidecar file an exporter may drop in a package to say which model set it
+#: came from (see ``tools/export_kxr_models.py``). Packages without one are
+#: jskeus', which is where every model in this gallery started out.
+COLLECTION_FILE = "collection.txt"
+DEFAULT_COLLECTION = "jskeus"
+
+
 def _kind(name):
     if name.endswith(("-scene", "_scene")):
         return "scene"
     if name.endswith(("-object", "_object")):
         return "object"
     return "robot"
+
+
+def _collection(model_dir):
+    """Return the model set ``model_dir`` came from.
+
+    Read from the package's ``collection.txt``, falling back to
+    ``DEFAULT_COLLECTION``. The gallery turns this into a source filter, so it
+    is kept separate from ``_kind``: a kxreus package is still a robot.
+    """
+    try:
+        with open(osp.join(model_dir, COLLECTION_FILE)) as f:
+            return f.read().strip() or DEFAULT_COLLECTION
+    except OSError:
+        return DEFAULT_COLLECTION
 
 
 _UP = np.array([0, 0, 1.0])
@@ -238,7 +259,7 @@ def _render_thumb(model_dir, urdf_rel, out_path, size=256):
 
 
 def _worker(args):
-    model_dir, thumb_dir = args
+    model_dir, thumb_dir, force = args
     name = osp.basename(model_dir)
     try:
         urdfs = [u for u in glob.glob(osp.join(model_dir, "urdf", "*.urdf"))
@@ -251,7 +272,12 @@ def _worker(args):
         joints = root.findall("joint")
         movable = [j for j in joints
                    if j.get("type") in ("revolute", "prismatic", "continuous")]
-        _render_thumb(model_dir, urdf_rel, osp.join(thumb_dir, name + ".webp"))
+        thumb = osp.join(thumb_dir, name + ".webp")
+        # Re-rendering all of these costs minutes, and nothing about a package
+        # already on disk changes between runs, so adding a few models only
+        # renders those few. --force re-renders everything.
+        if force or not osp.exists(thumb):
+            _render_thumb(model_dir, urdf_rel, thumb)
         # Relative file list for client-side zip download of the package.
         files = []
         for pat in ("package.xml", "CMakeLists.txt", "urdf/*.urdf", "meshes/*",
@@ -261,7 +287,9 @@ def _worker(args):
                 if rel.endswith(("_abs.urdf", "_thumb_abs.urdf")):
                     continue
                 files.append(rel)
-        return {"name": name, "kind": _kind(name), "links": len(root.findall("link")),
+        return {"name": name, "kind": _kind(name),
+                "collection": _collection(model_dir),
+                "links": len(root.findall("link")),
                 "joints": len(joints), "movable": len(movable), "urdf": urdf_rel,
                 "files": files}
     except Exception as e:
@@ -274,6 +302,8 @@ def main():
     parser.add_argument("--eusmodels", default=EUSMODELS)
     parser.add_argument("--docs", default=DOCS)
     parser.add_argument("--workers", type=int, default=max(1, os.cpu_count() - 1))
+    parser.add_argument("--force", action="store_true",
+                        help="re-render thumbnails that already exist")
     args = parser.parse_args()
 
     thumb_dir = osp.join(args.docs, "thumbnails")
@@ -284,14 +314,14 @@ def main():
     print(f"rendering {len(dirs)} thumbnails ...")
     sys.stdout.flush()
     entries = []
-    tasks = [(d, thumb_dir) for d in dirs]
+    tasks = [(d, thumb_dir, args.force) for d in dirs]
     with ProcessPoolExecutor(max_workers=args.workers) as ex:
         for i, r in enumerate(ex.map(_worker, tasks), 1):
             if r:
                 entries.append(r)
             if i % 100 == 0:
                 print(f"  [{i}/{len(dirs)}]", flush=True)
-    entries.sort(key=lambda e: (e["kind"], e["name"]))
+    entries.sort(key=lambda e: (e["kind"], e["collection"], e["name"]))
     with open(osp.join(args.docs, "manifest.json"), "w") as f:
         json.dump(entries, f)
     print(f"done: {len(entries)} models -> {args.docs}/manifest.json")
