@@ -14,3 +14,7 @@ gallery/
 # Pin the interpreter for uv. Un-ignored explicitly because a global
 # ignore of dotfiles would otherwise drop it.
 !.python-version
+
+# uv writes this on any `uv run`. urdfeus is a library: it should resolve
+# against what a consumer already has, not pin it.
+uv.lock
