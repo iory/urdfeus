@@ -153,10 +153,11 @@
     </collision>
   </link>
   <link name="rarm_gripper">
+    <!-- inertia recomputed by urdfeus: all-zero inertia tensor -->
     <inertial>
       <origin xyz="0.0141169 0.0170793 -0.00332742" rpy="0 0 0" />
       <mass value="0.005" />
-      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+      <inertia ixx="1.9928562e-06" ixy="-1.3059218e-07" ixz="1.6982093e-08" iyy="7.955603e-07" iyz="1.6057919e-07" izz="1.6744371e-06" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -229,10 +230,11 @@
     </collision>
   </link>
   <link name="larm_gripper">
+    <!-- inertia recomputed by urdfeus: all-zero inertia tensor -->
     <inertial>
       <origin xyz="0.0141169 0.0170793 0.00332742" rpy="0 0 0" />
       <mass value="0.005" />
-      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+      <inertia ixx="1.9928562e-06" ixy="-1.3059218e-07" ixz="-1.6982093e-08" iyy="7.955603e-07" iyz="-1.6057919e-07" izz="1.6744371e-06" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
