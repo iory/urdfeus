@@ -51,6 +51,35 @@ jobs:
         sudo apt-get install -qq -y libspatialindex-dev freeglut3-dev libsuitesparse-dev libblas-dev liblapack-dev
         # Install EusLisp and display dependencies
         sudo apt-get install -qq -y jskeus xvfb
+    - name: Fetch the EusLisp models
+      # The Debian packages ship the interpreter but no models: jskeus
+      # 1.2.4+dfsg-3 installs 1.6 MB and euslisp 9.27+dfsg-7's file list has no
+      # models directory at all. So every test that needs a jskeus model -- the
+      # eus2urdf sweep and the eus -> URDF -> eus round trip -- skipped here,
+      # silently, while passing locally.
+      #
+      # The models live in two repositories: the robots and objects in
+      # euslisp/EusLisp, the irteus demo models in euslisp/jskeus. Lay them out
+      # the way a source checkout does, <root>/eus/models beside
+      # <root>/irteus/demo, because that is the relation the tests use to find
+      # the demo models from the model directory. Blobless sparse clones of the
+      # tags the installed packages were built from: 30 MB and a couple of
+      # seconds, and the model files match the interpreter that reads them.
+      run: |
+        root="${{ runner.temp }}/jskeus"
+        mkdir -p "$root"
+        git clone --depth 1 --filter=blob:none --sparse \
+          --branch EusLisp-9.27 https://github.com/euslisp/EusLisp.git \
+          "$root/eus"
+        git -C "$root/eus" sparse-checkout set models
+        git clone --depth 1 --filter=blob:none --sparse \
+          --branch 1.2.4 https://github.com/euslisp/jskeus.git "$root/jskeus"
+        git -C "$root/jskeus" sparse-checkout set irteus/demo
+        mv "$root/jskeus/irteus" "$root/irteus"
+        rm -rf "$root/jskeus"
+        ls "$root/eus/models"/*-robot.l | wc -l
+        echo "JSKEUS_MODELS_DIR=$root/eus/models" >> "$GITHUB_ENV"
+
     - name: Install Pytest
       run: |
         python -m pip install --upgrade pip setuptools wheel
@@ -65,11 +94,11 @@ jobs:
         Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
         # Set EusLisp environment
         export EUSDIR=/usr/share/euslisp
-        # Locate the apt-installed jskeus models so TestEus2UrdfJskeus runs
-        which irteusgl || true
-        models="$(find /usr /opt -path '*jskeus/eus/models/*-robot.l' -print -quit 2>/dev/null)"
-        if [ -n "$models" ]; then export JSKEUS_MODELS_DIR="$(dirname "$models")"; fi
+        # JSKEUS_MODELS_DIR comes from the fetch step above; fail loudly rather
+        # than skipping every model test if it is somehow unset or empty.
+        which irteusgl
         echo "JSKEUS_MODELS_DIR=${JSKEUS_MODELS_DIR}"
+        ls "${JSKEUS_MODELS_DIR}/h3-robot.l"
         # Run tests
         pytest -v tests
 
