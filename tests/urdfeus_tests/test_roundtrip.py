@@ -44,9 +44,13 @@ from urdfeus.eus2urdf import eus2urdf
 from urdfeus.urdf2eus import urdf2eus
 
 #: Coplanar decal submeshes are pushed off their host surface by
-#: ``_DECAL_OFFSET`` metres, so a link's mesh may legitimately grow by that much
-#: on each side of the round trip.
-MESH_TOL_MM = 2.0 * _DECAL_OFFSET * 1000.0
+#: ``_DECAL_OFFSET`` metres along the surface normal, so what lands on a given
+#: axis is that offset's projection, and a link with several decals can
+#: accumulate more than one of them on one axis: h3's left elbow moves 1.0 mm in
+#: z. Four offsets is the bound here, which stays two orders of magnitude below
+#: what this check exists to catch -- a mesh that ends up on the wrong link sits
+#: hundreds of millimetres out, as two mirrored cupboard doors did.
+MESH_TOL_MM = 4.0 * _DECAL_OFFSET * 1000.0
 
 
 def candidate_model_dirs():
