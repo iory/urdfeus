@@ -5,10 +5,13 @@ import shutil
 import subprocess
 import tempfile
 import unittest
+import xml.etree.ElementTree as ET
 
 import numpy as np
 from skrobot.model import RobotModel
+import trimesh
 
+from urdfeus.eus2urdf import _add_inertial
 from urdfeus.eus2urdf import _ros_package_name
 from urdfeus.eus2urdf import _unique_name_map
 from urdfeus.eus2urdf import dump_eus_model
@@ -219,3 +222,107 @@ class TestEus2UrdfJskeus(unittest.TestCase):
                     failures.append((name, err))
         self.assertFalse(
             failures, f"{len(failures)}/{len(tasks)} failed: {failures[:10]}")
+
+
+class TestInertialRepair(unittest.TestCase):
+    """``<inertial>`` for links whose EusLisp tensor cannot be used.
+
+    jskeus models such as h3/h7 declare ``:inertia-tensor`` as a zero matrix
+    and macra/human declare placeholders next to a real mass, so these run
+    without irteusgl on a hand-built dump entry.
+    """
+
+    EXTENTS = (0.1, 0.2, 0.3)  # metres
+    MASS = 2.0  # kg
+
+    def setUp(self):
+        self.mesh = trimesh.creation.box(extents=self.EXTENTS)
+        a, b, c = self.EXTENTS
+        self.analytic = self.MASS / 12.0 * np.diag(
+            [b * b + c * c, a * a + c * c, a * a + b * b])
+
+    def _link(self, inertia_kgm2):
+        """A dump ``links`` entry in EusLisp units (g, mm, g*mm^2)."""
+        return {
+            "name": ":test-link",
+            "weight": self.MASS * 1000.0,
+            "centroid": [0.0, 0.0, 0.0],
+            "inertia": None if inertia_kgm2 is None
+            else (np.asarray(inertia_kgm2) * 1e9).tolist(),
+        }
+
+    def _emitted(self, link_el):
+        inertia = link_el.find("inertial/inertia")
+        return np.array([
+            [float(inertia.get("ixx")), float(inertia.get("ixy")),
+             float(inertia.get("ixz"))],
+            [float(inertia.get("ixy")), float(inertia.get("iyy")),
+             float(inertia.get("iyz"))],
+            [float(inertia.get("ixz")), float(inertia.get("iyz")),
+             float(inertia.get("izz"))]])
+
+    def test_usable_tensor_is_written_unchanged(self):
+        link_el = ET.Element("link")
+        note = _add_inertial(link_el, self._link(self.analytic), self.mesh)
+        self.assertIsNone(note)
+        np.testing.assert_allclose(
+            self._emitted(link_el), self.analytic, rtol=1e-7)
+
+    def test_zero_tensor_is_recomputed_from_the_mesh(self):
+        link_el = ET.Element("link")
+        note = _add_inertial(link_el, self._link(np.zeros((3, 3))), self.mesh)
+        self.assertIn("all-zero", note)
+        # A box is watertight and convex, so the recomputed tensor is the
+        # analytic one; any real link only gets its convex hull.
+        np.testing.assert_allclose(
+            self._emitted(link_el), self.analytic, rtol=1e-6)
+        self.assertAlmostEqual(
+            float(link_el.find("inertial/mass").get("value")), self.MASS)
+
+    def test_missing_tensor_without_a_mesh_writes_no_inertial(self):
+        link_el = ET.Element("link")
+        note = _add_inertial(link_el, self._link(None), None)
+        self.assertIn("no mesh", note)
+        self.assertIsNone(link_el.find("inertial"))
+
+    def test_placeholder_moment_is_recomputed(self):
+        # human-robot declares izz = 1.0 g*mm^2 beside ixx = iyy = 2.07e8.
+        placeholder = np.diag([self.analytic[0, 0], self.analytic[0, 0], 1e-9])
+        link_el = ET.Element("link")
+        note = _add_inertial(link_el, self._link(placeholder), self.mesh)
+        self.assertIn("too small", note)
+        np.testing.assert_allclose(
+            self._emitted(link_el), self.analytic, rtol=1e-6)
+
+    def test_non_positive_definite_tensor_is_recomputed(self):
+        negative = np.diag([-self.analytic[0, 0], self.analytic[1, 1],
+                            self.analytic[2, 2]])
+        link_el = ET.Element("link")
+        note = _add_inertial(link_el, self._link(negative), self.mesh)
+        self.assertIn("not positive definite", note)
+        np.testing.assert_allclose(
+            self._emitted(link_el), self.analytic, rtol=1e-6)
+
+    def test_triangle_inequality_violation_is_recomputed(self):
+        # Two small moments that cannot add up to the third.
+        broken = np.diag([1e-4, 1e-4, 1.0])
+        link_el = ET.Element("link")
+        note = _add_inertial(link_el, self._link(broken), self.mesh)
+        self.assertIn("triangle inequality", note)
+        np.testing.assert_allclose(
+            self._emitted(link_el), self.analytic, rtol=1e-6)
+
+    def test_a_thin_rod_is_left_alone(self):
+        # The magnitude floor must not fire on a real, very slender body: a rod
+        # 1000x longer than it is thick still has a usable smallest moment.
+        length, radius = 1.0, 5e-4
+        rod = trimesh.creation.cylinder(radius=radius, height=length)
+        mass = 1.0
+        tensor = np.diag([
+            mass * (3 * radius ** 2 + length ** 2) / 12.0,
+            mass * (3 * radius ** 2 + length ** 2) / 12.0,
+            mass * radius ** 2 / 2.0])
+        link = self._link(tensor)
+        link["weight"] = mass * 1000.0
+        link_el = ET.Element("link")
+        self.assertIsNone(_add_inertial(link_el, link, rod))

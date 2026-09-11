@@ -422,28 +422,169 @@ def _classify_joint(joint, is_follower):
     return "revolute"
 
 
-def _add_inertial(link_el, link):
+#: Each principal moment is compared against ``mass * radius ** 2`` of the
+#: link's own mesh, and anything below this fraction of that is a placeholder
+#: rather than a mass distribution. A rod a thousand times longer than it is
+#: thick, slender past anything a robot link is, still keeps its smallest
+#: moment an order of magnitude above this; macra-robot declares ~1e-40 and
+#: human-robot a single 1.0 g*mm^2 next to two moments of 2.07e8 g*mm^2, both
+#: of which are several orders below it.
+_INERTIA_FLOOR_FRACTION = 1e-7
+
+
+def _inertia_defect(inertia, mass, mesh):
+    """Return why ``inertia`` cannot be a rigid body's tensor, else None.
+
+    A usable tensor is positive definite and its principal moments obey the
+    triangle inequality. Several EusLisp models declare ``:inertia-tensor`` as
+    a zero matrix (h3/h3s/h4/h6/h7, igoid2/igoid3, saizo) or placeholders
+    (macra) while still declaring a non-zero ``:weight``. Mass without inertia
+    is not a rigid body, so an importer handed it either refuses the body or
+    silently substitutes a preset tensor that has nothing to do with the
+    robot - both of which are worse than saying so here.
+
+    Parameters
+    ----------
+    inertia : numpy.ndarray or None
+        Candidate tensor in kg*m^2, or None when the link carries no
+        ``:inertia-tensor`` at all.
+    mass : float
+        Link mass in kg.
+    mesh : trimesh.Trimesh or None
+        The link's mesh in link-local metres. Used only for a length scale, so
+        the magnitude check is skipped when the link has no mesh.
+
+    Returns
+    -------
+    str or None
+        A one-line reason, or None when the tensor is usable as it stands.
+    """
+    if inertia is None:
+        return "no :inertia-tensor in the EusLisp model"
+    if not np.all(np.isfinite(inertia)):
+        return "inertia tensor holds a non-finite component"
+    if not np.any(inertia):
+        return "all-zero inertia tensor"
+    # Symmetric by construction (EusLisp stores the full 3x3), so the cheaper
+    # symmetric eigensolver is the right one and returns ascending moments.
+    moments = np.linalg.eigvalsh(0.5 * (inertia + inertia.T))
+    if moments[0] <= 0.0:
+        return ("inertia tensor is not positive definite (smallest principal"
+                + f" moment {moments[0]:.3g})")
+    small, mid, large = moments
+    if small + mid < large * (1.0 - 1e-9):
+        return ("principal moments violate the triangle inequality"
+                + f" ({small:.3g} + {mid:.3g} < {large:.3g})")
+    if mesh is not None:
+        radius = 0.5 * float(np.linalg.norm(mesh.bounding_box.extents))
+        floor = _INERTIA_FLOOR_FRACTION * mass * radius ** 2
+        if small < floor:
+            return (f"smallest principal moment {small:.3g} kg*m^2 is too"
+                    + f" small for {mass:.3g} kg spread over"
+                    + f" {2 * radius:.3g} m")
+    return None
+
+
+def _inertia_from_mesh(mesh, mass):
+    """Inertia tensor of ``mesh`` at the uniform density that gives ``mass``.
+
+    The tensor is taken about the mesh's own centre of mass and in link-local
+    axes, which is the frame URDF's ``<inertia>`` is read in. Uniform density
+    is a guess, but it is a guess derived from the link's actual shape, unlike
+    the mass-scaled presets importers substitute when inertia is missing.
+
+    Parameters
+    ----------
+    mesh : trimesh.Trimesh
+        The link's mesh in link-local metres.
+    mass : float
+        Link mass in kg, taken from the EusLisp ``:weight``.
+
+    Returns
+    -------
+    tuple of (numpy.ndarray, str) or None
+        The 3x3 tensor in kg*m^2 and the geometry it came from, or None when
+        the mesh encloses no usable volume.
+
+    Notes
+    -----
+    glvertices meshes are rarely watertight (they are render geometry, often
+    open shells), and the divergence-theorem volume integral trimesh uses is
+    only defined on a closed surface. So the raw mesh is used when it is
+    watertight and its convex hull, which is closed by construction, when it
+    is not.
+    """
+    if mesh.is_watertight and mesh.volume > 0.0:
+        body, source = mesh.copy(), "mesh"
+    else:
+        body, source = mesh.convex_hull.copy(), "convex hull of the mesh"
+    if not body.is_watertight or body.volume <= 0.0:
+        return None
+    # density, not mass, is what trimesh scales the integral by; mass/volume
+    # makes the resulting tensor match the declared mass exactly.
+    body.density = mass / body.volume
+    inertia = np.asarray(body.moment_inertia, dtype=np.float64)
+    inertia = 0.5 * (inertia + inertia.T)
+    if not np.all(np.isfinite(inertia)) or np.linalg.eigvalsh(inertia)[0] <= 0:
+        return None
+    return inertia, source
+
+
+def _add_inertial(link_el, link, mesh=None):
+    """Write ``<inertial>`` for one link, repairing an unusable tensor.
+
+    Parameters
+    ----------
+    link_el : xml.etree.ElementTree.Element
+        The ``<link>`` element to append to.
+    link : dict
+        One entry of the dump's ``links``, in EusLisp units (g, mm, g*mm^2).
+    mesh : trimesh.Trimesh or None
+        The link's mesh in link-local metres, used to recompute the tensor
+        when the declared one cannot be used.
+
+    Returns
+    -------
+    str or None
+        A note naming the link and what was wrong, for the caller to report,
+        or None when the declared inertia was written unchanged.
+    """
     weight = link["weight"]
     if weight is None or weight <= 0.0:
-        return
+        return None
+    mass = weight / 1000.0  # g -> kg
+    it = link["inertia"]
+    inertia = (_mat3(it) / 1e9) if it is not None else None  # g*mm^2 -> kg*m^2
+
+    note = None
+    defect = _inertia_defect(inertia, mass, mesh)
+    if defect is not None:
+        computed = _inertia_from_mesh(mesh, mass) if mesh is not None else None
+        if computed is None:
+            # Writing mass with no usable inertia is what breaks importers, and
+            # there is nothing here to compute one from, so the link is left
+            # without <inertial> rather than with an impossible one.
+            return (f"{link['name']}: {defect}, and no mesh to compute one"
+                    + " from, so no <inertial> was written")
+        inertia, source = computed
+        note = (f"{link['name']}: {defect}; recomputed from the {source}"
+                + " at uniform density")
+        link_el.append(ET.Comment(
+            f" inertia recomputed by urdfeus: {defect} "))
+
     inertial = ET.SubElement(link_el, "inertial")
     centroid = link["centroid"]
     xyz = (np.array(centroid) / meter2millimeter) if centroid is not None \
         else np.zeros(3)
     ET.SubElement(inertial, "origin", xyz=_fmt_vec(xyz), rpy="0 0 0")
-    ET.SubElement(inertial, "mass", value=f"{weight / 1000.0:.8g}")  # g -> kg
-    it = link["inertia"]
-    if it is not None:
-        # g*mm^2 -> kg*m^2
-        i = _mat3(it) / 1e9
-        ET.SubElement(
-            inertial, "inertia",
-            ixx=f"{i[0, 0]:.8g}", ixy=f"{i[0, 1]:.8g}", ixz=f"{i[0, 2]:.8g}",
-            iyy=f"{i[1, 1]:.8g}", iyz=f"{i[1, 2]:.8g}", izz=f"{i[2, 2]:.8g}",
-        )
-    else:
-        ET.SubElement(inertial, "inertia",
-                      ixx="0", ixy="0", ixz="0", iyy="0", iyz="0", izz="0")
+    ET.SubElement(inertial, "mass", value=f"{mass:.8g}")
+    i = inertia
+    ET.SubElement(
+        inertial, "inertia",
+        ixx=f"{i[0, 0]:.8g}", ixy=f"{i[0, 1]:.8g}", ixz=f"{i[0, 2]:.8g}",
+        iyy=f"{i[1, 1]:.8g}", iyz=f"{i[1, 2]:.8g}", izz=f"{i[2, 2]:.8g}",
+    )
+    return note
 
 
 def _package_xml(package_name):
@@ -631,13 +772,18 @@ def eus2urdf_from_data(
 
     # Links (+ meshes).
     used_fnames = set()
+    inertia_notes = []
     for link in data["links"]:
         name = link["name"]
         link_el = ET.SubElement(robot_el, "link", name=link_names[name])
-        _add_inertial(link_el, link)
 
+        # The mesh is built before <inertial> because it is what an unusable
+        # declared inertia tensor is recomputed from.
         pos, rot = link_pose[name]
         mesh = _build_link_mesh(link, pos, rot)
+        note = _add_inertial(link_el, link, mesh)
+        if note is not None:
+            inertia_notes.append(note)
         if mesh is not None:
             # _safe_name can collapse distinct link names to the same stem;
             # disambiguate so meshes never overwrite each other.
@@ -658,6 +804,12 @@ def eus2urdf_from_data(
                 ET.SubElement(el, "origin", xyz="0 0 0", rpy="0 0 0")
                 geom = ET.SubElement(el, "geometry")
                 ET.SubElement(geom, "mesh", filename=uri)
+
+    if inertia_notes:
+        print(f"Warning: {len(inertia_notes)} link(s) declare a mass the"
+              + " EusLisp inertia tensor cannot go with:")
+        for note in inertia_notes:
+            print(f"  {note}")
 
     # Joints. ``joint_unames`` already gives each joint a unique sanitized name
     # (handling both invalid characters and models that reuse a name across

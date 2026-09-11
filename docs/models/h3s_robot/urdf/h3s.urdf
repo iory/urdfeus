@@ -1,10 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <robot name="h3s">
   <link name="root">
+    <!-- inertia recomputed by urdfeus: all-zero inertia tensor -->
     <inertial>
       <origin xyz="0.000142373 -0.000644654 0.300876" rpy="0 0 0" />
       <mass value="3.18" />
-      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+      <inertia ixx="0.15362927" ixy="2.9336273e-05" ixz="0.0021048742" iyy="0.14496023" iyz="1.407309e-05" izz="0.056269515" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -20,10 +21,11 @@
     </collision>
   </link>
   <link name="h3scout_tire_l">
+    <!-- inertia recomputed by urdfeus: all-zero inertia tensor -->
     <inertial>
       <origin xyz="2.017866e-17 1.98952e-16 0.015" rpy="0 0 0" />
       <mass value="0.8" />
-      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+      <inertia ixx="0.0019706717" ixy="-7.6860655e-20" ixz="2.4799934e-20" iyy="0.0019706827" iyz="2.7732579e-19" izz="0.0038213544" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -39,10 +41,11 @@
     </collision>
   </link>
   <link name="h3scout_tire_r">
+    <!-- inertia recomputed by urdfeus: all-zero inertia tensor -->
     <inertial>
       <origin xyz="-4.915314e-18 -5.684342e-17 0.015" rpy="0 0 0" />
       <mass value="0.8" />
-      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+      <inertia ixx="0.0019706717" ixy="-7.6860655e-20" ixz="2.4799934e-20" iyy="0.0019706827" iyz="2.7732579e-19" izz="0.0038213544" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -58,10 +61,11 @@
     </collision>
   </link>
   <link name="h3rarm_shoulder_y">
+    <!-- inertia recomputed by urdfeus: all-zero inertia tensor -->
     <inertial>
       <origin xyz="0.0325169 -0.0241725 0.0209257" rpy="0 0 0" />
       <mass value="0.05" />
-      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+      <inertia ixx="5.8019834e-05" ixy="6.6993514e-06" ixz="-8.5083076e-06" iyy="0.00010925596" iyz="7.98084e-06" izz="0.00010827961" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -77,10 +81,11 @@
     </collision>
   </link>
   <link name="h3rarm_shoulder_p">
+    <!-- inertia recomputed by urdfeus: all-zero inertia tensor -->
     <inertial>
       <origin xyz="0.0169893 0.000287019 -0.0259877" rpy="0 0 0" />
       <mass value="0.05" />
-      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+      <inertia ixx="6.8662114e-05" ixy="1.4956894e-07" ixz="-2.1273999e-05" iyy="0.00015524791" iyz="1.2958221e-06" izz="0.00010912778" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -96,10 +101,11 @@
     </collision>
   </link>
   <link name="h3rarm_elbow_p">
+    <!-- inertia recomputed by urdfeus: all-zero inertia tensor -->
     <inertial>
       <origin xyz="0.0389702 3.537988e-18 0.0150484" rpy="0 0 0" />
       <mass value="0.1" />
-      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+      <inertia ixx="1.8050906e-05" ixy="5.1525524e-08" ixz="-8.0942429e-06" iyy="0.00019646408" iyz="1.5388013e-07" izz="0.00019451762" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -115,10 +121,11 @@
     </collision>
   </link>
   <link name="h3rarm_wrist_r">
+    <!-- inertia recomputed by urdfeus: all-zero inertia tensor -->
     <inertial>
       <origin xyz="0.00638476 -6.903304e-18 -0.0143166" rpy="0 0 0" />
       <mass value="0.07" />
-      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+      <inertia ixx="5.457482e-05" ixy="7.7523881e-08" ixz="-3.7363428e-06" iyy="5.1473139e-05" iyz="1.6152463e-07" izz="1.8438947e-05" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -134,10 +141,11 @@
     </collision>
   </link>
   <link name="h3rarm_hand_y">
+    <!-- inertia recomputed by urdfeus: all-zero inertia tensor -->
     <inertial>
       <origin xyz="-0.00117482 0.0318335 -1.939732e-17" rpy="0 0 0" />
       <mass value="0.01" />
-      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+      <inertia ixx="6.1298109e-06" ixy="1.1327784e-07" ixz="-6.2489158e-22" iyy="1.9975765e-06" iyz="-4.8520062e-22" izz="4.4353679e-06" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -153,10 +161,11 @@
     </collision>
   </link>
   <link name="h3larm_shoulder_y">
+    <!-- inertia recomputed by urdfeus: all-zero inertia tensor -->
     <inertial>
       <origin xyz="0.0325169 -0.0241725 -0.0209257" rpy="0 0 0" />
       <mass value="0.05" />
-      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+      <inertia ixx="5.8019834e-05" ixy="6.6993514e-06" ixz="8.5083076e-06" iyy="0.00010925596" iyz="-7.98084e-06" izz="0.00010827961" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -172,10 +181,11 @@
     </collision>
   </link>
   <link name="h3larm_shoulder_p">
+    <!-- inertia recomputed by urdfeus: all-zero inertia tensor -->
     <inertial>
       <origin xyz="-0.0169893 -0.000287019 0.0259877" rpy="0 0 0" />
       <mass value="0.05" />
-      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+      <inertia ixx="6.8662114e-05" ixy="1.4956894e-07" ixz="-2.1273999e-05" iyy="0.00015524791" iyz="1.2958221e-06" izz="0.00010912778" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -191,10 +201,11 @@
     </collision>
   </link>
   <link name="h3larm_elbow_p">
+    <!-- inertia recomputed by urdfeus: all-zero inertia tensor -->
     <inertial>
       <origin xyz="-0.0389702 2.576881e-18 -0.0150484" rpy="0 0 0" />
       <mass value="0.1" />
-      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+      <inertia ixx="1.8073331e-05" ixy="1.0655237e-07" ixz="-8.8174129e-06" iyy="0.00019666989" iyz="2.1767001e-07" izz="0.00019470968" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -210,10 +221,11 @@
     </collision>
   </link>
   <link name="h3larm_wrist_r">
+    <!-- inertia recomputed by urdfeus: all-zero inertia tensor -->
     <inertial>
       <origin xyz="-0.00638476 7.866975e-19 0.0143166" rpy="0 0 0" />
       <mass value="0.07" />
-      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+      <inertia ixx="5.457482e-05" ixy="-7.7523881e-08" ixz="-3.7363428e-06" iyy="5.1473139e-05" iyz="-1.6152463e-07" izz="1.8438947e-05" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -229,10 +241,11 @@
     </collision>
   </link>
   <link name="h3larm_hand_y">
+    <!-- inertia recomputed by urdfeus: all-zero inertia tensor -->
     <inertial>
       <origin xyz="-0.00117482 0.0318335 5.383698e-18" rpy="0 0 0" />
       <mass value="0.01" />
-      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+      <inertia ixx="6.1298109e-06" ixy="1.1327784e-07" ixz="9.0888132e-24" iyy="1.9975765e-06" iyz="-7.412638e-23" izz="4.4353679e-06" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -248,10 +261,11 @@
     </collision>
   </link>
   <link name="h3head_neck_y">
+    <!-- inertia recomputed by urdfeus: all-zero inertia tensor -->
     <inertial>
       <origin xyz="2.448468e-19 -0.00270396 0.071242" rpy="0 0 0" />
       <mass value="0.05" />
-      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+      <inertia ixx="2.404826e-05" ixy="-1.2490877e-21" ixz="-1.7985385e-21" iyy="1.7774908e-05" iyz="-3.0317203e-21" izz="1.3480511e-05" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -267,10 +281,11 @@
     </collision>
   </link>
   <link name="h3head_neck_r">
+    <!-- inertia recomputed by urdfeus: all-zero inertia tensor -->
     <inertial>
       <origin xyz="-1.8437e-18 -0.0136353 0.0295903" rpy="0 0 0" />
       <mass value="0.05" />
-      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+      <inertia ixx="4.3940443e-05" ixy="-1.8107238e-21" ixz="-1.9811358e-21" iyy="2.3621283e-05" iyz="-4.2652275e-06" izz="3.7836454e-05" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -286,10 +301,11 @@
     </collision>
   </link>
   <link name="h3head_neck_p">
+    <!-- inertia recomputed by urdfeus: all-zero inertia tensor -->
     <inertial>
       <origin xyz="-0.0322712 -0.000497244 -1.696767e-17" rpy="0 0 0" />
       <mass value="0.25" />
-      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+      <inertia ixx="0.00072352041" ixy="-2.7093209e-07" ixz="-2.1196173e-06" iyy="0.00044284431" iyz="1.8233355e-07" izz="0.00039369193" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />

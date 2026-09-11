@@ -685,10 +685,11 @@
     </collision>
   </link>
   <link name="head_necklink4">
+    <!-- inertia recomputed by urdfeus: all-zero inertia tensor -->
     <inertial>
       <origin xyz="0.0062281 -3.869592e-20 0.00075" rpy="0 0 0" />
       <mass value="0.022" />
-      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+      <inertia ixx="1.8745833e-07" ixy="1.0073776e-21" ixz="4.8871511e-22" iyy="2.9374583e-06" iyz="2.4524011e-23" izz="3.1166667e-06" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />

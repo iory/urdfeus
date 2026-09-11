@@ -20,10 +20,11 @@
     </collision>
   </link>
   <link name="rleg_human_crotch_yaw">
+    <!-- inertia recomputed by urdfeus: smallest principal moment 1e-09 kg*m^2 is too small for 4 kg spread over 0.45 m -->
     <inertial>
       <origin xyz="-1.174932e-17 -2.904945e-19 0.0523018" rpy="0 0 0" />
       <mass value="4" />
-      <inertia ixx="0.01094191" ixy="-1.365245e-35" ixz="2.458043e-18" iyy="0.01094191" iyz="6.077352e-20" izz="1e-09" />
+      <inertia ixx="0.035749538" ixy="-8.4402155e-19" ixz="3.2812046e-19" iyy="0.035749533" iyz="-1.2248954e-09" izz="0.015554082" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -58,10 +59,11 @@
     </collision>
   </link>
   <link name="rleg_human_crotch_pitch">
+    <!-- inertia recomputed by urdfeus: smallest principal moment 1e-09 kg*m^2 is too small for 5 kg spread over 0.663 m -->
     <inertial>
       <origin xyz="-1.008586e-17 8.830346e-18 -0.203495" rpy="0 0 0" />
       <mass value="5" />
-      <inertia ixx="0.207052" ixy="4.45308e-34" ixz="-1.026213e-17" iyy="0.207052" iyz="8.984677e-18" izz="1e-09" />
+      <inertia ixx="0.13708362" ixy="-1.1754456e-18" ixz="3.8093149e-19" iyy="0.13708363" iyz="2.7012774e-08" izz="0.019482184" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -77,10 +79,11 @@
     </collision>
   </link>
   <link name="rleg_human_knee_pitch">
+    <!-- inertia recomputed by urdfeus: smallest principal moment 1e-09 kg*m^2 is too small for 10 kg spread over 0.54 m -->
     <inertial>
       <origin xyz="-9.262524e-18 2.620133e-18 -0.132778" rpy="0 0 0" />
       <mass value="10" />
-      <inertia ixx="0.176301" ixy="2.426905e-34" ixz="-1.229863e-17" iyy="0.176301" iyz="3.47897e-18" izz="1e-09" />
+      <inertia ixx="0.16813271" ixy="-1.1777295e-18" ixz="-1.4645783e-20" iyy="0.16813275" iyz="-3.7082379e-08" izz="0.025899562" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -134,10 +137,11 @@
     </collision>
   </link>
   <link name="rleg_human_ankle_roll">
+    <!-- inertia recomputed by urdfeus: smallest principal moment 2.57e-09 kg*m^2 is too small for 5 kg spread over 0.364 m -->
     <inertial>
       <origin xyz="0.0301705 -4.344756e-19 -0.0225" rpy="0 0 0" />
       <mass value="5" />
-      <inertia ixx="0.002531252" ixy="6.554181e-20" ixz="0.003394185" iyy="0.007082559" iyz="-4.88785e-20" izz="0.004551309" />
+      <inertia ixx="0.0096043767" ixy="-3.4544259e-19" ixz="0.0024323647" iyy="0.027270654" iyz="2.4146632e-19" izz="0.02731944" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -153,10 +157,11 @@
     </collision>
   </link>
   <link name="lleg_human_crotch_yaw">
+    <!-- inertia recomputed by urdfeus: smallest principal moment 1e-09 kg*m^2 is too small for 4 kg spread over 0.45 m -->
     <inertial>
       <origin xyz="-1.174932e-17 -2.904945e-19 0.0523018" rpy="0 0 0" />
       <mass value="4" />
-      <inertia ixx="0.01094191" ixy="-1.365245e-35" ixz="2.458043e-18" iyy="0.01094191" iyz="6.077352e-20" izz="1e-09" />
+      <inertia ixx="0.035749538" ixy="-8.3783324e-19" ixz="-2.347529e-19" iyy="0.035749533" iyz="1.2248954e-09" izz="0.015554082" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -191,10 +196,11 @@
     </collision>
   </link>
   <link name="lleg_human_crotch_pitch">
+    <!-- inertia recomputed by urdfeus: smallest principal moment 1e-09 kg*m^2 is too small for 5 kg spread over 0.663 m -->
     <inertial>
       <origin xyz="-1.008586e-17 8.830346e-18 -0.203495" rpy="0 0 0" />
       <mass value="5" />
-      <inertia ixx="0.207052" ixy="4.45308e-34" ixz="-1.026213e-17" iyy="0.207052" iyz="8.984677e-18" izz="1e-09" />
+      <inertia ixx="0.13708362" ixy="-1.3578415e-18" ixz="7.1243072e-19" iyy="0.13708363" iyz="-2.7012774e-08" izz="0.019482184" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -210,10 +216,11 @@
     </collision>
   </link>
   <link name="lleg_human_knee_pitch">
+    <!-- inertia recomputed by urdfeus: smallest principal moment 1e-09 kg*m^2 is too small for 10 kg spread over 0.54 m -->
     <inertial>
       <origin xyz="-9.262524e-18 2.620133e-18 -0.132778" rpy="0 0 0" />
       <mass value="10" />
-      <inertia ixx="0.176301" ixy="2.426905e-34" ixz="-1.229863e-17" iyy="0.176301" iyz="3.47897e-18" izz="1e-09" />
+      <inertia ixx="0.16813271" ixy="-1.2954381e-18" ixz="-1.5225333e-18" iyy="0.16813275" iyz="3.7082379e-08" izz="0.025899562" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -267,10 +274,11 @@
     </collision>
   </link>
   <link name="lleg_human_ankle_roll">
+    <!-- inertia recomputed by urdfeus: smallest principal moment 2.57e-09 kg*m^2 is too small for 5 kg spread over 0.364 m -->
     <inertial>
       <origin xyz="0.0301705 -4.344756e-19 -0.0225" rpy="0 0 0" />
       <mass value="5" />
-      <inertia ixx="0.002531252" ixy="6.554181e-20" ixz="0.003394185" iyy="0.007082559" iyz="-4.88785e-20" izz="0.004551309" />
+      <inertia ixx="0.0096043767" ixy="-3.4544259e-19" ixz="0.0024323647" iyy="0.027270654" iyz="2.4146632e-19" izz="0.02731944" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -438,10 +446,11 @@
     </collision>
   </link>
   <link name="head_human_neck_pitch">
+    <!-- inertia recomputed by urdfeus: smallest principal moment 1e-09 kg*m^2 is too small for 0.9 kg spread over 0.287 m -->
     <inertial>
       <origin xyz="-5.533818e-18 -1.60124e-18 0.075" rpy="0 0 0" />
       <mass value="0.9" />
-      <inertia ixx="0.005062501" ixy="-7.974873e-36" ixz="3.735327e-19" iyy="0.005062501" iyz="1.080837e-19" izz="1e-09" />
+      <inertia ixx="0.0045298038" ixy="-3.2597395e-20" ixz="-1.0978984e-20" iyy="0.0045298038" iyz="2.8975462e-20" izz="0.0010496064" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -552,10 +561,11 @@
     </collision>
   </link>
   <link name="rarm_human_collar_yaw">
+    <!-- inertia recomputed by urdfeus: smallest principal moment 1e-09 kg*m^2 is too small for 7.5 kg spread over 0.453 m -->
     <inertial>
       <origin xyz="-4.094797e-18 4.905714e-18 -0.0661958" rpy="0 0 0" />
       <mass value="7.5" />
-      <inertia ixx="0.03286414" ixy="1.506593e-34" ixz="-2.032938e-18" iyy="0.03286414" iyz="2.435533e-18" izz="1e-09" />
+      <inertia ixx="0.058658261" ixy="-2.6331404e-18" ixz="1.1809152e-19" iyy="0.058658259" iyz="-8.8485196e-09" izz="0.040198113" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -571,10 +581,11 @@
     </collision>
   </link>
   <link name="rarm_human_shoulder_pitch">
+    <!-- inertia recomputed by urdfeus: smallest principal moment 1e-09 kg*m^2 is too small for 1 kg spread over 0.336 m -->
     <inertial>
       <origin xyz="-4.783143e-18 -0.085 1.872899e-17" rpy="0 0 0" />
       <mass value="1" />
-      <inertia ixx="0.007225001" ixy="-4.065672e-19" ixz="8.958346e-35" iyy="1e-09" iyz="1.591965e-18" izz="0.007225001" />
+      <inertia ixx="0.006796275" ixy="-0" ixz="-1.0633928e-19" iyy="0.001676537" iyz="4.244508e-20" izz="0.0067963095" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -609,10 +620,11 @@
     </collision>
   </link>
   <link name="rarm_human_shoulder_yaw">
+    <!-- inertia recomputed by urdfeus: smallest principal moment 1e-09 kg*m^2 is too small for 4.8 kg spread over 0.462 m -->
     <inertial>
       <origin xyz="-5.677576e-18 -2.682198e-18 -0.142745" rpy="0 0 0" />
       <mass value="4.8" />
-      <inertia ixx="0.09780512" ixy="-7.309624e-35" ixz="-3.890132e-18" iyy="0.09780512" iyz="-1.837775e-18" izz="1e-09" />
+      <inertia ixx="0.069534162" ixy="-3.5787889e-19" ixz="8.2754553e-19" iyy="0.069534151" iyz="-7.5772718e-10" izz="0.0069957115" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -628,10 +640,11 @@
     </collision>
   </link>
   <link name="rarm_human_elbow_pitch">
+    <!-- inertia recomputed by urdfeus: smallest principal moment 1e-09 kg*m^2 is too small for 4.5 kg spread over 0.405 m -->
     <inertial>
       <origin xyz="-4.154057e-18 4.145665e-19 -0.112542" rpy="0 0 0" />
       <mass value="4.5" />
-      <inertia ixx="0.05699604" ixy="7.749598e-36" ixz="-2.103783e-18" iyy="0.05699604" iyz="2.099533e-19" izz="1e-09" />
+      <inertia ixx="0.044682766" ixy="-2.8576206e-19" ixz="-6.9385528e-20" iyy="0.044682767" iyz="5.076985e-09" izz="0.0045410918" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -894,10 +907,11 @@
     </collision>
   </link>
   <link name="larm_human_collar_yaw">
+    <!-- inertia recomputed by urdfeus: smallest principal moment 1e-09 kg*m^2 is too small for 7.5 kg spread over 0.453 m -->
     <inertial>
       <origin xyz="-4.094797e-18 4.905714e-18 -0.0661958" rpy="0 0 0" />
       <mass value="7.5" />
-      <inertia ixx="0.03286414" ixy="1.506593e-34" ixz="-2.032938e-18" iyy="0.03286414" iyz="2.435533e-18" izz="1e-09" />
+      <inertia ixx="0.058658261" ixy="-2.3527606e-18" ixz="-2.7475884e-19" iyy="0.058658259" iyz="8.8485196e-09" izz="0.040198113" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -913,10 +927,11 @@
     </collision>
   </link>
   <link name="larm_human_shoulder_pitch">
+    <!-- inertia recomputed by urdfeus: smallest principal moment 1e-09 kg*m^2 is too small for 1 kg spread over 0.336 m -->
     <inertial>
       <origin xyz="-3.77669e-18 0.085 1.614809e-17" rpy="0 0 0" />
       <mass value="1" />
-      <inertia ixx="0.007225001" ixy="3.210187e-19" ixz="6.098633e-35" iyy="1e-09" iyz="-1.372588e-18" izz="0.007225001" />
+      <inertia ixx="0.006796275" ixy="1.5467531e-19" ixz="8.7004862e-20" iyy="0.001676537" iyz="-3.7853157e-20" izz="0.0067963095" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -951,10 +966,11 @@
     </collision>
   </link>
   <link name="larm_human_shoulder_yaw">
+    <!-- inertia recomputed by urdfeus: smallest principal moment 1e-09 kg*m^2 is too small for 4.8 kg spread over 0.462 m -->
     <inertial>
       <origin xyz="-5.677576e-18 -2.682198e-18 -0.142745" rpy="0 0 0" />
       <mass value="4.8" />
-      <inertia ixx="0.09780512" ixy="-7.309624e-35" ixz="-3.890132e-18" iyy="0.09780512" iyz="-1.837775e-18" izz="1e-09" />
+      <inertia ixx="0.069534162" ixy="-3.7577282e-19" ixz="-4.7687034e-19" iyy="0.069534151" iyz="7.5772718e-10" izz="0.0069957115" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -970,10 +986,11 @@
     </collision>
   </link>
   <link name="larm_human_elbow_pitch">
+    <!-- inertia recomputed by urdfeus: smallest principal moment 1e-09 kg*m^2 is too small for 4.5 kg spread over 0.405 m -->
     <inertial>
       <origin xyz="-4.154057e-18 4.145665e-19 -0.112542" rpy="0 0 0" />
       <mass value="4.5" />
-      <inertia ixx="0.05699604" ixy="7.749598e-36" ixz="-2.103783e-18" iyy="0.05699604" iyz="2.099533e-19" izz="1e-09" />
+      <inertia ixx="0.044682766" ixy="-2.491258e-19" ixz="1.8922899e-20" iyy="0.044682767" iyz="-5.076985e-09" izz="0.0045410918" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
