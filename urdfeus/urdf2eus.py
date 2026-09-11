@@ -1,4 +1,5 @@
 import datetime
+import hashlib
 import os
 import platform
 import re
@@ -380,71 +381,70 @@ def print_geometry(link, simplify_vertex_clustering_voxel_size=None, fp=sys.stdo
 #: Bumped whenever what we cache changes, so entries written by an older
 #: urdfeus are ignored rather than silently reused.  Version 2 keeps the
 #: vertex normals loaded from the mesh file alongside the split geometry.
-_MESH_CACHE_VERSION = 2
+#: Bumped whenever the key's meaning changes, so entries written by an older
+#: urdfeus can never be mistaken for current ones. 3 is the first
+#: content-addressed key: 2 and earlier hashed three sampled vertices, which
+#: collided between distinct meshes of the same size -- two mirrored cupboard
+#: doors, say -- and silently gave one link the other's geometry.
+_MESH_CACHE_VERSION = 3
 
 
 def _compute_mesh_cache_key(mesh, material=None):
-    """Compute a fast cache key for mesh based on sampled geometry.
-
-    Uses Python's built-in hash() for speed instead of cryptographic hashing.
-    Samples large arrays to balance accuracy with performance.
-
-    Note: Avoids accessing face_colors property which is computationally expensive.
-    Instead uses vertex/face geometry and a hash of the color array if available.
+    """Return a content hash of ``mesh``, used to emit shared geometry once.
 
     Parameters
     ----------
     mesh : trimesh.Trimesh
-        Mesh to compute cache key for.
-    material : any, optional
-        An optional material identifier to include in the hash.
+        Mesh to key.
+    material : urdf material or None
+        Material assigned to the link, when ``use_urdf_material`` is on. Folded
+        into the key so that geometrically identical meshes carrying different
+        materials stay distinct.
 
     Returns
     -------
     int
-        Fast hash value for cache key.
+        Non-negative 64-bit digest of the mesh's geometry and colour.
+
+    Notes
+    -----
+    The whole vertex and face arrays are digested rather than a sample of them.
+    A key that reads three numbers collides between meshes that differ
+    everywhere else -- jskeus' 73b2 cupboard has two mirrored doors of equal
+    size, which collided -- and a collision here does not cost time, it puts
+    the wrong geometry on a link. blake2b over the raw buffers costs
+    microseconds at the mesh sizes urdfeus converts.
+
+    The digest is also stable across processes, which ``hash()`` is not for
+    bytes: :mod:`urdfeus.mesh_cache` names its files after the key, so a
+    per-process key silently never hits. It is kept non-negative because that
+    module files entries under ``abs(key)``, which would let ``+n`` and ``-n``
+    share one cache file.
     """
-    # Start with vertex and face counts for quick differentiation
-    h = hash((_MESH_CACHE_VERSION, len(mesh.vertices), len(mesh.faces)))
+    digest = hashlib.blake2b(digest_size=8)
+    digest.update(str(_MESH_CACHE_VERSION).encode())
+    digest.update(np.ascontiguousarray(mesh.vertices, dtype=np.float64).tobytes())
+    digest.update(np.ascontiguousarray(mesh.faces, dtype=np.int64).tobytes())
 
-    # Sample vertices (hash first, middle, last)
-    vertices = mesh.vertices.flatten()
-    if len(vertices) > 30:
-        sample_indices = [0, len(vertices)//2, len(vertices)-1]
-        h = hash((h, tuple(vertices[sample_indices])))
-    else:
-        h = hash((h, vertices.tobytes()))
-
-    # Sample faces similarly
-    faces = mesh.faces.flatten()
-    if len(faces) > 30:
-        sample_indices = [0, len(faces)//2, len(faces)-1]
-        h = hash((h, tuple(faces[sample_indices])))
-    else:
-        h = hash((h, faces.tobytes()))
-
-    # Include color information but avoid expensive face_colors property
-    # Check for the underlying data directly to avoid computation
-    if hasattr(mesh.visual, '_data') and hasattr(mesh.visual._data, 'get'):
-        # Try to get face colors from cached data if available
-        face_colors = mesh.visual._data.get('face_colors')
-        if face_colors is not None:
-            h = hash((h, face_colors.tobytes()))
-    elif hasattr(mesh.visual, 'main_color'):
-        # Fallback: use main_color which is much faster
+    # Colour, without touching the face_colors property: it is computed on
+    # demand and that is expensive on a dense mesh.
+    face_colors = None
+    if hasattr(mesh.visual, "_data") and hasattr(mesh.visual._data, "get"):
+        face_colors = mesh.visual._data.get("face_colors")
+    if face_colors is not None:
+        digest.update(np.ascontiguousarray(face_colors).tobytes())
+    elif hasattr(mesh.visual, "main_color"):
         try:
-            main_color = mesh.visual.main_color
-            h = hash((h, tuple(main_color)))
+            digest.update(np.ascontiguousarray(mesh.visual.main_color).tobytes())
         except Exception:
             pass
 
-    # If material is provided, factor it into the hash key.
-    # This allows distinguishing meshes that are geometrically identical
-    # but have different materials assigned (e.g., when use_urdf_material=True).
     if (material is not None) and (material.color is not None):
-        h = hash((h, tuple(material.color), material.texture))
+        digest.update(
+            np.ascontiguousarray(material.color, dtype=np.float64).tobytes())
+        digest.update(str(material.texture).encode())
 
-    return h
+    return int.from_bytes(digest.digest(), "big")
 
 
 def _remove_duplicate_vertices(vertices, faces, tolerance=1e-6, normals=None):
