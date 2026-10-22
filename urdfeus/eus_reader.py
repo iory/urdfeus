@@ -6,7 +6,8 @@ arrays for the ``#f(...)`` / ``#i(...)`` / ``#2f((...))`` vector and matrix
 literals.
 
 It is a *reader*, not an evaluator: no macro expansion, no package handling, no
-``#.`` evaluation. That is enough for the machine-generated models
+``#.`` evaluation. ``#+``/``#-`` conditionals are resolved against a fixed
+feature list (:data:`DEFAULT_FEATURES`). That is enough for the machine-generated models
 :mod:`urdfeus.eus_parse` walks, and anything it does not recognise raises
 :class:`EusReadError` rather than being skipped.
 """
@@ -75,6 +76,11 @@ class Dotted:
 #: A token that ends a symbol.
 _DELIM = set(" \t\r\n()\";")
 
+#: Features ``#+``/``#-`` test against: those of the 64-bit jskeus irteusgl
+#: the generated models are loaded into. The conditionals urdfeus emits only
+#: pick GL calls inside ``:draw`` methods, which the parser never runs.
+DEFAULT_FEATURES = frozenset((":jsk", ":x86_64", ":aarch64"))
+
 _INT_RE = re.compile(r"^[+-]?\d+\.?$")
 _FLOAT_RE = re.compile(r"^[+-]?(\d+\.\d*|\.\d+|\d+)([eEdD][+-]?\d+)?$")
 
@@ -97,9 +103,10 @@ def _atom(text):
 class Reader:
     """Reads forms out of one EusLisp source string."""
 
-    def __init__(self, text, path=None):
+    def __init__(self, text, path=None, features=DEFAULT_FEATURES):
         self.text = text
         self.path = path
+        self.features = features
         self.pos = 0
         self.length = len(text)
 
@@ -123,8 +130,30 @@ class Reader:
                 if end < 0:
                     raise self._error("unterminated block comment")
                 self.pos = end + 2
+            elif c == "#" and text[self.pos + 1:self.pos + 2] in ("+", "-"):
+                # A read-time conditional reads as nothing when it keeps the
+                # next form, and swallows that form when it does not.
+                keep_if = text[self.pos + 1] == "+"
+                self.pos += 2
+                feature = self.read()
+                if self._feature_p(feature) != keep_if:
+                    self.read()
             else:
                 return
+
+    def _feature_p(self, expr):
+        """Evaluate a ``#+``/``#-`` feature expression."""
+        if isinstance(expr, Symbol):
+            return expr.name in self.features
+        if isinstance(expr, list) and expr and isinstance(expr[0], Symbol):
+            op, args = expr[0].name, expr[1:]
+            if op in ("or", ":or"):
+                return any(self._feature_p(a) for a in args)
+            if op in ("and", ":and"):
+                return all(self._feature_p(a) for a in args)
+            if op in ("not", ":not") and len(args) == 1:
+                return not self._feature_p(args[0])
+        raise self._error(f"bad feature expression {expr!r}")
 
     def _read_string(self):
         # self.pos is at the opening quote
