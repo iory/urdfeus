@@ -71,6 +71,17 @@ class TestEusReader(unittest.TestCase):
         self.assertEqual(read_forms(";; comment\n(a) ; trailing\n"),
                          [[Symbol("a")]])
 
+    def test_feature_conditionals(self):
+        # The shape urdfeus-glvertices.l uses inside :draw.
+        forms = read_forms("""(a #+:jsk b #-:jsk c
+ #+(or :x86_64 :aarch64) d #-(or :x86_64 :aarch64) e
+ #+(and :jsk (not :nofeature)) f)""")
+        self.assertEqual(forms, [[Symbol("a"), Symbol("b"), Symbol("d"),
+                                  Symbol("f")]])
+
+    def test_conditional_at_end_of_list(self):
+        self.assertEqual(read_forms("(a #-:jsk (b c))"), [[Symbol("a")]])
+
 
 @unittest.skipUnless(osp.isfile(sample_model), "sample model not present")
 class TestParseGeneratedModel(unittest.TestCase):
@@ -115,6 +126,32 @@ class TestParseGeneratedModel(unittest.TestCase):
     def test_unknown_constructor(self):
         with self.assertRaises(EusParseError):
             parse_eus_model(sample_model, constructor="no-such-thing")
+
+
+class TestParseFreshlyGeneratedModel(unittest.TestCase):
+    """The static parser on what the current urdf2eus writes.
+
+    The checked-in sample predates the embedded urdfeus-glvertices template,
+    whose ``#+``/``#-`` conditionals the reader used to reject, and the
+    ``:all-links`` the newer euscollada-robot template runs in ``:init-ending``.
+    """
+
+    def test_fetch(self):
+        from skrobot.data import fetch_urdfpath
+
+        from urdfeus.urdf2eus import urdf2eus
+
+        tmp = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, tmp, ignore_errors=True)
+        eus_path = osp.join(tmp, "fetch.l")
+        with open(eus_path, "w") as f:
+            urdf2eus(fetch_urdfpath(),
+                     osp.join(osp.dirname(__file__), "fetch.yaml"), fp=f)
+        data = parse_eus_model(eus_path)
+        self.assertEqual(data["robot_name"], "fetch")
+        self.assertGreater(len(data["joints"]), 0)
+        if is_irteusgl_available():
+            _assert_dumps_match(self, dump_eus_model(eus_path), data)
 
 
 def _assert_dumps_match(case, reference, parsed):

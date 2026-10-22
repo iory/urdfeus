@@ -909,6 +909,8 @@ class Interpreter:
             return obj.name
         if name == ":parent":
             return obj.parent
+        if name == ":descendants":
+            return list(obj.descendants)
         if name == ":put":
             obj.properties[_sym(args[0])] = args[1] if len(args) > 1 else None
             return obj.properties[_sym(args[0])]
@@ -1674,6 +1676,10 @@ _simple("cadr", lambda seq: seq[1] if seq and len(seq) > 1 else None)
 _simple("caddr", lambda seq: seq[2] if seq and len(seq) > 2 else None)
 _simple("first", lambda seq: seq[0] if seq else None)
 _simple("rest", lambda seq: list(seq[1:]) if seq else None)
+_simple("cons", lambda car, cdr: [car] + cdr if isinstance(cdr, list)
+        else [car] if cdr is None else Dotted(car, cdr))
+# last returns the last cons, not the last element.
+_simple("last", lambda seq: [seq[-1]] if seq else None)
 _simple("nth", lambda n, seq: seq[n] if seq is not None and n < len(seq)
         else None)
 _simple("elt", lambda seq, n: seq[n])
