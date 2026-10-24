@@ -245,3 +245,19 @@ jobs:
       uses: pypa/gh-action-pypi-publish@master
       with:
         password: ${{ secrets.PYPI_TOKEN }}
+
+  # The release merge and tag are pushed with GITHUB_TOKEN, and a push made with
+  # that token starts no other workflow, so pages.yml never sees them. A
+  # workflow_dispatch is the exception, so the page is redeployed from here to
+  # carry the code that was just published.
+  pages:
+    name: Redeploy the browser converter
+    needs: pypi
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+    - name: Dispatch pages.yml on main
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: gh workflow run pages.yml --repo "${{ github.repository }}" --ref main
