@@ -186,14 +186,35 @@ jobs:
     runs-on: ubuntu-latest
     needs: auto-merge
     if: needs.auto-merge.outputs.release == 'true'
+    outputs:
+      sha: ${{ steps.merged.outputs.sha }}
     steps:
+      # This job runs in the pull_request event, whose default checkout is the
+      # PR's temporary test merge (refs/pull/N/merge). Tagging that put every
+      # release on a commit that is not in main's history. Tag the commit the
+      # squash merge actually created on main instead.
+      - name: Find the commit the merge created on main
+        id: merged
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          sha=$(gh pr view "${{ github.event.pull_request.number }}" \
+            --repo "${{ github.repository }}" --json mergeCommit --jq '.mergeCommit.oid // empty')
+          if [ -z "$sha" ]; then
+            echo "PR #${{ github.event.pull_request.number }} has no merge commit; not tagging" >&2
+            exit 1
+          fi
+          echo "merge commit: $sha"
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+
       - uses: actions/checkout@v4
         with:
+          ref: ${{ steps.merged.outputs.sha }}
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
@@ -237,13 +258,14 @@ jobs:
     needs: tag-release
     runs-on: ubuntu-latest
     steps:
+    # Build exactly the tagged commit; main may already have moved on.
     - uses: actions/checkout@v4
       with:
-        ref: main
+        ref: ${{ needs.tag-release.outputs.sha }}
         fetch-depth: 0
         token: ${{ secrets.GITHUB_TOKEN }}
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: '3.x'
     - name: Install publishing dependencies
