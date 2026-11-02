@@ -1,0 +1,21 @@
+# version and date-released are left out on purpose: Zenodo takes the version
+# from the release tag, and a value written here would go stale at every bump.
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "urdfeus: URDF ⇄ EusLisp converter"
+abstract: >-
+  A Python library for converting between URDF and EusLisp robot models in
+  both directions (urdf2eus and eus2urdf), also available as an in-browser
+  converter.
+authors:
+  - family-names: Yanokura
+    given-names: Iori
+license: MIT
+repository-code: "https://github.com/iory/urdfeus"
+url: "https://iory.github.io/urdfeus/"
+keywords:
+  - urdf
+  - euslisp
+  - robotics
+  - ros
