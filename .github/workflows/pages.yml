@@ -66,6 +66,35 @@ jobs:
           cp -r web/dist _site/convert
           echo "assembled $(find _site -type f | wc -l) files"
 
+      # Cloudflare Web Analytics, inserted into the assembled copies rather than
+      # docs/ and web/ so that local builds and dev servers carry no beacon and
+      # never count their own visits. The token is printed in every public page,
+      # so it is not a secret; it lives here only, not in each HTML file.
+      - name: Insert the Cloudflare Web Analytics beacon
+        env:
+          CF_BEACON_TOKEN: "63496313d65d4ea9b205a875aad06f84"
+        run: |
+          python - <<'EOF'
+          import json
+          import os
+          import pathlib
+
+          token = os.environ["CF_BEACON_TOKEN"]
+          tag = ('<script defer src="https://static.cloudflareinsights.com/beacon.min.js"'
+                 f" data-cf-beacon='{json.dumps({'token': token})}'></script>")
+          pages = sorted(pathlib.Path("_site").rglob("*.html"))
+          for page in pages:
+              html = page.read_text()
+              if "cloudflareinsights" in html:
+                  continue
+              if html.count("</head>") != 1:
+                  raise SystemExit(f"{page}: expected exactly one </head>")
+              page.write_text(html.replace("</head>", tag + "\n</head>", 1))
+              print(f"beacon inserted: {page}")
+          if not pages:
+              raise SystemExit("no HTML pages found under _site")
+          EOF
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
