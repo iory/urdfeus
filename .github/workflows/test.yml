@@ -220,6 +220,18 @@ jobs:
           git tag "v${{ steps.get_version.outputs.version }}"
           git push origin "v${{ steps.get_version.outputs.version }}"
 
+      # Zenodo archives a version and mints its DOI on a published GitHub
+      # Release, not on a bare tag. A release created with GITHUB_TOKEN starts
+      # no workflow, but repository webhooks such as Zenodo's still fire.
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "v${{ steps.get_version.outputs.version }}" \
+            --verify-tag \
+            --title "v${{ steps.get_version.outputs.version }}" \
+            --generate-notes
+
   pypi:
     name: Release To PyPi
     needs: tag-release
