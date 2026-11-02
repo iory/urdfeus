@@ -3,6 +3,7 @@
 ![PyPI](https://img.shields.io/pypi/v/urdfeus.svg)
 ![Python Versions](https://img.shields.io/pypi/pyversions/urdfeus.svg)
 [![Build Status](https://github.com/iory/urdfeus/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/iory/urdfeus/actions)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23880883.svg)](https://doi.org/10.5281/zenodo.23880883)
 
 [English](README.md) | 日本語
 
@@ -416,6 +417,20 @@ YAMLファイルでグループを定義すると、EusLispで以下のような
 - scikit-robot
 - trimesh
 - numpy
+
+## 引用
+
+研究でurdfeusを使った場合は引用をお願いします。下のDOIは常に[Zenodo](https://doi.org/10.5281/zenodo.23880883)上の最新版を指します（各リリースにも個別のDOIがあります）。GitHubの「Cite this repository」ボタンからも他の形式で取得できます。
+
+```bibtex
+@software{urdfeus,
+  author    = {Yanokura, Iori and Matsuo, Kento and Yamaguchi, Naoya},
+  title     = {urdfeus: URDF ⇄ EusLisp converter},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.23880883},
+  url       = {https://doi.org/10.5281/zenodo.23880883}
+}
+```
 
 ## ライセンス
 

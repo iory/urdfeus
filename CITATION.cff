@@ -16,6 +16,8 @@ authors:
   - family-names: Yamaguchi
     given-names: Naoya
 license: MIT
+# Concept DOI: resolves to the latest version. Each release also gets its own.
+doi: 10.5281/zenodo.23880883
 repository-code: "https://github.com/iory/urdfeus"
 url: "https://iory.github.io/urdfeus/"
 keywords:

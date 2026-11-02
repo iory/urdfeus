@@ -3,6 +3,7 @@
 ![PyPI](https://img.shields.io/pypi/v/urdfeus.svg)
 ![Python Versions](https://img.shields.io/pypi/pyversions/urdfeus.svg)
 [![Build Status](https://github.com/iory/urdfeus/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/iory/urdfeus/actions)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23880883.svg)](https://doi.org/10.5281/zenodo.23880883)
 
 English | [日本語](https://github.com/iory/urdfeus/blob/main/README.ja.md)
 
@@ -414,6 +415,20 @@ Once groups are defined in the YAML file, methods like the following become avai
 - scikit-robot
 - trimesh
 - numpy
+
+## Citation
+
+If you use urdfeus in your research, please cite it. The DOI below always resolves to the latest version on [Zenodo](https://doi.org/10.5281/zenodo.23880883), where each release also has its own DOI. GitHub's "Cite this repository" button gives the same information in other formats.
+
+```bibtex
+@software{urdfeus,
+  author    = {Yanokura, Iori and Matsuo, Kento and Yamaguchi, Naoya},
+  title     = {urdfeus: URDF ⇄ EusLisp converter},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.23880883},
+  url       = {https://doi.org/10.5281/zenodo.23880883}
+}
+```
 
 ## License
 
