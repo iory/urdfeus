@@ -11,6 +11,10 @@ abstract: >-
 authors:
   - family-names: Yanokura
     given-names: Iori
+  - family-names: Matsuo
+    given-names: Kento
+  - family-names: Yamaguchi
+    given-names: Naoya
 license: MIT
 repository-code: "https://github.com/iory/urdfeus"
 url: "https://iory.github.io/urdfeus/"
