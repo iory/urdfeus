@@ -8,7 +8,7 @@ English | [日本語](https://github.com/iory/urdfeus/blob/main/README.ja.md)
 
 A Python library for converting between URDF and EusLisp, in both directions.
 
-[![eus2urdf gallery](docs/eus2urdf-gallery.gif)](https://iory.github.io/urdfeus/)
+[![eus2urdf gallery](https://raw.githubusercontent.com/iory/urdfeus/main/docs/eus2urdf-gallery.gif)](https://iory.github.io/urdfeus/)
 
 Every jskeus model (robots, objects and scenes) converted with `eus2urdf` can be browsed, posed and downloaded in the browser → **<https://iory.github.io/urdfeus/>**
 
@@ -46,7 +46,7 @@ Mesh simplification with `--voxel-size` depends on open3d and is not available i
 
 `urdfeus` converts robot description files (URDF) into EusLisp robot model definitions, so that URDF files used in ROS can be used from the EusLisp programming environment.
 
-![URDF to EusLisp conversion](docs/urdf2eus-image.png)
+![URDF to EusLisp conversion](https://raw.githubusercontent.com/iory/urdfeus/main/docs/urdf2eus-image.png)
 
 ## Installation
 
