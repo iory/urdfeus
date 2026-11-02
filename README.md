@@ -4,64 +4,66 @@
 ![Python Versions](https://img.shields.io/pypi/pyversions/urdfeus.svg)
 [![Build Status](https://github.com/iory/urdfeus/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/iory/urdfeus/actions)
 
-URDF ⇄ EusLisp を相互変換するPythonライブラリ
+English | [日本語](https://github.com/iory/urdfeus/blob/main/README.ja.md)
+
+A Python library for converting between URDF and EusLisp, in both directions.
 
 [![eus2urdf gallery](docs/eus2urdf-gallery.gif)](https://iory.github.io/urdfeus/)
 
-`eus2urdf`で変換したjskeusの全モデル（ロボット・物体・シーン）をブラウザで閲覧・操作・ダウンロードできます → **<https://iory.github.io/urdfeus/>**
+Every jskeus model (robots, objects and scenes) converted with `eus2urdf` can be browsed, posed and downloaded in the browser → **<https://iory.github.io/urdfeus/>**
 
-## ブラウザで変換する（インストール不要）
+## Convert in the browser (no installation)
 
-手元のモデルをその場で相互変換できます → **<https://iory.github.io/urdfeus/convert/>**
+Convert your own models on the spot → **<https://iory.github.io/urdfeus/convert/>**
 
-`urdfeus`がWebAssembly（Pyodide）として動くため、Pythonの環境構築が要りません。変換はすべてブラウザ内で完結するので、**ファイルはどこにもアップロードされません**。
+`urdfeus` runs as WebAssembly (Pyodide), so there is no Python environment to set up. Conversion happens entirely inside the browser: **your files are never uploaded anywhere**.
 
 ### URDF → EusLisp
 
-URDFをドラッグ&ドロップすると必要なメッシュが一覧表示されるので、「Select files」か「Select directory」でメッシュを渡してください。ファイル名を手がかりに`package://`のパスへ自動で突き合わせるので、メッシュの入ったフォルダごと指定して構いません。URDFとメッシュが同じフォルダにあるなら、フォルダごとドロップするだけで済みます。
+Drag and drop a URDF and the page lists the meshes it needs; hand them over with "Select files" or "Select directory". Meshes are matched to their `package://` paths by file name, so you can simply select the whole folder that contains them. If the URDF and its meshes live in the same folder, dropping that folder is all it takes.
 
 ### EusLisp → URDF
 
-`.l`をドロップすると、その場でURDFパッケージに変換し**3Dで表示**します。関節はスライダで動かせ、`package.xml` + `urdf/` + `meshes/`一式をzipでダウンロードできます。生成モデル（`euscollada`/`urdfeus`のロボット、jskeusの物体モデル）は幾何情報をファイル内に持っているので、メッシュを別途渡す必要はありません。
+Drop a `.l` file and it is converted to a URDF package and **shown in 3D** right away. Joints can be moved with sliders, and the whole `package.xml` + `urdf/` + `meshes/` set can be downloaded as a zip. Generated models (robots from `euscollada`/`urdfeus`, and jskeus object models) carry their geometry inside the file, so no separate meshes are needed.
 
-**GitHubのURLを貼るだけでも変換できます。** ファイルページのURL（`https://github.com/<owner>/<repo>/blob/<ref>/<path>.l`）を貼ると`raw.githubusercontent.com`に読み替えて取得します。リンクをドロップしても同じです。
+**You can also just paste a GitHub URL.** Paste a file page URL (`https://github.com/<owner>/<repo>/blob/<ref>/<path>.l`) and it is rewritten to `raw.githubusercontent.com` and fetched. Dropping the link works too.
 
-`?url=`を付ければ、開いた時点で取得と変換まで走ります（URLはパーセントエンコードしてください）。モデルをそのまま共有できます：
+Add `?url=` and the page fetches and converts the model as soon as it opens (percent-encode the URL). This makes a model directly shareable:
 
 ```
 https://iory.github.io/urdfeus/convert/?url=https%3A%2F%2Fgithub.com%2Fowner%2Frepo%2Fblob%2Fmain%2Frobot.l
 ```
 
-取得はブラウザからの直接アクセスなので、CORSを許可しているホストに限られます（GitHubのrawは許可しています）。それ以外のURLは失敗するので、ファイルを落としてドロップしてください。
+The file is fetched directly by the browser, so only hosts that allow CORS work (GitHub raw does). Other URLs will fail; download the file and drop it instead.
 
-`irteusgl`はネイティブプログラムなのでブラウザでは動きません。代わりに`.l`を直接読む[静的パーサ](#eus2urdfのバックエンド)を使います。コードでリンクを組み立てるモデルや、他ファイルを`load`するシーンはこの経路では読めないので、[インストール](#インストール)した`eus2urdf`（irteusgl経由）を使ってください。
+`irteusgl` is a native program and cannot run in the browser. Instead, a [static parser](#eus2urdf-backends) reads the `.l` file directly. Models that build their links in code, and scenes that `load` other files, cannot be read this way; use an [installed](#installation) `eus2urdf` (which goes through irteusgl) for those.
 
-初回のみPython実行環境（約33MB）を取得するため数秒かかります。2回目以降はブラウザのキャッシュが効きます。
+The first visit downloads a Python runtime (about 33 MB), so it takes a few seconds. After that the browser cache kicks in.
 
-`--voxel-size`によるメッシュ簡素化はopen3dに依存するため、ブラウザでは使えません。
+Mesh simplification with `--voxel-size` depends on open3d and is not available in the browser.
 
-## 概要
+## Overview
 
-`urdfeus`は、ロボット記述ファイル（URDF）をEusLispのロボットモデル定義に変換するツールです。ROS環境で使用されるURDFファイルを、EusLispプログラミング環境で利用できる形式に変換できます。
+`urdfeus` converts robot description files (URDF) into EusLisp robot model definitions, so that URDF files used in ROS can be used from the EusLisp programming environment.
 
 ![URDF to EusLisp conversion](docs/urdf2eus-image.png)
 
-## インストール
+## Installation
 
-Python 3.10以降が必要です。
+Python 3.10 or later is required.
 
-### uvを使う場合（推奨）
+### With uv (recommended)
 
-[uv](https://docs.astral.sh/uv/)は高速なPythonパッケージマネージャです。コマンドとして使うだけなら`uv tool`が最も確実です：
+[uv](https://docs.astral.sh/uv/) is a fast Python package manager. If you only need the commands, `uv tool` is the most reliable option:
 
 ```bash
 uv tool install urdfeus
 uv tool upgrade urdfeus
 ```
 
-隔離された環境に入り、`~/.local/bin`のshimが絶対パスのインタプリタを指すので、カレントディレクトリにあるチェックアウトに影響されません。
+It installs into an isolated environment, and the shim in `~/.local/bin` points at an interpreter by absolute path, so a checkout in the current directory cannot interfere with it.
 
-ライブラリとして使う場合は仮想環境に：
+To use it as a library, install it into a virtual environment:
 
 ```bash
 uv venv
@@ -70,19 +72,19 @@ source .venv/bin/activate  # Linux/macOS
 uv pip install urdfeus
 ```
 
-オプションの依存関係も含める場合：
+With the optional dependencies:
 
 ```bash
 uv pip install "urdfeus[all]"
 ```
 
-`[all]`が入れるopen3dはPython 3.12以下でのみインストールされます（open3dがcp313以降のホイールを配布していないため）。3.13以降では`urdfeus`本体だけが入り、メッシュ簡素化（`--voxel-size`）が使えません。
+The open3d pulled in by `[all]` is only installed on Python 3.12 and earlier (open3d does not ship wheels for cp313 and later). On 3.13 and later only `urdfeus` itself is installed, and mesh simplification (`--voxel-size`) is unavailable.
 
-### uvxを使う場合（PATHや環境を汚したくない場合）
+### With uvx (to keep your PATH and environments clean)
 
-インストールせずに一度だけ変換したい、`~/.local/bin`にshimを置きたくない、という場合は`uvx`が使えます。実行のたびに一時的な隔離環境が作られ、終わったらキャッシュ以外は残りません。
+If you want a one-off conversion without installing anything, or do not want a shim in `~/.local/bin`, use `uvx`. Each run creates a temporary isolated environment, and nothing but the cache is left behind.
 
-コマンド名がパッケージ名と違うので`--from urdfeus`が必要です：
+The command names differ from the package name, so `--from urdfeus` is required:
 
 ```bash
 uvx --from urdfeus urdf2eus robot.urdf robot.l
@@ -90,121 +92,121 @@ uvx --from urdfeus eus2urdf robot.l output_package_dir
 uvx --from urdfeus urdf2eus --doctor
 ```
 
-オプションの依存関係が要る場合（`--voxel-size`など）：
+If you need the optional dependencies (e.g. for `--voxel-size`):
 
 ```bash
 uvx --from "urdfeus[all]" urdf2eus robot.urdf robot.l --voxel-size 0.01
 ```
 
-バージョンを固定したいときは`--from "urdfeus==1.2.1"`のように書けます。`ROS_PACKAGE_PATH`などの環境変数はそのまま引き継がれるので、`package://`の解決も通常どおり動きます。
+To pin a version, write `--from "urdfeus==1.2.1"`. Environment variables such as `ROS_PACKAGE_PATH` are passed through, so `package://` resolution works as usual.
 
-毎回パッケージの解決が走るので、常用するなら`uv tool install`のほうが向いています。
+Package resolution runs on every invocation, so for regular use `uv tool install` is the better fit.
 
-### pipを使う場合
+### With pip
 
 ```bash
 pip install urdfeus
 ```
 
-`pip install --user`は避けてください。`~/.local`に残った古いコピーが、あとから入れた環境を隠すことがあります。
+Avoid `pip install --user`. A stale copy left in `~/.local` can shadow an environment you install later.
 
-### 開発版
+### Development version
 
 ```bash
 git clone https://github.com/iory/urdfeus.git
 cd urdfeus
-uv pip install -e .   # または pip install -e .
+uv pip install -e .   # or: pip install -e .
 ```
 
-### ROS環境との関係
+### Relationship to ROS
 
-`urdf2eus`はROSのPythonインタプリタを必要としません。URDFの`package://`を解決するために`ROS_PACKAGE_PATH`が通っていれば、隔離された仮想環境から実行できます：
+`urdf2eus` does not need ROS's Python interpreter. As long as `ROS_PACKAGE_PATH` is set so that `package://` in the URDF can be resolved, it runs from an isolated virtual environment:
 
 ```bash
 export ROS_PACKAGE_PATH=/path/to/your/ros/workspace
 urdf2eus robot.urdf robot.l
 ```
 
-## 不具合の報告
+## Reporting bugs
 
-環境の取り違えが原因の不具合が多いため、報告には実行環境を添えてください：
+Many bugs turn out to be caused by a mixed-up environment, so please include your environment in reports:
 
 ```bash
 urdf2eus --doctor
 ```
 
-どのPython・どの`urdfeus`・どの`scikit-robot`が実際に読み込まれたかを、バージョンだけでなくパスまで表示します。変換が成功して結果だけがおかしい場合は、生成された`.l`の先頭20行でも同じ情報が得られます。
+It shows which Python, which `urdfeus` and which `scikit-robot` were actually loaded, with their paths as well as their versions. If the conversion succeeds but the result looks wrong, the first 20 lines of the generated `.l` contain the same information.
 
-## 使用方法
+## Usage
 
-### コマンドライン
+### Command line
 
 ```bash
-# 基本的な変換
+# Basic conversion
 urdf2eus robot.urdf robot.l
 
-# YAMLファイルと一緒に変換
+# Convert together with a YAML file
 urdf2eus robot.urdf robot.l --yaml-path robot.yaml
 
-# カスタムロボット名を指定
+# Use a custom robot name
 urdf2eus robot.urdf robot.l --name my_robot
 
-# メッシュ簡素化オプション付き
+# With mesh simplification
 urdf2eus robot.urdf robot.l --voxel-size 0.01
 ```
 
-### Pythonスクリプト
+### Python
 
 ```python
 from urdfeus.urdf2eus import urdf2eus
 
-# URDFファイルをEusLispに変換
+# Convert a URDF file to EusLisp
 with open('robot.l', 'w') as f:
     urdf2eus('robot.urdf', fp=f)
 
-# YAMLファイルと一緒に変換
+# Convert together with a YAML file
 with open('robot.l', 'w') as f:
     urdf2eus('robot.urdf', 'robot.yaml', fp=f)
 
-# カスタムロボット名を指定
+# Use a custom robot name
 with open('robot.l', 'w') as f:
     urdf2eus('robot.urdf', robot_name='my_robot', fp=f)
 ```
 
-## EusLisp → URDF 変換 (eus2urdf)
+## EusLisp → URDF conversion (eus2urdf)
 
-`eus2urdf`は、EusLispのロボットモデルをURDF（ROSパッケージ形式）へ変換する逆方向のツールです。
-モデルは`irteusgl`で実体化してから抽出するため、`:init`内で手続き的に追加されるリンク・関節（脚や吸盤など）も取りこぼさず変換できます。メッシュは`glvertices`から`trimesh`経由で書き出します（デフォルトは色を保持できる`.glb`）。変換結果は[ギャラリー](https://iory.github.io/urdfeus/)で確認できます。
+`eus2urdf` is the reverse tool: it converts a EusLisp robot model into a URDF (as a ROS package).
+The model is instantiated in `irteusgl` before extraction, so links and joints added procedurally inside `:init` (legs, suction cups and so on) are converted too. Meshes are written from `glvertices` via `trimesh` (`.glb` by default, which preserves colors). The results can be seen in the [gallery](https://iory.github.io/urdfeus/).
 
-### 前提
+### Requirements
 
-- `irteusgl`（jskeus）がインストールされていること（無い場合は後述の静的パーサが使われます）
-- メッシュ書き出しに`trimesh` / `pycollada`（依存に含まれます）
+- `irteusgl` (jskeus) installed (if it is missing, the static parser described below is used)
+- `trimesh` / `pycollada` for writing meshes (included in the dependencies)
 
-### コマンドライン
+### Command line
 
 ```bash
-# EusLispモデル -> ROSパッケージ一式 (package.xml + urdf/ + meshes/)
+# EusLisp model -> complete ROS package (package.xml + urdf/ + meshes/)
 eus2urdf robot.l output_package_dir
 
-# package:// で使うパッケージ名を指定
+# Set the package name used in package://
 eus2urdf robot.l output_package_dir --package-name my_robot_description
 
-# ロボット名・コンストラクタ・メッシュ形式を指定
+# Set the robot name, constructor and mesh format
 eus2urdf robot.l out --name my_robot --constructor my-robot --mesh-format obj
 ```
 
-生成物のレイアウト：
+Output layout:
 
 ```
 output_package_dir/
   package.xml
-  CMakeLists.txt             # 最小のcatkin定義（catkin build/catkin_makeで通る）
-  urdf/<robot>.urdf          # package://<pkg>/meshes/<link>.glb を参照
+  CMakeLists.txt             # minimal catkin definition (builds with catkin build/catkin_make)
+  urdf/<robot>.urdf          # references package://<pkg>/meshes/<link>.glb
   meshes/<link>.glb
 ```
 
-### Pythonスクリプト
+### Python
 
 ```python
 from urdfeus.eus2urdf import eus2urdf
@@ -213,27 +215,27 @@ urdf_path = eus2urdf('robot.l', 'output_package_dir',
                      package_name='my_robot_description')
 ```
 
-#### オプション
+#### Options
 
-- `--package-name`: `package://`で参照するROSパッケージ名（既定は出力ディレクトリ名）
-- `--name`: `<robot name>`とURDFファイル名（既定はモデルが返すロボット名）
-- `--constructor`: EusLispのコンストラクタ関数名（既定はファイル名のstem）
-- `--mesh-format`: `trimesh.export`が扱う拡張子（既定`glb`）。`glb`/`ply`/`obj`は面ごとの色を保持。`dae`はtrimeshのColladaエクスポータが色をtextureに潰すため**多色メッシュがグレーになる**（単色メッシュは保持）。`stl`は色なし
-- `--draco`: glbメッシュをDraco圧縮（`KHR_draco_mesh_compression`）。頂点色を保ったまま密なメッシュを概ね1桁小さくする。`glb`固定で`DracoPy`が必要（`pip install urdfeus[draco]`）。読み込み側のglTFローダにはDracoデコーダが要る
-- `--irteusgl`: 使用する`irteusgl`実行ファイル
-- `--backend`: モデルの読み方（後述）
+- `--package-name`: ROS package name referenced by `package://` (defaults to the output directory name)
+- `--name`: `<robot name>` and the URDF file name (defaults to the robot name the model returns)
+- `--constructor`: name of the EusLisp constructor function (defaults to the file name stem)
+- `--mesh-format`: any extension `trimesh.export` handles (default `glb`). `glb`/`ply`/`obj` keep per-face colors. With `dae`, trimesh's Collada exporter collapses colors into a texture, so **multi-colored meshes turn gray** (single-colored meshes are kept). `stl` has no color
+- `--draco`: Draco-compress glb meshes (`KHR_draco_mesh_compression`). Dense meshes shrink by roughly an order of magnitude while keeping vertex colors. Forces `glb` and requires `DracoPy` (`pip install urdfeus[draco]`). The glTF loader on the reading side needs a Draco decoder
+- `--irteusgl`: the `irteusgl` executable to use
+- `--backend`: how the model is read (see below)
 
-#### 慣性テンソルの扱い
+#### Inertia tensors
 
-EusLispの`:weight`と`:inertia-tensor`はそのままURDFの`<mass>`と`<inertia>`にします（`g`→`kg`、`g*mm^2`→`kg*m^2`）。ただしjskeusのモデルには、質量を持ちながら慣性テンソルが剛体として成立していないものがあります。
+EusLisp's `:weight` and `:inertia-tensor` become URDF's `<mass>` and `<inertia>` as they are (`g`→`kg`, `g*mm^2`→`kg*m^2`). However, some jskeus models have mass but an inertia tensor that is not physically valid for a rigid body:
 
-- h3 / h3s / h4 / h6 / h7 / igoid2 / igoid3 / saizo: `:inertia-tensor`がゼロ行列
-- macra: 1e-40 相当の placeholder（数値誤差で固有値が負になるものもある）
-- human: 長軸まわりだけ`1.0`（他の2軸は`2.07e8`、単位は`g*mm^2`）
+- h3 / h3s / h4 / h6 / h7 / igoid2 / igoid3 / saizo: `:inertia-tensor` is a zero matrix
+- macra: a placeholder around 1e-40 (in some links numerical error makes eigenvalues negative)
+- human: `1.0` only about the long axis (the other two axes are `2.07e8`, in `g*mm^2`)
 
-質量があって慣性が無い剛体は存在しないので、こういうリンクを渡されたインポータは、そのボディを拒否するか、質量から作った既定テンソルを黙って代入します。後者はロボットと何の関係もない値です。そこでurdfeusは、テンソルが正定値でない、主慣性モーメントが三角不等式を満たさない、メッシュの大きさと質量に対して小さすぎる、のいずれかなら、**そのリンクのメッシュから一様密度で慣性を計算し直します**。質量と重心は宣言された値のままです。
+A rigid body with mass but no inertia cannot exist, so an importer handed such a link either rejects the body or silently substitutes a default tensor built from the mass, a value that has nothing to do with the robot. urdfeus therefore **recomputes the inertia from that link's mesh at uniform density** when the tensor is not positive definite, when the principal moments violate the triangle inequality, or when it is too small for the mesh size and mass. Mass and center of mass keep their declared values.
 
-書き換えたリンクは変換時に一覧で警告し、URDFにも理由をコメントで残します。
+Rewritten links are listed in a warning during conversion, and the reason is left as a comment in the URDF:
 
 ```xml
 <link name="root">
@@ -241,82 +243,82 @@ EusLispの`:weight`と`:inertia-tensor`はそのままURDFの`<mass>`と`<inerti
   <inertial>
 ```
 
-メッシュが無くて計算もできないリンクは、成立しないテンソルを書く代わりに`<inertial>`自体を出力しません（これも警告します）。
+For links with no mesh, where nothing can be computed, `<inertial>` is omitted entirely instead of writing an invalid tensor (this is warned about as well).
 
-#### eus2urdfのバックエンド
+#### eus2urdf backends
 
-モデルを読む経路は2つあります。
+There are two ways to read a model.
 
-| `--backend` | 読み方 | 対応範囲 |
+| `--backend` | How it reads | Coverage |
 | --- | --- | --- |
-| `irteusgl` | `irteusgl`でモデルを実体化してダンプ | どんなモデルでも読める。EusLispのインストールが必要 |
-| `static` | `.l`ファイルを直接パースする（`urdfeus.eus_parse`） | 生成モデル限定。EusLispは不要 |
-| `auto`（既定） | `irteusgl`がPATHにあればそちら、無ければ`static` | |
+| `irteusgl` | Instantiates the model in `irteusgl` and dumps it | Reads any model. Requires a EusLisp installation |
+| `static` | Parses the `.l` file directly (`urdfeus.eus_parse`) | Generated models only. EusLisp not required |
+| `auto` (default) | `irteusgl` if it is on PATH, otherwise `static` | |
 
-`static`が読めるのは**生成された**モデルです。`euscollada`/`urdfeus`がURDF・colladaから吐いたロボット（`gl::glvertices`で幾何を持つもの）と、jskeusの物体モデル（`faceset`で幾何を持つもの）が該当します。手書きでリンクを計算するモデルや、他ファイルを`load`するシーン（`*-scene.l`）は読めず、その旨のエラーになります（黙って一部だけ変換することはありません）。
+`static` reads **generated** models: robots emitted by `euscollada`/`urdfeus` from URDF or collada (geometry held as `gl::glvertices`), and jskeus object models (geometry held as `faceset`). Models that compute their links by hand, and scenes that `load` other files (`*-scene.l`), cannot be read and produce an error saying so (it never silently converts only part of a model).
 
-`static`は`:assoc`や`:newcoords`といったEusLispの座標系の意味論を再現しており、jskeusの全モデル651個で`irteusgl`のダンプと突き合わせて検証しています（641個が完全一致、2個は下限が正のジョイントに関する差でURDFとしては等価、8個はシーンで対象外）。
+`static` reproduces EusLisp's coordinate semantics such as `:assoc` and `:newcoords`, and has been verified against `irteusgl` dumps on all 651 jskeus models (641 match exactly, 2 differ only for joints with a positive lower limit and are equivalent as URDF, and 8 are scenes and out of scope).
 
 ```bash
-# EusLispが入っていない環境でも変換できる
+# Convert even where EusLisp is not installed
 eus2urdf robot.l out --backend static
 ```
 
 ```python
 from urdfeus.eus_parse import parse_eus_model
 
-data = parse_eus_model('robot.l')   # irteusgl不要。dumpと同じ辞書が返る
+data = parse_eus_model('robot.l')   # no irteusgl needed; returns the same dict as the dump
 ```
 
-#### ジオメトリの扱い
+#### Geometry
 
-- colladaボディは`glvertices`から、`make-cube`等で生成されたプレーンなbody（例：`:init`で追加される可視化用の脚キューブや吸盤）は各faceを三角形分割してメッシュ化します。いずれもメッシュとして書き出されます。
-- プレーンbodyのface三角形分割は凸面を仮定します（プリミティブ形状では成立）。
+- Collada bodies are meshed from `glvertices`; plain bodies created by `make-cube` and the like (e.g. leg cubes or suction cups added for visualization in `:init`) are meshed by triangulating each face. Both are written out as meshes.
+- Face triangulation of plain bodies assumes convex faces (which holds for primitive shapes).
 
-#### 往復（eus -> URDF -> eus）の検証
+#### Round-trip (eus -> URDF -> eus) verification
 
-`tests/urdfeus_tests/test_roundtrip.py`が、モデルをEusLispからURDFへ、URDFからEusLispへ戻し、両端の`irteusgl`ダンプを突き合わせます。単位や規約のずれは片道だけ見ると妥当に見えてしまうので、戻してから比べます（`g*mm^2`と`kg*m^2`の1e9、度とラジアン、mmとm、軸の符号）。
+`tests/urdfeus_tests/test_roundtrip.py` converts a model from EusLisp to URDF and back to EusLisp, then compares the `irteusgl` dumps at both ends. Unit and convention mismatches can look plausible when you only check one direction, so the comparison is made after converting back (the factor of 1e9 between `g*mm^2` and `kg*m^2`, degrees vs. radians, mm vs. m, axis signs).
 
-`dump-robot`は全関節をゼロにしてからダンプするため、比較対象はゼロ姿勢での運動学パラメータ一式（リンク姿勢・関節軸・種類・可動範囲）です。これが一致すれば他の姿勢の順運動学も一致するので、関節角をランダムに振るテストは置いていません。
+`dump-robot` zeroes every joint before dumping, so what is compared is the full set of kinematic parameters at the zero pose (link poses, joint axes, types and limits). If these match, forward kinematics matches at every other pose as well, so there is no test that sets random joint angles.
 
-往復で変わることを許しているのは2点だけです。名前は`:torso-waist-y`が`torso_waist_y`にサニタイズされるので、`eus2urdf`と同じ対応表で突き合わせます。そして剛体として成立しない慣性テンソルを持つリンクは、計算し直されたテンソルで戻ってきます（URDF内のコメントが付いているリンクを慣性の比較から外しています）。
+Only two things are allowed to change in a round trip. Names: `:torso-waist-y` is sanitized to `torso_waist_y`, so they are matched with the same mapping `eus2urdf` uses. And links whose inertia tensor is not valid for a rigid body come back with the recomputed tensor (links carrying the comment in the URDF are excluded from the inertia comparison).
 
-### 生成されたEusLispファイルの使用
+### Using the generated EusLisp file
 
 ```lisp
-;; EusLisp環境での使用例
+;; Example in EusLisp
 (load "robot.l")
-(setq *robot* (robot))  ; URDFのロボット名または--nameで指定した名前
+(setq *robot* (robot))  ; the URDF robot name, or the name given with --name
 (send *robot* :angle-vector)
 
-;; カスタム名を指定した場合
+;; With a custom name
 (load "robot.l")
-(setq *robot* (my_robot))  ; --name my_robot で生成した場合
+(setq *robot* (my_robot))  ; when generated with --name my_robot
 (send *robot* :angle-vector)
 ```
 
-### ロボット名の制約
+### Robot name constraints
 
-`--name`オプションで指定するロボット名は、EusLispの識別子として有効である必要があります：
+The robot name given with `--name` must be a valid EusLisp identifier:
 
-- 文字または`_`で始まる
-- 文字、数字、`_`、`-`のみ使用可能
-- EusLispの予約語（`if`, `defun`, `nil`など）は使用不可
-- 空文字列やスペースを含む名前は使用不可
+- It starts with a letter or `_`
+- It contains only letters, digits, `_` and `-`
+- It is not a EusLisp reserved word (`if`, `defun`, `nil`, ...)
+- It is not empty and contains no spaces
 
-**有効な例**: `my_robot`, `robot-v1`, `MyRobot`, `_robot`, `robot123`
-**無効な例**: `123robot`, `robot name`, `robot.name`, `if`, `defun`
+**Valid**: `my_robot`, `robot-v1`, `MyRobot`, `_robot`, `robot123`
+**Invalid**: `123robot`, `robot name`, `robot.name`, `if`, `defun`
 
-## YAMLファイル
+## YAML file
 
-ロボットの関節グループ、エンドエフェクタ、初期ポーズを設定できます。
+A YAML file configures the robot's joint groups, end effectors and predefined poses.
 
-### PR2ロボットの設定例
+### Example: PR2
 
-実際の[PR2設定ファイル](https://github.com/iory/urdfeus/blob/main/tests/urdfeus_tests/pr2.yaml)を参考にした例：
+Based on the actual [PR2 configuration file](https://github.com/iory/urdfeus/blob/main/tests/urdfeus_tests/pr2.yaml):
 
 ```yaml
-# 関節グループの定義
+# Joint groups
 torso:
   - torso_lift_joint : torso-waist-z
 
@@ -342,7 +344,7 @@ head:
   - head_pan_joint  : head-neck-y
   - head_tilt_joint : head-neck-p
 
-# エンドエフェクタ座標系
+# End-effector coordinates
 larm-end-coords: 
   parent : l_gripper_tool_frame
   rotate : [0, 1, 0, 0]
@@ -355,73 +357,73 @@ head-end-coords:
   translate : [0.08, 0, 0.13]
   rotate    : [0, 1, 0, 90]
 
-# 事前定義ポーズ
+# Predefined poses
 angle-vector:
   reset-manip-pose : [300.0, 75.0, 50.0, 110.0, -110.0, -20.0, -10.0, -10.0, -75.0, 50.0, -110.0, -110.0, 20.0, -10.0, -10.0, 0.0, 50.0]
   reset-pose : [50.0, 60.0, 74.0, 70.0, -120.0, 20.0, -30.0, 180.0, -60.0, 74.0, -70.0, -120.0, -20.0, -30.0, 180.0, 0.0, 0.0]
 ```
 
-### グループ定義の効果
+### What group definitions give you
 
-YAMLファイルでグループを定義すると、EusLispで以下のようなメソッドが使用できるようになります：
+Once groups are defined in the YAML file, methods like the following become available in EusLisp:
 
 ```lisp
-;; PR2ロボットの例
+;; PR2 example
 (setq *robot* (pr2))
 
-;; 右腕の現在の関節角度を取得
+;; Get the current joint angles of the right arm
 (send *robot* :rarm :angle-vector)
 ;; => #f(-60.0 74.0 -70.0 -120.0 -20.0 -30.0 180.0)
 
-;; 右腕の関節リストを取得
+;; Get the right arm's joint list
 (send *robot* :rarm :joint-list)
 ;; => (#<rotational-joint r_shoulder_pan_joint> 
 ;;     #<rotational-joint r_shoulder_lift_joint> ...)
 
-;; 関節名を取得
+;; Get the joint names
 (send-all (send *robot* :rarm :joint-list) :name)
 ;; => ("r_shoulder_pan_joint" "r_shoulder_lift_joint" 
 ;;     "r_upper_arm_roll_joint" "r_elbow_flex_joint" ...)
 
-;; 右腕の関節角度を設定
+;; Set the right arm's joint angles
 (send *robot* :rarm :angle-vector #f(0 0 0 -90 0 0 0))
 
-;; 事前定義ポーズの使用
+;; Use a predefined pose
 (send *robot* :reset-pose)
 ```
 
-### 設定項目の詳細
+### Configuration reference
 
-#### 関節グループ
-- `グループ名`: ロボットの部位名（rarm, larm, head など）
-- `関節名 : EusLisp関節名`: URDFの関節名とEusLispでの関節名のマッピング
+#### Joint groups
+- `group name`: name of the body part (rarm, larm, head, ...)
+- `joint name : EusLisp joint name`: mapping from the URDF joint name to the joint name in EusLisp
 
-#### エンドエフェクタ座標系
-- `parent`: 座標系を取り付ける親リンク名
-- `translate`: [x, y, z] 平行移動（メートル単位）
-- `rotate`: [x, y, z, angle] 回転軸ベクトルと角度（度単位）
+#### End-effector coordinates
+- `parent`: parent link the coordinates are attached to
+- `translate`: [x, y, z] translation (meters)
+- `rotate`: [x, y, z, angle] rotation axis vector and angle (degrees)
 
-#### 事前定義ポーズ
-- `angle-vector`: ポーズ名と対応する関節角度リスト
-- 関節角度は度単位で指定
-- 関節の順序はYAMLファイル内の関節グループの定義順序に従う
+#### Predefined poses
+- `angle-vector`: pose names and their joint angle lists
+- Joint angles are in degrees
+- Joint order follows the order in which the joint groups are defined in the YAML file
 
-## 依存関係
+## Dependencies
 
-- Python 3.6+
+- Python 3.10+
 - scikit-robot
 - trimesh
 - numpy
 
-## ライセンス
+## License
 
 MIT License
 
-## 貢献
+## Contributing
 
-プルリクエストやイシューの報告を歓迎します。
+Pull requests and issue reports are welcome.
 
-## 関連プロジェクト
+## Related projects
 
-- [scikit-robot](https://github.com/iory/scikit-robot) - Pythonロボットモデリングライブラリ
-- [EusLisp](https://github.com/euslisp/EusLisp) - Lispベースのロボットプログラミング言語
+- [scikit-robot](https://github.com/iory/scikit-robot) - Python robot modeling library
+- [EusLisp](https://github.com/euslisp/EusLisp) - Lisp-based robot programming language
