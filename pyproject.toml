@@ -17,6 +17,8 @@ readme = "README.md"
 license = { file = "LICENSE" }
 authors = [
     { name="Iori Yanokura", email="yanokura@jsk.imi.i.u-tokyo.ac.jp" },
+    { name="Kento Matsuo" },
+    { name="Naoya Yamaguchi" },
 ]
 keywords = ["urdf", "euslisp"]
 classifiers = [
