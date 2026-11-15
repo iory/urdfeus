@@ -559,6 +559,30 @@ def _usable_authored_normals(mesh):
     return normals
 
 
+def _bake_texture(mesh):
+    """Return ``mesh`` with a texture baked to vertex colours.
+
+    Parameters
+    ----------
+    mesh : trimesh.Trimesh
+        Mesh to bake.  It is not modified.
+
+    Returns
+    -------
+    baked : trimesh.Trimesh
+        ``mesh`` itself when it has no texture, otherwise a new mesh sharing
+        its vertices and faces with ``ColorVisuals`` from the texture.
+    """
+    if getattr(mesh.visual, 'kind', None) != 'texture':
+        return mesh
+    return trimesh.Trimesh(
+        vertices=mesh.vertices,
+        faces=mesh.faces,
+        visual=mesh.visual.to_color(),
+        process=False,
+    )
+
+
 def _concatenate_visual_mesh(meshes):
     """Concatenate a link's visual meshes, keeping authored vertex normals.
 
@@ -566,17 +590,22 @@ def _concatenate_visual_mesh(meshes):
     fresh mesh without the cache, so normals loaded from the mesh file are
     lost.  Stack them by hand to match.
 
+    Textured meshes are baked to vertex colours first.  scikit-robot >= 0.4.20
+    keeps ``TextureVisuals`` in ``Link.visual_mesh``; concatenating those
+    would pack every image into one atlas and leave a visual without
+    ``main_color``.  Baking matches what older scikit-robot did on load.
+
     Parameters
     ----------
     meshes : list of trimesh.Trimesh
-        Meshes to concatenate.
+        Meshes to concatenate.  They are not modified.
 
     Returns
     -------
     mesh : trimesh.Trimesh
     """
-    mesh = trimesh.util.concatenate(meshes)
     parts = meshes if isinstance(meshes, list | tuple) else [meshes]
+    mesh = trimesh.util.concatenate([_bake_texture(part) for part in parts])
     stacked = []
     for part in parts:
         cache = getattr(part, '_cache', None)
